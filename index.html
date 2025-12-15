@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calum H. Murray | Astronomy & Cosmology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <div class="aurora"></div>
+  <header class="hero">
+    <div class="hero__text">
+      <p class="eyebrow">Cosmologist • Weak Lensing • Cluster Physics</p>
+      <h1>Dr. Calum H. Murray</h1>
+      <p class="lede">Postdoctoral researcher at CosmoStat (CEA Saclay), specialising in galaxy cluster cosmology, gravitational lensing, and the statistical machinery that lets new surveys turn shear maps into precision physics.</p>
+      <div class="hero__actions">
+        <a class="button primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="button ghost" href="mailto:calum.murray@cea.fr">calum.murray@cea.fr</a>
+        <a class="button" href="aot.html">Astronomy on Tap Paris</a>
+      </div>
+      <dl class="meta">
+        <div><dt>Current role</dt><dd>CosmoStat, CEA Saclay (Advisors: Martin Kilbinger &amp; Samuel Farrens)</dd></div>
+        <div><dt>Previous posts</dt><dd>APC Paris • LPSC Grenoble • Euclid collaboration</dd></div>
+        <div><dt>Location</dt><dd>Orme des Merisiers, France</dd></div>
+      </dl>
+    </div>
+    <div class="hero__card">
+      <p class="tag">Focus</p>
+      <h2>Clean signals from noisy universes</h2>
+      <p>From filtering large-scale noise in cluster weak lensing to building likelihoods for abundance cosmology, Calum develops methods that keep astrophysical systematics under control while staying sensitive to subtle physics.</p>
+      <ul class="pill-list">
+        <li>Galaxy clusters</li>
+        <li>Weak lensing</li>
+        <li>Simulation-based inference</li>
+        <li>Euclid &amp; LSST</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">Research themes</p>
+        <h3>Interlocking questions driving my work</h3>
+        <p class="subtitle">Method-heavy astrophysics that links survey data to cosmological insight.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h4>Weak-lensing mass estimation</h4>
+          <p>Designing filters and likelihoods that stabilise shear measurements, deliver robust cluster mass calibrations, and scale to next-generation data from Euclid and LSST.</p>
+        </article>
+        <article class="card">
+          <h4>Cluster abundance cosmology</h4>
+          <p>Building likelihoods that include super-sample covariance, tuning halo mass function calibrations, and exploring simulation-based inference for cleaner cosmological constraints.</p>
+        </article>
+        <article class="card">
+          <h4>Cross-correlations &amp; gravity tests</h4>
+          <p>Linking galaxies, CMB lensing, and radio dipoles to probe f(R) gravity, intrinsic alignments, and moving-lens effects across multiple wavelengths.</p>
+        </article>
+        <article class="card">
+          <h4>Survey leadership &amp; community</h4>
+          <p>Active in Euclid’s cluster science working groups, organiser of outreach series Astronomy on Tap Paris, and reviewer for AAS journals.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel--graph">
+      <div class="panel__header">
+        <p class="eyebrow">Research map</p>
+        <h3>Topics, methods, and papers — connected</h3>
+        <p class="subtitle">A force-directed view of how my projects intertwine. Nodes in midnight blue highlight papers; links show methodological or thematic ties.</p>
+      </div>
+      <div id="graph"></div>
+      <div class="legend">
+        <span class="dot paper"></span> Paper &nbsp;&nbsp; <span class="dot theme"></span> Theme / method
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">Selected publications</p>
+        <h3>Recent highlights</h3>
+      </div>
+      <div class="list">
+        <article>
+          <p class="year">2025</p>
+          <h4>Euclid Quick Data Release (Q1): first detections from the galaxy cluster workflow</h4>
+          <p>Euclid Collaboration — early cluster detections and validation for the mission’s inaugural public data.</p>
+        </article>
+        <article>
+          <p class="year">2025</p>
+          <h4>Filtering out large-scale noise for cluster weak lensing mass estimation</h4>
+          <p>With C. Combet, C. Payerne, M. Ricci — stabilising shear signals to refine mass estimates.</p>
+        </article>
+        <article>
+          <p class="year">2024</p>
+          <h4>Cluster abundance cosmology: including super-sample covariance in the unbinned likelihood</h4>
+          <p>Extending likelihoods so Euclid/LSST cluster counts retain cosmological constraining power under large-scale modes.</p>
+        </article>
+        <article>
+          <p class="year">2024</p>
+          <h4>Constraining f(R) gravity with galaxy–CMB lensing cross-correlations</h4>
+          <p>Joint analysis of galaxy catalogs and CMB lensing to test modified gravity scenarios.</p>
+        </article>
+        <article>
+          <p class="year">2023</p>
+          <h4>Testing the accuracy of likelihoods for cluster abundance cosmology</h4>
+          <p>Benchmarking likelihood choices using simulations to avoid biased cluster-based constraints.</p>
+        </article>
+        <article>
+          <p class="year">2022</p>
+          <h4>Measuring weak-lensing masses on individual clusters</h4>
+          <p>Combining shear profiles and calibrated halo mass functions to sharpen single-cluster mass inferences.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel timeline">
+      <div class="panel__header">
+        <p class="eyebrow">Trajectory</p>
+        <h3>Positions &amp; training</h3>
+      </div>
+      <div class="timeline__grid">
+        <div class="timeline__item">
+          <p class="year">2024 — present</p>
+          <h4>Postdoctoral Researcher</h4>
+          <p>CosmoStat, CEA Saclay (France). Advisors: Martin Kilbinger &amp; Samuel Farrens.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="year">2022 — 2024</p>
+          <h4>Postdoctoral Researcher</h4>
+          <p>AstroParticle &amp; Cosmology Laboratory, Université de Paris. Advisor: James G. Bartlett.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="year">2020 — 2022</p>
+          <h4>Postdoctoral Researcher</h4>
+          <p>Laboratory of Subatomic Physics &amp; Cosmology, Université Grenoble Alpes. Advisor: Céline Combet.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="year">2017 — 2020</p>
+          <h4>PhD, Université Paris Cité</h4>
+          <p>Galaxy cluster cosmology with the Euclid Dark Energy Survey. Advisor: James G. Bartlett.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="year">2012 — 2017</p>
+          <h4>Master of Mathematical Physics</h4>
+          <p>University of Edinburgh. Thesis: The colours of galaxies (Advisor: Robert Mann).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">Talks &amp; outreach</p>
+        <h3>Sharing results with peers and the public</h3>
+      </div>
+      <div class="grid grid--two">
+        <div class="card">
+          <h4>Invited seminars</h4>
+          <ul class="bullet-list">
+            <li>Le comptage d'amas de galaxies dans notre Univers avec Euclid — SFP General Congress, Troyes (2025).</li>
+            <li>Constraining f(R) gravity with galaxy–CMB lensing cross-correlations — MPE Munich (2025).</li>
+            <li>Beyond cosmic variance: galaxy cluster weak lensing — Royal Observatory Edinburgh (2024).</li>
+            <li>Robust estimation of the quasar dipole — LUPM Montpellier (2024).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Service &amp; outreach</h4>
+          <ul class="bullet-list">
+            <li>Reviewer for American Astronomical Society journals (since 2025).</li>
+            <li>Principal organiser, Astronomy on Tap Paris — twelve public talks bringing astrophysics to city bars (past year, ongoing since 2023).</li>
+            <li>Organiser, APC cluster journal club (2022–2024); Rencontres Ciel et de l'Espace contributor (2022 &amp; 2024).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Crafted for clarity &amp; curiosity — inspired by survey data and star maps.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
