@@ -214,6 +214,21 @@ a:hover { color: #4f6a8c; }
 
 #graph svg {
   display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.graph-node circle {
+  cursor: grab;
+}
+
+.graph-node circle.is-dragging {
+  cursor: grabbing;
+}
+
+.graph-node text {
+  user-select: none;
+  pointer-events: none;
 }
 
 footer {
