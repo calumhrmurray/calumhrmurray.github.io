@@ -46,87 +46,290 @@ const graphData = {
 };
 
 const graphHost = document.getElementById('graph');
+
 if (graphHost) {
-  const width = graphHost.clientWidth;
-  const height = graphHost.clientHeight;
+  const width = Math.max(graphHost.clientWidth, 640);
+  const height = Math.max(graphHost.clientHeight, 360);
 
-  const svg = d3.select('#graph').append('svg')
-    .attr('width', width)
-    .attr('height', height);
+  const svg = createSvg(width, height);
+  graphHost.appendChild(svg);
 
-  const color = d3.scaleOrdinal()
-    .domain(['paper', 'theme'])
-    .range(['#81a1c1', '#72b6aa']);
+  const nodeLookup = new Map();
+  const nodes = graphData.nodes.map(node => {
+    const seededNode = {
+      ...node,
+      x: randomBetween(48, width - 48),
+      y: randomBetween(48, height - 48),
+      vx: 0,
+      vy: 0
+    };
+    nodeLookup.set(node.id, seededNode);
+    return seededNode;
+  });
 
-  const simulation = d3.forceSimulation(graphData.nodes)
-    .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(110).strength(0.9))
-    .force('charge', d3.forceManyBody().strength(-260))
-    .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(45));
+  const links = graphData.links.map(link => ({
+    source: nodeLookup.get(link.source),
+    target: nodeLookup.get(link.target)
+  }));
 
-  const link = svg.append('g')
-    .attr('stroke', 'rgba(129, 161, 193, 0.35)')
-    .attr('stroke-width', 1.4)
-    .selectAll('line')
-    .data(graphData.links)
-    .join('line');
+  runSimulation(nodes, links, width, height);
 
-  const node = svg.append('g')
-    .selectAll('g')
-    .data(graphData.nodes)
-    .join('g')
-    .call(drag(simulation));
+  const { linkElements, nodeElements } = drawGraph(svg, nodes, links);
+  updatePositions(linkElements, nodeElements);
 
-  node.append('circle')
-    .attr('r', d => d.group === 'paper' ? 12 : 10)
-    .attr('fill', d => color(d.group))
-    .attr('stroke', '#f3f7fc')
-    .attr('stroke-width', d => d.group === 'paper' ? 1.6 : 1.2)
-    .attr('filter', 'drop-shadow(0 8px 18px rgba(47,52,64,0.16))');
+  enableDragging(svg, nodeElements, linkElements, width, height);
+}
 
-  node.append('text')
-    .text(d => d.id)
-    .attr('x', 16)
-    .attr('y', 4)
-    .attr('fill', '#24303c')
-    .style('font-size', '12px')
-    .style('font-weight', '600')
-    .style('font-family', '"Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif');
+function createSvg(width, height) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  svg.setAttribute('role', 'presentation');
+  svg.setAttribute('focusable', 'false');
+  return svg;
+}
 
-  node.append('title').text(d => d.id);
+function randomBetween(min, max) {
+  return min + Math.random() * (max - min);
+}
 
-  simulation.on('tick', () => {
-    link
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
+function runSimulation(nodes, links, width, height) {
+  const iterations = 280;
+  const chargeStrength = 1400;
+  const springLength = 120;
+  const springStiffness = 0.015;
+  const centerStrength = 0.006;
+  const friction = 0.86;
+  const margin = 28;
 
-    node
-      .attr('transform', d => `translate(${d.x},${d.y})`);
+  for (let step = 0; step < iterations; step += 1) {
+    for (let i = 0; i < nodes.length; i += 1) {
+      for (let j = i + 1; j < nodes.length; j += 1) {
+        const a = nodes[i];
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const distance = Math.max(Math.hypot(dx, dy), 1);
+        const force = chargeStrength / (distance * distance);
+        const fx = (force * dx) / distance;
+        const fy = (force * dy) / distance;
+        a.vx += fx;
+        a.vy += fy;
+        b.vx -= fx;
+        b.vy -= fy;
+      }
+    }
+
+    links.forEach(link => {
+      const dx = link.target.x - link.source.x;
+      const dy = link.target.y - link.source.y;
+      const distance = Math.max(Math.hypot(dx, dy), 1);
+      const force = springStiffness * (distance - springLength);
+      const fx = (force * dx) / distance;
+      const fy = (force * dy) / distance;
+      link.source.vx += fx;
+      link.source.vy += fy;
+      link.target.vx -= fx;
+      link.target.vy -= fy;
+    });
+
+    nodes.forEach(node => {
+      node.vx += (width / 2 - node.x) * centerStrength;
+      node.vy += (height / 2 - node.y) * centerStrength;
+      node.vx *= friction;
+      node.vy *= friction;
+      node.x = clamp(node.x + node.vx * 0.02, margin, width - margin);
+      node.y = clamp(node.y + node.vy * 0.02, margin, height - margin);
+    });
+  }
+}
+
+function drawGraph(svg, nodes, links) {
+  const linkGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  linkGroup.setAttribute('stroke', 'rgba(129, 161, 193, 0.35)');
+  linkGroup.setAttribute('stroke-width', '1.4');
+  svg.appendChild(linkGroup);
+
+  const linkElements = links.map(link => {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.classList.add('graph-link');
+    linkGroup.appendChild(line);
+    return { line, data: link };
+  });
+
+  const nodeGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  svg.appendChild(nodeGroup);
+
+  const nodeElements = nodes.map(node => {
+    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    group.classList.add('graph-node');
+    nodeGroup.appendChild(group);
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('r', node.group === 'paper' ? '12' : '10');
+    circle.setAttribute('fill', node.group === 'paper' ? '#81a1c1' : '#72b6aa');
+    circle.setAttribute('stroke', '#f3f7fc');
+    circle.setAttribute('stroke-width', node.group === 'paper' ? '1.6' : '1.2');
+    circle.dataset.id = node.id;
+    group.appendChild(circle);
+
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.textContent = node.id;
+    text.setAttribute('x', '16');
+    text.setAttribute('y', '4');
+    text.setAttribute('fill', '#24303c');
+    text.setAttribute('font-size', '12px');
+    text.setAttribute('font-weight', '600');
+    text.setAttribute('font-family', '"Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif');
+    group.appendChild(text);
+
+    const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+    title.textContent = node.id;
+    group.appendChild(title);
+
+    return { group, circle, text, data: node };
+  });
+
+  return { linkElements, nodeElements };
+}
+
+function updatePositions(linkElements, nodeElements) {
+  linkElements.forEach(({ line, data }) => {
+    line.setAttribute('x1', data.source.x.toFixed(1));
+    line.setAttribute('y1', data.source.y.toFixed(1));
+    line.setAttribute('x2', data.target.x.toFixed(1));
+    line.setAttribute('y2', data.target.y.toFixed(1));
+  });
+
+  nodeElements.forEach(({ group, data }) => {
+    group.setAttribute('transform', `translate(${data.x.toFixed(1)}, ${data.y.toFixed(1)})`);
   });
 }
 
-function drag(simulation) {
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.2).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
+function enableDragging(svg, nodeElements, linkElements, width, height) {
+  let activeNode = null;
+  let pointerId = null;
+  const margin = 28;
 
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
+  const moveNode = event => {
+    if (!activeNode || event.pointerId !== pointerId) return;
+    const position = clientToSvg(svg, event.clientX, event.clientY);
+    activeNode.x = clamp(position.x, margin, width - margin);
+    activeNode.y = clamp(position.y, margin, height - margin);
+    updatePositions(linkElements, nodeElements);
+  };
 
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
+  const endDrag = event => {
+    if (event.pointerId !== pointerId) return;
+    const circle = event.target;
+    circle.classList.remove('is-dragging');
+    circle.releasePointerCapture(pointerId);
+    activeNode = null;
+    pointerId = null;
+  };
 
-  return d3.drag()
-    .on('start', dragstarted)
-    .on('drag', dragged)
-    .on('end', dragended);
+  nodeElements.forEach(({ circle, data }) => {
+    circle.addEventListener('pointerdown', event => {
+      event.preventDefault();
+      activeNode = data;
+      pointerId = event.pointerId;
+      circle.classList.add('is-dragging');
+      circle.setPointerCapture(pointerId);
+    });
+
+    circle.addEventListener('pointermove', moveNode);
+    circle.addEventListener('pointerup', endDrag);
+    circle.addEventListener('pointercancel', endDrag);
+    circle.addEventListener('lostpointercapture', endDrag);
+  });
+}
+
+function clientToSvg(svg, clientX, clientY) {
+  const rect = svg.getBoundingClientRect();
+  const scaleX = svg.viewBox.baseVal.width / rect.width;
+  const scaleY = svg.viewBox.baseVal.height / rect.height;
+  return {
+    x: (clientX - rect.left) * scaleX,
+    y: (clientY - rect.top) * scaleY
+  };
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+// Photo toggling logic
+const photo = document.getElementById('profile-photo');
+
+function buildMonochromeVersion() {
+  return new Promise((resolve, reject) => {
+    if (!photo) {
+      reject(new Error('Profile photo not found'));
+      return;
+    }
+
+    const process = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = photo.naturalWidth;
+      canvas.height = photo.naturalHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(photo, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      const altSrc = canvas.toDataURL('image/png');
+      resolve(altSrc);
+    };
+
+    if (photo.complete) {
+      process();
+    } else {
+      photo.addEventListener('load', process, { once: true });
+      photo.addEventListener('error', reject, { once: true });
+    }
+  });
+}
+
+if (photo) {
+  const originalSrc = window.PROFILE_PHOTO_SRC || photo.getAttribute('src');
+  if (originalSrc) {
+    photo.src = originalSrc;
+  }
+  let monochromeSrc = null;
+
+  const togglePhoto = async () => {
+    try {
+      if (!monochromeSrc) {
+        monochromeSrc = await buildMonochromeVersion();
+      }
+
+      const useMonochrome = !photo.classList.contains('is-monochrome');
+      photo.classList.toggle('is-monochrome', useMonochrome);
+      photo.setAttribute('aria-pressed', useMonochrome);
+      photo.src = useMonochrome ? monochromeSrc : originalSrc;
+    } catch (err) {
+      console.error('Could not build monochrome photo', err);
+    }
+  };
+
+  photo.addEventListener('click', togglePhoto);
+  photo.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      togglePhoto();
+    }
+  });
 }
