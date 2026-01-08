@@ -247,7 +247,8 @@ a:hover { color: #4f6a8c; }
   box-shadow: var(--shadow);
 }
 
-.poster-card img {
+.poster-card img,
+.poster-media {
   width: 100%;
   display: block;
 }
