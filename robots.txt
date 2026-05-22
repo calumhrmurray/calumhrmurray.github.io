@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calumhrmurray.github.io/calumhrmurray/sitemap.xml
+Sitemap: https://calumhrmurray.github.io/sitemap.xml
