@@ -25,6 +25,7 @@
     name="twitter:description"
     content="Astronomy outreach, public talks and Astronomy on Tap Paris activities by observational cosmologist Calum Murray."
   />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -33,9 +34,10 @@
       <a class="brand" href="index.html">Calum Murray</a>
       <div class="nav-links">
         <a href="index.html">Research</a>
-        <a href="outreach.html" aria-current="page">Public outreach</a>
         <a href="publications.html">Publications</a>
-        <a href="weak_lens.html">Gravitational Lensing</a>
+        <a href="software.html">Software</a>
+        <a href="weak_lens.html">Lensing</a>
+        <a href="outreach.html" aria-current="page">Outreach</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV (pdf)</a>
       </div>
     </div>
@@ -43,13 +45,39 @@
 
   <div class="page">
     <header class="hero">
-      <p class="muted">Science for everyone</p>
       <h1>Connecting astronomy with the public</h1>
-      <p>Among other public outreach activities over the past year and a half, I have been organising <a href="https://astronomyontap.org/" target="_blank" rel="noopener">Astronomy on Tap</a> in Paris, where we get to explain astrophysics to the general public in a relaxed, friendly setting.</p>
     </header>
 
-    <section>
-      <h2 class="section-title">Recent Astronomy on Tap Paris talks</h2>
+    <section aria-labelledby="press-releases">
+      <h2 class="section-title" id="press-releases">Press releases</h2>
+      <div class="release-card">
+        <a class="release-globe" href="press-releases.html" aria-label="The UNIONS dark matter map, full screen">
+          <video autoplay muted loop playsinline preload="metadata"
+                 poster="assets/unions/unions_globe_poster.jpg">
+            <source src="assets/unions/unions_globe.mp4" type="video/mp4" />
+            <img src="assets/unions/unions_globe_poster.jpg" alt="The sky as a globe, with the UNIONS survey footprint picked out in blue." />
+          </video>
+        </a>
+        <div>
+          <strong>The largest dark matter map of the northern sky</strong>
+          <p>The UNIONS collaboration announced it in July 2026: ten years of imaging the
+          northern sky and the shapes of 61 million distant galaxies, and the mass their
+          distortion reveals. The blue is that mass.</p>
+          <p class="repo-links">
+            <a href="press-releases.html">See it full screen &#8594;</a>
+            <a href="https://uwaterloo.ca/news/decade-cosmic-discovery" target="_blank" rel="noopener">University of Waterloo &#8599;</a>
+            <a href="https://irfu.cea.fr/Phocea/Vie_des_labos/Ast/ast.php?t=fait_marquant&amp;id_ast=5498" target="_blank" rel="noopener">CEA-Irfu &#8599;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="astronomy-on-tap">
+      <h2 class="section-title" id="astronomy-on-tap">Astronomy on Tap Paris</h2>
+      <p>Among other public outreach activities over the past year and a half, I have been organising <a href="https://astronomyontap.org/" target="_blank" rel="noopener">Astronomy on Tap</a> in Paris, where we get to explain astrophysics to the general public in a relaxed, friendly setting.</p>
+      <p class="muted">More about the series, and how to speak at it: <a href="aot.html">Astronomy on Tap Paris</a>.</p>
+
+      <h3 class="subsection-title">Recent talks</h3>
       <div class="poster-grid">
         <figure class="poster-card">
           <img src="assets/aot_april.jpg" alt="Astronomy on Tap Paris poster for Astronomy at the End of the World." />

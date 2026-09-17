@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Explore the UNIONS Dark Matter Map | Calum Murray</title>
+<meta name="description" content="The UNIONS weak-lensing convergence map of the northern sky, rendered on a rotating sphere, with a link to the July 2026 announcement of the largest dark matter map of the northern hemisphere." />
+<meta name="author" content="Calum Murray" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://calumhrmurray.github.io/unions_map.html" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Calum Murray" />
+<meta property="og:title" content="UNIONS Dark Matter Map | Calum Murray" />
+<meta property="og:description" content="The UNIONS weak-lensing convergence map of the northern sky, on a rotating sphere." />
+<meta property="og:url" content="https://calumhrmurray.github.io/unions_map.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="UNIONS Dark Matter Map | Calum Murray" />
+<meta name="twitter:description" content="The UNIONS weak-lensing convergence map of the northern sky, on a rotating sphere." />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:"Helvetica Neue",Arial,sans-serif;color:#fff}
+#c{width:100vw;height:100vh}
+
+#ui{position:fixed;top:18px;left:50%;transform:translateX(-50%);text-align:center;
+     pointer-events:none;z-index:10}
+#title{font-size:1.25rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;
+        color:#e8e8e8;text-shadow:0 0 18px rgba(100,150,255,.55)}
+#subtitle{font-size:.72rem;letter-spacing:.07em;color:#7799bb;margin-top:4px}
+
+#ctrl{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+       display:flex;gap:8px;z-index:10;align-items:center;flex-wrap:wrap;
+       justify-content:center;max-width:90vw}
+.btn{background:rgba(10,20,50,.85);border:1px solid rgba(80,120,200,.4);
+      color:#99bbff;padding:6px 14px;border-radius:18px;cursor:pointer;
+      font-size:.72rem;letter-spacing:.06em;transition:all .2s;
+      backdrop-filter:blur(5px);white-space:nowrap}
+.btn:hover{background:rgba(30,60,120,.9);border-color:rgba(100,160,255,.7);color:#fff}
+.btn.on{background:rgba(30,80,180,.9);border-color:#6699ff;color:#fff}
+.sep{width:1px;height:24px;background:rgba(100,140,200,.25);flex-shrink:0}
+
+#cbar{position:fixed;right:18px;top:50%;transform:translateY(-50%);
+       display:flex;flex-direction:column;align-items:center;gap:4px;z-index:10}
+#cblabel{font-size:.66rem;color:#7799bb;writing-mode:vertical-rl;
+          text-orientation:mixed;transform:rotate(180deg);margin-bottom:2px;
+          letter-spacing:.05em}
+#cbcanvas{border:1px solid rgba(80,100,160,.3);border-radius:2px}
+#cbtop,#cbbot{font-size:.64rem;color:#8899bb}
+
+#home{position:fixed;top:18px;left:18px;z-index:11;color:#99bbff;text-decoration:none;
+       border:1px solid rgba(80,120,200,.4);border-radius:18px;padding:6px 14px;
+       background:rgba(10,20,50,.85);backdrop-filter:blur(5px);
+       font-size:.72rem;letter-spacing:.06em;transition:all .2s}
+#home:hover{background:rgba(30,60,120,.9);border-color:rgba(100,160,255,.7);color:#fff}
+
+#release{pointer-events:auto;display:inline-block;margin-top:14px;color:#cfe0ff;
+          text-decoration:none;border:1px solid rgba(100,160,255,.45);border-radius:20px;
+          padding:8px 18px;background:rgba(10,20,50,.8);backdrop-filter:blur(5px);
+          font-size:.74rem;letter-spacing:.05em;transition:all .2s;max-width:88vw}
+#release:hover{background:rgba(30,80,180,.9);border-color:#6699ff;color:#fff}
+#release .where{display:block;font-size:.66rem;letter-spacing:.06em;color:#7799bb;margin-top:3px}
+#release:hover .where{color:#bbccee}
+
+#loading{position:fixed;inset:0;z-index:20;display:flex;align-items:center;
+          justify-content:center;background:#000003;transition:opacity .8s ease;
+          font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#5577aa}
+#loading.gone{opacity:0;pointer-events:none}
+
+#credits{position:fixed;bottom:20px;left:18px;z-index:10;font-size:.66rem;
+          line-height:1.5;letter-spacing:.05em;color:rgba(120,145,190,.75);
+          pointer-events:none;max-width:40vw}
+#credits span{display:block;color:rgba(100,120,160,.6);font-size:.62rem;
+               letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px}
+
+#hint{position:fixed;bottom:58px;left:50%;transform:translateX(-50%);
+       font-size:.66rem;color:rgba(100,120,160,.6);letter-spacing:.06em;
+       pointer-events:none}
+</style>
+</head>
+<body>
+<div id="c"></div>
+<div id="loading">Loading the map</div>
+<a id="home" href="press-releases.html">&#8592; Back</a>
+
+<div id="ui">
+  <div id="title">UNIONS Dark Matter Convergence</div>
+  <div id="subtitle">Canada–France Imaging Survey &nbsp;·&nbsp; Weak Gravitational Lensing &nbsp;·&nbsp;
+    Background: ESA/Gaia/DPAC</div>
+  <a id="release" href="https://uwaterloo.ca/news/decade-cosmic-discovery" target="_blank" rel="noopener">
+    A decade of cosmic discovery &#8599;
+    <span class="where">The UNIONS announcement &#183; University of Waterloo &#183; 20 July 2026</span>
+  </a>
+</div>
+
+<div id="ctrl">
+  <button class="btn on" id="b_s0"  onclick="setSigma(0)">&#963; = 3.0</button>
+  <button class="btn"    id="b_s1"  onclick="setSigma(1)">&#963; = 3.5</button>
+  <div class="sep"></div>
+  <button class="btn on" id="b_c_classic" onclick="setCmap(&quot;classic&quot;)">Classic (RdBu)</button><button class="btn" id="b_c_seismic" onclick="setCmap(&quot;seismic&quot;)">Seismic</button><button class="btn" id="b_c_ocean" onclick="setCmap(&quot;ocean&quot;)">Ocean</button><button class="btn" id="b_c_blues" onclick="setCmap(&quot;blues&quot;)">Blue</button><button class="btn" id="b_c_kelp" onclick="setCmap(&quot;kelp&quot;)">Kelp / Ocean</button><button class="btn" id="b_c_aurora" onclick="setCmap(&quot;aurora&quot;)">Aurora</button><button class="btn" id="b_c_puor" onclick="setCmap(&quot;puor&quot;)">Purple–Orange</button>
+  <div class="sep"></div>
+  <button class="btn" onclick="resetView()">Reset</button>
+  <button class="btn on" id="bspin" onclick="toggleSpin()">Auto-rotate</button>
+</div>
+
+<div id="hint">Drag to rotate &nbsp;·&nbsp; Scroll to zoom</div>
+
+<div id="credits"><span>Visualisation</span>Calum Murray · Cail Daley · Andreas Tersenov</div>
+
+<div id="cbar">
+  <span id="cbtop">&nbsp;</span>
+  <canvas id="cbcanvas" width="18" height="200"></canvas>
+  <span id="cbbot">&nbsp;</span>
+  <span id="cblabel">Convergence &#954;</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+// ── Embedded assets ──────────────────────────────────────────────────────────
+const GAIA  = "assets/unions/gaia_edr3_background.jpg";
+const DATA  = [
+  "assets/unions/unions_kappa_sigma30.png",
+  "assets/unions/unions_kappa_sigma35.png"
+];
+const VMINS = [-6.230674e-03, -5.812621e-03];
+const VMAXS = [6.230674e-03, 5.812621e-03];
+
+const LUTS = {
+  "classic": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAxUlEQVR4nJ2OO24EMQxDn6iD5Hi5fx+LKayd2OtZDJCCEH8mHN98WUAGZMS/79OGFChFZBALV0ZfEVr4K5NOr/3J9bYhIhvND7/13Mwt003v3EhQgkTo5CFBvvjMDv60kYkjIHTBC5+6c93nW6d7xwZQ5u/aFGBD2Yt/o3H77+/A+OoZGGXKZthUMa/NMFT5g+5eLdzurVVzbY/a8VPvXh2d+94H9H/cqDL2wltPzvT90O//b50qXGNDbbrwGEdn633I141fMiBhpnt4HZ4AAAAASUVORK5CYII=",
+  "seismic": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAQklEQVR4nOWNqREAIAwENyR0R//N8AoEBhVQIHbuEyeQOiiTwPJ/dCKKGahCjGC259U90KCUc3KGWv35xrdDG3zNACsxwIBEtIPvAAAAAElFTkSuQmCC",
+  "ocean": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAA1UlEQVR4nJ2OS3KDQAxEX2ugvLGvkPtfz+ySYqQsEEbYhnwWqlZ/1DNql48IGaiBtYK28Z13kH3RSvas+/HGqxam7BBYjlLb8aLtsiX3fJu5+EOWd/95vj34TzMxNmMwMTYxmjGaGNa9afFyP/OG7Bqza7C6Fy/3WxNXE7cmbiauRbvoE/MJ8wn5Pfc7FhPyCeYv6DPMHeZ5meSx8qJVvvi9+Ov04m+c0hfdCQd33qAO9M3/3+353bEHPYRjC4ZwlNqGHqI/0Hb8PG8/dNUO+8Xba974BkXM8Z1g9B4EAAAAAElFTkSuQmCC",
+  "blues": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAvUlEQVR4nJWOS5LCMAxEX8tUpoA7cv8zMJHFwiE2cmomLFT9kbtllcsjwgRmbcrAJy0odqhj2m+5U1q9Y9B5/+//iiGBTJjU0IQSb8jsDbnu0b2xd/JI/Qc3t7uzN983E4tgMfFjYtlm5+p82uvTf+PVxK0Y9yJupXEDnhWe3vG3Bh7Mw4GXpu78oONE3sf8GlR/I0mfQA/qOiJJf4/uQF0hHGIlNmzaicg739/H8C5np1090Zuz+50/etN/X5qDM2Ar1NJJAAAAAElFTkSuQmCC",
+  "kelp": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAA7klEQVR4nJ2OQW7FIBBDn2HorifoDXr/uyVSGaYLIE1Ivlp1gfxibBO9f3wGAOpHmqzO3P3LN5MXX6A58Gr70v/HtoSSUEpDhdSZs69rhpSGd++SFn90L/7S5fTu2mWw5UzJ1tWMkjOWjZKNYpNHxrpeeWRs7oy82bFdslGSUWSUlCmpUPSjb6l0X+W4zzi0DWJHbYPYDqXtKDZo26HEDv5F80pUJ7zS3IlaF/Z7xitRzzwyo/Nbpo3dNdPGG+FBNAiH5hwcrhc+RNOD1zsv/Zs3d/Xsh3CgAc7krheWRqbn7ixcf9hBND1013+Q+AYQkABk0IH1MAAAAABJRU5ErkJggg==",
+  "aurora": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAvklEQVR4nK2OQW7DMAwEZy3pUEAF8o/8/0/2qZceRbGHKK4ty4gDBAKxy+GSkG7cHdTe9K96h03rhRHjwJpeZt39lQWkwKS9io0/4a+yEwEp7rMrH+y88ZcQaKWNhxB1MrviWx8fPn5ByhCzkzKk76bZiU1ThpB+UZnBFlRmZAvYjMqCbIan2g8YuHFQN//crO75ce98VivUKqproyM2yPT8SuaQPctAAYq3Aop71ze2zTkU+px3O4O9i/cN+AMQJ/IpHB9fMgAAAABJRU5ErkJggg==",
+  "puor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAxElEQVR4nJ2OS5LFMAgDG5zFu9M73Jzc0izsJORbNbOgRCOBHT/fjzNMBveVd3O/eC97CZlBBkTG1h9nkDE0qp9BbP3IRLm3ZbI9VmYj2srL1Vur1b3l6M0iG8QyNBtEg1ymFt76kl/5Lj85csHk4Eg89Y7Ns3dg2tUjsEE2NlhTbWS2fvVU2YW1z1V8zxuSx/5Z/ce5PN59uiehqv3EEur/z3nN9qHulY0v3u675M67F09CEraQ+kmF3eefrrNd33dt8QstGHqI2V3e8QAAAABJRU5ErkJggg=="
+};
+const CMAP_ORDER = ['classic', 'seismic', 'ocean', 'blues', 'kelp', 'aurora', 'puor'];
+
+// ── Scene ─────────────────────────────────────────────────────────────────────
+const con = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(con.clientWidth, con.clientHeight);
+renderer.setClearColor(0x000003);
+con.appendChild(renderer.domElement);
+
+const scene  = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, con.clientWidth/con.clientHeight, 0.1, 500);
+camera.position.set(1.93, 2.158, -0.786); camera.lookAt(0,0,0);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping=true; controls.dampingFactor=0.06;
+controls.minDistance=1.4; controls.maxDistance=6;
+
+// Stars
+(function(){
+  const N=7000, p=new Float32Array(N*3);
+  for(let i=0;i<N;i++){
+    const t=Math.acos(2*Math.random()-1),f=2*Math.PI*Math.random(),r=90+10*Math.random();
+    p[i*3]=r*Math.sin(t)*Math.cos(f); p[i*3+1]=r*Math.sin(t)*Math.sin(f); p[i*3+2]=r*Math.cos(t);
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.BufferAttribute(p,3));
+  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0xffffff,size:.14,sizeAttenuation:true})));
+})();
+
+scene.add(new THREE.AmbientLight(0x556688,2.0));
+const sun=new THREE.DirectionalLight(0xfff5ee,0.45); sun.position.set(4,2,3); scene.add(sun);
+
+// ── Shader ────────────────────────────────────────────────────────────────────
+const uniforms = {
+  tBg:   {value:null},
+  tData: {value:null},
+  tCmap: {value:null}
+};
+
+const mat = new THREE.ShaderMaterial({
+  uniforms,
+  vertexShader:`
+    varying vec2 vUv;
+    void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+  fragmentShader:`
+    uniform sampler2D tBg;
+    uniform sampler2D tData;
+    uniform sampler2D tCmap;
+    varying vec2 vUv;
+    void main(){
+      vec4  d   = texture2D(tData, vUv);
+      float val = d.r;               // normalised kappa 0..1
+      float msk = d.a;               // 1 = data, 0 = transparent
+      vec3  col = texture2D(tCmap, vec2(val, 0.5)).rgb;
+      vec3  bg  = pow(texture2D(tBg, vUv).rgb, vec3(0.88)) * 1.18;
+      gl_FragColor = vec4(mix(bg, col, msk), 1.0);
+    }`
+});
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(1,128,64), mat));
+
+// ── Texture cache + loading ───────────────────────────────────────────────────
+const loader = new THREE.TextureLoader();
+const dataCache = [null, null];
+const lutCache  = {};
+let bgLoaded = false;
+
+function markReady(){
+  if(uniforms.tBg.value && uniforms.tData.value)
+    document.getElementById('loading').classList.add('gone');
+}
+loader.load(GAIA, t=>{ t.flipY=true; uniforms.tBg.value=t; bgLoaded=true; markReady(); });
+
+function loadData(idx, cb){
+  if(dataCache[idx]){cb(dataCache[idx]);return;}
+  loader.load(DATA[idx], t=>{t.flipY=true;dataCache[idx]=t;cb(t);});
+}
+function loadLut(key, cb){
+  if(lutCache[key]){cb(lutCache[key]);return;}
+  loader.load(LUTS[key], t=>{
+    t.magFilter=THREE.LinearFilter; t.minFilter=THREE.LinearFilter;
+    t.flipY=false; lutCache[key]=t; cb(t);
+  });
+}
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let curSigma=0, curCmap=CMAP_ORDER[0];
+
+function applyAll(){
+  loadData(curSigma, td=>{ uniforms.tData.value=td; markReady(); });
+  loadLut(curCmap,   tl=>{ uniforms.tCmap.value=tl; updateColorbar(); });
+}
+
+function setSigma(idx){
+  curSigma=idx;
+  ['b_s0','b_s1'].forEach((id,i)=>document.getElementById(id).classList.toggle('on',i===idx));
+  applyAll();
+}
+function setCmap(key){
+  curCmap=key;
+  CMAP_ORDER.forEach(k=>document.getElementById('b_c_'+k).classList.toggle('on',k===key));
+  applyAll();
+}
+
+applyAll();
+
+// ── Colorbar ──────────────────────────────────────────────────────────────────
+// Pre-sample each cmap LUT into canvas gradients
+const CMAP_CSS = {
+  classic: ['#053061','#2166ac','#4393c3','#92c5de','#f7f7f7','#f4a582','#d6604d','#b2182b','#67001f'],
+  seismic: ['#00004d','#0000ff','#7777ff','#ffffff','#ff7777','#ff0000','#4d0000'],
+  ocean:   ['#03071e','#023e8a','#0096c7','#90e0ef','#f0f4f8','#fde68a','#f97316','#b91c1c','#4a044e'],
+  blues:   ['#03045e','#0077b6','#48cae4','#caf0f8','#ffffff','#e0f2fe','#7dd3fc','#1d4ed8','#0f172a'],
+  kelp:    ['#0d1b2a','#1b4332','#40916c','#b7e4c7','#f8f9fa','#fde68a','#ca6702','#9d0208','#370617'],
+  aurora:  ['#10002b','#3c096c','#7b2ff7','#c77dff','#f8f9fa','#ffd60a','#e85d04','#9b2226','#03071e'],
+  puor:    ['#2d004b','#542788','#998ec3','#d8daeb','#f7f7f7','#fee0b6','#f1a340','#b35806','#7f3b08'],
+};
+
+function updateColorbar(){
+  const cvs=document.getElementById('cbcanvas');
+  const ctx=cvs.getContext('2d');
+  const g=ctx.createLinearGradient(0,0,0,200);
+  const stops=CMAP_CSS[curCmap]||CMAP_CSS.classic;
+  stops.forEach((c,i)=>g.addColorStop(i/(stops.length-1),c));
+  ctx.fillStyle=g; ctx.fillRect(0,0,18,200);
+  const vm=VMAXS[curSigma], vn=VMINS[curSigma];
+  document.getElementById('cbtop').textContent='+'+vm.toFixed(4);
+  document.getElementById('cbbot').textContent=vn.toFixed(4);
+}
+
+// ── UI helpers ─────────────────────────────────────────────────────────────────
+function resetView(){camera.position.set(1.93,2.158,-0.786);camera.lookAt(0,0,0);controls.reset();}
+let spinning=true;
+controls.autoRotate=true; controls.autoRotateSpeed=0.35;
+function toggleSpin(){
+  spinning=!spinning; controls.autoRotate=spinning; controls.autoRotateSpeed=0.35;
+  document.getElementById('bspin').classList.toggle('on',spinning);
+}
+
+window.addEventListener('resize',()=>{
+  const w=con.clientWidth,h=con.clientHeight;
+  camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h);
+});
+
+(function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
+</script>
+</body>
+</html>
