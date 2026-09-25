@@ -11,6 +11,7 @@ Static HTML and CSS, no build step, served by GitHub Pages.
 | `press-releases.html` | The UNIONS dark matter map: the globe animation and the July 2026 announcements. Linked from `outreach.html`, not from the nav |
 | `unions_map.html` | The same convergence map in WebGL, interactive: drag, zoom, smoothing scale, colour map |
 | `weak_lens.html` | An interactive gravitational lensing sandbox |
+| `spherex-sky.html` | The half-sky SPHEREx catalogue as a movie through redshift, from `assets/spherex/`. Unlisted: linked only from a figure caption in the Cambridge application, marked `noindex` and left out of the sitemap |
 | `outreach.html`, `aot.html` | Public outreach and Astronomy on Tap Paris |
 
 `press-releases.html` and `outreach.html` play a 3.3 MB looping animation from `assets/unions/` (a seamless 300-frame

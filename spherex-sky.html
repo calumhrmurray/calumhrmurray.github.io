@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The half sky through redshift | Calum Murray</title>
+<!-- Unlisted: linked from an application figure caption, not from the nav or the sitemap. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="author" content="Calum Murray" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+  /* The palette of the application's figures (figures/style.py), so the movie reads as the
+     figure it animates. White outside the ellipse matches the frames' own background. */
+  :root {
+    --ink: #1d2f42;
+    --wind: #2e5c88;
+    --quiet: #8795a3;
+    --line: rgba(29, 47, 66, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 56px;
+  }
+
+  .home {
+    align-self: flex-start;
+    margin: 22px 0 0;
+    color: var(--quiet);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 15px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .home:hover { color: var(--wind); border-color: var(--wind); }
+
+  main {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    margin-top: 34px;
+  }
+
+  .eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    font-family: "Seravek", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  h1 {
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: clamp(27px, 4.6vw, 41px);
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+  }
+
+  .sky {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1988 / 1008;
+    margin: 28px auto 20px;
+    cursor: pointer;
+  }
+
+  .caption {
+    margin: 0 auto;
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: left;
+  }
+
+  .caption + .caption { margin-top: 1em; }
+
+  .credit {
+    margin: 22px auto 0;
+    max-width: 620px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--quiet);
+    text-align: left;
+    font-family: "Seravek", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<a class="home" href="index.html">&#8592; Calum Murray</a>
+
+<main>
+  <p class="eyebrow">SPHEREx &nbsp;&middot;&nbsp; the cosmic web</p>
+  <h1>The half sky, through redshift</h1>
+
+  <video class="sky" id="sky" autoplay muted loop playsinline preload="auto"
+         poster="assets/spherex/sky_movie_poster.jpg"
+         aria-label="A Mollweide map of half the sky, filled with galaxies from the SPHEREx catalogue. As redshift increases the pattern of filaments and voids drifts and changes.">
+    <source src="assets/spherex/sky_movie.mp4" type="video/mp4" />
+    <img src="assets/spherex/sky_movie_poster.jpg" alt="The half-sky SPHEREx catalogue between redshifts 0.07 and 0.10: 512,148 galaxies tracing filaments and voids." />
+  </video>
+
+  <p class="caption">The half-sky SPHEREx catalogue, scrolled through redshift. Each frame is a
+  shell of thickness &Delta;z&nbsp;=&nbsp;0.03, holding every galaxy whose calibrated probability
+  of lying in the shell is above 0.7; the shell&rsquo;s centre steps by 0.0025, so consecutive
+  frames overlap and the web drifts rather than flickers. Click the map to pause it on a
+  shell. It runs from 0.02&nbsp;&lt;&nbsp;z&nbsp;&lt;&nbsp;0.05
+  out to 0.32&nbsp;&lt;&nbsp;z&nbsp;&lt;&nbsp;0.35.</p>
+
+  <p class="caption">It starts on the shell shown in the application&rsquo;s figure,
+  0.07&nbsp;&lt;&nbsp;z&nbsp;&lt;&nbsp;0.10: 512,148 galaxies over the 20,800&nbsp;deg&sup2; the
+  catalogue covers, 9,300&nbsp;deg&sup2; of which is sky that neither DESI nor SDSS maps.</p>
+
+  <p class="credit">Drawn from the 21,200,305 quality, non-stellar, fitted galaxies of the
+  SPHEREx all-sky catalogue (galaxies_v2_allsky_v1). Calum Murray.</p>
+</main>
+<script>
+  // Start on frame 20 (2 s at 10 fps), the 0.07 < z < 0.10 shell the application's figure
+  // shows; the poster is that same frame, so the page opens on the figure and then moves.
+  const sky = document.getElementById("sky");
+  // A cached video can have its metadata before this script runs, so check before listening.
+  const toFigure = () => { sky.currentTime = 2; };
+  if (sky.readyState >= 1) toFigure();
+  else sky.addEventListener("loadedmetadata", toFigure, { once: true });
+  // No native controls: they would sit over the redshift label in the frame's corner.
+  sky.addEventListener("click", () => { sky.paused ? sky.play() : sky.pause(); });
+</script>
+</body>
+</html>
