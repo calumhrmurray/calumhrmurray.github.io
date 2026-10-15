@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 756" width="1400" height="756" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<defs><linearGradient id="vis" x1="0" x2="1"><stop offset="0" stop-color="#7b3fbf"/><stop offset="0.25" stop-color="#3a6fd8"/><stop offset="0.5" stop-color="#3fbf6f"/><stop offset="0.72" stop-color="#e8d44a"/><stop offset="1" stop-color="#d64545"/></linearGradient><linearGradient id="opa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8da2b8" stop-opacity="0.85"/><stop offset="1" stop-color="#8da2b8" stop-opacity="0.20"/></linearGradient></defs>
+<rect x="96.0" y="34" width="91.1" height="26" fill="#3b2a4a" opacity="0.95"/>
+<text x="141.6" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">gamma</text>
+<rect x="187.1" y="34" width="273.4" height="26" fill="#3f3560" opacity="0.95"/>
+<text x="323.9" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">X-ray</text>
+<rect x="460.6" y="34" width="144.0" height="26" fill="#4a4a8c" opacity="0.95"/>
+<text x="532.6" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">UV</text>
+<rect x="604.6" y="34" width="26.9" height="26" fill="url(#vis)" opacity="0.95"/>
+<rect x="631.5" y="34" width="284.8" height="26" fill="#6d3a2e" opacity="0.95"/>
+<text x="773.9" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">infrared</text>
+<rect x="916.3" y="34" width="91.1" height="26" fill="#2f4a55" opacity="0.95"/>
+<text x="961.9" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">microwave</text>
+<rect x="1007.4" y="34" width="364.6" height="26" fill="#25404a" opacity="0.95"/>
+<text x="1189.7" y="52" text-anchor="middle" font-size="16" fill="#f2f7f5" opacity="0.92" letter-spacing="0.08em">radio</text>
+<path d="M 96.0 222.0 L 96.0 74.0 L 579.2 74.0 L 593.9 75.5 L 597.8 189.4 L 606.6 207.2 L 619.2 213.1 L 631.5 210.2 L 638.7 204.2 L 647.7 115.4 L 651.7 201.3 L 655.6 78.4 L 657.6 88.8 L 662.7 202.8 L 668.3 79.9 L 671.3 189.4 L 674.1 204.2 L 678.3 111.0 L 682.2 75.5 L 685.0 85.8 L 692.4 168.7 L 695.7 177.6 L 700.6 75.5 L 703.3 140.6 L 705.8 155.4 L 710.3 84.4 L 716.9 74.0 L 722.6 78.4 L 729.8 165.8 L 735.9 174.6 L 741.2 155.4 L 747.3 77.0 L 755.0 91.8 L 761.4 115.4 L 770.3 77.0 L 804.9 74.0 L 852.6 74.0 L 874.7 103.6 L 884.7 94.7 L 909.9 130.2 L 926.7 151.0 L 959.8 180.6 L 1007.4 207.2 L 1050.9 216.1 L 1189.7 217.6 L 1280.9 213.1 L 1308.2 155.4 L 1335.5 81.4 L 1372.0 74.0 L 1372.0 222.0 Z" fill="url(#opa)" stroke="#5f7489" stroke-width="1.6" stroke-opacity="0.9"/>
+<text x="96" y="90" font-size="17" fill="#111318">atmosphere: opaque ↑  transparent ↓</text>
+<text x="1364" y="90" text-anchor="end" font-size="15" fill="#596273" opacity="0.7">windows to scale, depth schematic</text>
+<line x1="96" y1="222" x2="1372" y2="222" stroke="#c5ccd6" stroke-width="1"/>
+<rect x="631.5" y="34" width="75.1" y2="0" height="676.0" fill="#d0701a" opacity="0.09"/>
+<line x1="631.5" y1="34" x2="631.5" y2="710.0" stroke="#d0701a" stroke-width="1" stroke-dasharray="3 4" opacity="0.55"/>
+<line x1="706.6" y1="34" x2="706.6" y2="710.0" stroke="#d0701a" stroke-width="1" stroke-dasharray="3 4" opacity="0.55"/>
+<text x="86" y="258" text-anchor="end" font-size="16" fill="#596273" letter-spacing="0.1em">SPACE</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="96.0" y="253.0" width="162.1" height="5" rx="2.5"/><rect x="94.5" y="248.0" width="3" height="15" rx="1"/><rect x="256.6" y="248.0" width="3" height="15" rx="1"/></g><text x="269.1" y="260.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Fermi</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="285.5" y="285.0" width="182.3" height="5" rx="2.5"/><rect x="284.0" y="280.0" width="3" height="15" rx="1"/><rect x="466.3" y="280.0" width="3" height="15" rx="1"/></g><text x="478.8" y="292.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Chandra / XMM</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="547.5" y="317.0" width="116.3" height="5" rx="2.5"/><rect x="546.0" y="312.0" width="3" height="15" rx="1"/><rect x="662.4" y="312.0" width="3" height="15" rx="1"/></g><text x="674.9" y="324.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Hubble</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="599.0" y="349.0" width="45.8" height="5" rx="2.5"/><rect x="597.5" y="344.0" width="3" height="15" rx="1"/><rect x="643.3" y="344.0" width="3" height="15" rx="1"/></g><text x="655.8" y="356.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Gaia</text>
+<g opacity="1.0" fill="#1f5fbf"><rect x="619.2" y="255.0" width="51.5" height="7" rx="3.5"/><rect x="617.2" y="248.0" width="4" height="21" rx="1"/><rect x="668.7" y="248.0" width="4" height="21" rx="1"/></g><text x="681.7" y="263.5" text-anchor="start" font-size="19" font-weight="700" fill="#1f5fbf" opacity="1">Euclid</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="613.8" y="381.0" width="62.0" height="5" rx="2.5"/><rect x="612.3" y="376.0" width="3" height="15" rx="1"/><rect x="674.3" y="376.0" width="3" height="15" rx="1"/></g><text x="686.8" y="388.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Roman</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="622.6" y="413.0" width="152.8" height="5" rx="2.5"/><rect x="621.1" y="408.0" width="3" height="15" rx="1"/><rect x="774.0" y="408.0" width="3" height="15" rx="1"/></g><text x="786.5" y="420.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">JWST</text>
+<g opacity="1.0" fill="#d0701a"><rect x="631.5" y="287.0" width="75.1" height="7" rx="3.5"/><rect x="629.5" y="280.0" width="4" height="21" rx="1"/><rect x="704.6" y="280.0" width="4" height="21" rx="1"/></g><text x="717.6" y="295.5" text-anchor="start" font-size="19" font-weight="700" fill="#d0701a" opacity="1">SPHEREx</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="691.3" y="445.0" width="73.9" height="5" rx="2.5"/><rect x="689.8" y="440.0" width="3" height="15" rx="1"/><rect x="763.7" y="440.0" width="3" height="15" rx="1"/></g><text x="776.2" y="452.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">WISE</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="693.6" y="477.0" width="150.2" height="5" rx="2.5"/><rect x="692.1" y="472.0" width="3" height="15" rx="1"/><rect x="842.2" y="472.0" width="3" height="15" rx="1"/></g><text x="854.7" y="484.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Spitzer</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="801.5" y="253.0" width="99.1" height="5" rx="2.5"/><rect x="800.0" y="248.0" width="3" height="15" rx="1"/><rect x="899.1" y="248.0" width="3" height="15" rx="1"/></g><text x="911.6" y="260.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Herschel</text>
+<g opacity="0.78" fill="#6d8fb3"><rect x="868.6" y="285.0" width="138.8" height="5" rx="2.5"/><rect x="867.1" y="280.0" width="3" height="15" rx="1"/><rect x="1005.9" y="280.0" width="3" height="15" rx="1"/></g><text x="1018.4" y="292.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Planck</text>
+<line x1="96" y1="526" x2="1372" y2="526" stroke="#c5ccd6" stroke-width="1"/>
+<text x="86" y="554" text-anchor="end" font-size="16" fill="#596273" letter-spacing="0.1em">GROUND</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="602.4" y="549.0" width="39.6" height="5" rx="2.5"/><rect x="600.9" y="544.0" width="3" height="15" rx="1"/><rect x="640.6" y="544.0" width="3" height="15" rx="1"/></g><text x="653.1" y="556.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">DESI</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="651.7" y="581.0" width="21.8" height="5" rx="2.5"/><rect x="650.2" y="576.0" width="3" height="15" rx="1"/><rect x="672.0" y="576.0" width="3" height="15" rx="1"/></g><text x="684.5" y="588.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">2MASS</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="597.8" y="613.0" width="47.0" height="5" rx="2.5"/><rect x="596.3" y="608.0" width="3" height="15" rx="1"/><rect x="643.3" y="608.0" width="3" height="15" rx="1"/></g><text x="655.8" y="620.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">Rubin / LSST</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="597.8" y="645.0" width="42.7" height="5" rx="2.5"/><rect x="596.3" y="640.0" width="3" height="15" rx="1"/><rect x="638.9" y="640.0" width="3" height="15" rx="1"/></g><text x="651.4" y="652.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">UNIONS</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="601.3" y="677.0" width="169.0" height="5" rx="2.5"/><rect x="599.8" y="672.0" width="3" height="15" rx="1"/><rect x="768.8" y="672.0" width="3" height="15" rx="1"/></g><text x="781.3" y="684.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">VLT / ELT</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="871.2" y="549.0" width="95.8" height="5" rx="2.5"/><rect x="869.7" y="544.0" width="3" height="15" rx="1"/><rect x="965.5" y="544.0" width="3" height="15" rx="1"/></g><text x="978.0" y="556.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">ALMA</text>
+<g opacity="0.78" fill="#7f8f8b"><rect x="993.3" y="581.0" width="251.3" height="5" rx="2.5"/><rect x="991.8" y="576.0" width="3" height="15" rx="1"/><rect x="1243.1" y="576.0" width="3" height="15" rx="1"/></g><text x="1255.6" y="588.5" text-anchor="start" font-size="16" font-weight="500" fill="#111318" opacity="0.85">SKA / VLA</text>
+<line x1="96" y1="730" x2="1372" y2="730" stroke="#c5ccd6" stroke-width="1.2"/>
+<line x1="96.0" y1="730" x2="96.0" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="96.0" y="749" text-anchor="middle" font-size="16" fill="#596273">1 pm</text>
+<line x1="278.3" y1="730" x2="278.3" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="278.3" y="749" text-anchor="middle" font-size="16" fill="#596273">0.1 nm</text>
+<line x1="460.6" y1="730" x2="460.6" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="460.6" y="749" text-anchor="middle" font-size="16" fill="#596273">10 nm</text>
+<line x1="642.9" y1="730" x2="642.9" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="642.9" y="749" text-anchor="middle" font-size="16" fill="#596273">1 µm</text>
+<line x1="825.1" y1="730" x2="825.1" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="825.1" y="749" text-anchor="middle" font-size="16" fill="#596273">100 µm</text>
+<line x1="1007.4" y1="730" x2="1007.4" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="1007.4" y="749" text-anchor="middle" font-size="16" fill="#596273">1 cm</text>
+<line x1="1189.7" y1="730" x2="1189.7" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="1189.7" y="749" text-anchor="middle" font-size="16" fill="#596273">1 m</text>
+<line x1="1372.0" y1="730" x2="1372.0" y2="735" stroke="#c5ccd6" stroke-width="1.2"/>
+<text x="1372.0" y="749" text-anchor="middle" font-size="16" fill="#596273">100 m</text>
+<text x="1372" y="722" text-anchor="end" font-size="16" fill="#596273">wavelength →</text>
+</svg>
