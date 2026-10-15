@@ -57,17 +57,17 @@ Slide and overlay from the CosmoStat journal-club deck.</aside>
         <h2>SPHEREx scans the entire sky, at a low earth orbit</h2>
         <div class="cols">
           <div class="col" style="flex:1.5;">
-            <video src="media/survey_strategy.mp4" muted="" loop="" playsinline="" data-autoplay="" style="display:block;width:100%;border-radius:4px;"></video>
+            <video src="media/survey_strategy.mp4" muted="" loop="" playsinline="" data-autoplay="" style="display:block;width:859px;border-radius:4px;height:auto;position:relative;left:-32px;top:0px;"></video>
           </div>
           <div class="col" style="flex:1;">
-            <ul style="margin-top:0;width:434px;height:372px;">
+            <ul style="margin-top:0;width:339px;height:372px;position:relative;left:95px;top:1px;">
               <li>Launched 11 March 2025; surveying since 1 May 2025</li>
               <li>20 cm telescope, 3.5° × 11.5° field of view</li><li>Polar orbit, looking ~90° from the Sun: the ecliptic poles are crossed on every orbit</li>
               <li>Orbits ~650 km above the Earth&nbsp;</li>
             </ul>
           </div>
         </div>
-        <p class="caption" style="text-align:left;margin-top:8px;">Animation: NASA/JPL-Caltech (NASA SVS), "Novel Survey Strategy". Numbers: Bock et al. 2025 (arXiv:2511.02985).</p><aside class="notes">The observing geometry: the observatory works near the great circle 90° from the Sun, and that circle sweeps round the sky as the Earth goes round the Sun, so the whole sky is covered every six months. The inset is the allowed pointing zone.
+        <p class="caption" style="text-align:left;margin-top:8px;position:relative;left:-11px;top:18px;">Animation: NASA/JPL-Caltech (NASA SVS), "Novel Survey Strategy". Numbers: Bock et al. 2025 (arXiv:2511.02985).</p><aside class="notes">The observing geometry: the observatory works near the great circle 90° from the Sun, and that circle sweeps round the sky as the Earth goes round the Sun, so the whole sky is covered every six months. The inset is the allowed pointing zone.
 Sun-synchronous polar orbit, inclination 97.95°, Sun kept more than 93.5° off axis. The boresight is tipped 8° toward the solar panels, which is what lets it reach the ecliptic poles.
 Cooling: three conical photon shields and a three-stage V-groove radiator hold the optics near 55 K. No cryogen and no mechanical cooler, so no consumable sets the mission lifetime.
 The poles are crossed on nearly every orbit, so the deep fields are a gift of geometry, not an allocation. That is also why SPHEREx depth in our footprint depends on ecliptic latitude (the SPHEREx depth slide, after the release timeline).
@@ -76,8 +76,8 @@ Altitude: ~650 km (NASA/JPL SPHEREx press kit, mission overview); Bock et al. 20
 
       <!-- SPHEREx 7 · Euclid and SPHEREx on one field -->
       <section>
-        <h2>Euclid and SPHEREx on the same 10′ of sky</h2>
-        <div style="display:flex;gap:40px;justify-content:center;align-items:flex-start;">
+        <h2>A comparison of Euclid and SPHEREx images</h2>
+        <div style="display:flex;gap:40px;justify-content:center;align-items:flex-start;position:relative;left:1px;top:0px;">
           <div style="width:540px;">
             <img src="fig/ngc6744_euclid.jpg" alt="The central 10 arcminutes of NGC 6744 from Euclid, VIS, Y and H in colour, north up" style="display:block;width:540px;height:540px;border-radius:4px;">
             <p class="caption"><b>Euclid</b> VIS + Y + H · 0.1″ pixels</p>
@@ -166,7 +166,8 @@ Fits reproduced from the catalogue exactly (refit z_est equals the catalogue's t
           <tbody><tr><th>all objects</th><th style="color:#2a62c9;">galaxy sample</th><th style="color:#2a62c9;">quality sample</th><th style="color:#8a4fd0;">stars</th><th style="color:#2a9d8f;">point-like</th><th style="color:#b5262f;">failed fits</th><th class="soft">removed by flags</th></tr>
           <tr><td>13,784,773</td><td>5,206,897 (37.8%)</td><td>3,102,178 (22.5%)</td><td>1,233,310 (8.9%)</td><td>985,052 (7.1%)</td><td>5,751,542 (41.7%)</td><td>607,972 (4.4%)</td></tr>
         </tbody></table>
-        <img src="fig/sample_overview_res.png" alt="Left: redshift distribution of the resolved galaxy and quality samples and of the point-like objects removed from them. Right: I_E distribution of stars, failed fits, point-like objects, galaxy sample, quality sample and objects removed by flags" style="position:absolute;left:70px;top:190px;width:1140px;"><aside class="notes">v2 SPHEREx-only catalogue, all 13,784,773 VIS-selected objects (euclid-spherex branch v2, 6b157d1, results/v2_spherex_only/redshift_catalogue/catalogue.parquet; scripts/sample_overview_res.py, candide job 1007278; numbers/sample_overview_res.json).
+        <img src="fig/sample_overview_res.png" alt="Left: redshift distribution of the resolved galaxy and quality samples and of the point-like objects removed from them. Right: I_E distribution of stars, failed fits, point-like objects, galaxy sample, quality sample and objects removed by flags" style="position:absolute;left:70px;top:190px;width:1140px;">
+        <div hidden="" data-ai-note="done" style="position:absolute;left:586px;top:596px;width:300px;"><p data-by="author">remove the text, stars and failed fits have no redshift</p><p data-by="ai">Removed from the figure: redrawn by scripts/sample_overview_res.py on candide (job 1009306), numbers unchanged.</p></div><aside class="notes">v2 SPHEREx-only catalogue, all 13,784,773 VIS-selected objects (euclid-spherex branch v2, 6b157d1, results/v2_spherex_only/redshift_catalogue/catalogue.parquet; scripts/sample_overview_res.py, candide job 1007278; numbers/sample_overview_res.json).
 Samples (decided 15 Oct): galaxy = the release galaxy sample (release_selection.sample_masks: fitted, not is_star, Sérsic/ellipticity, DR1 flags, spurious, Gaia halo veto) AND resolved, i.e. not MER point_like_prob &gt; 0.5 (NaN counts as resolved); quality = that + all ZQ bits + odds ≥ 0.90. This departs from the release definition, which keeps point-like objects so the AGN arm can use them.
 Point-like class: 985,052, 15.9% of the release galaxy sample (9.1% of the quality sample). By z_est it removes 82% at 0–0.02, 72% at 0.02–0.04, 53% at 0.04–0.06, 31% at 0.06–0.1, 4–10% at 0.1–0.6, and 38–61% above 0.8. By I_E: under 0.6% brighter than 18, 14–18% at 18.5–20.5. Who they are: 1,169 DESI QSO tracers (median z 1.6), 2,332 DESI STAR spectra, only 12 BGS / 6 LRG / 2 ELG; of truth-matched galaxies at z_spec &lt; 0.04, 750 of 752 are kept. Their photo-z: σ_NMAD 0.34, 55% outliers. Removing them takes galaxy-sample outliers from 2.5% to 1.9% (quality 0.61% → 0.52%), σ_NMAD unchanged.
 The low-z excess: N(z &lt; 0.04)/N(0.04–0.08) was 1.39 (galaxy) and 1.42 (quality) before, 0.59 and 0.32 after; z &lt; 0.04 now holds 2.0% of the galaxy sample (was 7.2%). A small rise below 0.06 remains.
@@ -235,7 +236,7 @@ Caveat: the 10′-60′ window lies partly below some shells' scale cuts (121′
       <section>
         <h2>CMB lensing cross-correlations</h2>
         <img src="fig/kappa_grid_lcl_res_y5.png" alt="Cross-power spectra ℓC_ℓ of the resolved galaxy sample with Planck CMB lensing in six redshift shells from z = 0.05 to 0.6, shared y-axis, with detection significance" style="position:absolute;left:101px;top:108px;width:700px;height:auto;">
-        <p class="caption" style="position:absolute;left:784px;top:360px;width:467px;margin:0;text-align:left;height:62px;">ℓC<sub>ℓ</sub><sup>gκ</sup> to ℓ = 1000, black: the pipeline's model curve. Planck PR3 lensing, resolved galaxy sample, ISD-weighted. Pseudo-C<sub>ℓ</sub> with NaMaster (Alonso, Sanchez &amp; Slosar 2019, MNRAS).</p><aside class="notes">Figure: y fixed to −5…5 (10⁵ ℓC_ℓ); five bandpowers beyond it are arrowheads at the edge: −6.04 (0.05–0.1, ℓ 549), 5.26 (0.3–0.4, ℓ 969), 5.16 (0.4–0.5, ℓ 129), 5.97 and 5.00 (0.5–0.6, ℓ 129, 429).
+        <p class="caption" style="position:absolute;left:813px;top:629px;width:390px;margin:0;text-align:left;height:62px;">ISD-weighted. Pseudo-C<sub>ℓ</sub> with NaMaster (Alonso, Sanchez &amp; Slosar 2019, MNRAS).</p><aside class="notes">Figure: y fixed to −5…5 (10⁵ ℓC_ℓ); five bandpowers beyond it are arrowheads at the edge: −6.04 (0.05–0.1, ℓ 549), 5.26 (0.3–0.4, ℓ 969), 5.16 (0.4–0.5, ℓ 129), 5.97 and 5.00 (0.5–0.6, ℓ 129, 429).
 NaMaster: D. Alonso, J. Sanchez, A. Slosar (LSST DESC), "A unified pseudo-C_ℓ framework", MNRAS, doi:10.1093/mnras/stz093, arXiv:1809.09603; pymaster also asks for a citation of its GitHub repository.
 Galaxy × Planck CMB lensing for the resolved galaxy sample, six shells 0.05-0.6, ISD-weighted (euclid-spherex src/lss/xcorr.py, universe v2_spherex_only_galaxy_resolved_z005, job 1007283). NaMaster pseudo-Cℓ at nside 512, Planck PR3 minimum-variance lensing; figure scripts/kappa_row_lcl.py --grid from numbers/kappa_cl_v2_res.json. Detection 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ; 9.7σ combined as a quadrature sum (treats the shells as independent, so somewhat optimistic). Release-sample run, 0-0.1 first shell: 3.9, 3.5, 3.1, 4.3, 5.5, 4.8σ, 10.4σ.
 The test: b_κ comes from how strongly the galaxies correlate with the CMB lensing map, which depends on where the galaxies really are and not at all on our photometry; b_gg comes from the shell's own w(θ), which assumes the redshifts we assigned. Interlopers or a shifted n(z) would make them disagree. b_κ / b_gg = 1.17, 1.46, 0.98, 1.16, 1.29, 1.08 from 0.05 to 0.6 (b_gg 0.76, 0.97, 1.13, 1.21, 1.36, 1.54, errors ~1.5%; b_κ errors 0.32-0.63): consistent everywhere.
