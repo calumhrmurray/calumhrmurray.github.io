@@ -16,7 +16,7 @@
       <section class="title-slide" data-background-image="fig/title_bg/C_ngc_z10.jpg" data-background-size="cover">
         <div aria-hidden="true" style="position:absolute;left:-1000px;top:110px;width:3280px;height:420px;z-index:-1;background:linear-gradient(180deg, rgba(237,243,248,0) 0%, rgba(237,243,248,0.88) 18%, rgba(237,243,248,0.88) 82%, rgba(237,243,248,0) 100%);"></div>
         <h1 style="position:relative;left:0px;top:47px;">Euclid+SPHEREx</h1>
-        <p class="sub" style="position:relative;left:0px;top:64px;">A high purity galaxy catalogue with precise redshifts below z&lt;0.5/0.6</p>
+        <p class="sub" style="position:relative;left:0px;top:64px;">A high purity galaxy catalogue with precise redshifts below z&lt;0.6</p>
         <p class="meta" style="font-size:0.82em;position:relative;left:0px;top:42px;"><b>Calum Murray, Ken Ganga, Martin Kilbinger, Mike Hudson, Cail Daley&nbsp;</b><br>Euclid WL meeting, Napoli · 16 October 2026</p><aside class="notes">Title background: north galactic cap, 90° field, 0.10 &lt; z &lt; 0.13. Background: a patch of the no-|b|-cut all-sky SPHEREx catalogue (41.3 M galaxies; Legacy Surveys DR9/DR10 + DR11 positions, redshifts from SPHEREx alone), one shell selected as in the finale movie, Lambert equal-area projection about RA 185°, Dec +35°. Made by scripts/title_background.py.</aside>
       </section>
 
@@ -43,7 +43,7 @@
             <text x="643" y="498" text-anchor="middle" fill="#eef3f0" font-size="22" font-weight="700" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">1 m</text>
           </svg>
         </div>
-        <p class="caption" style="text-align:left;margin-top:8px;">2.6 m tall · 3.2 m across · 502 kg · 20 cm effective aperture &nbsp;·&nbsp; NASA/JPL-Caltech, PIA26537: SPHEREx after environmental testing, BAE Systems, Boulder, November 2024.</p>
+        <p class="caption" style="text-align:left;margin-top:8px;position:relative;left:224px;top:-8px;">NASA/JPL-Caltech, PIA26537: SPHEREx after environmental testing, BAE Systems, Boulder, November 2024.</p>
         <aside class="notes">The observatory a few months before launch.
 Right to left: the big white cone is the outer photon shield, and there are three of them nested. They are baffles, not a JWST-style sunshade: they keep sunlight and Earthshine off the telescope while it looks away from the Sun.
 Behind them the small drum is the telescope, 20 cm effective aperture. The red slatted panel and gold blanketing are the V-groove radiators that cool it passively; the flat black panel is the spacecraft bus.
@@ -54,25 +54,24 @@ Slide and overlay from the CosmoStat journal-club deck.</aside>
 
       <!-- SPHEREx 4 · orbit and survey -->
       <section>
-        <h2>Launched March 2025, surveying since May</h2>
+        <h2>SPHEREx scans the entire sky, at a low earth orbit</h2>
         <div class="cols">
           <div class="col" style="flex:1.5;">
             <video src="media/survey_strategy.mp4" muted="" loop="" playsinline="" data-autoplay="" style="display:block;width:100%;border-radius:4px;"></video>
           </div>
           <div class="col" style="flex:1;">
-            <ul style="margin-top:0;">
+            <ul style="margin-top:0;width:434px;height:372px;">
               <li>Launched 11 March 2025; surveying since 1 May 2025</li>
-              <li>20 cm telescope, 3.5° × 11.3° field of view</li>
-              <li>Passively cooled: no cryogen, so nothing runs out</li>
-              <li>Polar orbit, looking ~90° from the Sun: the ecliptic poles are crossed on every orbit</li>
+              <li>20 cm telescope, 3.5° × 11.5° field of view</li><li>Polar orbit, looking ~90° from the Sun: the ecliptic poles are crossed on every orbit</li>
+              <li>Orbits ~650 km above the Earth&nbsp;</li>
             </ul>
           </div>
         </div>
-        <p class="caption" style="text-align:left;margin-top:8px;">Animation: NASA/JPL-Caltech (NASA SVS), "Novel Survey Strategy". Numbers: Bock et al. 2025 (arXiv:2511.02985).</p>
-        <aside class="notes">The observing geometry: the observatory works near the great circle 90° from the Sun, and that circle sweeps round the sky as the Earth goes round the Sun, so the whole sky is covered every six months. The inset is the allowed pointing zone.
+        <p class="caption" style="text-align:left;margin-top:8px;">Animation: NASA/JPL-Caltech (NASA SVS), "Novel Survey Strategy". Numbers: Bock et al. 2025 (arXiv:2511.02985).</p><aside class="notes">The observing geometry: the observatory works near the great circle 90° from the Sun, and that circle sweeps round the sky as the Earth goes round the Sun, so the whole sky is covered every six months. The inset is the allowed pointing zone.
 Sun-synchronous polar orbit, inclination 97.95°, Sun kept more than 93.5° off axis. The boresight is tipped 8° toward the solar panels, which is what lets it reach the ecliptic poles.
 Cooling: three conical photon shields and a three-stage V-groove radiator hold the optics near 55 K. No cryogen and no mechanical cooler, so no consumable sets the mission lifetime.
-The poles are crossed on nearly every orbit, so the deep fields are a gift of geometry, not an allocation. That is also why SPHEREx depth in our footprint depends on ecliptic latitude (the SPHEREx depth slide, after the release timeline).</aside>
+The poles are crossed on nearly every orbit, so the deep fields are a gift of geometry, not an allocation. That is also why SPHEREx depth in our footprint depends on ecliptic latitude (the SPHEREx depth slide, after the release timeline).
+Altitude: ~650 km (NASA/JPL SPHEREx press kit, mission overview); Bock et al. 2025 Table 1 gives a semi-major axis of 7037.4 km, i.e. ~660 km above a 6378 km Earth radius, and the Explanatory Supplement the same 7037.41 km. Field of view 3.5° × 11.5° (Bock et al. 2025, §IV.3.2). Survey start 1 May 2025 (Explanatory Supplement v1.0). Hubble for comparison: ~475 km (orbital elements of June 2026, perigee 472, apogee 475 km; orbitalradar.com), launched at ~615 km in 1990 and decaying.</aside>
       </section>
 
       <!-- SPHEREx 7 · Euclid and SPHEREx on one field -->
@@ -85,7 +84,7 @@ The poles are crossed on nearly every orbit, so the deep fields are a gift of ge
           </div>
           <div style="width:540px;">
             <video src="media/ngc6744_spherex.mp4" poster="fig/ngc6744_spherex_poster.png" muted="" loop="" playsinline="" data-autoplay="" style="display:block;width:540px;height:540px;border-radius:4px;"></video>
-            <p class="caption"><b>SPHEREx</b> · 6.2″ pixels · the six detectors in turn, one brightness scale</p>
+            <p class="caption"><b>SPHEREx</b> · 6.2″ pixels</p>
           </div>
         </div>
         <aside class="notes">Both panels are real data of the same field: the central 10′ × 10′ of NGC 6744 (RA 287.4421, Dec −63.8574), north up, east left, on one scale, so a star in one panel is at the same place in the other. The galaxy is about 20′ across, so this is its inner disk and bulge.
@@ -102,11 +101,7 @@ Why the journal-club version was replaced: it set the Euclid press image (the wh
       <!-- SPHEREx 10 · data releases -->
       <section>
         <h2>A comparison of SPHEREx and Euclid observations</h2>
-        
-        <ul style="position:absolute;left:66px;top:108px;width:1170px;margin:0;">
-  <li>SPHEREx data is public</li><li>There is no available source catalogues, we can make one</li><li>This work has been presented to SGS-OU-PHZ, there is a standard project (pending approval)</li></ul>
-        <img src="fig/spherex_euclid_one.png" alt="One galaxy observed by both: Euclid VIS stamp and SPHEREx 2 micron stamp on the left; on the right its 77-channel SPHEREx spectrum with Euclid VIS, Y, J, H and ground u g r i z fluxes, observations only, with the 3.3 micron PAH feature marked" style="position:absolute;left:190px;top:228px;width:900px;">
-        <div hidden="" data-ai-note="done" style="position:absolute;left:667px;top:151px;width:300px;"><p data-by="author">please add one spectra here. from the later 4. except only have the observations. it needs to be pretty much the full page with some text above it, then include euclid vis image and sphere-x image on the left</p><p data-by="ai">Added (fig/spherex_euclid_one.png, scripts/spherex_euclid_one.py): the dusty star-forming disc, observations only — 77 SPHEREx channels, Euclid VIS/Y/J/H, ground ugriz — with the VIS stamp and a grey SPHEREx 2 µm stack (30 visits, 1.5′) on the left. Chosen because its stamp shows a clear source (27σ) and its spectrum the PAH line.</p></div><aside class="notes">Figure: the dusty star-forming disc of the four-galaxies slide (targetid 2650717155641680634, RA 265.072 Dec +64.168, DESI z 0.129, I_E 17.79). Observations only: the 77-channel SPHEREx co-add (size-corrected), Euclid VIS/Y/J/H and ground u g r i z multiplied by the v2 joint-fit zeropoints. Left: VIS 10″ (CDS HiPS) and SPHEREx D3 (~1.7–2.4 µm), median of 30 QR2 visits, ZODI and local sky subtracted, 1.5′ north-up, orange box = the VIS stamp; a brighter star 43″ SSW. The bump at 3.69 µm observed is the 3.3 µm PAH feature (3.27 µm rest in the data), +151 µJy at peak, 36σ on the catalogue errors.
+        <img src="fig/spherex_euclid_one.png" alt="One galaxy observed by both: Euclid VIS stamp and SPHEREx 2 micron stamp on the left; on the right its 77-channel SPHEREx spectrum with Euclid VIS, Y, J, H and ground u g r i z fluxes, observations only, with the 3.3 micron PAH feature marked" style="position:absolute;left:49px;top:96px;width:1182px;height:auto;"><aside class="notes">Figure: the dusty star-forming disc of the four-galaxies slide (targetid 2650717155641680634, RA 265.072 Dec +64.168, DESI z 0.129, I_E 17.79). Observations only: the 77-channel SPHEREx co-add (size-corrected), Euclid VIS/Y/J/H and ground u g r i z multiplied by the v2 joint-fit zeropoints. Left: VIS 10″ (CDS HiPS) and SPHEREx D3 (~1.7–2.4 µm), median of 30 QR2 visits, ZODI and local sky subtracted, 1.5′ north-up, orange box = the VIS stamp; a brighter star 43″ SSW. The bump at 3.69 µm observed is the 3.3 µm PAH feature (3.27 µm rest in the data), +151 µJy at peak, 36σ on the catalogue errors.
 Dates from spherex.caltech.edu/page/data-products and irsa.ipac.caltech.edu/Missions/spherex.html, as read on 9 September 2026 for the journal club; the "now" line is 28 September 2026.
 Calibrated spectral images land in IRSA about two months after they are taken, weekly.
 - QR1, Jul 2025: first Quick Release images.
@@ -118,7 +113,7 @@ Redrawn for this deck by scripts/make_intro_svgs.py.</aside>
       </section>
 
       <section data-section="Data">
-        <h2>A bright VIS-selected sample of 13.8 M objects</h2>
+        <h2>A simple selection of bright VIS sources within Euclid</h2>
         <img class="fig" src="fig/selection.png" alt="Sky density of the target sample in both DR1 lobes, and its I_E histogram per lobe" style="width:1080px;">
         <ul style="margin-top:4px;">
           <li><b>Select sources with Euclid: 16 &lt; I<sub>E</sub> &lt; 20.5</b> on PHZ <code>flux_vis_unif</code> ·</li><li>Peform forced photometry at the position of the Euclid sources within SPHEREx</li><li>Estimate source redshifts with template fitting (Eazy: https://github.com/gbrammer/eazy-py)</li>
@@ -135,8 +130,7 @@ Figure: make_figures.py (fig_selection), on the v2 catalogue; the target list is
 
       <section>
         <h2>Four galaxies, four kinds: Euclid and SPHEREx agree</h2>
-        <img src="fig/four_galaxies_spherex.png" alt="Four Euclid DR1 galaxies: co-added SPHEREx spectra with the fitted template, the Euclid and ground bands for comparison, a 10 arcsec VIS cutout and a 1.5 arcmin SPHEREx false-colour stack" style="position:absolute;left:20px;top:13px;width:1242px;height:auto;">
-        <div hidden="" data-ai-note="done" style="position:absolute;left:692px;top:348px;width:300px;"><p data-by="author">what is the line bump? why does it show up in all of them?</p><p data-by="ai">It is the 3.3 µm PAH emission feature (polycyclic aromatic hydrocarbons, warm dust in star-forming regions), seen at 3.3(1+z) ≈ 3.7–4.0 µm. Measured in the SPHEREx points, not the template: 3.27–3.32 µm rest in the three star-forming galaxies (15–36σ peak excess); the quiescent one shows no net bump (0.5σ) — only its fitted template carries a weak one, because the FSPS templates include dust emission. Details in the notes.</p></div><aside class="notes">The bump at ~3.7–4.0 µm observed: the 3.3 µm PAH feature. Measured on the SPHEREx points against a straight continuum through 3.0–3.4 and 4.1–4.6 µm observed, rest wavelengths from DESI z: dusty disc 3.69 µm obs / 3.27 rest, +151 µJy peak (36σ), 6-channel sum 32σ; blue star-forming 3.97 / 3.31, +75 µJy (28σ), sum 12σ (peak at the window edge, probably underestimated); barred spiral 3.69 / 3.32, +47 µJy (15σ), sum 13σ; quiescent none (0.5σ). σ uses catalogue errors, known to be off by up to ~2× with magnitude; the excesses are 10–25% above continuum regardless.
+        <img src="fig/four_galaxies_spherex.png" alt="Four Euclid DR1 galaxies: co-added SPHEREx spectra with the fitted template, the Euclid and ground bands for comparison, a 10 arcsec VIS cutout and a 1.5 arcmin SPHEREx false-colour stack" style="position:absolute;left:26px;top:13px;width:1242px;height:auto;"><aside class="notes">The bump at ~3.7–4.0 µm observed: the 3.3 µm PAH feature. Measured on the SPHEREx points against a straight continuum through 3.0–3.4 and 4.1–4.6 µm observed, rest wavelengths from DESI z: dusty disc 3.69 µm obs / 3.27 rest, +151 µJy peak (36σ), 6-channel sum 32σ; blue star-forming 3.97 / 3.31, +75 µJy (28σ), sum 12σ (peak at the window edge, probably underestimated); barred spiral 3.69 / 3.32, +47 µJy (15σ), sum 13σ; quiescent none (0.5σ). σ uses catalogue errors, known to be off by up to ~2× with magnitude; the excesses are 10–25% above continuum regardless.
 Barred spiral stamp: the target is detected at its own position (13.6× pixel noise in D1 and D3); the brighter source is a neighbour 14″ N (I_E 17.32, z_est 0.107) and another 25″ NNW (I_E 17.50, z_est 0.109): a small group. Whether v2 forced photometry modelled the neighbours jointly (neighbour_paired mode) or fitted the target alone (extract_spectra.py default) has not been checked; at 14″ (~2 SPHEREx pixels) some neighbour light could reach the target's fit.
 SPHEREx stamps (right column): public QR2 L2b frames via IRSA cutouts, IMAGE − ZODI, flag mask as in ngc6744_compare.py, local sky subtracted, NaN-aware resample onto a 2″ north-up grid, median over 23–30 visits per band; R G B = D5 (~4 µm), D3 (~2 µm), D1 (~1 µm), one colour balance, each stamp scaled to its galaxy's centre so field stars saturate. At I_E ≈ 18 these galaxies are ~0.1 MJy/sr per SPHEREx pixel, ~2σ per visit at 1 µm. v2 SPHEREx only. Four north-lobe galaxies from the galaxy sample at I_E 17-18.5 with a DESI redshift and |Δz|/(1+z) &lt; 0.005, chosen inside the Euclid Q1 field so all four have the same VIS and VIS+Y+H stamps (CDS HiPS CDS/P/Euclid/Q1/VIS and /color, 10″; CDS has no DR1 HiPS). 53 of the 13,521 qualifying objects are in Q1.
 1. Quiescent, red sequence: targetid 2666309507641850661, RA 266.631 Dec +64.185, I_E 18.01, z 0.198 / DESI 0.193.
@@ -150,17 +144,12 @@ Fits reproduced from the catalogue exactly (refit z_est equals the catalogue's t
 
       <!-- SPHEREx all-sky · solved along the way: the helium line -->
       <section id="allsky-helium" class="ported">
-        <h2>Helium in the upper atmosphere glows at 1.083 µm</h2>
-        <div class="steps" style="left:700px;top:118px;width:540px;">
-          <h3>The physics</h3>
-          <p>Helium atoms high in the atmosphere sit in a long-lived excited state, and scatter sunlight at exactly 1.083 µm. Hubble's infrared camera sees the same glow.</p>
-          <h3 class="next">What it did</h3>
-          <p>Left in the spectrum, the line is read as Hα at z ≈ 0.67: a pile of false redshifts at 0.6–0.68, and a cliff at 0.68.</p>
+        <h2>We can see airglow from Helium with SPHEREx</h2>
+        <div class="steps" style="left:686px;top:113px;width:540px;">
+          <p style="position:relative;left:-46px;top:0px;font-size:24px;">The low-earth orbit means that SPHEREx sees some of the atmosphere.<br>The sun hits He I in the upper atmosphere.<br>SPHEREx sees this as emission.<br>If we're naive it looks like H alpha</p>
         </div>
-        <img src="fig/allsky/talk/he_spectrum_compact.png" alt="A galaxy at DESI z = 0.120 fitted at z = 0.67 with the He I channels, and at z = 0.11 without them, with both P(z)" style="position:absolute;left:650px;top:362px;width:590px;">
-        <p class="caption" style="position:absolute;left:700px;top:318px;width:540px;margin:0;text-align:left;">A galaxy at DESI z = 0.12, fitted as published at z = 0.67;<br>without the He I channels, <b>z = 0.11</b>.</p>
-        <img src="images/image-2.png" alt="One SPHEREx D1 frame from 2025-10-20 with a dark arc across its bottom, the 1.083 µm curve drawn in orange" style="position:absolute;left:40px;top:120px;width:552px;height:auto;">
-        <div hidden="" data-ai-note="" style="position:absolute;left:915px;top:22px;width:300px;"><p data-by="author">understand this better (just a note for calum)</p></div><aside class="notes">
+        <img src="fig/allsky/talk/he_spectrum_compact.png" alt="A galaxy at DESI z = 0.120 fitted at z = 0.67 with the He I channels, and at z = 0.11 without them, with both P(z)" style="position:absolute;left:593px;top:304px;width:671px;height:auto;">
+        <img src="images/image-2.png" alt="One SPHEREx D1 frame from 2025-10-20 with a dark arc across its bottom, the 1.083 µm curve drawn in orange" style="position:absolute;left:40px;top:120px;width:552px;height:auto;"><aside class="notes">
           <p>Metastable 2³S helium in the upper atmosphere resonantly scatters sunlight in the 2³S–2³P transition at 1.083 µm; Hubble's WFC3 sees it as a time-varying background (Brammer et al. 2014).</p>
           <p>In one SPHEREx D1 frame (2025-10-20) the sky is 0.40 MJy/sr at 1.040 µm, 2.43 on the line and 0.47 at 1.106 µm. In the co-added spectra a residual on SPHEREx channels 14–15 is read as Hα at z ≈ 0.67, which made the alias pile at 0.6–0.68 and the cliff at 0.68 in the catalogue (issue #11).</p>
           <p>The fix so far is a fit-level mask of the He I channels; the next step is SPHEREx's published He I background template (#49), and the adopted tractorjax-spherex background with 288 wavelength bins catches the line's edge across a whole frame (DECISIONS, EXT-20).</p>
@@ -170,28 +159,6 @@ Fits reproduced from the catalogue exactly (refit z_est equals the catalogue's t
       </section>
 
       <!-- SPHEREx all-sky · solved along the way: the bright-star halo mask -->
-      <section id="allsky-halos" class="ported">
-        <h2>Bright stars pull redshifts into rings around them</h2>
-        <div class="steps" style="left:40px;top:130px;width:440px;">
-          <h3>How it showed up</h3>
-          <p>Redshift shells that <b>anti-correlate</b>. In linear theory two shells can only correlate positively.</p>
-          <h3>The cause</h3>
-          <p>The halo of a bright star leaks into the local background around each galaxy: z slides below 0.1 near the star, and into 0.5–0.7 in a ring outside it.</p>
-          <h3 class="next">The fix</h3>
-          <p>Measure the background as a clipped median over all usable pixels, not a thin annulus. Inside the halo radius, outliers fall from <b>22.8%</b> to <b>3.8%</b>.</p>
-        </div>
-        <div class="figcard" style="left:520px;top:120px;width:720px;">
-          <img src="fig/allsky/talk/halo_sky.png" alt="Galaxies around three bright stars, coloured by fitted redshift, before and after the background fix">
-          <span class="cap">Galaxies round three bright stars: fitted at <b>z &lt; 0.1</b> (blue) or <b>0.5 &lt; z &lt; 0.7</b> (orange). Left, the annulus background as published; right, the clipped median.</span>
-        </div>
-        <img src="fig/allsky/talk/halo_spherex_image.png" alt="SPHEREx D3 image of the same region, median of 127 frames, with the three bright stars and their halo radii marked" style="position:absolute;left:40px;top:358px;width:369px;height:auto;">
-        <p class="caption" style="position:absolute;left:434px;top:542px;width:170px;margin:0;text-align:left;">The same sky in SPHEREx D3 (1.6–2.4 µm), median of 127 frames: the halos of the two brightest stars are visible directly.</p><aside class="notes">
-          <p>Found because redshift shells anti-correlated, which linear theory forbids, and because the systematics weights would not converge (CATALOGUE_REPORT.md §8.6, issue #2).</p>
-          <p>Around three stars of Ks 0.2, 0.4 and 1.9: before, 1,026 galaxies fitted at z &lt; 0.1 and 1,411 at 0.5–0.7; after the F4 background (clipped median over all usable pixels), 886 and 546. Against DESI, inside the halo radius: 22.8% outliers on 3,503 galaxies before, 3.8% on 3,647 after (results/figures/talk/halo_zz.png).</p>
-          <p>The release also carries the veto radius 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, round 188,347 2MASS stars (column bs_ratio). In the final background, tractorjax-spherex's map is adopted with F4 kept inside bright-star halo discs (DECISIONS, EXT-20).</p>
-          <p>Link to this catalogue: the Euclid galaxy sample vetoes 45″ round Gaia G &lt; 13 stars, and the high-z sky movie in the backups shows the same rings round bright stars where that veto is not applied.</p>
-        </aside>
-      </section>
 
       <section>
         <h2>The 13.8 M objects: galaxies, stars and failed fits</h2>
@@ -199,8 +166,7 @@ Fits reproduced from the catalogue exactly (refit z_est equals the catalogue's t
           <tbody><tr><th>all objects</th><th style="color:#2a62c9;">galaxy sample</th><th style="color:#2a62c9;">quality sample</th><th style="color:#8a4fd0;">stars</th><th style="color:#2a9d8f;">point-like</th><th style="color:#b5262f;">failed fits</th><th class="soft">removed by flags</th></tr>
           <tr><td>13,784,773</td><td>5,206,897 (37.8%)</td><td>3,102,178 (22.5%)</td><td>1,233,310 (8.9%)</td><td>985,052 (7.1%)</td><td>5,751,542 (41.7%)</td><td>607,972 (4.4%)</td></tr>
         </tbody></table>
-        <img src="fig/sample_overview_res.png" alt="Left: redshift distribution of the resolved galaxy and quality samples and of the point-like objects removed from them. Right: I_E distribution of stars, failed fits, point-like objects, galaxy sample, quality sample and objects removed by flags" style="position:absolute;left:70px;top:190px;width:1140px;">
-        <p class="caption" style="position:absolute;left:70px;top:650px;width:1140px;margin:0;">v2, SPHEREx only. Galaxy and quality samples are resolved (MER point_like_prob ≤ 0.5); quality ⊂ galaxy; the other five add up to all objects. Point-like: would otherwise be galaxies; they are the low-z spike. Failed fits: the fit ran to z = 0, mostly bright stars.</p><aside class="notes">v2 SPHEREx-only catalogue, all 13,784,773 VIS-selected objects (euclid-spherex branch v2, 6b157d1, results/v2_spherex_only/redshift_catalogue/catalogue.parquet; scripts/sample_overview_res.py, candide job 1007278; numbers/sample_overview_res.json).
+        <img src="fig/sample_overview_res.png" alt="Left: redshift distribution of the resolved galaxy and quality samples and of the point-like objects removed from them. Right: I_E distribution of stars, failed fits, point-like objects, galaxy sample, quality sample and objects removed by flags" style="position:absolute;left:70px;top:190px;width:1140px;"><aside class="notes">v2 SPHEREx-only catalogue, all 13,784,773 VIS-selected objects (euclid-spherex branch v2, 6b157d1, results/v2_spherex_only/redshift_catalogue/catalogue.parquet; scripts/sample_overview_res.py, candide job 1007278; numbers/sample_overview_res.json).
 Samples (decided 15 Oct): galaxy = the release galaxy sample (release_selection.sample_masks: fitted, not is_star, Sérsic/ellipticity, DR1 flags, spurious, Gaia halo veto) AND resolved, i.e. not MER point_like_prob &gt; 0.5 (NaN counts as resolved); quality = that + all ZQ bits + odds ≥ 0.90. This departs from the release definition, which keeps point-like objects so the AGN arm can use them.
 Point-like class: 985,052, 15.9% of the release galaxy sample (9.1% of the quality sample). By z_est it removes 82% at 0–0.02, 72% at 0.02–0.04, 53% at 0.04–0.06, 31% at 0.06–0.1, 4–10% at 0.1–0.6, and 38–61% above 0.8. By I_E: under 0.6% brighter than 18, 14–18% at 18.5–20.5. Who they are: 1,169 DESI QSO tracers (median z 1.6), 2,332 DESI STAR spectra, only 12 BGS / 6 LRG / 2 ELG; of truth-matched galaxies at z_spec &lt; 0.04, 750 of 752 are kept. Their photo-z: σ_NMAD 0.34, 55% outliers. Removing them takes galaxy-sample outliers from 2.5% to 1.9% (quality 0.61% → 0.52%), σ_NMAD unchanged.
 The low-z excess: N(z &lt; 0.04)/N(0.04–0.08) was 1.39 (galaxy) and 1.42 (quality) before, 0.59 and 0.32 after; z &lt; 0.04 now holds 2.0% of the galaxy sample (was 7.2%). A small rise below 0.06 remains.
@@ -229,36 +195,34 @@ Source: scripts/euclid_sky_movie_v2.py in this deck folder, which imports cambri
       <section>
         <h2>Redshift validation&nbsp;</h2>
         <img class="fig" src="fig/zz_galaxy_res.png" alt="Photometric against spectroscopic redshift for the galaxy sample: Euclid PHZ on the left, Euclid plus SPHEREx on the right" style="width:1000px;">
-        <p class="caption" style="position:relative;left:-66px;top:4px;width:1244px;height:71px;">Truth: DESI DR1 + 6dFGS + 2dFGRS + 2dFLenS + OzDES.</p>
-        
-        <div hidden="" data-ai-note="" style="position:absolute;left:84px;top:443px;width:300px;"><p data-by="author">should the number of euclid galaxies with valid photo-z actually be less?</p></div><aside class="notes">v2 SPHEREx-only, resolved galaxy sample (release galaxy sample + not MER point_like_prob &gt; 0.5; make_figures.py ES_RESOLVED=1, candide job 1007289; numbers/numbers_v2_spherex_only_resolved.json), the report's truth table (2dFLenS included): 111,571 matches. Ours σ_NMAD 0.0087, outliers 1.93%; Euclid PHZ on the same objects 0.0354, 1.50%: 4.1× tighter in scatter, but PHZ now has fewer outliers.
+        <p class="caption" style="position:relative;left:-66px;top:4px;width:1244px;height:71px;">Truth: DESI DR1 + 6dFGS + 2dFGRS + 2dFLenS + OzDES.</p><aside class="notes">v2 SPHEREx-only, resolved galaxy sample (release galaxy sample + not MER point_like_prob &gt; 0.5; make_figures.py ES_RESOLVED=1, candide job 1007289; numbers/numbers_v2_spherex_only_resolved.json), the report's truth table (2dFLenS included): 111,571 matches. Ours σ_NMAD 0.0087, outliers 1.93%; Euclid PHZ on the same objects 0.0354, 1.50%: 4.1× tighter in scatter, but PHZ now has fewer outliers.
 North (101,175): ours 0.0089 / 1.97%, PHZ 0.0341 / 1.46%. South (10,396): ours 0.0071 / 1.46%, PHZ 0.0430 / 1.89%.
 What the resolved cut did: it removes 1% of the matches (1,224) but they were mostly DESI QSOs at z 0.9–2.9 that failed in both codes; our outliers 2.50% → 1.93%, PHZ's 2.51% → 1.50%, σ unchanged. With the release definition (point-like kept) the two had the same outlier rate.
 Against the September (joint-fit) catalogue, release definition: 0.0111 / 4.8% on 108,968.
 Requiring |z_est − PHZ|/(1+PHZ) &lt; 0.15 keeps 96.9% at 0.0085 and 0.29% outliers; 7.5% of our outliers are also PHZ outliers.
 The z_phot ~ 0.67 alias band is gone: He I 1.083 µm channels are masked in the v2 fit.
-Horizontal striping in PHZ is its own redshift quantisation. Outlier: |Δz|/(1+z) &gt; 0.15.</aside>
+Horizontal striping in PHZ is its own redshift quantisation. Outlier: |Δz|/(1+z) &gt; 0.15.
+Euclid panel since 16 Oct: PHZ restricted to phz_flags == 0, Euclid's own "fit OK" (scripts/zz_phzflags.py, candide job 1009257, numbers/zz_galaxy_phzflags.json). 636 of the 111,571 matches are flagged (bit 0: 636, bits 1 and 3: 455); on those PHZ has σ_NMAD 0.069 and 24% outliers, ours 0.0081 and 1.7%. Euclid on the 110,935 unflagged: 0.0353 / 1.37%; ours on the same 110,935: 0.0087 / 1.93%. Quality sample: 551 of 93,393 flagged, PHZ 0.0359 / 1.25% on the rest.</aside>
       </section>
 
       <section>
-        <h2>Redshift validation (linear scales)</h2>
+        <h2>Redshift validation&nbsp;</h2>
         <img src="fig/metrics_grid_v2big_res_lin.png" alt="sigma_NMAD and outlier fraction on linear axes against spectroscopic redshift (top) and I_E (bottom), for Euclid PHZ and this work (SPHEREx only), resolved galaxy and quality samples" style="position:absolute;left:120px;top:102px;width:1040px;"><aside class="notes">The previous slide with linear y-axes: same resolved galaxy and quality samples, same bins and truth table. σ_NMAD 0–0.05 on both rows (top point: PHZ quality sample at z_spec 0.05–0.1, 0.046), with the 0.01 reference line. Outliers 0–7% against z_spec (top: ours, galaxy sample, z 0–0.05, 6.25%) and 0–10.5% against I_E (ours, 20–20.5, 9.9%): the two outlier panels have different ranges. Replotted from the binned values printed by the resolved make_figures run (candide job 1007289; ~/napoli_scratch/resolved/lin.py).</aside>
       </section>
 
       <section>
-        <h2>Galaxy auto/cross-correlations</h2>
-        <img src="fig/wtheta_cross_grid_sq_res_plain.png" alt="All 21 auto and cross angular correlation functions between the six redshift shells from z = 0.05 to 0.6, ISD-weighted and unweighted" style="position:absolute;left:668px;top:98px;width:568px;">
-        <div class="steps" style="left:40px;top:118px;width:590px;">
-          <h3>How the weights are made</h3>
+        <h2>Galaxy correlations</h2>
+        <img src="fig/wtheta_cross_grid_sq_res_plain.png" alt="All 21 auto and cross angular correlation functions between the six redshift shells from z = 0.05 to 0.6, ISD-weighted and unweighted" style="position:absolute;left:564px;top:0px;width:685px;height:auto;">
+        <div class="steps" style="left:40px;top:118px;width:498px;height:335px;">
           <p>Eight sky maps: dust, star density, SPHEREx channel count, ecliptic latitude, zodi, background, visits, Euclid VIS depth; five are regressed.</p>
           <p>In each shell, galaxy density is binned against each map. A trend counts only if it is 2× larger than in 400 lognormal mocks, which cluster but are clean.</p>
           <p>Remove the worst trend with a linear fit, repeat until all pass, and weight each galaxy by 1/fit in its own shell.</p>
           <h3 class="next">What it shows</h3>
           <p>Neighbouring shells correlate (r = 0.15–0.33, the photo-z overlap); shells two or more apart are near zero.</p>
-        </div>
-        <p class="caption" style="position:absolute;left:40px;top:640px;width:590px;margin:0;text-align:left;">θ·w<sub>ij</sub>(θ) for all 21 shell pairs, resolved galaxy sample, z = 0.05–0.6. r in the text: ⟨w<sub>ij</sub>⟩ / √(⟨w<sub>ii</sub>⟩⟨w<sub>jj</sub>⟩) over 10′–60′.</p>
-        <div hidden="" data-ai-note="done" style="position:absolute;left:551px;top:551px;width:300px;"><p data-by="author">remove the grey bands here please</p><p data-by="ai">Removed (fig/wtheta_cross_grid_sq_res_plain.png; scripts/wtheta_cross_square.py --no-scalecut --no-r). The scale cuts are still listed in the notes: 121′, 62′, 39′, 29′, 23′, 19′ from the lowest shell up.</p></div>
-        <div hidden="" data-ai-note="done" style="position:absolute;left:923px;top:0px;width:300px;"><p data-by="author">please remove the upper right boxes it makes there too much info on the slide.</p><p data-by="ai">Removed; the r values stay in one line of text on the left and in the notes, with the definition moved to the caption.</p></div><aside class="notes">Measured on the resolved galaxy sample (release galaxy sample + not MER point_like_prob &gt; 0.5) in six shells from 0.05 to 0.6 (universe v2_spherex_only_galaxy_resolved_z005, euclid-spherex branch v2-clustering; w(θ) job 1007282, ISD weights 1007281, mocks 1007279, randoms 1007280; numbers/numbers_v2_galaxy_resolved_clustering.json).
+          <h3 class="next">The worst trends, removed in order</h3>
+          <p style="margin-bottom:6px;">“Worst” = the map whose linear fit gains the most χ² over the mocks.</p>
+          <p style="font-size:16px;margin:0;">0.05–0.1: stars<br>0.1–0.2: none<br>0.2–0.3: channel count, ecliptic latitude, VIS depth<br>0.3–0.4: channel count, stars, VIS depth<br>0.4–0.5: channel count, stars<br>0.5–0.6: ecliptic latitude, channel count<br>Weights stay within 0.77–1.36.</p>
+        </div><aside class="notes">Measured on the resolved galaxy sample (release galaxy sample + not MER point_like_prob &gt; 0.5) in six shells from 0.05 to 0.6 (universe v2_spherex_only_galaxy_resolved_z005, euclid-spherex branch v2-clustering; w(θ) job 1007282, ISD weights 1007281, mocks 1007279, randoms 1007280; numbers/numbers_v2_galaxy_resolved_clustering.json).
 Cross-correlations: Landy-Szalay (D_iD_j − D_iR − RD_j + RR)/RR against one shared random set (11,213,820 randoms, 10× the largest shell; uniform to χ²/pixel 0.95), each galaxy weighted by its own shell's ISD weight, 120 jackknife patches. N per shell on the mask: 232,296; 789,857; 1,087,609; 1,121,382; 715,694; 428,637.
 r over 10′-60′, weighted: neighbours 0.05-0.1/0.1-0.2 0.29 ± 0.04; 0.1-0.2/0.2-0.3 0.15 ± 0.04; 0.2-0.3/0.3-0.4 0.27 ± 0.03; 0.3-0.4/0.4-0.5 0.23 ± 0.03; 0.4-0.5/0.5-0.6 0.33 ± 0.03. Two or more apart: −0.03 to 0.08; 0.05-0.1 with 0.5-0.6: 0.00 ± 0.03. Unchanged within errors from the release-sample run.
 Reading: a neighbour's cross is the overlap of the two shells' true n(z), so r ≈ 0.15-0.33 says the photo-z leak into the next shell by tens of per cent, as expected for σ_NMAD ≈ 0.009 and Δz = 0.1 shells. Far pairs are small but not all zero: the outlier tails. In September and in the first all-sky run, bright-star halos made far shells anti-correlate; no longer.
@@ -269,14 +233,9 @@ Caveat: the 10′-60′ window lies partly below some shells' scale cuts (121′
       </section>
 
       <section>
-        <h2>CMB cross-correlations</h2>
-        <img src="fig/kappa_grid_lcl_res_y5.png" alt="Cross-power spectra ℓC_ℓ of the resolved galaxy sample with Planck CMB lensing in six redshift shells from z = 0.05 to 0.6, shared y-axis, with detection significance" style="position:absolute;left:40px;top:104px;width:640px;">
-        <ul style="position:absolute;left:720px;top:150px;width:520px;margin:0;">
-          <li>Galaxy × Planck κ: 9.7σ combined, 3–5.5σ in every shell above z = 0.1</li>
-          <li>Two independent biases agree in every shell, b<sub>κ</sub> / b<sub>gg</sub> = 1.0–1.5: lensing knows nothing about our photometry</li>
-          <li>The 0.05–0.1 shell now passes too (1.2 ± 0.8); its lensing signal alone is weak, 1.4σ</li>
-        </ul>
-        <p class="caption" style="position:absolute;left:720px;top:600px;width:520px;margin:0;text-align:left;">ℓC<sub>ℓ</sub><sup>gκ</sup> to ℓ = 1000, black: the pipeline's model curve. Planck PR3 lensing, resolved galaxy sample, ISD-weighted. Pseudo-C<sub>ℓ</sub> with NaMaster (Alonso, Sanchez &amp; Slosar 2019, MNRAS).</p><aside class="notes">Figure: y fixed to −5…5 (10⁵ ℓC_ℓ); five bandpowers beyond it are arrowheads at the edge: −6.04 (0.05–0.1, ℓ 549), 5.26 (0.3–0.4, ℓ 969), 5.16 (0.4–0.5, ℓ 129), 5.97 and 5.00 (0.5–0.6, ℓ 129, 429).
+        <h2>CMB lensing cross-correlations</h2>
+        <img src="fig/kappa_grid_lcl_res_y5.png" alt="Cross-power spectra ℓC_ℓ of the resolved galaxy sample with Planck CMB lensing in six redshift shells from z = 0.05 to 0.6, shared y-axis, with detection significance" style="position:absolute;left:101px;top:108px;width:700px;height:auto;">
+        <p class="caption" style="position:absolute;left:784px;top:360px;width:467px;margin:0;text-align:left;height:62px;">ℓC<sub>ℓ</sub><sup>gκ</sup> to ℓ = 1000, black: the pipeline's model curve. Planck PR3 lensing, resolved galaxy sample, ISD-weighted. Pseudo-C<sub>ℓ</sub> with NaMaster (Alonso, Sanchez &amp; Slosar 2019, MNRAS).</p><aside class="notes">Figure: y fixed to −5…5 (10⁵ ℓC_ℓ); five bandpowers beyond it are arrowheads at the edge: −6.04 (0.05–0.1, ℓ 549), 5.26 (0.3–0.4, ℓ 969), 5.16 (0.4–0.5, ℓ 129), 5.97 and 5.00 (0.5–0.6, ℓ 129, 429).
 NaMaster: D. Alonso, J. Sanchez, A. Slosar (LSST DESC), "A unified pseudo-C_ℓ framework", MNRAS, doi:10.1093/mnras/stz093, arXiv:1809.09603; pymaster also asks for a citation of its GitHub repository.
 Galaxy × Planck CMB lensing for the resolved galaxy sample, six shells 0.05-0.6, ISD-weighted (euclid-spherex src/lss/xcorr.py, universe v2_spherex_only_galaxy_resolved_z005, job 1007283). NaMaster pseudo-Cℓ at nside 512, Planck PR3 minimum-variance lensing; figure scripts/kappa_row_lcl.py --grid from numbers/kappa_cl_v2_res.json. Detection 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ; 9.7σ combined as a quadrature sum (treats the shells as independent, so somewhat optimistic). Release-sample run, 0-0.1 first shell: 3.9, 3.5, 3.1, 4.3, 5.5, 4.8σ, 10.4σ.
 The test: b_κ comes from how strongly the galaxies correlate with the CMB lensing map, which depends on where the galaxies really are and not at all on our photometry; b_gg comes from the shell's own w(θ), which assumes the redshifts we assigned. Interlopers or a shifted n(z) would make them disagree. b_κ / b_gg = 1.17, 1.46, 0.98, 1.16, 1.29, 1.08 from 0.05 to 0.6 (b_gg 0.76, 0.97, 1.13, 1.21, 1.36, 1.54, errors ~1.5%; b_κ errors 0.32-0.63): consistent everywhere.
@@ -285,9 +244,8 @@ Compton-y (backup slide): detected in every shell.</aside>
       </section>
 
       <section data-section="All-sky">
-        <h2>From two Euclid patches to entire extragalactic sky</h2>
-        <video src="finale_sky_z037.mp4" controls="" muted="" playsinline="" data-autoplay="" onended="this.currentTime=24.367;this.play()" style="display:block;width:1160px;margin:0 auto;border:1px solid var(--rule);border-radius:4px;"></video>
-        <div hidden="" data-ai-note="done" style="position:absolute;left:0px;top:416px;width:300px;"><p data-by="author">it should stop at 0.37 then go back down and back up etc. for a while since I will be talking at the same time</p><p data-by="ai">Now stops at 0.34 &lt; z &lt; 0.37, then sweeps back down to 0.07 and up again, repeating until you leave the slide: finale_sky_z037.mp4 is the intro (24 s) followed by one down-and-up sweep (24 s); at its end the video seeks back to the start of the sweep (onended sets currentTime, no attribute changes), so the sweep repeats seamlessly and re-entering the slide starts from the intro.</p></div><aside class="notes">About 24 s to the last shell (0.34 &lt; z &lt; 0.37), then it sweeps back down to 0.07 and up again, 24 s per sweep, repeating until you leave the slide (talk over it). One file, finale_sky_z037.mp4: the intro, then from 24.37 s one sweep; the video's onended seeks back to 24.37 s. No Galactic-latitude cut. The backup slide after the high-z Euclid movie has an older version stopping at 0.35, made from the |b|-cut sample.
+        <h2>A similar catalogue, but with DESI legacy imaging instead</h2>
+        <video src="finale_sky_z037.mp4" controls="" muted="" playsinline="" data-autoplay="" onended="this.currentTime=24.367;this.play()" style="display:block;width:1160px;margin:0 auto;border:1px solid var(--rule);border-radius:4px;"></video><aside class="notes">About 24 s to the last shell (0.34 &lt; z &lt; 0.37), then it sweeps back down to 0.07 and up again, 24 s per sweep, repeating until you leave the slide (talk over it). One file, finale_sky_z037.mp4: the intro, then from 24.37 s one sweep; the video's onended seeks back to 24.37 s. No Galactic-latitude cut. The backup slide after the high-z Euclid movie has an older version stopping at 0.35, made from the |b|-cut sample.
 1. The two Euclid DR1 lobes as in the redshift movie earlier, one shell, 0.07 &lt; z &lt; 0.10 (58,643 galaxies, v2 SPHEREx-only galaxy sample, resolved sources only: point_like_prob &gt; 0.5 removed, 5.21 M of 6.19 M galaxies kept).
 2. Every galaxy glides from its place in that layout to its place on the whole sky: an equatorial Mollweide, RA 105° at the centre, RA increasing to the left. The north lobe (RA 207°, Dec +76°) ends as slivers near the pole; the south lobe (RA 61°, Dec −46°) lands in the DES part of the southern sky.
 3. The all-sky SPHEREx catalogue fades in around them, same shell (1,096,235 galaxies): SPHEREx forced photometry at DESI Legacy Imaging Surveys positions, DR9-north + DR10-south (final_v2, prelim_v0) and, over the sky where those have no grz, the DR11 rerun (campaign final_v2_dr11d, 182 cells, finished 2026-10-14), which replaces DELVE there. Same method as this talk, different parent catalogue, redshifts from SPHEREx alone.
@@ -300,13 +258,12 @@ Made by scripts/finale_movie.py (Z_END=0.37; the loop by scripts/finale_loop.py 
       </section>
 
       <section>
-        <h2>The same method over the whole sky: 92.0 M objects</h2>
+        <h2>Some numbers for the full sky catalogue</h2>
         <table class="tight num" style="position:absolute;left:40px;top:104px;width:1200px;margin:0;font-size:0.6em;white-space:nowrap;">
           <tbody><tr><th>all objects</th><th style="color:#2a62c9;">galaxy sample</th><th style="color:#2a62c9;">quality sample</th><th style="color:#8a4fd0;">stars</th><th style="color:#b5262f;">failed fits</th><th class="soft">removed by cuts</th><th style="color:#c8651b;">calibration stars</th></tr>
           <tr><td>92,036,397</td><td>71,137,758 (77.3%)</td><td>41,294,489 (44.9%)</td><td>3,916,929 (4.3%)</td><td>11,872,782 (12.9%)</td><td>2,942,193 (3.2%)</td><td>2,166,735 (2.4%)</td></tr>
         </tbody></table>
-        <img src="fig/allsky_overview.png" alt="Left: redshift distribution of the all-sky galaxy and quality samples. Right: Legacy Surveys r distribution of stars, failed fits, galaxy sample, quality sample and objects removed by cuts" style="position:absolute;left:100px;top:192px;width:1080px;">
-        <p class="caption" style="position:absolute;left:70px;top:640px;width:1140px;margin:0;">Legacy Surveys DR9-N + DR10-S, DR11 (in place of DELVE wherever it reaches) and SGA, with redshifts from SPHEREx alone; no |b| cut. Quality ⊂ galaxy; the other five add up to all objects. Preliminary: no zero points yet, DR11 not yet checked against spec-z.</p><aside class="notes">All-sky catalogue, every object before any cut, with no |b| cut: the objects of the finale movie's file. final_v2 (release prelim_v0, 77,070,050 rows) with the 13,329,653 DELVE rows dropped wherever DR11 was extracted (DR11 replaces DELVE there), plus every DR11D row (campaign final_v2_dr11d, 28,296,000 with the SGA extension). Total 92,036,397; the old title's 105 M was 77.07 M + 28.30 M, which counts the DELVE/DR11 overlap twice.
+        <img src="fig/allsky_overview.png" alt="Left: redshift distribution of the all-sky galaxy and quality samples. Right: Legacy Surveys r distribution of stars, failed fits, galaxy sample, quality sample and objects removed by cuts" style="position:absolute;left:100px;top:192px;width:1080px;"><aside class="notes">All-sky catalogue, every object before any cut, with no |b| cut: the objects of the finale movie's file. final_v2 (release prelim_v0, 77,070,050 rows) with the 13,329,653 DELVE rows dropped wherever DR11 was extracted (DR11 replaces DELVE there), plus every DR11D row (campaign final_v2_dr11d, 28,296,000 with the SGA extension). Total 92,036,397; the old title's 105 M was 77.07 M + 28.30 M, which counts the DELVE/DR11 overlap twice.
 Classes (scripts/allsky_overview.py, nibi job 24032952, numbers/allsky_overview.json): failed = not zq_fit or z_est ≤ 0; star = fitted and star-flagged (stargal v3 star_science for Legacy and DELVE, the fit's is_star for SGA and DR11, whose classifier v4 is still to come); galaxy = fitted, not a star, in the parent sample (DR11: release cut B and a finite r); removed = fitted, not a star, outside it (2.94 M, almost all DR11 cut B); Gaia calibration stars are fitted but never galaxies. Quality = galaxy + zq_snr, zq_odds, zq_risk, zq_szn; it is exactly the 41,294,489-row file the finale movie draws.
 By survey (galaxy / quality / failed): Legacy DR9 north 11,972,853 / 7,570,210 / 466,791 of 12,778,218; Legacy DR10 south 45,042,985 / 26,635,516 / 1,680,502 of 47,800,690; DELVE DR3 188,339 / 106,572 / 213,679 of 544,697; SGA 428,745 / 413,957 / 14,546 of 450,057; Legacy DR11 13,457,830 / 6,522,904 / 9,495,084 of 28,246,018; SGA (DR11 extension) 47,006 / 45,330 / 2,180 of 49,982. DR11's failed-fit share (34%) is far above Legacy's (3-4%): it reaches into the Galactic plane, and its fits have no spec-z validation yet. No point-like class: Legacy targets are already resolved (TYPE != PSF).
 Previous version of this slide (selection and spec-z validation), kept for questions:
@@ -322,10 +279,10 @@ DR11 (added 2026-10-15): the DR11D rerun (docs/DR11D_PLAN.md; campaign final_v2_
 
       <section>
         <h2>Summary</h2>
-        <ul style="position:absolute;left:69px;top:104px;width:1147px;margin:0;">
-  <li>A close to final Euclid+SPHEREx catalogue is available for anyone to use (just send me a message)</li><li>The SPHEREx + DESI legacy imaging surveys sample is also available for anyone to use <b>(just send me a message)</b></li>
+        <ul style="position:absolute;left:69px;top:97px;width:1147px;margin:0;">
+  <li>A close to final Euclid+SPHEREx catalogue is available for <b>anyone to use!</b>&nbsp;</li><li>The SPHEREx + DESI legacy imaging surveys sample is also available for anyone to us<b>e!</b></li><li><b>If you're interested send me a message</b></li>
 </ul>
-        <img src="fig/euclid_nz_desy6.svg" alt="Tomographic n(z), each scaled to peak 1: six Euclid × SPHEREx bins below z = 0.5 against the six DES Y6 clustering bins" style="position:absolute;left:98px;top:192px;width:1090px;height:auto;">
+        <img src="fig/euclid_nz_desy6.svg" alt="Tomographic n(z), each scaled to peak 1: six Euclid × SPHEREx bins below z = 0.5 against the six DES Y6 clustering bins" style="position:absolute;left:95px;top:215px;width:1090px;height:auto;">
         <p class="caption" style="position:absolute;left:98px;top:670px;width:1145px;margin:0;height:41px;">Euclid × SPHEREx resolved galaxies, n(z) from reweighted spec-z, against the DES Y6 3×2pt lens bins (arXiv:2601.14559); each scaled to peak 1.</p><aside class="notes">Figure: scripts/summary_nz_euclid.py (numbers/euclid_nz_desy6.json), the twin of the Cambridge interview figure (cambridge-ai-physics/interview/make_nz.py). Euclid × SPHEREx v2, SPHEREx only, resolved galaxy sample, north lobe (where the truth table is); the same six z_est bins as the UNIONS × SPHEREx version (0, 0.10, 0.16, 0.22, 0.30, 0.40, 0.50). Each bin's n(z) is its matched spec-z distribution, every truth galaxy weighted by catalogue/truth counts in its (I_E 0.5 mag, z_est 0.02) cell, so it describes the catalogue and not only DESI-like objects; plotted with a 3-point smoothing on a 0.01 grid. DES Y6: the MagLim++ lens bins of the Y6 3×2pt, read from Fig. 2 of arXiv:2601.14559; bin 2 (0.40–0.55) dropped before unblinding (its Appendix A). Shapes and widths only: every bin scaled to peak 1.
 Per bin: 0.00-0.10: mean z 0.126, 68% half-width 0.069, 54% outside the edges, 80,654 galaxies, 10,288 with spec-z (n_eff 1236); 0.10-0.16: mean z 0.147, 68% half-width 0.029, 30% outside the edges, 103,944 galaxies, 17,298 with spec-z (n_eff 2764); 0.16-0.22: mean z 0.202, 68% half-width 0.025, 25% outside the edges, 147,126 galaxies, 20,522 with spec-z (n_eff 3535); 0.22-0.30: mean z 0.261, 68% half-width 0.032, 20% outside the edges, 197,277 galaxies, 23,025 with spec-z (n_eff 3328); 0.30-0.40: mean z 0.344, 68% half-width 0.044, 25% outside the edges, 266,556 galaxies, 20,111 with spec-z (n_eff 2296); 0.40-0.50: mean z 0.432, 68% half-width 0.044, 22% outside the edges, 168,575 galaxies, 6,969 with spec-z (n_eff 989). DES Y6 68% half-widths: 0.076, 0.092, 0.059, 0.069, 0.059, 0.083. Reading: bins 2-6 are narrower than every DES Y6 lens bin; the lowest bin (z_est &lt; 0.1) is broad and leaks upward, the same low-z interloper problem the clustering and CMB-lensing slides show.
 Previous figure on this slide, UNIONS × SPHEREx (fig/cambridge_nz_desy6.svg), kept for questions:
@@ -338,9 +295,34 @@ Reading: in bins 1-2 our quality-sample bins are about a quarter narrower than D
 Not a like-for-like sample comparison: MagLim is i-band magnitude limited to much fainter than our I_E &lt; 20.5; this compares how well each sample's photo-z bin is localised in true redshift.</aside>
       </section>
 
+      <section>
+        <h2>The same comparison for UNIONS × SPHEREx</h2>
+        <img src="fig/cambridge_nz_desy6.svg" alt="Tomographic n(z), each scaled to peak 1: six UNIONS × SPHEREx bins below z = 0.5 against the six DES Y6 clustering bins" style="position:absolute;left:-29px;top:113px;width:1299px;height:auto;">
+        <p class="caption" style="position:absolute;left:98px;top:628px;width:1145px;margin:0;height:41px;">UNIONS × SPHEREx, r &lt; 20.5, n(z) from matched DESI redshifts, against the DES Y6 3×2pt lens bins (arXiv:2601.14559); each scaled to peak 1.</p><aside class="notes">Figure: fig/cambridge_nz_desy6.svg, from cambridge-ai-physics/interview/make_nz.py; the twin of the Euclid × SPHEREx figure on the Summary slide, same six z_est bins (0, 0.10, 0.16, 0.22, 0.30, 0.40, 0.50).
+UNIONS × SPHEREx: each bin's n(z) is the distribution of matched DESI redshifts (DIR) in one SPHEREx field of ~13.5 deg², UNIONS r &lt; 20.5 (spherex results/redshift/unions_r205/calibration_nz_6bin.json, spherex@4e73b0e).
+DES Y6: the MagLim++ lens bins as used in the Y6 3×2pt (SOMPZ+WZ), read from Fig. 2 of arXiv:2601.14559; bin 2 (0.40–0.55) was dropped before unblinding (its Appendix A). Shapes and widths only: every bin is scaled to peak 1.</aside>
+      </section>
+
       <section class="break" data-section="Backup">
         <p class="big">Backup slides</p>
         <p class="sub">Everything from here on is for questions.</p><aside class="notes"></aside>
+      </section>
+
+      <section id="allsky-halos" class="ported">
+        <h2>SPHEREx images have too conservative masking around stars</h2>
+        <div class="steps" style="left:40px;top:130px;width:440px;">
+        </div>
+        <div class="figcard" style="left:520px;top:120px;width:720px;">
+          <img src="fig/allsky/talk/halo_sky.png" alt="Galaxies around three bright stars, coloured by fitted redshift, before and after the background fix">
+          <span class="cap">Galaxies round three bright stars: fitted at <b>z &lt; 0.1</b> (blue) or <b>0.5 &lt; z &lt; 0.7</b> (orange). Left, the annulus background as published; right, the clipped median.</span>
+        </div>
+        <img src="fig/allsky/talk/halo_spherex_image.png" alt="SPHEREx D3 image of the same region, median of 127 frames, with the three bright stars and their halo radii marked" style="position:absolute;left:0px;top:234px;width:506px;height:auto;">
+        <div hidden="" data-ai-note="done" style="position:absolute;left:177px;top:132px;width:300px;"><p data-by="author">place this in backup please</p><p data-by="ai">Moved to the first backup slide, straight after "Backup slides".</p></div><aside class="notes">
+          <p>Found because redshift shells anti-correlated, which linear theory forbids, and because the systematics weights would not converge (CATALOGUE_REPORT.md §8.6, issue #2).</p>
+          <p>Around three stars of Ks 0.2, 0.4 and 1.9: before, 1,026 galaxies fitted at z &lt; 0.1 and 1,411 at 0.5–0.7; after the F4 background (clipped median over all usable pixels), 886 and 546. Against DESI, inside the halo radius: 22.8% outliers on 3,503 galaxies before, 3.8% on 3,647 after (results/figures/talk/halo_zz.png).</p>
+          <p>The release also carries the veto radius 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, round 188,347 2MASS stars (column bs_ratio). In the final background, tractorjax-spherex's map is adopted with F4 kept inside bright-star halo discs (DECISIONS, EXT-20).</p>
+          <p>Link to this catalogue: the Euclid galaxy sample vetoes 45″ round Gaia G &lt; 13 stars, and the high-z sky movie in the backups shows the same rings round bright stars where that veto is not applied.</p>
+        </aside>
       </section>
 
       <section>
@@ -355,29 +337,6 @@ Read left to right, then land on the orange column.
       </section>
 
       <section>
-        <h2>Assessing the quality of the quoted errors on redshift</h2>
-        <img src="fig/coverage_pit_res.png" alt="Fraction of spec-z inside the 68% and 90% intervals against I_E, raw and recalibrated, per lobe, and the PIT histogram" style="position:absolute;left:40px;top:104px;width:1200px;">
-        <table class="tight num" style="position:absolute;left:40px;top:478px;width:600px;margin:0;">
-          <tbody><tr><th>lobe</th><th>n</th><th>68% raw</th><th>68% recal.</th><th>90% raw</th><th>90% recal.</th></tr>
-          <tr><td>north</td><td>50,257</td><td>0.745</td><td>0.835</td><td>0.915</td><td>0.973</td></tr>
-          <tr><td>south</td><td>5,264</td><td>0.797</td><td>0.864</td><td>0.939</td><td>0.980</td></tr>
-          <tr><td class="soft">promised</td><td></td><td class="soft">0.68</td><td class="soft">0.68</td><td class="soft">0.90</td><td class="soft">0.90</td></tr>
-        </tbody></table>
-        <ul style="position:absolute;left:680px;top:474px;width:560px;margin:0;font-size:0.82em;">
-          <li>Raw intervals are too wide when bright, too narrow fainter than I<sub>E</sub> ≈ 19.5</li>
-          <li>The recalibration fitted on the pilot widens them further: drop it</li>
-          <li>PIT hump = too wide; pile at 1 = spec-z above our P(z) (z biased low by 0.0025)</li>
-        </ul>
-        <p class="caption" style="position:absolute;left:40px;top:650px;width:600px;margin:0;text-align:left;">Held-out half of the truth (the half the recalibration was not fitted on), resolved galaxy sample, v2 SPHEREx only.</p><aside class="notes">Now restricted to the resolved galaxy sample (make_figures.py ES_RESOLVED=1, candide job 1007289). Held-out coverage, N; 68% raw / recal.; 90% raw / recal. North: all held-out 53,453; 0.738 / 0.826; 0.906 / 0.968. Galaxy (release) 50,798; 0.740 / 0.829; 0.909 / 0.969. Galaxy (resolved, the figure and table) 50,257; 0.745 / 0.835; 0.915 / 0.973. Quality (resolved) 41,681; 0.770 / 0.858; 0.933 / 0.986. South: all 5,907; 0.775 / 0.840; 0.913 / 0.961. Galaxy (release) 5,319; 0.791 / 0.857; 0.931 / 0.974. Galaxy (resolved) 5,264; 0.797 / 0.864; 0.939 / 0.980. Quality (resolved) 4,865; 0.811 / 0.878; 0.948 / 0.987. Most of the change from the old slide comes from restricting to the galaxy sample at all.
-The numbers below were measured on all held-out objects (the old figure) and not redone: v2 SPHEREx only, the held-out half of the truth (59,360 objects; the other 59,917 fitted the recalibration, stretch_mixture_nfilt_mag). PIT values are calibrate_pz's own (results/v2_spherex_only/pz_calibration/recalibrated.parquet); figure and table from make_figures.py (fig_coverage_pit).
-68% raw: 0.738 north, 0.775 south, against 0.68 promised. By magnitude the raw 68% coverage runs from 0.88 at I_E 16-17 down through 0.68 at about 19.5 to 0.55 at 20-20.5: too wide when bright, too narrow when faint. The same in the pull widths measured for the sky movies: 0.49 at I_E 16 rising to 1.28 at 20.5. The fit's error model (sys_err_v1) is magnitude-blind; the magnitude dependence of the misfit is what a refit of the error model should take out.
-90% raw: 0.906 north, 0.913 south: right on average, for the same compensating reason.
-Recalibrated: 0.826 / 0.968 north. The stretch-and-mixture was designed on the pilot, where raw coverage was 0.64; here it widens intervals that were already wide, so prefer the raw widths. The recalibrated PIT also has a hole above 0.9 that the raw one does not; not understood.
-PIT shape: a hump (P(z) too wide in the bulk) and an excess at PIT &gt; 0.95 (spec-z above our upper tail more often than below the lower one): the low-z bias, −0.0025 in z_est − z_spec north, about a third of σ_NMAD.
-Use P(z) for stacking and n(z) only with a calibration, not as a per-object probability.</aside>
-      </section>
-
-      <section>
         <h2>SPHEREx depth</h2>
         <div class="cols">
           <div class="col" style="flex:1.25;">
@@ -387,7 +346,7 @@ Use P(z) for stacking and n(z) only with a calibration, not as a per-object prob
           </div>
         </div>
         
-        <img src="images/image-1.png" alt="" style="position:absolute;left:781px;top:139px;width:419px;height:auto;"><aside class="notes">Euclid depth is uniform (tiling at constant exposure), varying weakly with Galactic latitude. SPHEREx revisits the ecliptic poles constantly, so depth is a function of ecliptic latitude: 252 obs at 30°, 325 at 70°, 1,277 beyond 80°. The footprint stops at 87.8° because the poles are Euclid deep fields.
+        <img src="images/image-1.png" alt="" style="position:absolute;left:659px;top:151px;width:603px;height:auto;"><aside class="notes">Euclid depth is uniform (tiling at constant exposure), varying weakly with Galactic latitude. SPHEREx revisits the ecliptic poles constantly, so depth is a function of ecliptic latitude: 252 obs at 30°, 325 at 70°, 1,277 beyond 80°. The footprint stops at 87.8° because the poles are Euclid deep fields.
 The two are essentially uncorrelated (report Fig. 6), so they act as independent axes of the selection function.
 Median co-added S/N over all targets in the v2 catalogue 11.0 (16-84%: 4.7-34.8); median 333 observations per target. Median E(B-V) 0.022 (CSFD, over targets).
 This depth gradient comes back in the homogeneity section: it reaches the redshift quality.
@@ -396,89 +355,9 @@ Bottom right, the Euclid VIS 5σ point-source depth (src/depth_maps.py, nside 64
       </aside>
       </section>
 
-
-      <section>
-        <h2>Do we need clustering n(z)s?</h2>
-        <table class="tight num" style="position:absolute;left:40px;top:130px;width:760px;margin:0;font-size:24px;">
-          <tbody><tr><th>z<sub>phot</sub> bin</th><th>error on ⟨z⟩, direct (ours)</th><th>effective N</th><th>DES Y3 clustering-z</th></tr>
-          <tr><td>0.20–0.40</td><td><b>0.0017</b></td><td>3,527</td><td rowspan="3" style="vertical-align:middle;">0.003–0.008</td></tr>
-          <tr><td>0.40–0.55</td><td>0.0081</td><td>788</td></tr>
-          <tr><td>0.55–0.70</td><td>0.0175</td><td>679</td></tr>
-        </tbody></table>
-        <p class="caption" style="position:absolute;left:40px;top:400px;width:760px;margin:0;text-align:left;">Ours: quality sample, same bins as the summary slide, true n(z) from matched spec-z reweighted to the catalogue, error from a jackknife over sky patches. DES: Cawthon et al. 2022 (MNRAS 513(4)), typical range over its bins.</p>
-        <ul style="position:absolute;left:830px;top:120px;width:410px;margin:0;">
-          <li>Below z = 0.4 the direct n(z) is already 2–5× more precise</li>
-          <li>0.40–0.55: about the same</li>
-          <li>Above 0.55 the spec-z run out: there a clustering-z would help</li>
-        </ul><aside class="notes">Direct side: the n(z) of each z_phot bin from the matched spec-z, weighted by catalogue/truth counts in (I_E, z_est) cells, north lobe (make_figures.py, direct_nz). The error on the mean is a jackknife over HEALPix nside-4 patches (~200 deg² each). It does NOT include the representativeness error: the reweighting assumes the truth sample is fair within each (I_E, z_est) cell, which DESI targeting may violate. So these are lower limits on the direct error, and the honest statement is "comparable or better" in bin 1.
-Clustering side: Cawthon et al. 2022 (DES Y3, clustering redshifts against BOSS/eBOSS for MagLim and redMaGiC; arXiv:2012.12826): "Our typical uncertainties on the mean redshift ranged from 0.003 to 0.008, while our uncertainties on the width ranged from 4 to 9%." That is over ~4,000 deg² with BOSS/eBOSS as reference; a clustering-z for this catalogue against DESI over ~450 deg² (north) would have its own error, not forecast here.
-Effective numbers fall fast with z: 3,527 in 0.20-0.40, 788 in 0.40-0.55, 679 in 0.55-0.70. Above 0.55 the spec-z overlap is what limits the direct method, and that is where a clustering-z (needing no spec-z of these galaxies) would add something. Method references: spherex-allsky docs/LITERATURE_FAILURE_MODES.md (Gatti et al. 2022; Cawthon et al. 2022).</aside>
-      </section>
-
-      <section>
-        <h2>One run fits two hypotheses</h2>
-        <div class="cols">
-          <div class="col">
-            <h3>Galaxy fit</h3>
-            <ul>
-              <li>77 SPHEREx channels only, He I channels masked</li>
-              <li>fluxes corrected to total for galaxy size</li>
-              <li>12 templates, non-negative, z = 0.001–2</li>
-              <li>→ z<sub>est</sub>, P(z), χ²<sub>gal</sub></li>
-            </ul>
-          </div>
-          <div class="col">
-            <h3>Stellar fit</h3>
-            <ul>
-              <li>same photometry, same weights</li>
-              <li>PHOENIX/Sonora grid, no redshift</li>
-              <li>best single template → χ²<sub>★</sub>, T<sub>eff</sub>, log g</li>
-              <li><b>is_star</b> if χ²<sub>★</sub> − χ²<sub>gal</sub> &lt; 0</li>
-            </ul>
-          </div>
-        </div>
-        <aside class="notes">Stellar templates are not redshifted, so they are a second grid alongside the galaxy fit, not extra galaxy templates: eazy's fit_phoenix_stars fits every PHOENIX/Sonora template to the same fluxes with the same weights, and delta_chi2_star = best stellar χ² − galaxy χ². is_star = delta_chi2_star &lt; 0 (STAR_DCHI2_MAX in src/redshift/estimate_redshift.py). Carried: chi2_star, delta_chi2_star, star_teff, star_logg.
-Calibration on Euclid (src/calibrate_star_flag.py): 257,637 Gaia astrometric stars vs 515,519 confirmed galaxies over the pilot; delta_chi2_star median −3,559 for stars vs +377 for galaxies at 18 ≤ I_E &lt; 19; at threshold 0: 0.91 completeness, 0.07 galaxy loss there; Youden optimum +4.2. The scale-free ratio would separate better (AUC 0.93 vs 0.90) but the number needs no change.
-It goes blind fainter than I_E 20.5, where the spectra no longer distinguish a star from a galaxy.
-The Gaia calibration above was measured on the September (joint-fit) catalogue and has not been repeated on v2. v2 caveat: the flag is only set on objects whose galaxy fit converged; 5.75 M objects whose galaxy fit lands on the grid floor carry no is_star although 71% of them are point-like (homogeneity slide). v2 has no zeropoints in the fit: no optical band enters it.</aside>
-      </section>
-
-      <section>
-        <h2>Testing the different template sets</h2>
-        <div class="cols">
-          <div class="col" style="flex:1.15;">
-            <table class="tight num" style="position:relative;left:195px;top:6px;">
-              <tbody><tr><th>template bank</th><th>templates</th><th><span style="text-transform:none">σ</span><sub>NMAD</sub></th><th>outliers</th></tr>
-              <tr><td><b>fsps_QSF_12</b> (adopted)</td><td>12</td><td><b>0.0128</b></td><td>3.45%</td></tr>
-              <tr><td>UltraVISTA NMF</td><td>12</td><td>0.0125</td><td>4.31%</td></tr>
-              <tr><td>carnall_sfhz (old default)</td><td>14</td><td>0.0135</td><td>3.54%</td></tr>
-              <tr><td>spline</td><td>20</td><td>0.0136</td><td>3.57%</td></tr>
-              <tr><td>PEGASE13</td><td>259</td><td>0.0144</td><td>3.05%</td></tr>
-              <tr><td>Brown+14 atlas</td><td>670</td><td>0.0153</td><td>3.53%</td></tr>
-              <tr><td>PEGASE</td><td>127</td><td>0.0183</td><td>5.38%</td></tr>
-              <tr><td>fsps_QSF_12, single template</td><td>12</td><td>0.0453</td><td>14.5%</td></tr>
-            </tbody></table>
-          </div>
-          <div class="col" style="flex:0.85;">
-            <ul style="position:relative;left:-519px;top:270px;width:678px;height:219px;">
-              <li>Earlier: eazy v1.3 → carnall_sfhz cut σ 17% and outliers 21%</li>
-              <li>Magnitude prior hurt LRGs → flat</li>
-              <li>SPHEREx dereddening: negligible at E(B−V) ~ 0.01</li>
-              <li>Adding ugri: outliers 11.5% → 4.6%</li>
-            </ul>
-          </div>
-        </div><aside class="notes">The sweep: eight banks through the identical fitting configuration on the delivered UNIONS combine (12.7k truth objects), same co-adds and error model, so only the bank changed. Adoption gate declared before running: 5% improvement in cleaned scatter with outliers not degrading. Nothing reached it; fsps_QSF_12 retained; bank closed 2026-08-25.
-Motivation for the test: two SPHEREx papers argued for alternatives (online dictionary learning beats eazy on mocks; the SPHEREx pipeline fits a large COSMOS2020-derived empirical library). The large empirical atlases came out worse; best-single-template mode (the conventional way to fit an atlas) worse by 3.5×. Interpretation: with a low-resolution spectrum spanning a factor of six in wavelength, a small non-negative basis spans real continua; a large basis adds directions the data cannot distinguish, i.e. variance. The basis is not the bottleneck.
-Caveat: the sweep used UNIONS optical bands, not Euclid; re-running it on Euclid is low-priority work.
-Earlier UNIONS steps (SPHEREx-only, BGS tile): eazy_v1.3 0.0197 / 17.1% → carnall_sfhz_13 0.0164 / 13.6%; carnall dissolved the "confident alias" pathology. Then on the ngc100 combine, fsps_QSF_12 and uvista_nmf beat carnall (0.0132 vs 0.0139; outliers 2.3% vs 3.3%).
-Other UNIONS experiments: emission-line templates matter for BGS; magnitude prior hurts LRGs; extinction A/B on a low-E(B-V) field: 0.01244 → 0.01246, i.e. nothing (kept on for dustier fields); ugri: SPHEREx-only 0.0149 / 11.5% → + ugri + ZP 0.0137 / 4.6%; ugri alone fails. Sample: ELGs (median S/N 0.17) are below SPHEREx's continuum limit; BGS (S/N 6.9) excellent.</aside>
-      </section>
-
       <section>
         <h2>The 12 templates: six quiescent, six star-forming</h2>
-        <img class="fig" src="fig/templates.png" alt="The twelve fsps_QSF_12_v3 templates in rest-frame f_nu, with sSFR, A_V and H-alpha equivalent width" style="width:900px;">
-        <p class="caption">Red: quiescent, getting older left to right (1–4), then dustier (5–6). Blue: star-forming with nebular lines, getting dustier (7–12). Shaded: the rest frame SPHEREx sees at z = 0–0.5.</p>
-        <p class="caption" style="font-size:0.4em;margin-top:2px;">eazy-py, Brammer (2021), Zenodo 10.5281/zenodo.5012704 · FSPS: Conroy, Gunn &amp; White (2009); Conroy &amp; Gunn (2010) · EAZY method: Brammer, van Dokkum &amp; Coppi (2008)</p><aside class="notes">fsps_QSF_12_v3 is eazy-py's standard FSPS template set (G. Brammer): "QSF" = quiescent + star-forming. My understanding is that it was built by reducing a large FSPS model grid to 12 components, as the original eazy set was; worth checking the eazy-photoz README before saying so in the room. eazy fits a NON-NEGATIVE linear combination of all 12 at each redshift, so the basis spans a continuous space of SEDs, not 12 fixed galaxies. That is why 12 is enough, and why larger banks added variance rather than accuracy in the sweep.
+        <img class="fig" src="fig/templates.png" alt="The twelve fsps_QSF_12_v3 templates in rest-frame f_nu, with sSFR, A_V and H-alpha equivalent width" style="width:1094px;position:relative;left:-29px;top:-12px;height:auto;"><aside class="notes">fsps_QSF_12_v3 is eazy-py's standard FSPS template set (G. Brammer): "QSF" = quiescent + star-forming. My understanding is that it was built by reducing a large FSPS model grid to 12 components, as the original eazy set was; worth checking the eazy-photoz README before saying so in the room. eazy fits a NON-NEGATIVE linear combination of all 12 at each redshift, so the basis spans a continuous space of SEDs, not 12 fixed galaxies. That is why 12 is enough, and why larger banks added variance rather than accuracy in the sweep.
 Per template (from the headers eazy reads; sSFR = SFR/mass, M/L_V = mass/L_V, EW(Hα) in Å):
 1. quiescent, sSFR 8e-12/yr, A_V 0.06, M/L_V 0.39, EW(Hα) 3: youngest of the quiescent set, post-starburst-like, strong Balmer break.
 2. quiescent, sSFR 3e-12, A_V 0.11, M/L_V 0.75.
@@ -499,73 +378,9 @@ Template files: data/fsps_QSF_12_v3/ in this deck folder; figure made by make_fi
 
       <section>
         <h2>The stellar grid: BT-Settl model atmospheres, 400–7,000 K</h2>
-        <img class="fig" src="fig/star_templates.png" alt="BT-Settl model spectra from 2500 to 7000 K in f_nu normalised at 1 micron, with the SPHEREx band shaded" style="width:940px;">
-        <ul>
-          <li>Cool stars rise into the near-IR with H<sub>2</sub>O bands a galaxy cannot make; hot stars fall like a galaxy near z = 0</li>
-        </ul>
-        <p class="caption" style="font-size:0.42em;">BT-Settl: Allard, Homeier &amp; Freytag (2012, Phil. Trans. R. Soc. A 370, 2765) · Sonora brown dwarfs: Marley et al. (2021, ApJ 920, 85) · grid as packaged by eazy-py (Brammer 2021) · spectra shown via the SVO Theory Service</p><aside class="notes">eazy's fit_phoenix_stars loads bt-settl_t400-7000_g4.5.fits: BT-Settl model atmospheres at log g 4.5 (with 4.0-5.5 available), solar metallicity, 400-7,000 K, and by default adds the Sonora brown-dwarf models (Marley et al. 2018 Zenodo release, published as Marley et al. 2021) and a carbon star. eazy fits each as a single template, scaled, with no redshift.
+        <img class="fig" src="fig/star_templates.png" alt="BT-Settl model spectra from 2500 to 7000 K in f_nu normalised at 1 micron, with the SPHEREx band shaded" style="width:1175px;position:relative;left:0px;top:-1px;height:auto;"><aside class="notes">eazy's fit_phoenix_stars loads bt-settl_t400-7000_g4.5.fits: BT-Settl model atmospheres at log g 4.5 (with 4.0-5.5 available), solar metallicity, 400-7,000 K, and by default adds the Sonora brown-dwarf models (Marley et al. 2018 Zenodo release, published as Marley et al. 2021) and a carbon star. eazy fits each as a single template, scaled, with no redshift.
 The curves here are BT-Settl (AGSS2009 solar abundances) from the SVO Theory Service at log g 4.5, 2,500-7,000 K, binned to R = 300. Same model family as eazy's grid; eazy's exact file is not re-downloadable (its S3 URL returns 403), so small differences in abundance version are possible.
 Why the flag works where it does: below ~4,000 K the water bands at 1.4, 1.9 and 2.7 µm carve peaks no galaxy template has; at 6,000-7,000 K the spectrum is a smooth Rayleigh-Jeans fall, which a low-z galaxy can mimic, so hot stars are the hard case (Gaia calibration: 0.91 completeness at 18 ≤ I_E &lt; 19).</aside>
-      </section>
-
-      <section>
-        <h2>An example of stars</h2>
-        <img class="fig" src="fig/star_pair.png" alt="Two flagged stars at 3,100 K and 3,600 K with their best stellar model and best galaxy model" style="position:absolute;left:40px;top:108px;width:900px;">
-        <ul style="position:absolute;left:960px;top:150px;width:280px;margin:0;font-size:0.85em;">
-          <li>Top: water bands no galaxy template makes · Δχ² = −114</li>
-          <li>Bottom: the galaxy fit at z = 0.005 comes close, and loses by 51</li><li>The Euclid/SPHEREx problem here should be an issue I need to solve</li>
-        </ul><aside class="notes">v2 SPHEREx only (euclid-spherex src/example_star_spectra.py --universe v2_spherex_only, refit reproduces the catalogue exactly). The top two of the six on the next-but-two slide: north, is_star set, point_like_prob &gt; 0.9, I_E 17-18.5, median SPHEREx S/N ≥ 10, best χ²/ν per fitted-temperature bin, so a showcase, not a random draw.
-Orange: best PHOENIX/Sonora template; blue dashed: best galaxy model, both fitted to the SPHEREx channels only. Green: Euclid and ground bands × the v2 joint zeropoints, for comparison, not in the fit.
-The big change from September: with the optical bands in the fit, Δχ² (star − galaxy) was −7,000 to −11,000 for five of six stars; on SPHEREx alone it is −40 to −300. The near-IR shape still separates them (water bands at 1.4, 1.9, 2.7 µm in the cool stars), but the margin is a hundred times thinner, and the galaxy fits now settle at z = 0.004-0.008 rather than at the grid floor. That is the same weakness the homogeneity slide shows: 5.75 M failed galaxy fits that carry no star flag.
-The blue bands (u, g, r) sit far below the stellar model in the cool stars: that is the stellar SED, not a calibration problem.</aside>
-      </section>
-
-      <section>
-        <h2>Six random spectra where the redshift agrees</h2>
-        <img class="fig" src="fig/gallery6_agree.png" alt="Six randomly drawn northern spectra where the redshift agrees, two each at I_E 16-18, 19.25-19.75 and 20.15-20.6" style="width:960px;">
-        <p class="caption">North, two per row: I<sub>E</sub> 16–18 · 19.25–19.75 · 20.15–20.6. In each panel “z ours / DESI” in each panel.<br><span style="color:#1f5fbf">Blue</span>: best template at our z. <span style="color:#c8651b">Dashed orange</span>: the same templates at DESI’s z. Black: SPHEREx, the only data in the fit; green: Euclid + ground bands, for comparison.</p><aside class="notes">v2 SPHEREx only, north, galaxy sample, truth-matched; random draws with a fixed seed (src/napoli_examples.py), not chosen. Agree: |Δz|/(1+z) &lt; 0.02. The refit reproduces the catalogue's z_est exactly for every object drawn.
-Bins (failures / objects with a spec-z): I_E 16-18: 36 / 13,922 (0.26%); 19.25-19.75: 840 / 23,083 (3.6%); 20.15-20.6: 265 / 1,323 (20%).
-The bright row: the 1.6 µm bump is sharp and both template curves lie on top of each other. The faint row: S/N ~ 3-5 per channel, the bump is still where it should be.
-At the faint end the Euclid and ground points sit 30-100% below the SPHEREx spectrum; at I_E ~ 18 they agree to a few per cent (the four-galaxy slide). Not a plotting error: SPHEREx picks up extra light (neighbours inside the 6″ pixels, background) or the faint-end S/N selection noted in V2_RUN. Unverified which.</aside>
-      </section>
-
-      <section>
-        <h2>Six random catastrophic failures</h2>
-        <img class="fig" src="fig/gallery6_fail.png" alt="Six randomly drawn northern spectra where the redshift fails, two each at I_E 16-18, 19.25-19.75 and 20.15-20.6" style="width:960px;">
-        <p class="caption">Same bins, same zeropoints, |Δz|/(1+z) &gt; 0.15; “z a / b” is ours / DESI. Blue: template at our z; dashed orange: at DESI’s z, the truth.<br>Failures are 2.5% of the galaxy sample but half the gallery, on purpose.</p><aside class="notes">Same construction, catastrophic failures only (|Δz|/(1+z) &gt; 0.15), v2 SPHEREx only, random draws with a fixed seed.
-Things to point at:
-- Bright row (I_E 16-18): both are fitted at z ≈ 0.01-0.04 with DESI at 0.19 and 0.31, and the SPHEREx spectrum bulges above every template between 1.8 and 3 µm. Something adds near-IR light the templates cannot make: a neighbour inside the PSF, an AGN, or residual background. Bright failures are rare (36 of 13,922).
-- Middle and bottom rows: bimodal fits resolved the wrong way, a low-z galaxy fitted at z = 0.6-1.6 by placing the bump elsewhere; the faint-end gap between the Euclid points and the SPHEREx spectrum is large here (see the previous slide's note).
-- Bottom right: DESI z = 2.217, a quasar beyond the fit's z ≤ 2 grid, so no orange curve can be drawn; our 1.28 is the grid doing its best without AGN templates.
-Counts per bin (north): 36 / 13,922 at I_E 16-18; 840 / 23,083 at 19.25-19.75; 265 / 1,323 at 20.15-20.6.</aside>
-      </section>
-
-      <section>
-        <h2>Six flagged stars, 3,100 to 6,000 K</h2>
-        <img class="fig" src="fig/fig_example_stars.png" alt="Six flagged stars from the Euclid catalogue with their SPHEREx co-added spectra, Euclid and ground bands, best stellar model and best galaxy model" style="width:820px;"><aside class="notes">v2 SPHEREx only. Six objects with is_star set and point_like_prob &gt; 0.9 at I_E 17-18.5 in the north, median SPHEREx S/N ≥ 10, one per bin of fitted temperature, best χ²/ν per bin, refit with the star flag on (src/example_star_spectra.py --universe v2_spherex_only; the refit reproduces the catalogue). A showcase of good stellar SEDs, not a random draw.
-targetid / T_eff / I_E / Δχ² (star − galaxy): 1546151928671140472 3,100 K 18.16 −114; 2726727104692841362 3,600 K 17.88 −51; 2737914707633559616 3,900 K 17.66 −92; 2235931585789228331 5,000 K 18.10 −40; 2733901638758120336 5,500 K 17.62 −170; 2705878812744314057 6,000 K 18.37 −292.
-The S/N floor was added because without it the hottest bin's "best" star had an essentially empty SPHEREx spectrum, which wins on χ²/ν.
-The 3,900 K star has one discrepant J-band point (~75 against ~800 µJy); it is in the data.
-September (joint fit) gave Δχ² of −7,000 to −11,000 for the same kind of star; on SPHEREx alone the margins are a hundred times thinner. The Gaia calibration of the flag (0.91 completeness at 18 ≤ I_E &lt; 19) was measured on the September catalogue and has not been redone for v2.</aside>
-      </section>
-
-      <section data-section="Results">
-        <h2>Selecting from the sample</h2>
-        <img class="fig" src="fig/products_res.png" alt="I_E histograms of the full catalogue, stars, galaxy sample and quality sample, and z_est histograms of the galaxy and quality samples" style="width:990px;">
-        <table class="tight num" style="width:1060px;margin:6px auto 0;">
-          <tbody><tr><th>sample</th><th>definition</th><th>objects</th><th><span style="text-transform:none">σ</span><sub>NMAD</sub></th><th>outliers</th></tr>
-          <tr><td>full</td><td>everything</td><td>13,784,773</td><td>—</td><td>—</td></tr>
-          <tr><td>stars</td><td>our SPHEREx SED star flag</td><td>1,233,310</td><td>—</td><td>—</td></tr>
-          <tr><td>galaxy</td><td>not star, resolved, no instrumental flags</td><td>5,206,897</td><td>0.0087</td><td>1.9%</td></tr>
-          <tr><td>quality</td><td>galaxy + ZQ bits + odds ≥ 0.90</td><td>3,102,178</td><td>0.0075</td><td>0.5%</td></tr>
-        </tbody></table>
-        <aside class="notes">v2 SPHEREx only. Samples (decided 15 Oct): the release definition (src/release_selection.sample_masks) plus resolved, not MER point_like_prob &gt; 0.5 (make_figures.py ES_RESOLVED=1, candide job 1007289). Metrics on the report's truth table (2dFLenS included): galaxy 111,571 matches, quality 93,393. The resolved step takes the galaxy ladder from 6,191,949 to 5,206,897 and quality from 3,412,115 to 3,102,178. Densities, resolved: galaxy 2,560 / 2,698 per deg² (N/S), quality 1,558 / 1,598.
-Everything below is the release-definition ladder and September comparison, not redone: metrics on 112,795 / 93,552 matches.
-Galaxy ladder: all 13,784,773 → confident fit (ZQ fit bit) 8,033,231 → not star (our is_star only; Euclid's PHZ classifier is NOT used) 6,799,921 → Sérsic &lt; 30″ and ellipticity &lt; 0.95 6,743,686 → DR1 detection flags (contaminated, saturated, border, VIS/NIR bright-star masks) 6,478,785 → spurious_prob ≤ 0.5 6,407,852 → ≥ 45″ from a Gaia G &lt; 13 star 6,191,949. Quality: + every ZQ bit and odds ≥ 0.90 → 3,412,115 (2,948,891 at z_est &lt; 0.5).
-Against September (joint fit): galaxy 5.65 M at 0.0111 / 4.8%, quality 1.78 M at 0.0081 / 0.6%. The quality sample nearly doubled at a lower scatter.
-Fewer confident fits than in September (8.0 M against 9.4 M): the extra failures are mostly stars whose galaxy fit lands on the grid floor, and the star count fell correspondingly (2.83 M → 1.23 M) because is_star is not set on them. Not a loss of galaxies.
-Densities (target-occupancy areas, 451 / 1,502 deg²): galaxy 3,011 / 3,218 per deg² (N/S), quality 1,715 / 1,757. 41% of the galaxy sample is at I_E ≥ 20.
-The September star-contamination bracket (galaxy sample 7.9-13.9%) has not been redone for v2.</aside>
       </section>
 
       <section>
@@ -591,818 +406,6 @@ The September star-contamination bracket (galaxy sample 7.9-13.9%) has not been 
 - South, green: 6dFGS, a shallow (K &lt; 12.65) all-southern-sky survey, a sprinkling of bright galaxies everywhere.
 - Red: one OzDES (DES supernova) field; blue at the top of the south lobe: the narrow strip DESI reaches.
 Truth definition as in the report (src/common.py load_truth: DESI DR1 v1.5 LSS clustering catalogues, which already carry ZWARN/ΔΧ² cuts; southern surveys at quality 3-4). 2dFLenS (2,536 southern matches in the report) is missing here because its server did not answer on 2026-09-27.</aside>
-      </section>
-
-      <section>
-        <h2>Density, redshift and magnitude of the spec-z sample</h2>
-        <img class="fig" src="fig/truth_coverage.png" alt="Spectroscopic redshifts per square degree among the targets on the sky, their redshift distribution per lobe, and the matched fraction against I_E" style="width:855px;"><aside class="notes">Truth matched at 1″ to every catalogue target, using the report's truth definition (src/common.py load_truth: DESI DR1 v1.5 LSS clustering catalogues for BGS_ANY, LRG, ELG_LOPnotqso, QSO, which already carry the ZWARN/ΔΧ² cuts; plus 6dFGS, 2dFGRS, OzDES DR1/DR2 at quality 3-4). 2dFLenS is missing here (server down on 2026-09-27); in the report it gives 2,536 southern matches.
-Redrawn on candide from the report's own truth table, which is target-level and so the same for v2. North: 108,622 matches, all DESI, 3.5% of targets, ~240 per deg² of the 451 deg² occupancy area. The circles are DESI DR1 tiles: DR1 is patchy even in the north.
-South: 11,952 (the report's count, 2dFLenS included): 2dFGRS ~6,900, 2dFLenS ~2,500, DESI ~1,600 (only in the narrow strip DESI reaches), 6dFGS ~1,050, OzDES ~150; the per-survey split is the September local fetch, not re-derived. ~7 per deg², a factor ~27 sparser. The bright circles are OzDES/DESI fields, the diffuse spray is 2dFGRS and 6dFGS.
-n(z): north median 0.23, south 0.13; 97% / 92% below z = 0.5. The southern truth is brighter and lower-z, which is why the south looks better on paper.
-Magnitude: the matched fraction peaks at I_E ~ 19 in the north (8%) and falls to 0.2% at 20.5; in the south it never exceeds 0.4% and is 0.01% at the faint end. The faintest bin holds 27% of the targets and the fewest spec-z: the bin where the redshifts are least certain is the one we can least check.
-Consequence: every validation number is really a statement about DESI-like galaxies in the north; the reweighted metrics (quality-sample slide notes) are the honest version for the whole catalogue.</aside>
-      </section>
-
-      <section>
-        <h2>Redshift validation</h2>
-        <img class="fig" src="fig/zz_quality_res.png" alt="Photometric against spectroscopic redshift for the quality sample: Euclid PHZ on the left, Euclid plus SPHEREx on the right" style="width:1000px;">
-        <p class="caption">Galaxy sample + all ZQ bits + odds ≥ 0.90. Truth: DESI DR1 + 6dFGS + 2dFGRS + 2dFLenS + OzDES.</p>
-        <aside class="notes">v2 SPHEREx only, resolved quality sample (make_figures.py ES_RESOLVED=1, candide job 1007289): 0.0075 with 0.52% outliers on 93,393 matches (north 0.0077 / 0.51% on 83,860; south 0.0066 / 0.61% on 9,533). Euclid PHZ on the same objects 0.0360 / 1.39%. 3,102,178 objects, 1,558 / 1,598 per deg² (N/S).
-Honest caveat: truth-matched metrics describe galaxies like the ones DESI targeted. Reweighted to the catalogue's own (I_E, z_est) distribution (north, release definition, not redone): σ 0.0097 with 4.4% outliers (effective N 3,973); for the galaxy sample 0.0160 / 13.0% (4,361). In September these were 0.0151 / 13.6% for the quality sample. The odds cut buys scatter; z_est &lt; 0.5 buys outliers.</aside>
-      </section>
-
-      <section>
-        <h2>North: the spec-z sample stops where the catalogue keeps going</h2>
-        <img class="fig" src="fig/colour_mag_res.png" alt="Galaxy sample and its spec-z subset in I_E against rest-frame U-V and against z_est, with the spec-z fraction per cell" style="width:1000px;"><aside class="notes">Figure now drawn for the resolved galaxy sample (make_figures.py ES_RESOLVED=1, candide job 1007289); the counts and fractions in these notes are from the release-definition version and were not redone. North, v2 galaxy sample (1.35 M with a rest-frame colour) against the 102,088 of them with a spec-z. Left: the catalogue; middle: the spec-z subset; right: the fraction of each cell with a spec-z (log colour).
-Colour (top): the spec-z fraction is 10-20% over almost all of colour space brighter than I_E 19.5, and drops to under 1% at I_E &gt; 20, at every colour. The bluest faint galaxies (U−V &lt; 0.7, I_E &gt; 18) are covered at only ~3-5%: DESI BGS is magnitude-limited in r, and the blue faint galaxies are the ones ELG selection only partly picks up.
-Redshift (bottom): coverage is good along the magnitude-redshift ridge DESI BGS follows, and poor at high z_est for a given magnitude, which is exactly where photo-z outliers (true low-z galaxies with a wrong high z_est) live.
-Colour caveat: this is the template-based rest-frame U−V (rest_UV) from the SPHEREx-only fit, not an observed colour; the sharp ceiling at U−V ≈ 2.2 is the reddest the 12-template bank makes. For an observed-colour version, use the MER fluxes in results/baseline/target_sample on candide.</aside>
-      </section>
-
-      <section>
-        <h2>Scrolling to z = 0.75: where the redshifts stop working</h2>
-        <video src="euclid_sky_movie_highz_res.mp4" controls="" loop="" muted="" playsinline="" data-autoplay="" style="display:block;width:1020px;margin:0 auto;border:1px solid var(--rule);border-radius:4px;"></video>
-        <aside class="notes">Same construction as the previous movie (v2 SPHEREx-only resolved galaxy sample, 5,206,897, Gaia halo veto included, probability of lying in the shell &gt; cut, widths rescaled by the pull width measured against the truth table), from z = 0.30 to 0.75, with thicker shells (Δz = 0.04) and a looser cut (P &gt; 0.5), because shells are sparser and the redshift errors larger out here. 165 frames, 16 s.
-What changed from the September version: the rings round bright stars are gone (the halo-aware background and the halo veto), and the alias pile-ups at 0.6-0.68 from He I read as Hα are gone (He I channels masked). What is left above ~0.55: the large-scale structure fades into noise as the shells fill with galaxies whose redshifts are no longer good (σ_NMAD 0.0143 at 0.6-0.75; above 0.75 only 181 truth-matched galaxies remain after the resolved cut, at 0.018 and 9.9% outliers). The release-definition version also showed a dense patch at the south lobe's low-latitude corner (stars and blends); not re-checked shell by shell here. About 13,000 north and 45,000 south galaxies in the 0.60-0.64 shell (13,113 / 44,684; was 12,000 / 41,000).
-Made by scripts/euclid_sky_movie_v2.py --highz in this deck folder.</aside>
-      </section>
-
-      <section>
-        <h2>The same movie, stopping at z = 0.35</h2>
-        <video src="finale_sky.mp4" controls="" muted="" playsinline="" data-autoplay="" style="display:block;width:1160px;margin:0 auto;border:1px solid var(--rule);border-radius:4px;"></video>
-        <aside class="notes">The all-sky finale of the main talk, identical up to 0.32 &lt; z &lt; 0.35, where it stops and holds (about 24 s). Use it instead of the main version if there is no time, or to stay clear of the 0.5-0.6 shell that the final_v2 report quarantines (He I residual, issue #97).
-Last shell: 789,466 all-sky and 81,159 Euclid galaxies. Euclid's patch is still visibly denser at these shells: I_E &lt; 20.5 is roughly r &lt; 20.8, so Euclid keeps galaxies the r &lt; 20.5 Legacy selection has lost.
-Made by scripts/finale_movie.py (Z_END=0.35); everything else as in the main slide's notes.</aside>
-      </section>
-
-      <!-- SPHEREx all-sky · solved along the way: the dark arc (from the cosmostat group-meeting deck) -->
-      <section id="allsky-heframe" class="ported">
-        <div class="kicker">SPHEREx all-sky · solved along the way</div>
-        <h2>A dark arc across every frame</h2>
-        <img src="images/image-2.png" alt="One SPHEREx D1 frame from 2025-10-20 with a dark arc across its bottom, the 1.083 µm curve drawn in orange" style="position:absolute;left:40px;top:120px;width:440px;">
-        <p class="caption" style="position:absolute;left:40px;top:568px;width:440px;margin:0;">One SPHEREx frame, detector 1, 20 October 2025. The orange curve is where the filter passes 1.083 µm.</p>
-        <div class="steps" style="left:520px;top:130px;width:330px;">
-          <h3>One curve, one wavelength</h3>
-          <p>SPHEREx has no slit and no grating: a linear variable filter sits on the detector, so each curved row sees one wavelength.</p>
-          <h3 class="next">Something fills the sky at 1.083 µm</h3>
-          <p>Whatever the field, the rows that see 1.083 µm are bright: a glow of the whole sky, at one wavelength.</p>
-        </div><aside class="notes">
-          <p>Before saying what it is: this is what we saw. One SPHEREx frame, detector 1, 20 October 2025 (l2b-v20). SPHEREx has a linear variable filter, so wavelength changes across the detector along curves; the orange line is the 1.083 µm curve. The dark arc follows it in every frame, whatever is in the field: something fills the whole sky at that one wavelength. The He I slide in the pipeline section says what.</p>
-          <p>The zoom is panel (c) of spherex-allsky results/figures/fig_hei_frame.png (report §8.7): the bottom 460 rows, sky pixels only, with the central wavelength at x = 1020 on the right axis.</p>
-        </aside>
-      </section>
-
-      <!-- SPHEREx all-sky · the halo fix, galaxy by galaxy -->
-      <section id="allsky-halo-spectra" class="ported">
-        <div class="kicker">SPHEREx all-sky · solved along the way</div>
-        <h2>Two galaxies near a bright star, before and after the new extraction</h2>
-        <img src="fig/allsky/talk/halo_spectra.png" alt="Two galaxies near a bright star: the production spectrum and posterior in red, the fixed extraction in blue, with the DESI redshift marked" style="position:absolute;left:40px;top:118px;width:1000px;">
-        <div class="steps" style="left:1060px;top:140px;width:180px;">
-          <p><b>In the core</b>: DESI z = 0.21. Production 0.03, fixed 0.19.</p>
-          <p><b>In the ring</b>: DESI z = 0.31. Production 0.58, fixed 0.29.</p>
-          <p class="soft">Red: production. Blue: the fixed background.</p>
-        </div>
-        <aside class="notes">
-          <p>Two galaxies near the same bright star. (a) In the core, 0.20 of the halo radius from star A, r = 19.3, DESI z = 0.209: the production spectrum carries the star's light, mostly in the blue and at the He I channels, and fits at z = 0.03; with the fixed background (F4) it is fainter and flatter and fits at 0.19. (b) In the ring, 0.71 of the radius, r = 18.0, DESI z = 0.307: production 0.58, fixed 0.29. Right: the posteriors, DESI marked.</p>
-          <p>Figure: spherex-allsky results/figures/fig_halo_examples.png (report §8.6).</p>
-        </aside>
-      </section>
-
-      <section id="allsky-halo-clustering" class="ported">
-        <div class="kicker">SPHEREx all-sky · solved along the way</div>
-        <h2>The halos had contaminated the clustering at 0.5–0.7</h2>
-        <p class="label" style="position:absolute;left:40px;top:116px;margin:0;">All galaxies</p>
-        <p class="label" style="position:absolute;left:660px;top:116px;margin:0;">Bright-star regions vetoed</p>
-        <img src="fig/allsky/talk/cross_before.png" alt="Cross-correlation between the 0.1–0.2 and 0.6–0.7 shells, all galaxies: strongly negative" style="position:absolute;left:40px;top:146px;width:250px;">
-        <img src="fig/allsky/talk/nz_before.png" alt="DESI redshifts of each shell's galaxies, all galaxies: the 0.6–0.7 shell spread from 0 to 0.7" style="position:absolute;left:300px;top:146px;width:330px;">
-        <img src="fig/allsky/talk/cross_after.png" alt="The same cross-correlation with bright-star regions vetoed: consistent with zero" style="position:absolute;left:660px;top:146px;width:240px;">
-        <img src="fig/allsky/talk/nz_after.png" alt="DESI redshifts of each shell's galaxies with the veto: the 0.6–0.7 shell now peaks at 0.6–0.7" style="position:absolute;left:910px;top:146px;width:330px;">
-        <p class="caption" style="position:absolute;left:40px;top:404px;width:590px;margin:0;"><b>Left:</b> θ·w(θ) between the 0.1–0.2 and 0.6–0.7 shells, <b>r = −0.58</b>. <b>Right:</b> DESI redshifts of each shell; only <b>12%</b> of the 0.6–0.7 shell is really there.</p>
-        <p class="caption" style="position:absolute;left:660px;top:404px;width:580px;margin:0;">The same cross: <b>r = 0.15</b>, consistent with zero. And <b>43%</b> of the 0.6–0.7 shell now lies at 0.6–0.7 (0.5–0.6: 49% → 75%).</p>
-        <p class="note" style="left:40px;top:500px;width:1200px;">Two shells 0.4 apart in redshift should not correlate at all, and negative correlation is impossible in linear theory. Galaxies pulled out of the 0.1–0.2 shell into a ring round each bright star leave a hole in one shell where they pile up in the other.</p>
-        <p class="soft" style="position:absolute;left:40px;top:600px;width:1200px;margin:0;font-size:16px;">Points: measured. Black line: predicted from the photo-z n(z); orange dashed: from DESI's n(z). Shaded angles are outside the fit.</p><aside class="notes">
-          <p>The 0.1–0.2 × 0.6–0.7 cross-correlation in region 1. With all galaxies (left) it is strongly negative, r = −0.58 over the fitted angles, where the photo-z n(z) predicts 0.00 and DESI's n(z) 0.44 (orange dashed). Negative is impossible in linear theory: it is galaxies moved from one shell to the other round the same stars, a deficit in one where there is an excess in the other. With bright-star regions vetoed (right) it is r = 0.15.</p>
-          <p>The n(z): DESI redshifts of the galaxies in each z_est shell. Before, only 12% of the 0.6–0.7 shell's 9,321 DESI matches are at 0.6–0.7, and 49% of 0.5–0.6; with the veto, 43% of 1,776 and 75% of 9,372. The linear bias of the 0.6–0.7 shell falls from 5.6 to 2.3 (fig_clus_dz01_bias / _vbright_bias).</p>
-          <p>This is the veto (bs_ratio), not the F4 extraction fix; the clustering has not been re-run on the F4 extraction.</p>
-          <p>Figures: crops of spherex-allsky results/figures/fig_clus_dz01_wtheta.png, fig_clus_dz01_nz.png and their _vbright versions (report §9.9–9.10).</p>
-        </aside>
-      </section>
-
-      <!-- SPHEREx all-sky · solved along the way: the comb -->
-      <section id="allsky-comb" class="ported">
-        <div class="kicker">SPHEREx all-sky · solved along the way</div>
-        <h2>The comb: redshifts prefer the spacing of SPHEREx's channels</h2>
-        <img src="fig/allsky/talk/comb_nz.png" alt="The catalogue's redshift distribution, spiky with a regular comb, against the smooth DESI distribution of the same galaxies" style="position:absolute;left:140px;top:120px;width:1000px;">
-        <div class="tiles" style="left:40px;top:550px;width:1200px;grid-template-columns:repeat(3, 1fr);">
-        </div><aside class="notes">
-          <p>Issue #23. The catalogue's z_est, the peak of P(z), is modulated with a period of 0.0248 in ln(1+z): the SPHEREx channel spacing, not the 0.01 grid beating against histogram bins. Folded amplitude 32% peak to peak, against 2% for DESI. A second 17% modulation is in grid phase, from eazy's parabolic refinement. Stacks show the 3.3 µm PAH feature driving the piles below z = 0.3. It matters for 3D clustering and fine n(z), not for broad shells.</p>
-          <p>Decision (2 October, Calum): quote both z_est and the posterior median z50. z50 has the same σ_NMAD (0.0094) and outlier rate on QUALITY and cuts the comb about threefold (high-pass rms of n(z) 0.188 → 0.063). Which one the shells are built on is still open. The comb study also fed the 5 October decision to start the redshift grid at 0.001.</p>
-          <p>Figure: results/figures/zhunt/fig_zhunt_nz_fold.png.</p>
-        </aside>
-      </section>
-
-      <section data-section="Clustering">
-        <h2>1,825 deg² mask, 5.8 M galaxies, 8 systematics templates</h2>
-        <img class="fig" src="fig/clustering_density_res.png" alt="Density of the clustering sample (the galaxy sample, resolved sources only), north and south lobes side by side" style="width:830px;">
-        <ul>
-          <li>the resolved galaxy sample, v2 SPHEREx only: 4,375,475 on the mask in the six shells 0.05–0.6, 123.8 M randoms · completeness from Euclid VMPZ</li>
-          <li>templates: E(B−V), stars, filters, ecliptic latitude, VIS depth, zodi, annulus background, n<sub>obs</sub></li>
-        </ul><aside class="notes">Now the resolved galaxy sample (universe v2_spherex_only_galaxy_resolved_z005; randoms job 1007280, 123.8 M, regenerated because they draw redshifts from the sample). Shell counts on the mask 232,296 / 789,857 / 1,087,609 / 1,121,382 / 715,694 / 428,637. The title's 5.8 M and the numbers below are the release-sample run and were not redone.
-Universe v2_spherex_only_galaxy (euclid-spherex branch v2): the v2 SPHEREx-only catalogue, sample = the release galaxy sample (reliability_cut galaxy_sample → release_selection.sample_masks, Gaia halo veto included), shells 0-0.6 in steps of 0.1.
-Funnel: 13,784,773 → confident fit 8,033,231 → not a star 6,799,921 → Sérsic/ellipticity 6,743,686 → DR1 flags 6,478,785 → not spurious 6,407,852 → halo veto 6,191,949 → on the analysis mask 5,765,406 → in the six shells 5,230,985.
-Mask: nside 1024 → 256, fracdet ≥ 0.8 and VMPZ VIS completeness ≥ 0.8; 34,824 pixels, 1,824.9 deg² (identical to the September mask); SP outlier cut removes 1.77%, leaving 1,792.6 deg². Randoms 123,838,980.
-Templates: 8 survey-property maps, 5 fiducial (ebv, stardens, nfilt_mean, ecl_lat, depth_vis) under fiducial_plus_euclid_depth; zodi, bkg_annulus and n_obs built and tested, not regressed.
-Mocks: lognormal. ISD converges in all six shells in 2-3 rounds, every final S_1D &lt; 2 (largest 1.80, ecl_lat at z &lt; 0.1). Flagged: stardens + nfilt_mean (0-0.1, 0.5-0.6), stardens (0.1-0.2), nfilt_mean + ecl_lat (0.2-0.3), nfilt_mean + depth_vis (0.3-0.4), nfilt_mean (0.4-0.5). 27-31 of 50 clean mocks flag at least one template, so a flag alone is not evidence.
-Map: the galaxy sample's density, 0.25° pixels (make_figures.py fig_clustering_density).</aside>
-      </section>
-
-      <section>
-        <h2>Weights clean the fiducial templates; the ring background still trends</h2>
-        <img class="fig" src="fig/null_oned_relations_res.png" alt="Relative galaxy density against each survey-property template, weighted and unweighted, per redshift shell" style="width:1090px;">
-        <ul>
-          <li>Dashed unweighted, solid weighted, grey band clean mocks</li>
-        </ul><aside class="notes">Now the resolved galaxy sample, shells 0.05-0.6 (null battery job 1007286). Weighted S_1D for the unregressed annulus background: 0.04, 0.00, 5.0, 2.1, 9.5, 8.9 from the lowest shell up: still the one map that trends. Weighted worst regressed map per shell: depth_vis 1.65 (0.05-0.1), nfilt_mean 0.40, stardens 1.19, n_obs 0.54, ecl_lat 0.67, zodi 2.78 (not regressed) / stardens 1.68. Unweighted stellar-density S_1D in 0.05-0.1: 7.9 (the release 0-0.1 shell: 177). Numbers below are from the release-sample run.
-v2 galaxy sample, six shells 0-0.6 (src/lss/nulls.py, job 1005451; figure src/lss/slides_clustering.py). Dashed: unweighted; solid: ISD-weighted; grey: 1σ of clean mocks. Orange axis labels: templates tested but not regressed.
-Fiducial templates after weighting: S_1D ≤ 0.6 everywhere except ecl_lat 2.08 at z &lt; 0.1. Before weighting the worst are stardens 177 and ebv 52 at z &lt; 0.1, stardens 66 at 0.5-0.6, nfilt_mean 57 at 0.4-0.5: the lowest shell is star-contaminated.
-Infrared templates (not regressed), weighted: bkg_annulus 9.4 (0.2-0.3), 14.7 (0.4-0.5), 6.8 (0.5-0.6); n_obs 6.7 (0-0.1), 2.8 (0.5-0.6); zodi ≤ 1.9. Against the September catalogue (bkg_annulus 81, n_obs 39, zodi 18) the per-frame background removed most of it, but bkg_annulus, which in v2 is the ring diagnostic recorded beside the map, still trends. Regressing it (the plus_ir arm) is the next step.
-Randoms are flat to ≤ 0.0005 against every template.</aside>
-      </section>
-
-      <section>
-        <h2>The previous slide asked it pixel by pixel; now scale by scale</h2>
-        <img class="fig" src="fig/sys_explain_maps.png" alt="Galaxy overdensity in the 0.3 to 0.4 shell next to the map of SPHEREx observations per target" style="width:1150px;">
-        <svg viewBox="0 0 1150 150" width="1150" height="150" style="display:block;margin:6px auto 0;">
-          <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#596273"/></marker></defs>
-          <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" fill="#111318" text-anchor="middle">
-            <rect x="10" y="20" width="250" height="100" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="135" y="55" font-weight="700">two maps</text>
-            <text x="135" y="82">galaxies δ<tspan font-size="12" dy="4">g</tspan><tspan dy="-4">, template t</tspan></text>
-            <rect x="310" y="20" width="250" height="100" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="435" y="55" font-weight="700">split into scales</text>
-            <text x="435" y="82">spherical harmonics, ℓ ≈ 180°/θ</text>
-            <rect x="610" y="20" width="250" height="100" rx="6" fill="#e6eefa" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="735" y="55" font-weight="700">compare at each ℓ</text>
-            <text x="735" y="82">C<tspan font-size="12" dy="-8">gt</tspan><tspan dy="8">: shared structure</tspan></text>
-            <rect x="910" y="20" width="230" height="100" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="1025" y="55" font-weight="700">normalise</text>
-            <text x="1025" y="82">r<tspan font-size="12" dy="4">ℓ</tspan><tspan dy="-4"> ∈ [−1, 1], 0 if clean</tspan></text>
-            <line x1="262" y1="70" x2="306" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ar2)"/>
-            <line x1="562" y1="70" x2="606" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ar2)"/>
-            <line x1="862" y1="70" x2="906" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ar2)"/>
-          </g>
-        </svg>
-        <aside class="notes">The idea in one sentence: if the galaxy map contains a copy of the template map, the two share structure, and the cross-spectrum C^gt says at which angular scales they share it.
-Left: galaxy overdensity of the clustering sample at 0.3 ≤ z_est &lt; 0.4 (0.5° pixels). Right: the template, here the number of SPHEREx observations per target. By eye the galaxy map is mostly cosmic structure plus noise; the question is whether any of the fan-shaped depth pattern on the right leaks into it.
-Relation to slide 21: that slide bins pixels by template value and plots the mean galaxy density in each bin (a 1-D relation, all scales mixed together). This asks the same question per angular scale ℓ (ℓ ≈ 180°/θ: ℓ = 20 is ~9°, ℓ = 200 is ~1°). Both use the same galaxies; slide 21 is from the pipeline with ISD weights, these slides are new, local and unweighted.
-Why scale matters: contamination that lives on degree scales biases the BAO and large-scale bias; contamination at small scales matters less for us.</aside>
-      </section>
-
-      <section>
-        <h2>Definitions</h2>
-        <div class="cols">
-          <div class="col" style="flex:1.05;">
-            <ul style="margin-top:0;">
-              <li>galaxies: \( \delta_g = \dfrac{n}{\bar n\, f} - 1 \) per pixel (f = covered fraction)</li>
-              <li>template: t, rescaled to mean 0 and σ = 1</li>
-              <li>\( C^{XY}_\ell = \frac{1}{f_\mathrm{sky}}\frac{1}{2\ell+1}\sum_m a^X_{\ell m}\, a^{Y*}_{\ell m} \)</li>
-              <li>\( C^{gg} \): clustering (minus shot noise) · \( C^{tt} \): the template's own structure · \( C^{gt} \): what they share</li>
-              <li>\( r_\ell = C^{gt}_\ell / \sqrt{C^{gg}_\ell\, C^{tt}_\ell} \)</li>
-              <li>if \( \delta_g = \delta_\mathrm{true} + \epsilon\, t \): \( r_\ell^2 \) = share of \( C^{gg} \) that is contamination</li>
-              <li>\( \chi^2 = \sum (r_\ell / \sigma)^2 \), \( \sigma = 1/\sqrt{N_\mathrm{modes}} \)</li>
-            </ul>
-          </div>
-          <div class="col" style="flex:0.95;">
-            <table class="tight">
-              <tbody><tr><th>template</th><th>what it is, per pixel</th></tr>
-              <tr><td>stellar density</td><td>SED-flagged stars per deg²</td></tr>
-              <tr><td>E(B−V)</td><td>CSFD dust reddening</td></tr>
-              <tr><td>SPHEREx zodi</td><td>zodiacal-light model at the target</td></tr>
-              <tr><td>annulus bkg</td><td>residual background, 4–6 px annulus</td></tr>
-              <tr><td>n<sub>obs</sub></td><td>SPHEREx exposures per target (log)</td></tr>
-              <tr><td>co-added S/N</td><td>median S/N of the 77-channel spectrum</td></tr>
-            </tbody></table>
-            <p class="soft" style="font-size:0.5em;">Clustering sample (odds ≥ 0.90, not a star) in 6 z<sub>est</sub> shells · 27′ pixels · 1,808 deg² · ℓ = 10–330 in 7 bins</p>
-          </div>
-        </div>
-        <aside class="notes">n: galaxies in the pixel; n̄: mean over the mask; f: fraction of the pixel covered by the footprint (from target occupancy at 3.4′), so edge pixels are not read as underdense. Mask: pixels ≥ 80% covered.
-Templates are the per-pixel mean of per-object catalogue columns, then standardised, so C^tt and C^gt are comparable across templates. log n_obs because depth goes as the log of the exposure count.
-a_ℓm are the spherical-harmonic coefficients of the map (healpy.anafast); dividing by f_sky is the simplest partial-sky correction (no mode-coupling matrix; NaMaster on candide does this properly).
-Shot noise: 1/n̄ (per steradian) is subtracted from C^gg only; the star map has ~300 stars per pixel, so its shot noise is negligible.
-Linear contamination model: if the observed field is the true field plus ε times the template, then C^gt = ε C^tt and C^gg picks up ε² C^tt, which is r² of the total. r = 0.3 → 9% of the power.
-Error: for no true correlation, r_ℓ scatters with σ = 1/√N_modes, N_modes = f_sky Σ(2ℓ+1) over the bin. Bins are treated as independent (approximately true for these wide bins).</aside>
-      </section>
-
-      <section>
-        <h2>The six templates</h2>
-        <img class="fig" src="fig/template_maps.png" alt="Maps of stellar density, E(B-V), SPHEREx zodi, annulus background, observations per target and co-added S/N, north and south side by side" style="width:1140px;">
-        <aside class="notes">Each is the per-pixel median of the per-object column in the catalogue (stellar density: count of SED-flagged stars per deg²), 0.5° pixels, same projection as the other maps.
-Stellar density: rises toward the Galactic plane (east of the south lobe, the small northern patches); the rings are bright-star masks.
-E(B−V): low everywhere (median 0.03), highest in the north-west and along the south's eastern edge.
-Zodi, n_obs, S/N: all set by the SPHEREx scan. Zodi is brightest near the ecliptic; n_obs and S/N are highest toward the ecliptic poles, where the scan's great circles converge (the fan in the south). These three are nearly the same map, so their detections are not independent evidence.
-Annulus background: bright around extended sources and bright stars, and higher at low Galactic latitude.</aside>
-      </section>
-
-      <section>
-        <h2>The three spectra: C<sup>gg</sup>, C<sup>tt</sup> and C<sup>gt</sup></h2>
-        <img class="fig" src="fig/sys_spectra.png" alt="Galaxy auto-spectra per shell, template auto-spectra, and galaxy-template cross-spectra for six templates with errors" style="width:1150px;">
-        <aside class="notes">All plotted as ℓ·C_ℓ so each ℓ bin reads evenly.
-Top left, C^gg: the galaxy clustering in each shell after shot-noise subtraction. The lowest shell clusters most strongly in projection (nearest, largest angular structures); z 0.5-0.7 is high because it is dominated by interlopers from other redshifts plus residual systematics.
-Top second, C^tt: every template has most of its structure on large scales (steeply falling), which is why contamination, if present, shows up at low ℓ.
-The other six: C^gt per template with Gaussian errors √((C^gg C^tt + C^gt²)/N_modes). Zero means clean. Stellar density, n_obs and S/N are positive at ℓ &lt; 100; zodi is negative (the mirror image of n_obs); E(B−V) is consistent with zero except the lowest shell; the annulus background is shell-dependent, and the z 0.5-0.7 shell stands out.
-Next slide divides C^gt by √(C^gg C^tt) so templates and shells can be compared on one scale.</aside>
-      </section>
-
-      <section>
-        <h2>Normalised: contamination is largest on large scales</h2>
-        <img class="fig" src="fig/sys_cross_curves.png" alt="Correlation coefficient between galaxy density and each systematic against multipole, per redshift shell" style="width:1010px;"><aside class="notes">The correlation coefficient r_ℓ = C^gt / √(C^gg C^tt) from the previous slide's spectra, per multipole bin. Grey: ±1σ expected for no correlation.
-Stars and SPHEREx depth (n_obs, S/N) peak at ℓ &lt; 50, i.e. degree scales, which is where the BAO and the large-scale clustering live. Hence the need for weights and for the plus_ir universe that regresses zodi, annulus background and n_obs.
-The z 0.5-0.7 shell behaves differently throughout (annulus background r ~ 0.5 at ℓ 40-100): it is dominated by photo-z interlopers, as the Planck lensing test also showed.</aside>
-      </section>
-
-      <section>
-        <h2>Galaxy × CMB lensing at 9.7σ; tSZ in every shell</h2>
-        <img class="fig" src="fig/kappa_cross_res.png" alt="Galaxy cross Planck CMB lensing (top) and Compton-y (bottom) power spectra in six redshift shells" style="width:1200px;">
-        <ul>
-          <li>b<sub>κ</sub> / b<sub>gg</sub> = 0.98–1.46 from z = 0.05 to 0.6 (resolved galaxy sample)</li>
-          <li>0.05–0.1: b<sub>gg</sub> 0.76, b<sub>κ</sub> 0.89 ± 0.63. With point-like objects and z &lt; 0.05 kept, 0–0.1 had b<sub>gg</sub> 0.28 against b<sub>κ</sub> 1.27: diluted</li>
-        </ul>
-        <aside class="notes">Now the resolved galaxy sample, shells 0.05-0.6 (κ/y jobs 1007283-84). κ detection 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ, 9.7σ in quadrature. Numbers below are from the release-sample run.
-v2 galaxy sample, ISD-weighted (src/lss/xcorr.py; jobs 1005452 κ, 1005453 y, 1005454 vetting). NaMaster pseudo-Cℓ at nside 512. Planck PR3 MV lensing, PR2 MILCA y.
-Galaxy × κ: 3.9, 3.5, 3.1, 4.3, 5.5, 4.8σ in the six shells; 10.4σ combined as the quadrature sum, which treats the shells as independent and so is optimistic (neighbouring shells share structure, r ≈ 0.2-0.35 on the cross-correlation slide). September, odds ≥ 0.90 sample: 8.8σ.
-b_κ / b_gg: 4.5 at z &lt; 0.1 (b_gg 0.28, b_κ 1.27 ± 0.32; the mocks expected b_gg 0.44), then 1.50, 1.00, 1.18, 1.30, 1.04. The test is the agreement of a bias from an external map with the bias from the sample's own clustering; it passes from 0.1 to 0.6. At z &lt; 0.1 the shell clusters far too weakly for its lensing: diluted by objects with no clustering of their own (stars or failed fits near z ≈ 0, which the stellar-density null test also shows), plus some higher-z galaxies that carry the lensing.
-Galaxy × y: detected in every shell, p from 8e-13 to 2.5e-3.
-Vetting: randoms × κ/y p = 0.79/0.98, weight map × κ/y p = 0.98/0.28, every fiducial template p ≥ 0.08. Not null: bkg_annulus (p = 1e-4 at z &lt; 0.1, &lt; 1e-4 at 0.5-0.6) and n_obs (&lt; 1e-4 at z &lt; 0.1) against the shells.</aside>
-      </section>
-
-      <!-- background 0 · the photometry pipeline -->
-      <section data-section="Background">
-        <div class="kicker">Backup · sky background</div>
-        <h2>The photometry pipeline, end to end</h2>
-        <svg viewBox="-10 0 1170 590" width="1160" height="585" style="position:absolute;left:60px;top:124px;" role="img" aria-label="Flowchart of the SPHEREx forced-photometry pipeline: targets, sky cells, frame index and staging; per frame the frame is opened and a background map made, then per target a stamp is fitted with Tractor; per target all observations are archived, co-added onto 77 channels, zero-pointed and fitted for redshift; with the Euclid catalogue's differences listed">
-          <defs><marker id="ppar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#596273"/></marker></defs>
-          <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#111318" text-anchor="middle">
-            <text x="44" y="14" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">ONCE</text>
-            <rect x="0" y="22" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100" y="46" font-size="16" font-weight="700">targets</text>
-            <text x="100" y="65" font-size="14">Legacy + DELVE + SGA</text>
-            <text x="100" y="84" font-size="14">+ calibration stars:</text>
-            <text x="100" y="103" font-size="14">77.1 M positions</text>
-            <rect x="237" y="22" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="337" y="46" font-size="16" font-weight="700">sky cells</text>
-            <text x="337" y="65" font-size="14">10° lattice,</text>
-            <text x="337" y="84" font-size="14">358 cells, two</text>
-            <text x="337" y="103" font-size="14">clusters, one ledger</text>
-            <rect x="474" y="22" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574" y="46" font-size="16" font-weight="700">frame index</text>
-            <text x="574" y="65" font-size="14">IRSA QR2 L2B frames</text>
-            <text x="574" y="84" font-size="14">(pinned); keep those</text>
-            <text x="574" y="103" font-size="14">covering a target</text>
-            <rect x="711" y="22" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811" y="46" font-size="16" font-weight="700">staging</text>
-            <text x="811" y="65" font-size="14">S3 → node-local disk,</text>
-            <text x="811" y="84" font-size="14">2,000-frame batches,</text>
-            <text x="811" y="103" font-size="14">deleted once measured</text>
-            <line x1="202" y1="70" x2="233" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="439" y1="70" x2="470" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="676" y1="70" x2="707" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <path d="M 811 120 V 145 H 22 V 166" fill="none" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <text x="44" y="162" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">PER FRAME, THEN PER TARGET IN IT</text>
-            <rect x="0" y="170" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100" y="194" font-size="16" font-weight="700">open the frame</text>
-            <text x="100" y="213" font-size="14">IMAGE, VARIANCE, FLAGS,</text>
-            <text x="100" y="232" font-size="14">ZODI, PSF cube,</text>
-            <text x="100" y="251" font-size="14">wavelength map</text>
-            <rect x="237" y="170" width="200" height="96" rx="6" fill="#fdf1f1" stroke="#b03030" stroke-width="2.5"/>
-            <text x="337" y="194" font-size="16" font-weight="700">background map</text>
-            <text x="337" y="213" font-size="14">ZODI + B(λ) + local map,</text>
-            <text x="337" y="232" font-size="14">halo-aware near stars</text>
-            <text x="337" y="251" font-size="14">(next slides)</text>
-            <rect x="474" y="170" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574" y="194" font-size="16" font-weight="700">stamp</text>
-            <text x="574" y="213" font-size="14">33 × 33 px; PSF of its</text>
-            <text x="574" y="232" font-size="14">zone, shifted to the</text>
-            <text x="574" y="251" font-size="14">sub-pixel position</text>
-            <rect x="711" y="170" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811" y="194" font-size="16" font-weight="700">Tractor fit</text>
-            <text x="811" y="213" font-size="14">flux only, position fixed,</text>
-            <text x="811" y="232" font-size="14">sky fixed at 0,</text>
-            <text x="811" y="251" font-size="14">clipped weights</text>
-            <rect x="948" y="170" width="200" height="96" rx="6" fill="#fff" stroke="#111318" stroke-width="2"/>
-            <text x="1048" y="194" font-size="16" font-weight="700">one observation</text>
-            <text x="1048" y="213" font-size="14">flux, error, λ, Δλ,</text>
-            <text x="1048" y="232" font-size="14">flags, background</text>
-            <text x="1048" y="251" font-size="14">subtracted</text>
-            <line x1="202" y1="218" x2="233" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="439" y1="218" x2="470" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="676" y1="218" x2="707" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="913" y1="218" x2="944" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <path d="M 1048 268 V 293 H 22 V 314" fill="none" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <text x="44" y="310" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">PER TARGET, ALL OBSERVATIONS</text>
-            <rect x="0" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100" y="342" font-size="16" font-weight="700">archive</text>
-            <text x="100" y="361" font-size="14">every observation kept</text>
-            <text x="100" y="380" font-size="14">(3.7 × 10¹⁰ rows, 1.7 TB)</text>
-            <text x="100" y="399" font-size="14">so co-adds can be rebuilt</text>
-            <rect x="237" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="337" y="342" font-size="16" font-weight="700">co-add</text>
-            <text x="337" y="361" font-size="14">77 channels, R = 40;</text>
-            <text x="337" y="380" font-size="14">errors × per-detector</text>
-            <text x="337" y="399" font-size="14">factor</text>
-            <rect x="474" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574" y="342" font-size="16" font-weight="700">zero points</text>
-            <text x="574" y="361" font-size="14">measured on DESI;</text>
-            <text x="574" y="380" font-size="14">not yet applied</text>
-            <text x="574" y="399" font-size="14">(preliminary)</text>
-            <rect x="711" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811" y="342" font-size="16" font-weight="700">redshift fit</text>
-            <text x="811" y="361" font-size="14">eazy-py, 12 FSPS templ.,</text>
-            <text x="811" y="380" font-size="14">flat prior, He I</text>
-            <text x="811" y="399" font-size="14">channels masked</text>
-            <rect x="948" y="318" width="200" height="96" rx="6" fill="#fff" stroke="#111318" stroke-width="2"/>
-            <text x="1048" y="342" font-size="16" font-weight="700">catalogue</text>
-            <text x="1048" y="361" font-size="14">+ stellar fit (is_star)</text>
-            <text x="1048" y="380" font-size="14">+ quality bits,</text>
-            <text x="1048" y="399" font-size="14">kept raw</text>
-            <line x1="202" y1="366" x2="233" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="439" y1="366" x2="470" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="676" y1="366" x2="707" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <line x1="913" y1="366" x2="944" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#ppar)"/>
-            <rect x="-8" y="438" width="1164" height="140" rx="8" fill="#f3f5f8"/>
-            <text x="6" y="462" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">EUCLID DR1 × SPHEREX v2 (THIS TALK): SAME STAGES, THESE DIFFERENCES</text>
-            <text x="6" y="490" font-size="15" text-anchor="start">Targets: Euclid VIS-detected, 16 &lt; I<tspan font-size="11" dy="4">E</tspan><tspan dy="-4"> &lt; 20.5, 13.8 M · cells 4°, no frame cap</tspan></text>
-            <text x="6" y="512" font-size="15" text-anchor="start">Background, weights, co-add: as above (per-frame map, clipped weights, streaming co-add, OUTLIER kept)</text>
-            <text x="6" y="534" font-size="15" text-anchor="start">Size: each SPHEREx flux divided by k, the share of a Sérsic galaxy's light a PSF fit recovers</text>
-            <text x="6" y="556" font-size="15" text-anchor="start">Redshift fit: SPHEREx alone, as above · the September catalogue used a ring background and a joint fit</text>
-          </g>
-        </svg>
-        <aside class="notes">Top three rows: the all-sky final run (final_v2, profile "final"). The grey box: how the Euclid DR1 × SPHEREx v2 catalogue, the one in this talk, differs. v2 runs the all-sky extraction profile on the Euclid targets (euclid-spherex src/run_profiles.py, profile "euclid"), so the only differences left are the targets, the cell lattice and the size correction. Background estimation is the red box; the following slides open it up.
-Once: targets in positions_final.fits, 77,070,050 rows (Legacy DR9-north r &lt; 20.55 / DR10-south r &lt; 20.5 with grz, 60.58 M; DELVE DR3 13.87 M; SGA 0.45 M; Gaia calibration stars 2.17 M). Sky cells on a fixed 10° lattice (src/spectra/campaign.py), 358 cells shared between the nibi and fir clusters by a hash-chained ledger. Frame index: one IRSA TAP query on spherex.artifact × spherex.plane, QR2 only, pinned by sha1 (src/spectra/build_frame_index.py); per cell, a frame is kept if any target lies inside its footprint (17 px margin), no frame cap (cell_index.py, extract_frames.py). Staging: from the S3 Open Data mirror (HTTPS fallback to IRSA) onto node-local disk in 2,000-frame batches, the next staging while the current is measured, each deleted once measured (docs/STORAGE.md).
-Per frame: each frame is opened once (frame-major), IMAGE, VARIANCE, FLAGS, ZODI, PSF cube and the wavelength WCS read (src/spectra/extract_spectra.py ~785-819); the background map (tjhec) and the variance gain for the clipped weights are made per frame. Per target on that frame: 33 × 33 px stamp; the PSF of the nearest PSF-cube zone, 10× oversampled, spline-shifted to the sub-pixel offset and summed to 9 × 9 px; defect mask (OUTLIER unmasked in the final run); Tractor PointSource with the position frozen and the sky fixed at zero, fitted to IMAGE − map with clip3 weights. Output per observation: flux, error, aperture flux, λ, Δλ from the wavelength WCS, flags, the ring diagnostic and the background subtracted; F4c flux by a direct solve; Msky for SGA galaxies.
-Per target: the archive keeps every observation (about 3.7 × 10¹⁰ rows, ~1.74 TB; OPERATOR_BRIEF), so the co-add can be rebuilt without re-extracting. Co-add: 77 channels at R = 40 from 0.75 to 5.0 µm (coadd_stream.py channel_grid), each error inflated by the frozen per-detector factor (1.03-1.28); the stream co-add has no clip; the release co-add rebuilt from the archive adds the l3 gain, rejection and the all-source-frame veto. Zero points measured on DESI (1.08-1.11 over 3.8-5 µm) but not applied in prelim_v0. Redshift: eazy-py, fsps_QSF_12_v3, flat prior, empirical error model, He I channels 14-15 masked, log grid from z = 0.001, P(z) stored; SPHEREx channels only. Stellar fit: eazy's PHOENIX/Sonora grid, is_star when χ²_star − χ²_gal &lt; 0. Quality bits stored raw; samples defined at release.
-Euclid (docs/reports/final_2026-09-28 §3): 13,784,773 VIS-detected targets; 212 cells of 4° with a 6,000-frame cap (31 cells hit it, ~21% of targets); the earlier extractor (ring background, OUTLIER masked, 1/VARIANCE weights); a batch co-add onto the same 77 channels with a 3σ clip; zero points fitted at the spec-z on half the truth, iterated, frozen, applied to the Euclid and ground bands with SPHEREx as the anchor; a joint fit of SPHEREx + Euclid VIS/Y/J/H + ground bands.</aside>
-      </section>
-
-      <!-- background 0b · the PSF and the Tractor fit -->
-      <section>
-        <div class="kicker">Backup · photometry</div>
-        <h2>How a flux is measured: the PSF and the Tractor fit</h2>
-        <div class="steps" style="left:40px;top:142px;width:560px;">
-          <h3>The PSF comes with the frame</h3>
-          <p>Every frame carries its own PSF: 121 zones (11 × 11 across the detector), each 10× oversampled, built by the mission from &gt;1,000 stars per zone. We use the zone nearest the source.</p>
-          <h3>Placed before it is binned</h3>
-          <p>At 6.2″ the pixels undersample the PSF, so where a source sits inside a pixel changes how its light splits between pixels. We shift the 10× PSF to the source's sub-pixel position, then sum it into 9 × 9 native pixels. Binning first and shifting after loses 6–9% of the flux, worst on the sharp blue detectors.</p>
-          <h3>Point source, fixed position</h3>
-          <p>The Euclid (or Legacy) position goes through the frame's WCS. The galaxies are a fraction of a pixel (I<sub>E</sub> 19–20: ~0.75″), so a point source is the model.</p>
-        </div>
-        <div class="steps" style="left:640px;top:142px;width:600px;">
-          <h3>One free parameter: the flux</h3>
-          <p>Background already subtracted, sky fixed at zero, position and PSF frozen. What is left is a weighted linear fit of the PSF <i>P</i> to the 33 × 33 px stamp <i>d</i>:</p>
-          <div style="font-size:24px;margin:4px 0 12px;">\[ \hat F = \frac{\sum_i w_i P_i d_i}{\sum_i w_i P_i^2}, \qquad \sigma_F = \Big(\sum_i w_i P_i^2\Big)^{-1/2} \]</div>
-          <p>Tractor does this solve (a full fit and the closed form agree to float precision). Flagged pixels get <i>w</i> = 0. Weights: 1/variance in the Euclid catalogue; in the all-sky final run a clipped variance, because the shipped variance uses each pixel's own noise and biases every flux low.</p>
-          <h3 class="next">Then many times over</h3>
-          <p>One flux and error per target per frame, hundreds per target, each with its own wavelength from where it fell on the filter; co-added onto 77 channels.</p>
-        </div>
-        <p class="soft" style="position:absolute;left:40px;top:640px;width:1200px;margin:0;font-size:17px;line-height:1.4;">Checked against IRSA's own spectrophotometry tool: flux scale 1.036, no trend with wavelength. What the model cannot do: large galaxies lose light outside the PSF, and a neighbour inside the PSF adds its own (no neighbours are fitted).</p>
-        <aside class="notes">Code: spherex-allsky src/spectra/extract_spectra.py (psf_zone, native_psf, measure_target, measure_stamp); the Euclid extractor (euclid-spherex src/spectra/extract_spectra.py) has the same psf_zone, native_psf and Tractor call.
-PSF: the L2B frame's PSF extension is a cube of 121 zones on an 11 × 11 grid over the detector, each 101 × 101 at 10× oversampling (centre index 50); the mission builds it from more than 1,000 stars per zone and band (SPHEREx pipeline paper, as summarised in spherex-allsky docs/SPHEREX_ONLINE_2026-10-02.md). psf_zone picks the zone whose centre (XCTR_n, YCTR_n) is nearest the source's detector position. The PSF is not interpolated between zones; tractorjax blends neighbouring zones bilinearly, effect unquantified.
-Zone off-by-two (issue #63): the zone centres are 1-based; the Euclid extractor and allsky_v1 compared them with sx − 1 instead of sx + 1, which picks the neighbouring zone for ~2% of positions; on 120 real observations one flux changed. Fixed in the all-sky final run (--psf-zone-onebased); not re-run on Euclid.
-Sub-pixel placement (native_psf): the oversampled zone PSF is shifted by the source's sub-pixel offset (dx, dy) × 10 with a cubic spline, then 10 × 10 blocks are summed into a 9 × 9 native-pixel stamp, normalised to unit sum. The source is then pinned at the integer pixel so Tractor applies no further shift. The comment in the code: block-reducing first and letting Tractor Lanczos-shift the native stamp "smears and loses ~6-9% of the flux (worst for the sharp blue detectors)". This is the "PSF undersampling fix" settled in the UNIONS predecessor, and it reproduces the official IRSA/Level-3 fluxes. The code refuses any PSF header whose oversampling is not 10 (EXT-24), rather than mis-sample.
-Fit: Tractor Image with data = stamp minus background, invvar = weights, PixelizedPSF(native PSF), ConstantSky(0), LinearPhotoCal(1); PointSource at the integer pixel with position frozen, image parameters frozen; tr.optimize_forced_photometry(variance=True). With only the flux free this is linear least squares: F = Σ w P d / Σ w P², error from the inverse variance Σ w P². DECISIONS 2026-10-07 (EXT-67): a direct weighted solve f = Σ(wPd)/Σ(wP²) equals the full Tractor fit to float precision, which is how the second (F4c) flux is computed cheaply. If nothing constrains the fit (every pixel under the PSF masked, e.g. the D3/D4 band edge at 2.40-2.44 µm) the observation is reported as failed rather than given the seed flux.
-Weights (issue #47): the L2 VARIANCE's Poisson term is computed from each pixel's own measured signal, so 1/VARIANCE down-weights pixels that fluctuated high and every flux is biased low by a detector-dependent constant (blank sky −1 to −2 µJy on D1-D4, −9 on D5, −17 on D6), the same on every visit, so co-adding does not remove it. The all-sky final run uses "clip3": VARIANCE − g·clip(d, ±3σ), which removes the pixel's own signal and noise for faint sources and leaves bright ones essentially unchanged. The Euclid catalogue uses plain 1/VARIANCE.
-Also recorded per observation: an aperture flux inside r = 3 px (a diagnostic of how much light a point-source model misses on extended galaxies), the wavelength and bandwidth at the source pixel from the frame's wavelength WCS, flags, and fit-quality statistics.
-Validation against IRSA (Euclid report, pilot): after the PSF correction the two agree to an inverse-variance-weighted flux scale of 1.036 with a median pull of +0.075, and no residual trend with wavelength; a few-per-cent grey offset is absorbed by the zero points and the template normalisation.
-Limits: extended galaxies lose flux to the point-source model (bright extended Euclid galaxies 30-40%; in the all-sky run galaxies above 3″ lose a median 29%, and the loss is not grey above 4 µm). No neighbours are modelled, so a neighbour inside the 6″ PSF adds its light (some catastrophic failures show this); joint neighbour fitting was tested in the tractorjax audit and not adopted, for speed.</aside>
-      </section>
-
-      <!-- background 1 · what is in a pixel -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>Every SPHEREx pixel is mostly foreground</h2>
-        <img src="fig/background/zodi_residual_levels.png" alt="Sky minus the ZODI model as a fraction of ZODI per co-add channel from 0.75 to 5 microns, QR2 median at |b| above 30 with 16-84 percent band, and the R7 reprocessing" style="position:absolute;left:40px;top:118px;width:700px;">
-        <p class="caption" style="position:absolute;left:40px;top:470px;width:700px;margin:0;text-align:left;">What is left after the shipped zodiacal model is subtracted, as a fraction of that model, per channel (all-sky QR2 frames, |b| &gt; 30). The spike at 1.083 µm is He I airglow.</p>
-        <div class="steps" style="left:780px;top:118px;width:460px;">
-          <h3>Zodiacal light comes modelled</h3>
-          <p>Every L2B frame carries a ZODI plane (Kelsall et al. 1998 model, Tsumura et al. 2013 scaling). It is <b>not</b> subtracted from the image: that is left to the user.</p>
-          <h3>The model is not the whole sky</h3>
-          <p>At |b| &gt; 30, sky − ZODI is still 20–40% of ZODI: 60–300 µJy on a point-source flux, as bright as a faint target. Plus He I airglow at 1.083 µm, and bright-star halos.</p>
-          <h3 class="next">So we subtract it before the fit</h3>
-          <p>Tractor is given a sky fixed at zero. The only free parameter is the source's flux, at the fixed Euclid position with the frame's PSF.</p>
-        </div>
-        <aside class="notes">Every SPHEREx L2B frame has IMAGE, VARIANCE, FLAGS, ZODI and PSF extensions plus a wavelength WCS. The ZODI plane is the zodiacal-light model (Kelsall 1998 + Tsumura 2013 scaling); the mission paper (arXiv:2511.15823) says it is not subtracted from IMAGE. SPHEREx's own Level-3 plan is a zodi spectral fit then photutils Background2D; we do not use L3.
-Residual after ZODI (spherex-allsky results/zodi75/README.md, figure zodi75/levels.png): sky − ZODI is 0.032-0.096 MJy/sr, 21-40% of ZODI at |b| &gt; 30, i.e. roughly 60-300 µJy on a PSF flux. So a background step is not optional.
-Design shared by every pipeline here: the background is subtracted from the stamp BEFORE the Tractor fit (ConstantSky(0) and frozen image parameters, euclid-spherex src/spectra/extract_spectra.py:279), and the fit solves only for the flux at the fixed Euclid position. A free sky per stamp was rejected in the all-sky work: without neighbours modelled it biases single-source fluxes 6-9% low (tractorjax audit, 2026-10-04).</aside>
-      </section>
-
-      <!-- background 2 · the Euclid catalogue's method -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>The September Euclid catalogue: ZODI model, then a ring median</h2>
-        <div class="steps" style="left:40px;top:118px;width:420px;">
-          <p><b>1.</b> Cut a 33 × 33 px stamp (6.15″ pixels) round the Euclid position.</p>
-          <p><b>2.</b> sky = IMAGE − ZODI.</p>
-          <p><b>3.</b> Take the ring 4–6 px out (25–37″). Drop pixels with a defect bit or the MP_SOURCE flag (on a known source).</p>
-          <p><b>4.</b> Background = median of the ring if ≥ 4 pixels survive, <b>otherwise zero</b>.</p>
-          <p><b>5.</b> Fit the PSF flux to sky − background, weights 1/variance.</p>
-          <p class="soft">The frozen UNIONS choice, used by the September Euclid catalogue and the first all-sky run. v2 replaced it with the per-frame map.</p>
-        </div>
-        <img src="fig/background/annulus_stamp.png" alt="Two SPHEREx stamps with the 4 and 6 pixel rings drawn: left, every ring pixel is flagged MP_SOURCE so nothing is subtracted; right, a normal ring with 38 usable pixels" style="position:absolute;left:490px;top:112px;width:750px;">
-        <p class="caption" style="position:absolute;left:490px;top:500px;width:750px;margin:0;text-align:left;">Two real stamps, same method (all-sky run). <b>Right:</b> an ordinary ring, 38 usable pixels (green circles). <b>Left:</b> 0.6 halo radii from a bright star, every ring pixel is flagged MP_SOURCE (crosses): nothing is subtracted, and the flux reads 0.430 mJy instead of 0.298.</p>
-        <aside class="notes">Code: euclid-spherex src/spectra/extract_spectra.py lines 228-238 (read for this slide): sky = img − zodi; annulus = r_in ≤ r ≤ r_out, usable (finite, no defect bit) and not MP_SOURCE (FLAGS bit 21); bg = median(sky[ann]) if n_ann ≥ 4 else 0.0; data = sky − bg; Tractor Image with ConstantSky(0). Defaults --win 16 (33 px stamp), --r-in 4, --r-out 6, --r-ap 3. Defect bits 0,1,2,4,5,6,7,9,10,11,14,15,17,19 (19 = OUTLIER is masked here). Weights plain 1/VARIANCE.
-Why this choice for Euclid: astra.yaml decision background_subtraction, default zodi_model_plus_annulus, rationale "the frozen UNIONS choice, validated against IRSA". The alternatives listed there (ZODI only, local only) were not run on Euclid. The per-observation background (bkg_annulus) and ZODI (zodi_median) are recorded, which is what the next-but-one slide tests.
-The figure is from the all-sky run (spherex-allsky results/figures/fig_halo_stamp.png), which used exactly this method in allsky_v1. Left: target at 0.62 r(Ks) from a bright star, D4, 3.01 µm, zero usable ring pixels; the method subtracts 0 and the flux is 0.430 mJy; a clipped-median fallback over the same ring with MP_SOURCE pixels kept (F4) subtracts 0.035 MJy/sr and gives 0.298 mJy. Right: D3 1.99 µm, 38 usable pixels, both give 0.369 mJy.</aside>
-      </section>
-
-      <!-- background 3 · where the ring fails -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>Where the ring fails: inside a bright star's halo</h2>
-        <img src="fig/background/halo_frame_d1.png" alt="A SPHEREx D1 frame round a bright star: the whole frame, a zoom on the halo, and the MP_SOURCE flag map with a large flagged disc" style="position:absolute;left:40px;top:108px;width:860px;">
-        <img src="fig/background/halo_fallback.png" alt="Share of observations with no background subtracted against distance from the star in halo radii, for the 2025 and 2026 processing, and the flagged disc radius against star magnitude" style="position:absolute;left:40px;top:420px;width:860px;">
-        <div class="steps" style="left:930px;top:118px;width:310px;">
-          <h3>The flag swallows the ring</h3>
-          <p>The pipeline flags a whole disc round a bright star as MP_SOURCE (blue, top right). Inside it the ring has no usable pixels.</p>
-          <h3>So nothing is subtracted</h3>
-          <p>Below: the share of observations left with no background, against distance in halo radii r(Ks). Near 100% inside half a radius.</p>
-          <h3 class="next">The star's light becomes the galaxy's</h3>
-          <p>Within r(Ks): <b>22.8%</b> outliers. With a fallback that keeps the flagged pixels: <b>3.8%</b>.</p>
-        </div>
-        <aside class="notes">Top: spherex-allsky results/figures/fig_halo_frames.png, first row only: a D1 frame (v20, 0.90 µm at the star), sky − ZODI on a symmetric log stretch; the zoom, ±0.4°; the MP_SOURCE map (blue) with the large disc. The bright band at the bottom of the first panel is the He I airglow row, the subject of the He I slide.
-Bottom: fig_halo_fallback.png. (a, b) Share of observations whose annulus was empty, so nothing was subtracted, against distance from the star in units of r(Ks) = 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, for the 2025 (v20) and 2026 (v24) processing. (c) The flagged disc's radius in units of r(Ks) against Ks.
-Numbers (results/halomech/halo_stars_score.json, all-sky, 3 stars, 22,425 targets): inside r(Ks) the outlier fraction η0.15 fell from 22.8% to 3.8% with the F4 fallback (clipped median over the same ring with the flagged pixels kept); failed fits 11.7% → 5.8%; far from the stars unchanged (3.0% → 3.2%). The excess of galaxies fitted into the 0.6-0.7 shell near the stars fell from 16.8× the field to 1.4×.
-For the Euclid catalogue (same method): the galaxy sample drops objects within 45″ of Gaia G &lt; 13 stars. For comparison r(Ks) is 0.1° = 6′ at Ks = 5.5 and the flagged disc reaches ~0.3-0.8 r(Ks), so the 45″ veto covers only the cores of the brightest stars. The rings round bright stars in the high-z Euclid movie (backups) are this effect. Not re-measured on Euclid.</aside>
-      </section>
-
-      <!-- background 4 · what it does to the Euclid catalogue -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>In the September Euclid catalogue the leftover background was visible</h2>
-        <img src="fig/background/euclid_bkg_nulls.png" alt="Euclid catalogue redshift scatter, outlier fraction and bias across quintiles of the zodiacal model brightness and of the ring background" style="position:absolute;left:40px;top:112px;width:760px;">
-        <table class="tight num" style="position:absolute;left:40px;top:410px;width:760px;margin:0;">
-          <tbody><tr><th>ring background quintile (MJy/sr)</th><th><span style="text-transform:none">σ</span><sub>NMAD</sub> galaxy</th><th><span style="text-transform:none">σ</span><sub>NMAD</sub> quality</th></tr>
-          <tr><td>0.030–0.037</td><td>0.0109</td><td>0.0090</td></tr>
-          <tr><td>0.037–0.039</td><td>0.0102</td><td>0.0088</td></tr>
-          <tr><td>0.039–0.041</td><td>0.0102</td><td>0.0088</td></tr>
-          <tr><td>0.041–0.044</td><td>0.0106</td><td>0.0091</td></tr>
-          <tr><td><b>0.044–0.289</b></td><td><b>0.0150</b></td><td><b>0.0125</b></td></tr>
-        </tbody></table>
-        <div class="steps" style="left:830px;top:118px;width:410px;">
-          <h3>Recorded per observation</h3>
-          <p>What the ring subtracted (<code>bkg_annulus</code>) and what the model said (<code>zodi_median</code>), so the catalogue can be tested against both.</p>
-          <h3>Redshifts</h3>
-          <p>Flat across four quintiles; worse by 40% in the top fifth, where the ring sees the most unmodelled light.</p>
-          <h3 class="next">Clustering</h3>
-          <p>The worst survey-property template: residual S<sub>1D</sub> = 81 after the weights (0.4–0.5 shell). Not regressed yet.</p>
-        </div>
-        <aside class="notes">Euclid report final_2026-09-28 §9.6 (Figure 27 and its table, read for this slide), truth-matched objects, about 23,100 per quintile. zodi_median: median of the ZODI model within 6 px of the target. bkg_annulus: what the ring actually subtracted after ZODI; its map averages 0.042 ± 0.0045 MJy/sr over the mask. A high value means diffuse light the model does not describe: model error, scattered light, the glow of faint sources and the outskirts of extended galaxies near the target.
-Quintile table (σ all / σ quality / quality kept): 0.0302-0.0372: 0.0109 / 0.0090 / 81.7%; 0.0372-0.0392: 0.0102 / 0.0088 / 85.5%; 0.0392-0.0411: 0.0102 / 0.0088 / 85.9%; 0.0411-0.0439: 0.0106 / 0.0091 / 85.2%; 0.0439-0.289: 0.0150 / 0.0125 / 84.4%. The report reads this as "flat to within what magnitude alone explains"; the top quintile is the exception worth showing. Across zodi_median the scatter rises 0.0096 → 0.0122 (galaxy), which follows ecliptic latitude, i.e. SPHEREx depth.
-Clustering (report §9.9-9.10): bkg_annulus is the worst diagnostic template, S1D 95.5 unweighted and 81.3 after the ISD weights in the 0.40-0.50 shell; n_obs 39, zodi 18. They are tested but not regressed in fiducial_plus_euclid_depth; the plus_ir universe would regress them.</aside>
-      </section>
-
-      <!-- background 4b · tractorjax-spherex -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>tractorjax-spherex, and what we took from it</h2>
-        <svg viewBox="-10 0 1170 590" width="1160" height="585" style="position:absolute;left:60px;top:124px;" role="img" aria-label="Flowchart of the tractorjax-spherex pipeline: IRSA cutouts, a Legacy source list and PSF; per cutout a background of ZODI, a 48-bin wavelength profile and a Background2D map, tiles with a free sky constant; a joint fit of all sources, fluxes per visit, binning to channels and photo-z; coloured by what our pipeline took, changed, rejected or did not adopt">
-          <defs><marker id="tjar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#596273"/></marker></defs>
-          <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#111318" text-anchor="middle">
-            <text x="44" y="14" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">INPUTS</text>
-            <rect x="0" y="22" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100" y="46" font-size="16" font-weight="700">IRSA cutouts</text>
-            <text x="100" y="65" font-size="14">per field, via</text>
-            <text x="100" y="84" font-size="14">spherex-retrieval</text>
-            <text x="100" y="103" font-size="14">(not whole frames)</text>
-            <rect x="237" y="22" width="200" height="96" rx="6" fill="#fff" stroke="#8a93a3" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="337" y="46" font-size="16" font-weight="700">source list</text>
-            <text x="337" y="65" font-size="14">every Legacy source</text>
-            <text x="337" y="84" font-size="14">z &lt; 21 + the targets,</text>
-            <text x="337" y="103" font-size="14">Legacy shapes ⊗ PSF</text>
-            <rect x="474" y="22" width="200" height="96" rx="6" fill="#fff" stroke="#8a93a3" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="574" y="46" font-size="16" font-weight="700">PSF</text>
-            <text x="574" y="65" font-size="14">zone kernels blended</text>
-            <text x="574" y="84" font-size="14">at the tile centre;</text>
-            <text x="574" y="103" font-size="14">R7 ePSF option</text>
-            <line x1="202" y1="70" x2="233" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="439" y1="70" x2="470" y2="70" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <path d="M 574 120 V 145 H 22 V 166" fill="none" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <text x="44" y="162" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">PER CUTOUT: BACKGROUND</text>
-            <rect x="0" y="170" width="200" height="96" rx="6" fill="#cfe0f7" stroke="#1f5fbf" stroke-width="3.5"/>
-            <text x="100" y="194" font-size="16" font-weight="700">− ZODI</text>
-            <text x="100" y="213" font-size="14">the shipped</text>
-            <text x="100" y="232" font-size="14">zodiacal model</text>
-            <rect x="237" y="170" width="200" height="96" rx="6" fill="#cfe0f7" stroke="#1f5fbf" stroke-width="3.5"/>
-            <text x="337" y="194" font-size="16" font-weight="700">− B(λ)</text>
-            <text x="337" y="213" font-size="14">median sky vs pixel</text>
-            <text x="337" y="232" font-size="14">wavelength,</text>
-            <text x="337" y="251" font-size="14">48 bins per cutout</text>
-            <rect x="474" y="170" width="200" height="96" rx="6" fill="#cfe0f7" stroke="#1f5fbf" stroke-width="3.5"/>
-            <text x="574" y="194" font-size="16" font-weight="700">− local map</text>
-            <text x="574" y="213" font-size="14">Background2D, box 10,</text>
-            <text x="574" y="232" font-size="14">filter 3; photutils'</text>
-            <text x="574" y="251" font-size="14">default exclusion</text>
-            <rect x="711" y="170" width="200" height="96" rx="6" fill="#fff" stroke="#8a93a3" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="811" y="194" font-size="16" font-weight="700">tiles</text>
-            <text x="811" y="213" font-size="14">15 px + 3 px halo</text>
-            <text x="811" y="232" font-size="14">over the cutout</text>
-            <rect x="948" y="170" width="200" height="96" rx="6" fill="#fff" stroke="#b03030" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="1048" y="194" font-size="16" font-weight="700">free sky per tile</text>
-            <text x="1048" y="213" font-size="14">a constant fitted</text>
-            <text x="1048" y="232" font-size="14">with the fluxes</text>
-            <line x1="202" y1="218" x2="233" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="439" y1="218" x2="470" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="676" y1="218" x2="707" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="913" y1="218" x2="944" y2="218" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <path d="M 1048 268 V 293 H 22 V 314" fill="none" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <text x="44" y="310" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">FIT AND PRODUCTS</text>
-            <rect x="0" y="318" width="200" height="96" rx="6" fill="#fff" stroke="#8a93a3" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="100" y="342" font-size="16" font-weight="700">joint fit</text>
-            <text x="100" y="361" font-size="14">all sources in a tile</text>
-            <text x="100" y="380" font-size="14">together; JAX on</text>
-            <text x="100" y="399" font-size="14">GPU or CPU</text>
-            <rect x="237" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="337" y="342" font-size="16" font-weight="700">one flux per source</text>
-            <text x="337" y="361" font-size="14">per visit; λ, Δλ;</text>
-            <text x="337" y="380" font-size="14">χ² flag (&gt; 10× the</text>
-            <text x="337" y="399" font-size="14">median)</text>
-            <rect x="474" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574" y="342" font-size="16" font-weight="700">bin to channels</text>
-            <text x="574" y="361" font-size="14">inverse-variance mean,</text>
-            <text x="574" y="380" font-size="14">no clip (102 in</text>
-            <text x="574" y="399" font-size="14">the paper)</text>
-            <rect x="711" y="318" width="200" height="96" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811" y="342" font-size="16" font-weight="700">photo-z</text>
-            <text x="811" y="361" font-size="14">eazy-py</text>
-            <text x="811" y="380" font-size="14">(paper, on simulated</text>
-            <text x="811" y="399" font-size="14">images)</text>
-            <line x1="202" y1="366" x2="233" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="439" y1="366" x2="470" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <line x1="676" y1="366" x2="707" y2="366" stroke="#596273" stroke-width="2" marker-end="url(#tjar)"/>
-            <rect x="-8" y="438" width="1164" height="140" rx="8" fill="#f3f5f8"/>
-            <text x="6" y="462" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">WHAT WE DID WITH IT</text>
-            <rect x="6" y="476" width="34" height="18" rx="3" fill="#cfe0f7" stroke="#1f5fbf" stroke-width="3.5"/>
-            <text x="52" y="490" font-size="15" text-anchor="start">Taken, then changed: one map per whole frame with 288 wavelength bins (follows He I) · halo-aware mask near Ks &lt; 8 stars · 50% exclusion</text>
-            <rect x="6" y="501" width="34" height="18" rx="3" fill="#fff" stroke="#b03030" stroke-width="2" stroke-dasharray="5 3"/>
-            <text x="52" y="515" font-size="15" text-anchor="start">Rejected: the free sky per tile; without neighbours in the fit it biases single-source fluxes 6–9% low</text>
-            <rect x="6" y="526" width="34" height="18" rx="3" fill="#fff" stroke="#8a93a3" stroke-width="2" stroke-dasharray="5 3"/>
-            <text x="52" y="540" font-size="15" text-anchor="start">Not adopted (yet): joint neighbour fitting (better in crowds, kept single-source for speed); R7 ePSF (our extractor reads QR2)</text>
-            <rect x="6" y="551" width="34" height="18" rx="3" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="52" y="565" font-size="15" text-anchor="start">Their own products, shown for completeness: we keep our stamp fit, 77-channel co-add and eazy configuration</text>
-          </g>
-        </svg>
-        <aside class="notes">tractorjax-spherex (Bahk et al. 2026, arXiv:2606.19875; code hbahk/tractorjax-spherex 0.3.3 at 9266a19 with spherex-retrieval 0.4.0). The stages are from their code as read in our audit (spherex-allsky results/tractorjax/README.md, issue #65; results/bkgmap/README.md, #64; docs/SPHEREX_ONLINE_2026-10-02.md). The paper itself validates on simulated images (SPHEREx Sky Simulator, 21 × 21 px cutouts, a pre-launch PSF, zodi-only background) and does not describe the background map, the tiles, the free sky or JAX: those come from the code. The clones are on nibi, not on this laptop.
-Inputs: IRSA cutouts per field via spherex-retrieval, not whole frames (code defaults attach the R7 ePSF and the R7 l3 gain; their paper configuration uses the QR2 PSF cube, gain off). Source list: every Legacy source with m_z &lt; 21 plus the targets, with fixed Legacy Sérsic shapes convolved with the PSF.
-Background per cutout: ZODI + a PCHIP profile through 48 quantile bins of per-pixel wavelength (≥ 20 px per bin) + photutils Background2D, box 10, filter 3, otherwise defaults (exclude_percentile 10); mask = their mask bits (including OUTLIER) | MP_SOURCE | bad variance.
-Fit: 15 px tiles with a 3 px halo, all sources in a tile fitted jointly with a free sky constant per tile; PSF zone kernels blended bilinearly at the tile centre; 1/variance weights; tractor-jax (JAX, GPU or CPU) with their eigfloor solver, or a CPU linear-solver backend. Output: a flux and error per source per visit, λ/Δλ, a χ² quality flag (&gt; 10× the source median). Spectral product: inverse-variance binning onto channels, flagged visits dropped, no clip; the paper averages onto 102 channels and runs eazy-py.
-What we did (DECISIONS 2026-10-04 and 2026-10-07; results/tractorjax, results/bkgmap): TAKEN, their background map. Swapped alone into our fit on 1,038 DESI galaxies it gave Δσ_NMAD −1.70 × 10⁻³ and Δη −0.96%. CHANGED: 288 wavelength bins over whole frames instead of 48 per cutout (with 48 bins over a whole frame the He I edge leaked, which carried 85% of the gap; the fixed port recovers 81% of their gain); the halo-aware mask inside Ks &lt; 8 2MASS discs; exclude_percentile 50 (at 30-55% flagged pixels the default kept only 2-24% of boxes, causing the detector-edge residual, #80); wavelengths from the frame's own WCS; no R7 gain; our defect mask. REJECTED: the free sky constant per tile, which without neighbours modelled biases single-source fluxes 6-9% low (−0.84σ). NOT ADOPTED: joint neighbour fitting (fixes crowded fluxes and gave Δσ −2.37 × 10⁻³ in the audit, but kept single-source for speed, EXT-62/EXT-16); the R7 ePSF (our extractor cannot read R7 frames, #24); OUTLIER masking (+3.0% outliers); their PSF core shift (+0.9-1.7% flux, #62).</aside>
-      </section>
-
-      <!-- background 5 · the all-sky final map -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>All-sky final run: one background map per frame</h2>
-        <svg viewBox="0 0 1200 170" width="1200" height="170" style="position:absolute;left:40px;top:104px;">
-          <defs><marker id="bkar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#596273"/></marker></defs>
-          <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#111318" text-anchor="middle">
-            <rect x="0" y="20" width="200" height="130" rx="6" fill="#f3f5f8" stroke="#596273" stroke-width="1.5"/>
-            <text x="100" y="62" font-size="19" font-weight="700">IMAGE</text>
-            <text x="100" y="90" font-size="15">the calibrated</text>
-            <text x="100" y="110" font-size="15">L2B frame</text>
-            <rect x="250" y="20" width="200" height="130" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="350" y="62" font-size="19" font-weight="700">− ZODI</text>
-            <text x="350" y="90" font-size="15">the shipped</text>
-            <text x="350" y="110" font-size="15">zodiacal model</text>
-            <rect x="500" y="20" width="200" height="130" rx="6" fill="#e6eefa" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="600" y="62" font-size="19" font-weight="700">− B(λ)</text>
-            <text x="600" y="90" font-size="15">median sky vs pixel</text>
-            <text x="600" y="110" font-size="15">wavelength, 288 bins</text>
-            <text x="600" y="130" font-size="15">sources masked</text>
-            <rect x="750" y="20" width="200" height="130" rx="6" fill="#e6eefa" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="850" y="62" font-size="19" font-weight="700">− local map</text>
-            <text x="850" y="90" font-size="15">10 px boxes, 3σ clip,</text>
-            <text x="850" y="110" font-size="15">halo-aware mask</text>
-            <rect x="1000" y="20" width="200" height="130" rx="6" fill="#fff" stroke="#111318" stroke-width="2"/>
-            <text x="1100" y="62" font-size="19" font-weight="700">= sky to fit</text>
-            <text x="1100" y="90" font-size="15">point-source flux</text>
-            <text x="1100" y="110" font-size="15">at fixed position</text>
-            <line x1="202" y1="85" x2="246" y2="85" stroke="#596273" stroke-width="2" marker-end="url(#bkar)"/>
-            <line x1="452" y1="85" x2="496" y2="85" stroke="#596273" stroke-width="2" marker-end="url(#bkar)"/>
-            <line x1="702" y1="85" x2="746" y2="85" stroke="#596273" stroke-width="2" marker-end="url(#bkar)"/>
-            <line x1="952" y1="85" x2="996" y2="85" stroke="#596273" stroke-width="2" marker-end="url(#bkar)"/>
-          </g>
-        </svg>
-        <img src="fig/background/hei_profile.png" alt="Sky minus ZODI against pixel wavelength round 1.083 microns in one D1 frame, showing the He I line 27 nm wide on a flat ZODI model, and the same in 300 frames" style="position:absolute;left:40px;top:300px;width:720px;">
-        <div class="steps" style="left:790px;top:296px;width:450px;">
-          <h3>Why a wavelength layer</h3>
-          <p>On the filter, wavelength is a curve across the detector, and the sky has spectral lines. He I is 27 nm wide; at 48 bins per frame (the published default) each bin is 8 nm and the line's edge leaks. 288 bins follow it.</p>
-          <h3 class="next">Why halo-aware</h3>
-          <p>Inside the disc of a Ks &lt; 8 star the MP_SOURCE flag is ignored for the local map, so the map sees the halo and removes it. The star's core and compact sources stay masked.</p>
-        </div>
-        <aside class="notes">This is "tjhec": the tractorjax-spherex background (Bahk et al. 2026, arXiv:2606.19875) with two changes of ours. Code: spherex-allsky src/spectra/extract_spectra.py, tjmap_background (line 367) and frame_background; the profile sets bkg_model="tjhec" (src/run_profiles.py). Built once per frame and subtracted pixel by pixel; no ring term enters the flux.
-Layers: (1) ZODI. (2) B(CWAVE): the median of IMAGE − ZODI in quantile bins of per-pixel central wavelength (from the frame's own wavelength WCS on an 8 px grid), 288 bins per frame, at least 20 px per bin, interpolated with PCHIP; all MP_SOURCE pixels masked for this layer. (3) photutils Background2D on what remains: box 10 px, filter 3, 3σ clip, SExtractor estimator, exclude_percentile 50 (photutils default 10).
-Halo-aware mask: inside the bright-star veto disc (radius 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°) of 2MASS stars with Ks &lt; 8 (1,341,326 stars), MP_SOURCE pixels are un-masked for the Background2D step; still masked: the star core (inside 0.1 of the radius), MP_SOURCE components smaller than 1,500 px, and pixels within 2 px of a &gt;3σ excess over a 15×15 local mean. Ks &lt; 8 rather than 6 because the deep flagged discs outside the Ks &lt; 6 vetoes are mostly Ks 6-8 stars (DECISIONS 2026-10-07).
-He I: in a whole D1 frame 48 bins are 0.008 µm wide while the 1.083 µm edge rises 20× in about 0.015 µm; that left ±0.04-0.17 MJy/sr, and the 6.5% of observations affected carried 85% of the redshift gap. 288 bins recovered 81% of the gain (results/bkgmap/port_diag.json, disc288_score.json). Figure: results/figures/fig_hei_profile.png (FWHM 27.0 nm against a pixel bandwidth of 29 nm; right panel, 300 D1 frames). The fit also masks co-add channels 14-15 (ZP-42).
-Large SGA galaxies are the exception: their extended-model fit (Msky) uses IMAGE − ZODI with its own free flat sky, because the 10 px boxes are about the size of a large galaxy and would remove its outskirts.</aside>
-      </section>
-
-      <!-- background 6 · choosing -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>Choosing the background on DESI redshifts</h2>
-        <table class="tight num" style="position:absolute;left:40px;top:118px;width:720px;margin:0;">
-          <tbody><tr><th>background</th><th>what it is</th><th>cell 1</th><th>cell 2</th><th>cell 3</th></tr>
-          <tr><td>F4</td><td>ring median; clipped median with flagged pixels inside halos</td><td>0.0145</td><td>0.0155</td><td>0.0114</td></tr>
-          <tr><td>F4c</td><td>F4 + 3σ-clipped fit weights</td><td>0.0140</td><td>0.0153</td><td>0.0105</td></tr>
-          <tr><td><b>tjhec</b></td><td><b>per-frame map (previous slide), clipped weights</b></td><td><b>0.0126</b></td><td><b>0.0138</b></td><td><b>0.0098</b></td></tr>
-        </tbody></table>
-        <p class="caption" style="position:absolute;left:40px;top:300px;width:720px;margin:0;text-align:left;">σ<sub>NMAD</sub> of all fitted DESI galaxies, three all-sky cells re-measured on identical pixels. tjhec is also the best inside halos in every cell.</p>
-        <div class="steps" style="left:800px;top:118px;width:440px;">
-          <h3>What it costs</h3>
-          <p>~3 s per frame, about 5% of the extraction.</p>
-          <h3 class="next">What it does not fix</h3>
-          <p>Blank sky reads +3 to +8 µJy per observation (F4c +1 to +3). Deep inside halos, +19 to +38 µJy. The blue wing of He I on D2 is not followed. Frames that are entirely flagged (1.7%) get no wavelength layer.</p>
-        </div>
-        <ul style="position:absolute;left:40px;top:370px;width:720px;margin:0;">
-          <li>About 10% lower scatter than the ring in all three cells</li>
-          <li>The ring flux (F4c) is still stored for every observation, so the choice can be revisited without re-extracting</li>
-          <li>It failed part of its own pre-registered test; adopted anyway on the DESI scatter</li>
-        </ul>
-        <aside class="notes">DECISIONS.md 2026-10-07, "Background: tjhec everywhere (EXT-20 refined), F4c stored only if free (EXT-67)", read for this slide. Cells d009 / d011 / d008, all fitted DESI galaxies, evidence in results/bkgstudy/ (issues #64, #80).
-F4 is the ring median with a fallback: when fewer than 4 clean ring pixels survive, a 3σ MAD-clipped median (3 iterations) over the same 4-6 px ring with MP_SOURCE pixels kept. F4c adds the clip3 weights (EXT-64): variance minus g·clip(d, ±3σ). tjhec is the map of the previous slide, also with clip3.
-Known limits, from the decision: (1) failed its own pre-registered test: halo-bin flux +9.8 µJy over F4 (about +6 of it clip3's own offset), D5 red edge −2.3 (every arm), one large miss on d009; (2) blank-sky zero point +2.9 to +7.6 µJy per observation D1-D6, against F4c +1.3 to +3.1; (3) deep inside halos blank positions still read +19 to +38 µJy; (4) deep discs outside every Ks &lt; 6 veto read +113 to +185 µJy in every map arm (hence Ks &lt; 8 the same day); (5) D2 He I blue-edge wing not followed; (6) outside halos on d008 the edge fix is slightly worse than the stock map (0.0102 vs 0.0100), unexplained.
-Overturned by: a held-out or pilot cell where tjhec is worse than F4c on DESI by more than 0.0005.
-All-source frames (EXT-80, DECISIONS): ~1.7% of footprint frames are almost entirely MP_SOURCE (inside the brightest IR stars' discs); there the wavelength profile is missing and He I stays in (D1 −57 µJy in Orion). Kept and measured; tjhec, F4c or a veto is chosen per frame at the release co-add.</aside>
-      </section>
-
-      <!-- background 6b · flowchart -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>Background subtraction, step by step</h2>
-        <svg viewBox="-10 0 1170 590" width="1160" height="585" style="position:absolute;left:60px;top:124px;" role="img" aria-label="Flowchart of the background subtraction: per frame, the ZODI model, a wavelength profile and a local map make a background map; per target, the map is subtracted from a stamp before the Tractor flux fit, co-add and redshift fit; side branches for the ring diagnostic and large galaxies; and the Euclid catalogue's simpler per-stamp path">
-          <defs><marker id="fcar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#596273"/></marker></defs>
-          <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#111318" text-anchor="middle">
-            <text x="0" y="40" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">PER FRAME, ONCE</text>
-            <rect x="474" y="0" width="674" height="54" rx="6" fill="#fdf1f1" stroke="#b03030" stroke-width="1.5"/>
-            <text x="811" y="21" font-size="15" font-weight="700">Near a bright star (2MASS Ks &lt; 8), inside its disc r(Ks):</text>
-            <text x="811" y="42" font-size="14">flagged pixels are kept, so the map removes the halo; the core stays masked</text>
-            <line x1="811" y1="52" x2="811" y2="66" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <rect x="0" y="70" width="200" height="100" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100.0" y="94" font-size="16" font-weight="700">L2B frame</text>
-            <text x="100.0" y="114" font-size="14">IMAGE, ZODI, FLAGS,</text>
-            <text x="100.0" y="134" font-size="14">VARIANCE,</text>
-            <text x="100.0" y="154" font-size="14">wavelength per pixel</text>
-            <rect x="237" y="70" width="200" height="100" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="337.0" y="94" font-size="16" font-weight="700">sky = IMAGE − ZODI</text>
-            <text x="337.0" y="114" font-size="14">remove the shipped</text>
-            <text x="337.0" y="134" font-size="14">zodiacal-light model</text>
-            <rect x="474" y="70" width="200" height="100" rx="6" fill="#e6eefa" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574.0" y="94" font-size="16" font-weight="700">− B(λ)</text>
-            <text x="574.0" y="114" font-size="14">median sky vs pixel</text>
-            <text x="574.0" y="134" font-size="14">wavelength, 288 bins;</text>
-            <text x="574.0" y="154" font-size="14">sources masked</text>
-            <rect x="711" y="70" width="200" height="100" rx="6" fill="#e6eefa" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811.0" y="94" font-size="16" font-weight="700">− local map</text>
-            <text x="811.0" y="114" font-size="14">Background2D: 10 px</text>
-            <text x="811.0" y="134" font-size="14">boxes, 3σ clip;</text>
-            <text x="811.0" y="154" font-size="14">halo-aware mask</text>
-            <rect x="948" y="70" width="200" height="100" rx="6" fill="#fff" stroke="#111318" stroke-width="2"/>
-            <text x="1048.0" y="94" font-size="16" font-weight="700">= background map</text>
-            <text x="1048.0" y="114" font-size="14">for the whole frame</text>
-            <text x="1048.0" y="134" font-size="14">(~3 s per frame)</text>
-            <line x1="202" y1="120.0" x2="233" y2="120.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="439" y1="120.0" x2="470" y2="120.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="676" y1="120.0" x2="707" y2="120.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="913" y1="120.0" x2="944" y2="120.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <path d="M 1048.0 172 V 205 H 337.0 V 236" fill="none" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <text x="0" y="230" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">PER TARGET, IN EACH FRAME</text>
-            <rect x="0" y="240" width="200" height="90" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="100.0" y="264" font-size="16" font-weight="700">stamp</text>
-            <text x="100.0" y="284" font-size="14">33 × 33 px round the</text>
-            <text x="100.0" y="304" font-size="14">target position</text>
-            <rect x="237" y="240" width="200" height="90" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="337.0" y="264" font-size="16" font-weight="700">data = IMAGE − map</text>
-            <text x="337.0" y="284" font-size="14">nothing left for a</text>
-            <text x="337.0" y="304" font-size="14">sky term to absorb</text>
-            <rect x="474" y="240" width="200" height="90" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="574.0" y="264" font-size="16" font-weight="700">Tractor fit</text>
-            <text x="574.0" y="284" font-size="14">PSF flux at fixed</text>
-            <text x="574.0" y="304" font-size="14">position, clipped weights</text>
-            <rect x="711" y="240" width="200" height="90" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="811.0" y="264" font-size="16" font-weight="700">co-add</text>
-            <text x="811.0" y="284" font-size="14">every observation into</text>
-            <text x="811.0" y="304" font-size="14">77 channels (R = 40)</text>
-            <rect x="948" y="240" width="200" height="90" rx="6" fill="#f3f5f8" stroke="#1f5fbf" stroke-width="2"/>
-            <text x="1048.0" y="264" font-size="16" font-weight="700">redshift fit (eazy)</text>
-            <text x="1048.0" y="284" font-size="14">He I channels 14–15</text>
-            <text x="1048.0" y="304" font-size="14">masked</text>
-            <line x1="202" y1="285.0" x2="233" y2="285.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="439" y1="285.0" x2="470" y2="285.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="676" y1="285.0" x2="707" y2="285.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="913" y1="285.0" x2="944" y2="285.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="100.0" y1="332" x2="100.0" y2="364" stroke="#596273" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fcar)"/>
-            <rect x="0" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#596273" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="100.0" y="392" font-size="16" font-weight="700">ring 4–6 px</text>
-            <text x="100.0" y="412" font-size="14">median of clean pixels;</text>
-            <text x="100.0" y="432" font-size="14">clipped fallback (F4)</text>
-            <line x1="202" y1="408.0" x2="233" y2="408.0" stroke="#596273" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fcar)"/>
-            <rect x="237" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#596273" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="337.0" y="392" font-size="16" font-weight="700">stored beside</text>
-            <text x="337.0" y="412" font-size="14">bkg_annulus, F4c flux:</text>
-            <text x="337.0" y="432" font-size="14">diagnostic only</text>
-            <rect x="711" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#596273" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="811.0" y="392" font-size="16" font-weight="700">large galaxies (SGA)</text>
-            <text x="811.0" y="412" font-size="14">Msky: IMAGE − ZODI</text>
-            <text x="811.0" y="432" font-size="14">with its own flat sky</text>
-            <rect x="948" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#596273" stroke-width="2" stroke-dasharray="6 4"/>
-            <text x="1048.0" y="392" font-size="16">stored, not yet</text>
-            <text x="1048.0" y="412" font-size="14">in the redshifts</text>
-            <line x1="913" y1="408.0" x2="944" y2="408.0" stroke="#596273" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fcar)"/>
-            <rect x="-8" y="476" width="1164" height="110" rx="8" fill="#f3f5f8"/>
-            <text x="6" y="500" font-size="13" font-weight="700" fill="#596273" text-anchor="start" letter-spacing="2">THE SEPTEMBER EUCLID CATALOGUE: PER STAMP, NO BRIGHT-STAR TREATMENT (v2, THIS TALK, USES THE MAP ABOVE)</text>
-            <rect x="0" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#596273" stroke-width="1.5"/>
-            <text x="100.0" y="538" font-size="16" font-weight="700">stamp, 33 × 33 px</text>
-            <text x="100.0" y="558" font-size="14">at the Euclid position</text>
-            <rect x="237" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#596273" stroke-width="1.5"/>
-            <text x="337.0" y="538" font-size="16" font-weight="700">sky = IMAGE − ZODI</text>
-            <text x="337.0" y="558" font-size="14">shipped model</text>
-            <rect x="474" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#596273" stroke-width="1.5"/>
-            <text x="574.0" y="538" font-size="16" font-weight="700">− ring median, 4–6 px</text>
-            <text x="574.0" y="558" font-size="14">zero if &lt; 4 clean pixels</text>
-            <rect x="711" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#596273" stroke-width="1.5"/>
-            <text x="811.0" y="538" font-size="16" font-weight="700">Tractor fit</text>
-            <text x="811.0" y="558" font-size="14">PSF flux, weights 1/var</text>
-            <rect x="948" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#596273" stroke-width="1.5"/>
-            <text x="1048.0" y="538" font-size="16" font-weight="700">co-add 77 channels</text>
-            <text x="1048.0" y="558" font-size="14">→ redshift fit</text>
-            <line x1="202" y1="544.0" x2="233" y2="544.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="439" y1="544.0" x2="470" y2="544.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="676" y1="544.0" x2="707" y2="544.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-            <line x1="913" y1="544.0" x2="944" y2="544.0" stroke="#596273" stroke-width="2" marker-end="url(#fcar)"/>
-          </g>
-        </svg>
-        <aside class="notes">Top two rows: the all-sky final run (final_v2, profile "final", background "tjhec"). Bottom lane: the September Euclid DR1 × SPHEREx catalogue. The v2 catalogue in this talk uses the top two rows unchanged (euclid-spherex src/run_profiles.py, profile "euclid": bkg_model tjhec, bright_kmax 8, fit_weights clip3, mask_outlier False, psf_zone_onebased True).
-Per frame, once (spherex-allsky src/spectra/extract_spectra.py, frame_background → tjmap_background): read the L2B frame's IMAGE, ZODI, FLAGS, VARIANCE and wavelength WCS; subtract the shipped zodiacal model; subtract B(λ), the median of IMAGE − ZODI in 288 quantile bins of per-pixel wavelength (≥ 20 px per bin, PCHIP interpolation, every MP_SOURCE and defect pixel masked); then photutils Background2D on the remainder (box 10 px, filter 3, 3σ clip, SExtractor estimator, exclude_percentile 50) with the halo-aware mask: inside the veto disc r(Ks) = 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, of each 2MASS Ks &lt; 8 star, MP_SOURCE pixels are un-masked so the map follows the halo; the star core, compact sources and &gt;3σ bumps stay masked. The sum is one background map per frame, about 3 s per frame, ~5% of extraction.
-Per target in each frame: a 33 × 33 px stamp; data = IMAGE − map pixel by pixel; Tractor solves only for the PSF flux at the fixed optical position (sky fixed at zero), with clip3 weights (variance minus g·clip(d, ±3σ)). Co-add: every observation of the target into 77 channels at R = 40, the same grid as the Euclid catalogue (spherex-allsky src/spectra/coadd_stream.py channel_grid). Redshift fit: eazy-py, with co-add channels 14-15 (He I) masked.
-Dashed, side branches: the 4-6 px ring median (clean pixels; if fewer than 4, a 3σ clipped median over the same ring with flagged pixels kept, "F4") is still computed per observation and stored as bkg_annulus, with the F4c flux from a direct weighted solve; it is a diagnostic and a fallback the release co-add can choose, not the flux. SGA large galaxies also get an extended-model fit (Msky) on IMAGE − ZODI with its own free flat sky, because the 10 px boxes are about the size of a large galaxy; stored, nothing fits redshifts from it yet. Frames that are almost entirely flagged (~1.7%) have no B(λ); the choice there is made at the release co-add.
-Bright stars, all-sky final run: the red box is the one place the processing differs near a star. Inside the veto disc of a 2MASS Ks &lt; 8 star (1,341,326 stars), pixels the L2B pipeline flagged as MP_SOURCE are un-masked for the Background2D step, so the local map follows the halo and subtracts it; the star core (inside 0.1 of the radius), MP_SOURCE components smaller than 1,500 px and pixels near &gt;3σ bumps stay masked. Outside the discs all flagged pixels are masked. The wavelength profile B(λ) masks all flagged pixels everywhere. Separately, the release carries a bright-star veto flag (bs_ratio) for selecting samples; the fiducial clustering footprint does not apply it (robustness arm only).
-Euclid lane (euclid-spherex src/spectra/extract_spectra.py:228-238): no frame-level map. Nothing is different near a bright star: inside its flagged disc the ring has no clean pixels, so nothing is subtracted and the halo light enters the flux. The only bright-star step is at sample level: the galaxy sample drops objects within 45″ of Gaia G &lt; 13 stars. Per stamp: IMAGE − ZODI, minus the median of the 4-6 px ring's clean, unflagged pixels, or zero if fewer than 4 survive; Tractor PSF flux at the fixed Euclid position with 1/variance weights; co-add onto 77 channels; joint redshift fit with the Euclid and ground bands.</aside>
-      </section>
-
-      <!-- background 7 · the final choice -->
-      <section>
-        <div class="kicker">Backup · sky background</div>
-        <h2>The final choice, for each catalogue</h2>
-        <div class="cols" style="margin-top:4px;">
-          <div class="col card" style="background:var(--paper-2);">
-            <h3>Euclid DR1 × SPHEREx v2 <span class="soft">(this talk)</span></h3>
-            <ul>
-              <li><b>The same per-frame map (tjhec)</b> and clipped weights as the all-sky run</li>
-              <li>Fluxes corrected to total for galaxy size</li>
-              <li>Bright stars: halo-aware map, and the galaxy sample drops 45″ round Gaia G &lt; 13</li>
-              <li>Why: re-extracted all 13.8 M targets with the all-sky profile</li>
-              <li>September (ring median, joint fit): 0.0111 / 4.8%; v2: 0.0088 / 2.5%</li>
-            </ul>
-          </div>
-          <div class="col card" style="background:#e6eefa;">
-            <h3>All-sky, final run</h3>
-            <ul>
-              <li><b>Per-frame map (tjhec)</b>: ZODI, then sky vs wavelength in 288 bins, then a local map with a halo-aware mask (2MASS Ks &lt; 8)</li>
-              <li>Ring background + clipped weights (F4c) stored beside it</li>
-              <li>Large galaxies (SGA): their own free flat sky</li>
-              <li>He I channels also masked in the redshift fit</li>
-              <li>Why: lowest DESI scatter in every test cell, best inside halos, follows He I</li>
-              <li>Flagged-out frames: chosen at the release co-add</li>
-            </ul>
-          </div>
-        </div>
-        <aside class="notes">Euclid DR1 × SPHEREx v2, the catalogue every number in the main talk comes from: the all-sky final profile re-run on the 13.8 M Euclid targets (campaign pilot_r40_97d231b0, background_subtraction = tjhec_halo_aware; euclid-spherex src/run_profiles.py, profile "euclid"; docs/V2_RUN.md), plus the Sérsic-total size correction. Bright stars: the halo-aware map, and the 45″ Gaia G &lt; 13 veto in the galaxy-sample definition. The September catalogue (universe baseline) used ZODI + annulus median, fallback zero (extract_spectra.py:228-238; report final_2026-09-28 §3.2), the same as allsky_v1. The galaxy-sample comparison on the left (0.0111 / 4.8% → 0.0088 / 2.5%) mixes every v2 change: background, weights, uncapped co-add, size correction, error model and the SPHEREx-only fit; it is not the background alone.
-All-sky final_v2 (DECISIONS 2026-10-07, EXT-20 refined): tjhec everywhere with no hand-over; clip3 weights; halo-aware mask to Ks &lt; 8; F4c flux stored per observation (EXT-67, a direct solve identical to a full fit); Msky with its own flat sky for SGA galaxies (EXT-15); He I channels 14-15 masked in the fit (ZP-42); all-source frames decided per frame at the release co-add (EXT-80). The co-adds in the preliminary catalogue use tjhec on every frame and are provisional.
-Note: the main-talk slide "Bright stars pull redshifts into rings" describes F4 as "a clipped median over all usable pixels"; in the code it is a clipped median over the same 4-6 px ring with the flagged pixels kept, and it is no longer the final background.</aside>
-      </section>
-
-      <section data-section="Summary">
-        <h2>Overview</h2>
-        <div class="cols">
-          <div class="col">
-            <ul style="width:922px;height:187px;position:relative;left:3px;top:-1px;">
-              <li>13.8 M Euclid DR1 sources with SPHEREx spectra and SPHEREx-only redshifts</li><li>Galaxy sample: 6.2 M, σ<sub>NMAD</sub> 0.009, 2.5% outliers</li>
-              <li>Quality sample: 3.4 M, σ<sub>NMAD</sub> 0.008, 0.6% outliers</li>
-              <li>3–9× tighter than PHZ brighter than I<sub>E</sub> = 19.5, still 1.7× at 20–20.5</li>
-              <li>Should be useful for a z&lt;0.5 galaxy-galaxy lensing sample.</li><li>Will be helpful for cluster studies at redshifts z&lt;0.5</li>
-            </ul>
-          </div>
-          <div class="col">
-          </div>
-        </div>
-        <aside class="notes">Numbers: v2 SPHEREx only (numbers/numbers_v2_spherex_only.json). Galaxy sample 6,191,949 at 0.0088 / 2.5% on 112,795 truth matches; quality 3,412,115 at 0.0076 / 0.6% on 93,552; PHZ on the galaxy sample's matches 0.0358 / 2.5%; ratio PHZ/ours 9.2 at I_E 16-17, 4.9 at 18-18.5, 2.9 at 19-19.5, 1.7 at 20-20.5.
-Deliverables: the catalogue (Euclid-internal first, public later) and a self-contained data release report.
-Next items with detail:
-- Combine the two estimators: PHZ's error is nearly flat in magnitude, ours steep; ideal partners. Agreement alone keeps 96% of the galaxy sample's matches at 0.0085 / 0.36%.
-- Set is_star on objects whose galaxy fit fails (5.75 M carry no flag), and refit the error model with a magnitude term (68% coverage 0.88 bright, 0.55 faint).
-- Full 13.8 M fit with fsps_qsf_12_agn_wide (~5 h): fixes type I AGN redshifts and ~100k stellar masses overestimated ×4.
-- plus_ir universe: regress zodi, bkg_annulus, n_obs.
-- Extractor arms: extended-profile source model (bright extended galaxies lose 30-40% to the point-source model), MER-neighbour deblending.
-- Refit the P(z) stretch on the finished sample (prefer raw widths now).
-- Re-run the IRSA official-pipeline comparison on Euclid targets.
-- Shred cut: ~2.7% of the release sample are knots/fragments of large galaxies (image inspection); they cluster with their hosts.</aside>
       </section>
 
     </div>
