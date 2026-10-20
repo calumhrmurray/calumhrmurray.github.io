@@ -306,40 +306,228 @@
         </aside>
       </section>
 
-      <!-- SPHEREx all-sky · the blocks, and the extraction block opened up -->
+      <!-- SPHEREx all-sky · the photometry pipeline, end to end (from the comprehensive slide set) -->
       <section id="allsky-blocks" data-section="SPHEREx all-sky">
-        <div class="kicker">SPHEREx all-sky · the blocks</div>
-        <h2>The all-sky catalogue, block by block</h2>
-        <div class="walls" style="left:40px;top:118px;width:1200px;grid-template-columns:1fr;">
-          <div class="row">
-            <p class="brick">selection<i>36 choices</i></p>
-            <p class="brick">footprint<i>19 choices</i></p>
-            <p class="brick" style="border-color:var(--warm);">extraction<i>51 choices</i></p>
-            <p class="brick">redshifts<i>40 choices</i></p>
-            <p class="brick">flags, release<i>36 choices</i></p>
-            <p class="brick">clustering<i>57 choices</i></p>
-          </div>
-        </div>
-        <p class="label" style="position:absolute;left:40px;top:205px;margin:0;">The pipeline</p>
-        <ol class="ovlist pipe" style="position:absolute;left:40px;top:235px;width:1200px;margin:0;">
-          <li><b>Sources selected on VIS-detected DR1 Wide</b>
-            <ul><li>Sources with 16 &lt; I<sub>E</sub> &lt; 20.5, de-duplicated at 1″, with no flag cuts at this stage</li></ul></li>
-          <li><b>Forced photometry</b>
-            <ul><li>Tractor fits the SPHEREx PSF at the fixed Euclid position, once per target per frame that covers it</li></ul></li>
-          <li><b>Co-add onto 77 channels</b>
-            <ul><li>Each channel takes every observation in its wavelength bin, drops flagged ones, inflates errors per detector, clips at 3σ and takes the inverse-variance mean</li></ul></li>
-          <li><b>Zeropoints</b>
-            <ul><li>Euclid and ground-band offsets relative to SPHEREx are fitted at the spec-z on half the truth, then frozen and applied</li></ul></li>
-          <li><b>Joint redshift fit</b>
-            <ul><li>eazy-py fits the 77 channels with VIS, Y, J, H and the ground bands, flat prior, 12 FSPS templates</li></ul></li>
-          <li><b>Stellar fit, same run</b>
-            <ul><li>The same photometry is fitted with a grid of stellar models; <code>is_star</code> when the best star beats the galaxy fit in χ²</li></ul></li>
-          <li><b>After the fit</b>
-            <ul><li>The posteriors are recalibrated, and stellar mass, SFR and rest-frame colours come from the same fit</li></ul></li>
-        </ol><aside class="notes">
-          <p>The blocks of the all-sky catalogue are its pipeline stages, each with its own register of choices: 239 in docs/CHOICES.md (selection 36, footprint 19, extraction 51, redshifts 40, flags and release 36, clustering 57).</p>
-          <p>The pipeline in order, as given for Euclid DR1 × SPHEREx (pizza-lunch deck; report §3). 1. Select on Euclid: VIS-detected DR1 Wide, 16 &lt; I_E &lt; 20.5, 1″ dedup, no flag cuts; 13,784,773 targets. 2. Forced photometry: one Tractor PSF fit per target per SPHEREx frame, at the fixed Euclid position; frame-major, each frame opened once. 3. Co-add onto 77 channels once a sky cell is fully measured: per channel, drop flagged and stamp-edge observations, inflate errors by the per-detector factor, clip at 3σ, inverse-variance mean. 4. Zeropoints fitted at the spec-z on half the truth, frozen. 5. Joint fit: eazy-py on SPHEREx + VIS/Y/J/H + ground bands, flat prior, fsps_QSF_12_v3. 6. Stellar fit in the same run: is_star when χ²_star − χ²_gal &lt; 0. 7. Posterior recalibration; stellar mass, SFR, rest-frame colours.</p>
-          <p>For the all-sky catalogue the same pipeline runs on Legacy Surveys positions (16 &lt; r &lt; 20.5) instead of Euclid: 287 cells of 10°, 1.37 million frames, 97.7 TB (CATALOGUE_REPORT.md §3).</p>
+        <div class="kicker">SPHEREx all-sky · the pipeline</div>
+        <h2>The photometry pipeline, end to end</h2>
+        <svg viewBox="-10 0 1170 590" width="1160" height="585" style="position:absolute;left:60px;top:118px;" role="img" aria-label="Flowchart of the SPHEREx forced-photometry pipeline: targets, sky cells, frame index and staging; per frame the frame is opened and a background map made, then per target a stamp is fitted with Tractor; per target all observations are archived, co-added onto 77 channels, zero-pointed and fitted for redshift; with the Euclid catalogue's differences listed">
+          <defs><marker id="pipe-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8795a3"></path></marker></defs>
+          <g font-family="Seravek, 'Gill Sans', 'Avenir Next', sans-serif" fill="#1d2f42" text-anchor="middle">
+            <text x="44" y="14" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">ONCE</text>
+            <rect x="0" y="22" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="100" y="46" font-size="16" font-weight="700">targets</text>
+            <text x="100" y="65" font-size="14">Legacy + DELVE + SGA</text>
+            <text x="100" y="84" font-size="14">+ calibration stars:</text>
+            <text x="100" y="103" font-size="14">77.1 M positions</text>
+            <rect x="237" y="22" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="337" y="46" font-size="16" font-weight="700">sky cells</text>
+            <text x="337" y="65" font-size="14">10° lattice,</text>
+            <text x="337" y="84" font-size="14">358 cells, two</text>
+            <text x="337" y="103" font-size="14">clusters, one ledger</text>
+            <rect x="474" y="22" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="574" y="46" font-size="16" font-weight="700">frame index</text>
+            <text x="574" y="65" font-size="14">IRSA QR2 L2B frames</text>
+            <text x="574" y="84" font-size="14">(pinned); keep those</text>
+            <text x="574" y="103" font-size="14">covering a target</text>
+            <rect x="711" y="22" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="811" y="46" font-size="16" font-weight="700">staging</text>
+            <text x="811" y="65" font-size="14">S3 → node-local disk,</text>
+            <text x="811" y="84" font-size="14">2,000-frame batches,</text>
+            <text x="811" y="103" font-size="14">deleted once measured</text>
+            <line x1="202" y1="70" x2="233" y2="70" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="439" y1="70" x2="470" y2="70" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="676" y1="70" x2="707" y2="70" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <path d="M 811 120 V 145 H 22 V 166" fill="none" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></path>
+            <text x="44" y="162" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">PER FRAME, THEN PER TARGET IN IT</text>
+            <rect x="0" y="170" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="100" y="194" font-size="16" font-weight="700">open the frame</text>
+            <text x="100" y="213" font-size="14">IMAGE, VARIANCE, FLAGS,</text>
+            <text x="100" y="232" font-size="14">ZODI, PSF cube,</text>
+            <text x="100" y="251" font-size="14">wavelength map</text>
+            <rect x="237" y="170" width="200" height="96" rx="6" fill="#fbeee8" stroke="#b9573a" stroke-width="2.5"></rect>
+            <text x="337" y="194" font-size="16" font-weight="700">background map</text>
+            <text x="337" y="213" font-size="14">ZODI + B(λ) + local map,</text>
+            <text x="337" y="232" font-size="14">halo-aware near stars</text>
+            <text x="337" y="251" font-size="14">(next slide)</text>
+            <rect x="474" y="170" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="574" y="194" font-size="16" font-weight="700">stamp</text>
+            <text x="574" y="213" font-size="14">33 × 33 px; PSF of its</text>
+            <text x="574" y="232" font-size="14">zone, shifted to the</text>
+            <text x="574" y="251" font-size="14">sub-pixel position</text>
+            <rect x="711" y="170" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="811" y="194" font-size="16" font-weight="700">Tractor fit</text>
+            <text x="811" y="213" font-size="14">flux only, position fixed,</text>
+            <text x="811" y="232" font-size="14">sky fixed at 0,</text>
+            <text x="811" y="251" font-size="14">clipped weights</text>
+            <rect x="948" y="170" width="200" height="96" rx="6" fill="#fff" stroke="#1d2f42" stroke-width="2"></rect>
+            <text x="1048" y="194" font-size="16" font-weight="700">one observation</text>
+            <text x="1048" y="213" font-size="14">flux, error, λ, Δλ,</text>
+            <text x="1048" y="232" font-size="14">flags, background</text>
+            <text x="1048" y="251" font-size="14">subtracted</text>
+            <line x1="202" y1="218" x2="233" y2="218" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="439" y1="218" x2="470" y2="218" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="676" y1="218" x2="707" y2="218" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="913" y1="218" x2="944" y2="218" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <path d="M 1048 268 V 293 H 22 V 314" fill="none" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></path>
+            <text x="44" y="310" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">PER TARGET, ALL OBSERVATIONS</text>
+            <rect x="0" y="318" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="100" y="342" font-size="16" font-weight="700">archive</text>
+            <text x="100" y="361" font-size="14">every observation kept</text>
+            <text x="100" y="380" font-size="14">(3.7 × 10¹⁰ rows, 1.7 TB)</text>
+            <text x="100" y="399" font-size="14">so co-adds can be rebuilt</text>
+            <rect x="237" y="318" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="337" y="342" font-size="16" font-weight="700">co-add</text>
+            <text x="337" y="361" font-size="14">77 channels, R = 40;</text>
+            <text x="337" y="380" font-size="14">errors × per-detector</text>
+            <text x="337" y="399" font-size="14">factor</text>
+            <rect x="474" y="318" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="574" y="342" font-size="16" font-weight="700">zero points</text>
+            <text x="574" y="361" font-size="14">measured on DESI;</text>
+            <text x="574" y="380" font-size="14">not yet applied</text>
+            <text x="574" y="399" font-size="14">(preliminary)</text>
+            <rect x="711" y="318" width="200" height="96" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="811" y="342" font-size="16" font-weight="700">redshift fit</text>
+            <text x="811" y="361" font-size="14">eazy-py, 12 FSPS templ.,</text>
+            <text x="811" y="380" font-size="14">flat prior, He I</text>
+            <text x="811" y="399" font-size="14">channels masked</text>
+            <rect x="948" y="318" width="200" height="96" rx="6" fill="#fff" stroke="#1d2f42" stroke-width="2"></rect>
+            <text x="1048" y="342" font-size="16" font-weight="700">catalogue</text>
+            <text x="1048" y="361" font-size="14">+ stellar fit (is_star)</text>
+            <text x="1048" y="380" font-size="14">+ quality bits,</text>
+            <text x="1048" y="399" font-size="14">kept raw</text>
+            <line x1="202" y1="366" x2="233" y2="366" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="439" y1="366" x2="470" y2="366" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="676" y1="366" x2="707" y2="366" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <line x1="913" y1="366" x2="944" y2="366" stroke="#8795a3" stroke-width="2" marker-end="url(#pipe-ar)"></line>
+            <rect x="-8" y="438" width="1164" height="140" rx="8" fill="#edf3f8"></rect>
+            <text x="6" y="462" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">EUCLID DR1 × SPHEREX v2 (THIS TALK): SAME STAGES, THESE DIFFERENCES</text>
+            <text x="6" y="490" font-size="15" text-anchor="start">Targets: Euclid VIS-detected, 16 &lt; I<tspan font-size="11" dy="4">E</tspan><tspan dy="-4"> &lt; 20.5, 13.8 M · cells 4°, no frame cap</tspan></text>
+            <text x="6" y="512" font-size="15" text-anchor="start">Background, weights, co-add: as above (per-frame map, clipped weights, streaming co-add, OUTLIER kept)</text>
+            <text x="6" y="534" font-size="15" text-anchor="start">Size: each SPHEREx flux divided by k, the share of a Sérsic galaxy's light a PSF fit recovers</text>
+            <text x="6" y="556" font-size="15" text-anchor="start">Redshift fit: SPHEREx alone, as above · the September catalogue used a ring background and a joint fit</text>
+          </g>
+        </svg><aside class="notes">
+          <p>Top three rows: the all-sky final run (final_v2, profile "final"). The grey box: how the Euclid DR1 × SPHEREx v2 catalogue, the one in this talk, differs. v2 runs the all-sky extraction profile on the Euclid targets (euclid-spherex src/run_profiles.py, profile "euclid"), so the only differences left are the targets, the cell lattice and the size correction. Background estimation is the red box; the next slide opens it up.</p>
+          <p>Once: targets in positions_final.fits, 77,070,050 rows (Legacy DR9-north r &lt; 20.55 / DR10-south r &lt; 20.5 with grz, 60.58 M; DELVE DR3 13.87 M; SGA 0.45 M; Gaia calibration stars 2.17 M). Sky cells on a fixed 10° lattice (src/spectra/campaign.py), 358 cells shared between the nibi and fir clusters by a hash-chained ledger. Frame index: one IRSA TAP query on spherex.artifact × spherex.plane, QR2 only, pinned by sha1 (src/spectra/build_frame_index.py); per cell, a frame is kept if any target lies inside its footprint (17 px margin), no frame cap (cell_index.py, extract_frames.py). Staging: from the S3 Open Data mirror (HTTPS fallback to IRSA) onto node-local disk in 2,000-frame batches, the next staging while the current is measured, each deleted once measured (docs/STORAGE.md).</p>
+          <p>Per frame: each frame is opened once (frame-major), IMAGE, VARIANCE, FLAGS, ZODI, PSF cube and the wavelength WCS read (src/spectra/extract_spectra.py ~785-819); the background map (tjhec) and the variance gain for the clipped weights are made per frame. Per target on that frame: 33 × 33 px stamp; the PSF of the nearest PSF-cube zone, 10× oversampled, spline-shifted to the sub-pixel offset and summed to 9 × 9 px; defect mask (OUTLIER unmasked in the final run); Tractor PointSource with the position frozen and the sky fixed at zero, fitted to IMAGE − map with clip3 weights. Output per observation: flux, error, aperture flux, λ, Δλ from the wavelength WCS, flags, the ring diagnostic and the background subtracted; F4c flux by a direct solve; Msky for SGA galaxies.</p>
+          <p>Per target: the archive keeps every observation (about 3.7 × 10¹⁰ rows, ~1.74 TB; OPERATOR_BRIEF), so the co-add can be rebuilt without re-extracting. Co-add: 77 channels at R = 40 from 0.75 to 5.0 µm (coadd_stream.py channel_grid), each error inflated by the frozen per-detector factor (1.03-1.28); the stream co-add has no clip; the release co-add rebuilt from the archive adds the l3 gain, rejection and the all-source-frame veto. Zero points measured on DESI (1.08-1.11 over 3.8-5 µm) but not applied in prelim_v0. Redshift: eazy-py, fsps_QSF_12_v3, flat prior, empirical error model, He I channels 14-15 masked, log grid from z = 0.001, P(z) stored; SPHEREx channels only. Stellar fit: eazy's PHOENIX/Sonora grid, is_star when χ²_star − χ²_gal &lt; 0. Quality bits stored raw; samples defined at release.</p>
+          <p>Euclid (docs/reports/final_2026-09-28 §3): 13,784,773 VIS-detected targets; 212 cells of 4° with a 6,000-frame cap (31 cells hit it, ~21% of targets); the earlier extractor (ring background, OUTLIER masked, 1/VARIANCE weights); a batch co-add onto the same 77 channels with a 3σ clip; zero points fitted at the spec-z on half the truth, iterated, frozen, applied to the Euclid and ground bands with SPHEREx as the anchor; a joint fit of SPHEREx + Euclid VIS/Y/J/H + ground bands.</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · background subtraction, step by step (from the comprehensive slide set) -->
+      <section id="allsky-background">
+        <div class="kicker">SPHEREx all-sky · the background</div>
+        <h2>Background subtraction, step by step</h2>
+        <svg viewBox="-10 0 1170 590" width="1160" height="585" style="position:absolute;left:60px;top:118px;" role="img" aria-label="Flowchart of the background subtraction: per frame, the ZODI model, a wavelength profile and a local map make a background map; per target, the map is subtracted from a stamp before the Tractor flux fit, co-add and redshift fit; side branches for the ring diagnostic and large galaxies; and the Euclid catalogue's simpler per-stamp path">
+          <defs><marker id="bg-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8795a3"></path></marker></defs>
+          <g font-family="Seravek, 'Gill Sans', 'Avenir Next', sans-serif" fill="#1d2f42" text-anchor="middle">
+            <text x="0" y="40" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">PER FRAME, ONCE</text>
+            <rect x="474" y="0" width="674" height="54" rx="6" fill="#fbeee8" stroke="#b9573a" stroke-width="1.5"></rect>
+            <text x="811" y="21" font-size="15" font-weight="700">Near a bright star (2MASS Ks &lt; 8), inside its disc r(Ks):</text>
+            <text x="811" y="42" font-size="14">flagged pixels are kept, so the map removes the halo; the core stays masked</text>
+            <line x1="811" y1="52" x2="811" y2="66" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <rect x="0" y="70" width="200" height="100" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="100.0" y="94" font-size="16" font-weight="700">L2B frame</text>
+            <text x="100.0" y="114" font-size="14">IMAGE, ZODI, FLAGS,</text>
+            <text x="100.0" y="134" font-size="14">VARIANCE,</text>
+            <text x="100.0" y="154" font-size="14">wavelength per pixel</text>
+            <rect x="237" y="70" width="200" height="100" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="337.0" y="94" font-size="16" font-weight="700">sky = IMAGE − ZODI</text>
+            <text x="337.0" y="114" font-size="14">remove the shipped</text>
+            <text x="337.0" y="134" font-size="14">zodiacal-light model</text>
+            <rect x="474" y="70" width="200" height="100" rx="6" fill="#d6e6f3" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="574.0" y="94" font-size="16" font-weight="700">− B(λ)</text>
+            <text x="574.0" y="114" font-size="14">median sky vs pixel</text>
+            <text x="574.0" y="134" font-size="14">wavelength, 288 bins;</text>
+            <text x="574.0" y="154" font-size="14">sources masked</text>
+            <rect x="711" y="70" width="200" height="100" rx="6" fill="#d6e6f3" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="811.0" y="94" font-size="16" font-weight="700">− local map</text>
+            <text x="811.0" y="114" font-size="14">Background2D: 10 px</text>
+            <text x="811.0" y="134" font-size="14">boxes, 3σ clip;</text>
+            <text x="811.0" y="154" font-size="14">halo-aware mask</text>
+            <rect x="948" y="70" width="200" height="100" rx="6" fill="#fff" stroke="#1d2f42" stroke-width="2"></rect>
+            <text x="1048.0" y="94" font-size="16" font-weight="700">= background map</text>
+            <text x="1048.0" y="114" font-size="14">for the whole frame</text>
+            <text x="1048.0" y="134" font-size="14">(~3 s per frame)</text>
+            <line x1="202" y1="120.0" x2="233" y2="120.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="439" y1="120.0" x2="470" y2="120.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="676" y1="120.0" x2="707" y2="120.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="913" y1="120.0" x2="944" y2="120.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <path d="M 1048.0 172 V 205 H 337.0 V 236" fill="none" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></path>
+            <text x="0" y="230" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">PER TARGET, IN EACH FRAME</text>
+            <rect x="0" y="240" width="200" height="90" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="100.0" y="264" font-size="16" font-weight="700">stamp</text>
+            <text x="100.0" y="284" font-size="14">33 × 33 px round the</text>
+            <text x="100.0" y="304" font-size="14">target position</text>
+            <rect x="237" y="240" width="200" height="90" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="337.0" y="264" font-size="16" font-weight="700">data = IMAGE − map</text>
+            <text x="337.0" y="284" font-size="14">nothing left for a</text>
+            <text x="337.0" y="304" font-size="14">sky term to absorb</text>
+            <rect x="474" y="240" width="200" height="90" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="574.0" y="264" font-size="16" font-weight="700">Tractor fit</text>
+            <text x="574.0" y="284" font-size="14">PSF flux at fixed</text>
+            <text x="574.0" y="304" font-size="14">position, clipped weights</text>
+            <rect x="711" y="240" width="200" height="90" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="811.0" y="264" font-size="16" font-weight="700">co-add</text>
+            <text x="811.0" y="284" font-size="14">every observation into</text>
+            <text x="811.0" y="304" font-size="14">77 channels (R = 40)</text>
+            <rect x="948" y="240" width="200" height="90" rx="6" fill="#edf3f8" stroke="#2e5c88" stroke-width="2"></rect>
+            <text x="1048.0" y="264" font-size="16" font-weight="700">redshift fit (eazy)</text>
+            <text x="1048.0" y="284" font-size="14">He I channels 14–15</text>
+            <text x="1048.0" y="304" font-size="14">masked</text>
+            <line x1="202" y1="285.0" x2="233" y2="285.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="439" y1="285.0" x2="470" y2="285.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="676" y1="285.0" x2="707" y2="285.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="913" y1="285.0" x2="944" y2="285.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="100.0" y1="332" x2="100.0" y2="364" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#bg-ar)"></line>
+            <rect x="0" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4"></rect>
+            <text x="100.0" y="392" font-size="16" font-weight="700">ring 4–6 px</text>
+            <text x="100.0" y="412" font-size="14">median of clean pixels;</text>
+            <text x="100.0" y="432" font-size="14">clipped fallback (F4)</text>
+            <line x1="202" y1="408.0" x2="233" y2="408.0" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#bg-ar)"></line>
+            <rect x="237" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4"></rect>
+            <text x="337.0" y="392" font-size="16" font-weight="700">stored beside</text>
+            <text x="337.0" y="412" font-size="14">bkg_annulus, F4c flux:</text>
+            <text x="337.0" y="432" font-size="14">diagnostic only</text>
+            <rect x="711" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4"></rect>
+            <text x="811.0" y="392" font-size="16" font-weight="700">large galaxies (SGA)</text>
+            <text x="811.0" y="412" font-size="14">Msky: IMAGE − ZODI</text>
+            <text x="811.0" y="432" font-size="14">with its own flat sky</text>
+            <rect x="948" y="368" width="200" height="80" rx="6" fill="#fff" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4"></rect>
+            <text x="1048.0" y="392" font-size="16">stored, not yet</text>
+            <text x="1048.0" y="412" font-size="14">in the redshifts</text>
+            <line x1="913" y1="408.0" x2="944" y2="408.0" stroke="#8795a3" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#bg-ar)"></line>
+            <rect x="-8" y="476" width="1164" height="110" rx="8" fill="#edf3f8"></rect>
+            <text x="6" y="500" font-size="13" font-weight="700" fill="#006666" text-anchor="start" letter-spacing="2">THE SEPTEMBER EUCLID CATALOGUE: PER STAMP, NO BRIGHT-STAR TREATMENT (v2, THIS TALK, USES THE MAP ABOVE)</text>
+            <rect x="0" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#8795a3" stroke-width="1.5"></rect>
+            <text x="100.0" y="538" font-size="16" font-weight="700">stamp, 33 × 33 px</text>
+            <text x="100.0" y="558" font-size="14">at the Euclid position</text>
+            <rect x="237" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#8795a3" stroke-width="1.5"></rect>
+            <text x="337.0" y="538" font-size="16" font-weight="700">sky = IMAGE − ZODI</text>
+            <text x="337.0" y="558" font-size="14">shipped model</text>
+            <rect x="474" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#8795a3" stroke-width="1.5"></rect>
+            <text x="574.0" y="538" font-size="16" font-weight="700">− ring median, 4–6 px</text>
+            <text x="574.0" y="558" font-size="14">zero if &lt; 4 clean pixels</text>
+            <rect x="711" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#8795a3" stroke-width="1.5"></rect>
+            <text x="811.0" y="538" font-size="16" font-weight="700">Tractor fit</text>
+            <text x="811.0" y="558" font-size="14">PSF flux, weights 1/var</text>
+            <rect x="948" y="514" width="200" height="60" rx="6" fill="#fff" stroke="#8795a3" stroke-width="1.5"></rect>
+            <text x="1048.0" y="538" font-size="16" font-weight="700">co-add 77 channels</text>
+            <text x="1048.0" y="558" font-size="14">→ redshift fit</text>
+            <line x1="202" y1="544.0" x2="233" y2="544.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="439" y1="544.0" x2="470" y2="544.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="676" y1="544.0" x2="707" y2="544.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+            <line x1="913" y1="544.0" x2="944" y2="544.0" stroke="#8795a3" stroke-width="2" marker-end="url(#bg-ar)"></line>
+          </g>
+        </svg>
+        <aside class="notes">
+          <p>Top two rows: the all-sky final run (final_v2, profile "final", background "tjhec"). Bottom lane: the September Euclid DR1 × SPHEREx catalogue. The v2 catalogue in this talk uses the top two rows unchanged (euclid-spherex src/run_profiles.py, profile "euclid": bkg_model tjhec, bright_kmax 8, fit_weights clip3, mask_outlier False, psf_zone_onebased True).</p>
+          <p>Per frame, once (spherex-allsky src/spectra/extract_spectra.py, frame_background → tjmap_background): read the L2B frame's IMAGE, ZODI, FLAGS, VARIANCE and wavelength WCS; subtract the shipped zodiacal model; subtract B(λ), the median of IMAGE − ZODI in 288 quantile bins of per-pixel wavelength (≥ 20 px per bin, PCHIP interpolation, every MP_SOURCE and defect pixel masked); then photutils Background2D on the remainder (box 10 px, filter 3, 3σ clip, SExtractor estimator, exclude_percentile 50) with the halo-aware mask: inside the veto disc r(Ks) = 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, of each 2MASS Ks &lt; 8 star, MP_SOURCE pixels are un-masked so the map follows the halo; the star core, compact sources and &gt;3σ bumps stay masked. The sum is one background map per frame, about 3 s per frame, ~5% of extraction.</p>
+          <p>Per target in each frame: a 33 × 33 px stamp; data = IMAGE − map pixel by pixel; Tractor solves only for the PSF flux at the fixed optical position (sky fixed at zero), with clip3 weights (variance minus g·clip(d, ±3σ)). Co-add: every observation of the target into 77 channels at R = 40, the same grid as the Euclid catalogue (spherex-allsky src/spectra/coadd_stream.py channel_grid). Redshift fit: eazy-py, with co-add channels 14-15 (He I) masked.</p>
+          <p>Dashed, side branches: the 4-6 px ring median (clean pixels; if fewer than 4, a 3σ clipped median over the same ring with flagged pixels kept, "F4") is still computed per observation and stored as bkg_annulus, with the F4c flux from a direct weighted solve; it is a diagnostic and a fallback the release co-add can choose, not the flux. SGA large galaxies also get an extended-model fit (Msky) on IMAGE − ZODI with its own free flat sky, because the 10 px boxes are about the size of a large galaxy; stored, nothing fits redshifts from it yet. Frames that are almost entirely flagged (~1.7%) have no B(λ); the choice there is made at the release co-add.</p>
+          <p>Bright stars, all-sky final run: the red box is the one place the processing differs near a star. Inside the veto disc of a 2MASS Ks &lt; 8 star (1,341,326 stars), pixels the L2B pipeline flagged as MP_SOURCE are un-masked for the Background2D step, so the local map follows the halo and subtracts it; the star core (inside 0.1 of the radius), MP_SOURCE components smaller than 1,500 px and pixels near &gt;3σ bumps stay masked. Outside the discs all flagged pixels are masked. The wavelength profile B(λ) masks all flagged pixels everywhere. Separately, the release carries a bright-star veto flag (bs_ratio) for selecting samples; the fiducial clustering footprint does not apply it (robustness arm only).</p>
+          <p>Euclid lane (euclid-spherex src/spectra/extract_spectra.py:228-238): no frame-level map. Nothing is different near a bright star: inside its flagged disc the ring has no clean pixels, so nothing is subtracted and the halo light enters the flux. The only bright-star step is at sample level: the galaxy sample drops objects within 45″ of Gaia G &lt; 13 stars. Per stamp: IMAGE − ZODI, minus the median of the 4-6 px ring's clean, unflagged pixels, or zero if fewer than 4 survive; Tractor PSF flux at the fixed Euclid position with 1/variance weights; co-add onto 77 channels; joint redshift fit with the Euclid and ground bands.</p>
         </aside>
       </section>
 
@@ -577,34 +765,6 @@
           <p>Shells of Δz = 0.03 stepping by 0.0025; a galaxy is drawn if its probability of lying in the shell exceeds 0.7, from a two-sided Gaussian on z16, z_est, z84 with widths rescaled by the pull width against DESI (1.00–1.14 by r). 1.10 M galaxies in the first shell, 1.37 M near z = 0.2, 0.79 M in the last. Stopping below 0.4 stays clear of the flagged 0.5–0.7 shells (He I residual, issue #97).</p>
           <p>DR11 rows have no spectroscopic validation yet and use the fit's own star flag; the thin dark rim round the LMC hole at higher z is probably LMC stars just outside the cut.</p>
           <p>Made by scripts/allsky_redshift_movie.py (the Napoli finale_movie.py's whole-sky phase without Euclid) from nibi /scratch/cmurray/spherex-allsky/napoli_allsky/galaxies_final_v2_dr11d_b0.parquet.</p>
-        </aside>
-      </section>
-
-      <!-- validation · the blocks again, now stacked vertically: one check per block, each against something outside the catalogue -->
-      <section id="validation-blocks">
-        <div class="kicker">Euclid × SPHEREx and all-sky · the validation</div>
-        <h2>With the catalogue built, the validation splits it back out</h2>
-        <div class="walls" style="left:40px;top:122px;width:1200px;grid-template-columns:250px 1fr;gap:16px 26px;align-items:center;">
-          <p class="brick">purity<i>stars, point-like, failed fits</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Stars from a stellar fit in the same run. Removing 1 M point-like objects (mostly quasars and stars) takes Euclid outliers from 2.5% to <b>1.9%</b>.</p>
-          <p class="brick">homogeneity<i>density on the sky</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">The galaxy sample's Galactic-latitude gradient is gone; what is left, SPHEREx depth and stellar density, is regressed out with DES-style weights.</p>
-          <p class="brick" style="border-color:var(--warm);">redshift quality<i>against spectra</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Euclid: σ<sub>NMAD</sub> <b>0.0087</b>, 1.9% outliers on 111,571 spectra. All-sky: <b>0.005 to 0.013</b> from r = 16 to 20.5, on 7.1 million.</p>
-          <p class="brick">shells × shells<i>clustering between redshift bins</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Neighbouring shells correlate as their overlap predicts (r = 0.15–0.33); shells further apart, −0.03 to 0.08. No more anti-correlation round bright stars.</p>
-          <p class="brick">clustering redshifts<i>against DESI, all-sky</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">The mean redshift of every shell agrees with the spectra to <b>≤ 0.009</b>. The 0.6–0.7 shell holds low-z interlopers, and is flagged.</p>
-          <p class="brick">CMB lensing<i>against Planck</i></p>
-          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Euclid galaxies × Planck lensing at <b>9.7σ</b>; lensing and clustering biases agree in all six shells.</p>
-        </div><aside class="notes">
-          <p>The building blocks of slide 17 ran left to right; the validation runs top to bottom, each test checking the catalogue against something outside it. All results from the Napoli deck (16 October); Euclid = v2 SPHEREx-only resolved galaxy sample, all-sky = final_v2 (+ DR11 where stated).</p>
-          <p>Purity: 1,233,310 stars, 985,052 point-like, 5,751,542 failed fits of 13.8 M (Euclid). Point-like removal: galaxy-sample outliers 2.50% → 1.93%, quality 0.61% → 0.52%, σ unchanged.</p>
-          <p>Homogeneity: density maps per sample; the galaxy sample's share of targets rises with |b| (ρ = +0.84) because the other samples fall. Weights: ISD as in DES Y3/Y6, five maps regressed (E(B−V), stars, SPHEREx channel count, ecliptic latitude, VIS depth), iterated until every S_1D &lt; 2, significance from 400 lognormal mocks.</p>
-          <p>Redshift quality: Euclid 111,571 matches, σ_NMAD 0.0087 / 1.93% (PHZ 0.0353 / 1.37%). All-sky quality sample, 7,130,481 matches from eleven surveys, σ_NMAD 0.0048 at r 15.5–16.5 to 0.0134 at 20–20.5; DR11 not yet validated.</p>
-          <p>Shells × shells (Euclid, six shells 0.05–0.6): neighbours r over 10′–60′ 0.15–0.33; two or more apart −0.03 to 0.08. Bright-star halos made far shells anti-correlate in September and in the first all-sky run; no longer.</p>
-          <p>Clustering redshifts (all-sky, 16 M galaxies over 12,600 deg² with DESI DR1 BGS and LRG): mean z within ±0.2 of each shell, clustering against spec-z matching, agree to ≤ 0.009; both put shells 0.1–0.5 about 0.01–0.02 above z_est. Shell 0.6–0.7 has a bump at z ≈ 0.2–0.45 (issue #97). Preliminary.</p>
-          <p>CMB lensing (Euclid): 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ in the six shells, 9.7σ as a quadrature sum (somewhat optimistic); b_κ / b_gg 0.98–1.46, errors 0.3–0.6.</p>
         </aside>
       </section>
 
