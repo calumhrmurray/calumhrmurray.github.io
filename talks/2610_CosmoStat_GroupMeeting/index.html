@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Group meeting · Calum Murray</title>
+  <link rel="stylesheet" href="reveal/dist/reset.css">
+  <link rel="stylesheet" href="reveal/dist/reveal.css">
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 2 · overview: four lines of work, and Lectern at the bottom -->
+      <section id="overview">
+        <h2>Updates</h2>
+        <ul class="ovlist" style="position:absolute;left:40px;top:100px;width:590px;margin:0;">
+          <li><b>Intrinsic alignment workshop at the IAP</b>
+            <ul><li>Organised by myself and Céline Gouin, June 2026: indico.iap.fr/event/174</li><li>Organising a second edition for next year with Céline, Sandrine, Martin?, Antonin?</li></ul></li>
+          <li><b>Improving our physical understanding of intrinsic alignments</b>
+            <ul><li>Build information from the density field → infer physical properties</li><li><b class="paper">Paper to be written</b></li></ul></li>
+          <li><b>2D lensing for cluster mass estimation</b>
+            <ul><li><b class="paper">Murray, Kilbinger &amp; Payerne 2026, <a href="https://arxiv.org/abs/2609.24948">arXiv:2609.24948</a></b>; presented at the IAP: indico.iap.fr/event/130</li><li>Simulation-based inference on the full 2D shear field round a cluster: better masses, and other cluster parameters</li></ul></li>
+          <li><b>Cosmological principle work</b>
+            <ul><li><b class="paper">Nguyen &amp; Murray 2026, A&amp;A, <a href="https://arxiv.org/abs/2605.30367">arXiv:2605.30367</a></b>: our acceleration from Quaia quasar proper motions</li></ul></li>
+          <li><b>Non-Gaussianity constraints</b>
+            <ul><li><b class="paper">UNIONS u-band dropouts</b></li><li><b class="paper">Payerne et al. 2026, <a href="https://arxiv.org/abs/2607.09943">arXiv:2607.09943</a></b></li></ul></li>
+        </ul>
+        <ul class="ovlist" style="position:absolute;left:660px;top:100px;width:580px;margin:0;">
+          <li><b>SPHEREx + Euclid / UNIONS / all-sky</b>
+            <ul><li>All-sky: 92 million objects, 71 million galaxies, over the whole extragalactic sky</li><li>Euclid: σ<sub>NMAD</sub> = 0.0087, against 0.035 for Euclid's own photo-z; a Euclid standard project paper on this</li><li><b class="paper">Paper being written, Murray et al. arxiv.2610.nextweek</b></li></ul></li>
+          <li><b>UNIONS</b>
+            <ul><li>Combining UNIONS with SPHEREx, we hope to do better than DES Y6 and Euclid DR1</li></ul></li>
+          <li><b>Euclid clusters</b>
+            <ul><li>COMB-CL, ready for the CCB</li><li>A Euclid key-project paper on the clustering of galaxies around clusters</li></ul></li>
+          <li><b>Astronomy on Tap Paris</b>
+            <ul><li>The November and December events are organised</li></ul></li>
+          <li><b>Incorporating AI within my work</b></li>
+        </ul>
+        <p class="lectern" style="left:40px;top:640px;width:700px;"><svg viewBox="0 0 16 16" width="22" height="22" style="position:relative;left:259px;top:19px;"><path d="M3 5h10l-1.5 4h-7z"></path><path d="M8 9v5M5 14h6"></path></svg><span style="position:relative;left:267px;top:30px;width:793px;height:39px;max-width:none;">These slides are made with <b>Lectern</b>: claude makes html, I can directly edit the text with a GUI</span></p><aside class="notes">
+          <p>Four things. The intrinsic-alignment work, which I presented at the IA meeting we organised at the IAP. COMB-CL in Euclid, which is going well. The 2D lensing paper. And SPHEREx, both inside Euclid and outside it.</p>
+          <p>And these slides are made with Lectern, my own editor: the deck is an HTML file, I drag and retype on a canvas, Claude edits the same file, and we leave each other notes on the slides.</p>
+          <p>[Calum: one line on the IAP meeting (dates, who came) and on what "advancing well" means for COMB-CL; neither is in the repos I read.]</p>
+        </aside>
+      </section>
+
+      <!-- 3 · IA: the density field has the signal-to-noise; build templates from it -->
+      <section id="ia-templates" data-section="Intrinsic alignments">
+        <h2 style="position:relative;left:0px;top:16px;">Use the density field to understand intrinsic alignments</h2>
+        <ul style="position:absolute;left:40px;top:111px;width:1200px;margin:0;padding-left:1.1em;">
+          <li style="font-size:20px;margin:0 0 6px;">The <b>density field has high signal-to-noise</b>: millions of well-measured modes.</li>
+          <li style="font-size:20px;margin:0 0 6px;">Galaxy <span class="tide">shapes</span> carry the same gravitational information at much <b>lower signal-to-noise</b>, buried under shape noise.</li>
+          <li style="font-size:20px;margin:0 0 6px;">So <b>construct templates from the density field</b>: physical predictions for the shape field, such as linear tidal alignment (<span class="lta">LTA</span>) or tidal torquing (<span class="tide">QTA</span>).</li>
+          <li style="font-size:20px;margin:0;">Cross-correlate each template with the shapes, and learn which physics the shapes follow.</li>
+        </ul>
+        <img src="fig/ia/tidal_field.png" alt="A watercolour density field in blue washes, its tidal field as dark brush strokes, and solid red galaxies on the overdensities, each elongated along the local tidal stretch" style="position:absolute;left:40px;top:318px;width:1200px;height:350px;">
+        <p class="caption" style="position:absolute;left:40px;top:676px;width:1200px;margin:0;text-align:left;">A random density field (blue, deeper where dense), its tidal field (black: the direction it stretches along), and galaxies (red) elongated along it, as linear tidal alignment predicts.</p><aside class="notes">
+          <p>The idea of the whole IA project. The density field, here CMASS, has very high signal-to-noise: millions of well-measured modes. The galaxy shapes respond to the same gravitational field, but each shape is dominated by its intrinsic scatter.</p>
+          <p>So rather than fit a generic amplitude to the shapes, construct physical templates from the density field: the linear tidal alignment template, the quadratic tidal-torquing template, an advected version, and the velocity. Each is a prediction for the shape field. Cross-correlating it with the measured shapes tests that physics directly.</p>
+          <p>The figure: a slice around an overdensity. LTA stretches shapes radially towards the halo; QTA predicts tangential alignment; around a halo they oppose, around a void they agree.</p>
+          <p>From the IAP talk (intrinsic_alignments/documentation/presentations/iap_2026, slides 7–8); figure figures/output/decals/headline/template_slice_halo.png.</p>
+        </aside>
+      </section>
+
+      <!-- 4 · IA: the three fields, live (js/ia/orbit.js over 740k CMASS galaxies) -->
+      <section id="ia-trio" class="dark" data-background-color="#000000">
+        <div class="kicker">Intrinsic alignments · CMASS</div>
+        <h2>The three fields: <span style="color:#5ec962">density</span>, <span style="color:#e8b07a">velocity</span>, <span style="color:#8a96e0">shapes</span></h2>
+        <div class="trio-cols">
+          <div class="trio-col">
+            <canvas class="webcanvas" data-mode="galaxies" data-src="trio-gal" style="left:2px;top:0px;"></canvas>
+            <p class="trio-lab"><span class="tt" style="color:#9fe6b0">The galaxy field</span><span class="td">740k tracers · colour = local density</span></p>
+          </div>
+          <div class="trio-col">
+            <canvas class="webcanvas" data-mode="velocity" data-src="trio-vel"></canvas>
+            <p class="trio-lab"><span class="tt" style="color:#e8b07a">The velocity field</span><span class="td">reconstructed flow Ψ · v ∝ −∇Φ</span></p>
+          </div>
+          <div class="trio-col">
+            <canvas class="webcanvas" data-mode="shapes" data-src="trio-shp"></canvas>
+            <p class="trio-lab"><span class="tt" style="color:#8a96e0">The shape field</span><span class="td">DECaLS orientations · γ ∝ ∂∂Φ</span></p>
+          </div>
+        </div>
+        <aside class="notes">
+          <p>Live: drag to rotate, scroll to zoom, each panel separately. The full NGC CMASS cap, 740,000 galaxies at 0.43 &lt; z &lt; 0.7.</p>
+          <p>Left, the galaxies coloured by local density. Middle, the velocity field reconstructed from the density with pyrecon: coherent infall towards the overdensities, v ∝ −∇Φ. Right, the DECaLS shapes traced as streamlines along their orientations: the tidal field, written in the shapes, γ ∝ ∂∂Φ.</p>
+          <p>Ported from the IAP deck: js/ia/orbit.js (patched to follow reveal's current slide) over js/ia/web_data.js.</p>
+        </aside>
+      </section>
+
+      <!-- 5 · IA: the four correlation functions -->
+      <section id="ia-channels">
+        <div class="kicker">Intrinsic alignments · the measurements</div>
+        <h2>Four correlation functions</h2>
+        <div class="chgrid">
+          <div class="chrow gg">
+            <div class="chhead"><span class="chname">gg</span><span class="chsub">density × density</span><span class="chexpr">ξ<sub>gg</sub> ∝ b<sup>2</sup></span></div>
+            <div class="chdiags">
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="density times density"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><circle cx="34" cy="32" r="8" fill="#16202e"/><circle cx="146" cy="32" r="8" fill="#16202e"/></svg><span class="clabel">ξ<sub>gg</sub></span></div>
+            </div>
+          </div>
+          <div class="chrow gs">
+            <div class="chhead"><span class="chname">gs</span><span class="chsub">density × shape</span><span class="chexpr">ξ<sub>gs</sub> ∝ b A<sub>IA</sub></span></div>
+            <div class="chdiags">
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="g plus"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><circle cx="34" cy="32" r="8" fill="#16202e"/><ellipse cx="146" cy="32" rx="22" ry="8" fill="#27347a"/></svg><span class="clabel">ξ<sub>g+</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="g cross"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><circle cx="34" cy="32" r="8" fill="#16202e"/><ellipse cx="146" cy="32" rx="22" ry="8" transform="rotate(45 146 32)" fill="#27347a"/></svg><span class="clabel">ξ<sub>g×</sub></span></div>
+            </div>
+          </div>
+          <div class="chrow ss">
+            <div class="chhead"><span class="chname">ss</span><span class="chsub">shape × shape</span><span class="chexpr">ξ<sub>ss</sub> ∝ A<sub>IA</sub><sup>2</sup></span></div>
+            <div class="chdiags">
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="plus plus"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" fill="#27347a"/><ellipse cx="146" cy="32" rx="22" ry="8" fill="#27347a"/></svg><span class="clabel">ξ<sub>++</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="cross cross"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" transform="rotate(45 34 32)" fill="#27347a"/><ellipse cx="146" cy="32" rx="22" ry="8" transform="rotate(45 146 32)" fill="#27347a"/></svg><span class="clabel">ξ<sub>××</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="cross plus"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" transform="rotate(45 34 32)" fill="#27347a"/><ellipse cx="146" cy="32" rx="22" ry="8" fill="#27347a"/></svg><span class="clabel">ξ<sub>×+</sub></span></div>
+            </div>
+          </div>
+          <div class="chrow sv">
+            <div class="chhead"><span class="chname">sv</span><span class="chsub">shape × velocity</span><span class="chexpr">ξ<sub>sv</sub> ∝ A<sub>IA</sub></span></div>
+            <div class="chdiags">
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="sv plus plus"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" fill="#27347a"/><line x1="146" y1="32" x2="167" y2="32" stroke="#bf6326" stroke-width="4"/><polygon points="173,32 161,26 161,38" fill="#bf6326"/></svg><span class="clabel">ξ<sub>++</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="sv cross cross"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" transform="rotate(45 34 32)" fill="#27347a"/><line x1="146" y1="32" x2="146" y2="13" stroke="#bf6326" stroke-width="4"/><polygon points="146,6 140,18 152,18" fill="#bf6326"/></svg><span class="clabel">ξ<sub>××</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="sv plus cross"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" fill="#27347a"/><line x1="146" y1="32" x2="146" y2="13" stroke="#bf6326" stroke-width="4"/><polygon points="146,6 140,18 152,18" fill="#bf6326"/></svg><span class="clabel">ξ<sub>+×</sub></span></div>
+              <div class="chdiag"><svg viewBox="0 0 180 64" role="img" aria-label="sv cross plus"><line x1="34" y1="32" x2="146" y2="32" stroke="#4a5666" stroke-width="3"/><ellipse cx="34" cy="32" rx="22" ry="8" transform="rotate(45 34 32)" fill="#27347a"/><line x1="146" y1="32" x2="167" y2="32" stroke="#bf6326" stroke-width="4"/><polygon points="173,32 161,26 161,38" fill="#bf6326"/></svg><span class="clabel">ξ<sub>×+</sub></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="caption" style="position:absolute;left:40px;top:640px;width:1200px;margin:0;">Every pair is binned by its separation and by its angle to the line of sight; <i>cucount</i> correlates any combination of spin-0 positions, spin-1 velocities and spin-2 shapes.</p>
+        <aside class="notes">
+          <p>Four correlation functions, all from the same catalogue. Density with density, which fixes the galaxy bias. Density with shape, the usual IA cross-correlation, proportional to b times A_IA. Shape with shape, second order in the tide. And shape with the reconstructed velocity, first order in A_IA, which only a density-field approach gives you.</p>
+          <p>The pictures show the components: plus is aligned with the separation, cross at 45 degrees; for the velocity, the arrow is the flow at the second galaxy.</p>
+          <p>cucount is the GPU pair counter (github.com/adematti/cucount), which correlates arbitrary spin combinations by projecting each field onto the pair separation before counting.</p>
+        </aside>
+      </section>
+
+      <!-- 6 · IA results: Abacus first, where the shapes are known -->
+      <section id="ia-abacus">
+        <div class="kicker">Intrinsic alignments · simulations</div>
+        <h2>In simulations, <span class="lta">LTA</span> explains the shapes of dark-matter halos well</h2>
+        <img src="fig/ia/xi_2d_maps_abacus_reconstructed.png" alt="AbacusSummit 2D xi(r_perp, r_par) maps for gs, ss and the shape-velocity channels, measured (filled) with the LTA template (contours)" style="position:absolute;left:40px;top:170px;width:1200px;">
+        <p class="caption" style="position:absolute;left:140px;top:530px;width:1000px;margin:0;text-align:center;">AbacusSummit halos, whose shapes are known exactly: the measured 2D ξ(r<sub>⊥</sub>, r<sub>∥</sub>) (filled) with the <span class="lta">LTA</span> template on top (contours). gs, ss and the shape–velocity channels are all recovered with a single LTA amplitude.</p>
+        <aside class="notes">
+          <p>First the simulation, where we know the truth: AbacusSummit halos with their shapes. Measured in 2D, separation across and along the line of sight. The filled maps are the measurement, the contours the LTA template from the reconstructed density field. One amplitude fits all the channels.</p>
+          <p>Figure: intrinsic_alignments/figures/output/abacus/headline/xi_2d_maps_abacus_reconstructed.png.</p>
+        </aside>
+      </section>
+
+      <!-- 7 · IA results: the same on CMASS × DECaLS -->
+      <section id="ia-decals">
+        <div class="kicker">Intrinsic alignments · the data</div>
+        <h2>The same on <span class="tide">CMASS × DECaLS</span></h2>
+        <img src="fig/ia/xi_2d_maps_decals_lta.png" alt="CMASS x DECaLS 2D xi(r_perp, r_par) maps: gs+, the s x s_LTA cross, sv++ and sv xx, with LTA contours" style="position:absolute;left:40px;top:170px;width:1200px;">
+        <p class="caption" style="position:absolute;left:140px;top:530px;width:1000px;margin:0;text-align:center;">The real data: ξ<sup>gs</sup><sub>+</sub>, the shape channel as the cross-correlation ⟨s · s<sub>LTA</sub>⟩, ξ<sup>sv</sup><sub>++</sub> and ξ<sup>sv</sup><sub>××</sub>. Data filled, <span class="lta">LTA</span> template in contours: the same panels as the simulation.</p>
+        
+        <p style="position:absolute;left:40px;top:590px;width:1200px;margin:0;text-align:center;font-size:36px;font-weight:700;color:var(--warm);">Paper to be written</p><aside class="notes">
+          <p>And the same panels on the real data: CMASS positions with DECaLS shapes. For the shape channel we use the cross-correlation of the shapes with the LTA template, which has much higher signal-to-noise than the shape auto-correlation.</p>
+          <p>Figure: figures/output/decals/headline/xi_2d_maps_decals_lta.png.</p>
+        </aside>
+      </section>
+
+      <!-- 9 · 2D lensing: the paper -->
+      <section id="lens-paper" data-section="2D lensing">
+        <div class="kicker">2D lensing</div>
+        <h2>The paper</h2>
+        <div class="figcard" style="left:170px;top:110px;width:940px;">
+          <img src="fig/lens/paper_abstract.png" alt="Title, authors and abstract of Murray, Kilbinger and Payerne, Two-dimensional weak lensing shear for cluster mass, concentration, ellipticity and miscentering estimation">
+        </div>
+        <aside class="notes">
+          <p>Murray, Kilbinger &amp; Payerne: "Two-dimensional weak lensing shear for cluster mass, concentration, ellipticity and miscentering estimation". A&amp;A format.</p>
+          <p>Check before quoting the abstract: it says "up to 20%" on the mass and "a factor of 2" for the line of sight; the body and conclusions say 3–18% and 2.2.</p>
+        </aside>
+      </section>
+
+      <!-- 10 · 2D lensing: the shear field, and why not average it -->
+      <section id="lens-field">
+        <div class="kicker">2D lensing · the motivation</div>
+        <h2>Use the whole shear field, not its average in rings</h2>
+        <div class="steps" style="left:40px;top:130px;width:560px;">
+        </div>
+        <img src="fig/field.png" alt="The tangential and cross components of the simulated reduced-shear field around one cluster, without shape noise" style="position:absolute;left:87px;top:130px;width:465px;height:auto;">
+        <p class="caption" style="position:absolute;left:600px;top:198px;width:600px;margin:0;">\(g_+\) (left) and \(g_\times\) (right) round one simulated cluster before shape noise: \(M_{200m} = 8\times10^{14}\,M_\odot\), \(c = 4\), \(e = 0.4\), 0.2′ off-centre.</p>
+        <img src="fig/summaries.svg" alt="Fifteen log-spaced rings, and the same rings cut into ten sectors each" style="position:absolute;left:137px;top:375px;width:915px;height:auto;">
+        <p class="caption" style="position:absolute;left:255px;top:670px;width:200px;margin:0;text-align:center;">1D: 15 rings</p>
+        <p class="caption" style="position:absolute;left:731px;top:660px;width:200px;margin:0;text-align:center;">2D: × 10 sectors</p>
+        <aside class="notes">
+          <p>The motivation, from the paper's introduction. Using the 2D field rather than the azimuthally averaged profile has two advantages. Miscentring and ellipticity create non-circular signals that are lost to the circular average, and the 2D field measures them directly. And the cosmic web shears the galaxies too, adding noise that is correlated across the field; averaging combines it sub-optimally (Murray+ 2025).</p>
+          <p>The model: an elliptical NFW halo, the correlated structure from Quijote N-body boxes, the uncorrelated line of sight as a Gaussian field from C_ℓ, and shape noise for 10, 30 or 100 galaxies per arcmin². g+ and g× in 15 rings from 1 to 32 arcmin, each cut into 10 sectors, go into neural posterior estimation (sbi), trained on 10⁶ simulations.</p>
+          <p>Figure: paper Fig. 1, laid side by side; rings and sectors drawn for the talk (scripts/make_diagrams.py).</p>
+        </aside>
+      </section>
+
+      <!-- 11 · 2D lensing: the results, paper Fig. 8b -->
+      <section id="lens-results">
+        <div class="kicker">2D lensing · the results</div>
+        <h2>The 2D field tightens every parameter</h2>
+        <div class="figcard" style="left:40px;top:120px;width:800px;">
+          <img src="fig/lens/sigma_grid.png" alt="Mean marginal posterior width against the true value for log mass, concentration, miscentring and ellipticity; 1D in red, 2D in blue, for 10, 30 and 100 galaxies per square arcminute">
+          <span class="cap">Mean posterior width over 800 noise realisations per point: <b>1D</b> in red, 2D in blue; dotted, solid, dashed for 10, 30, 100 galaxies per arcmin² (paper Fig. 8b).</span>
+        </div>
+        <div class="tiles" style="left:870px;top:120px;width:370px;grid-template-columns:1fr;gap:12px;">
+          <p class="tile"><span class="t">Mass</span><span class="g">8% tighter</span><span class="c">up to 18% at 100 per arcmin²</span></p>
+          <p class="tile"><span class="t">Concentration</span><span class="g">11% tighter</span><span class="c">19% at 100 per arcmin²</span></p>
+          <p class="tile"><span class="t">Miscentring</span><span class="g">21% tighter</span><span class="c">32% at 100 per arcmin²</span></p>
+          <p class="tile"><span class="t">Ellipticity</span><span class="g">6–8% tighter</span><span class="c">still set by the prior for one cluster</span></p>
+        </div>
+        <p class="caption" style="position:absolute;left:870px;top:640px;width:370px;margin:0;">Gains at 30 galaxies per arcmin², Euclid-like.</p>
+        <aside class="notes">
+          <p>At 30 galaxies per arcmin²: mass 8% tighter, concentration 11%, miscentring 21% (aanda.tex L314). At 100 per arcmin²: 18%, 19% and 32%. Ellipticity improves 6–8% at 30 and 10–13% at 100, but for a single cluster it stays prior-dominated: that is what stacks are for.</p>
+          <p>The mass gain comes from handling the correlated noise: without the line-of-sight structure it essentially disappears (L300). And leaving the line of sight out underestimates the mass error by 2.2× for the most massive clusters (L298).</p>
+        </aside>
+      </section>
+
+      <section id="spherex-intro" data-section="SPHEREx">
+        <div class="kicker">SPHEREx</div>
+        <h2>A spectrum of the whole sky, from space</h2>
+        <div class="figcard" style="left:40px;top:120px;width:620px;">
+          <img src="fig/spherex/em_spectrum.svg" alt="The electromagnetic spectrum, how opaque the atmosphere is at each wavelength, and the ranges of major facilities, with SPHEREx and Euclid picked out">
+          <span class="cap">From the ground, the near-infrared is cut into narrow windows. SPHEREx and Euclid observe it from space.</span>
+        </div>
+        <div class="figcard" style="left:690px;top:120px;width:550px;">
+          <video src="fig/spherex/survey_strategy.mp4" muted="" loop="" playsinline="" data-autoplay=""></video>
+          <span class="cap">How SPHEREx scans the sky. Animation: NASA/JPL-Caltech (NASA SVS), "Novel Survey Strategy".</span>
+        </div>
+        <ul class="ovlist" style="position:absolute;left:40px;top:520px;width:1200px;margin:0;">
+          <li>Launched 11 March 2025, surveying since 1 May 2025; a 20 cm telescope, 3.5° × 11.3° field</li>
+          <li>The whole sky every six months, 0.75–5 µm in 102 channels, with 6.2″ pixels</li>
+          <li>Polar orbit, looking about 90° from the Sun: the ecliptic poles are crossed on every orbit</li>
+        </ul><aside class="notes">
+          <p>Why space: from the ground, the near-infrared is chopped into narrow windows by water vapour and CO₂, and beyond about 2.5 µm the sky and the telescope glow. SPHEREx is not new because of its band; it is new because it takes a spectrum of every point on the sky. WISE did the sky in 4 broad bands; SPHEREx does it in 102 channels.</p>
+          <p>The survey: it observes near the great circle 90° from the Sun, which sweeps round the sky as the Earth goes round the Sun, so the whole sky is covered every six months. The poles are crossed on nearly every orbit, which is why the deep fields are there and why our depth depends on ecliptic latitude.</p>
+          <p>From the pizza-lunch deck (euclid-spherex/docs/slides/pizza_lunch_cea). Numbers: Bock et al. 2025 (arXiv:2511.02985). The spectrum figure's opacity curve is schematic; the facility ranges are real.</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx 1 · the same field from both telescopes -->
+      <section id="euclid-field" data-section="Euclid × SPHEREx">
+        <div class="kicker">Euclid × SPHEREx</div>
+        <h2>The same 10′ of sky: Euclid sees the galaxy, SPHEREx its spectrum</h2>
+        <img src="fig/euclid/ngc6744_euclid.jpg" alt="The central 10 arcminutes of NGC 6744 from Euclid, VIS, Y and H in colour, north up" style="position:absolute;left:150px;top:130px;width:470px;height:470px;border-radius:4px;">
+        <video src="fig/euclid/ngc6744_spherex.mp4" poster="fig/euclid/ngc6744_spherex_poster.png" muted loop playsinline data-autoplay style="position:absolute;left:660px;top:130px;width:470px;height:470px;border-radius:4px;"></video>
+        <p class="caption" style="position:absolute;left:150px;top:610px;width:470px;margin:0;"><b>Euclid</b> VIS + Y + H · 0.1″ pixels</p>
+        <p class="caption" style="position:absolute;left:660px;top:610px;width:470px;margin:0;"><b>SPHEREx</b> · 6.2″ pixels · its six detectors in turn, 0.75–5 µm, one brightness scale</p>
+        <aside class="notes">
+          <p>Both panels are real data of the same field: the central 10′ of NGC 6744, north up, on one scale. SPHEREx pixels are 62× coarser than Euclid VIS, about 3,800 Euclid pixels in each: that is the cost. Every one of those pixels carries a spectrum in 102 channels: that is what the cost buys.</p>
+          <p>A typical catalogue galaxy (I_E 19–20) is a fraction of one SPHEREx pixel. SPHEREx cannot detect or deblend it; Euclid says where it is, and we measure the SPHEREx spectrum there.</p>
+          <p>From the pizza-lunch deck (euclid-spherex/docs/slides/pizza_lunch_cea; scripts/ngc6744_compare.py).</p>
+        </aside>
+      </section>
+
+      <!-- 13 · the task: outside my expertise, and the output judges itself -->
+      <section id="spherex-task">
+        <div class="kicker">SPHEREx · the task</div>
+        <h2>Agentic Science + the SPHEREx catalogues</h2>
+        <ul class="ovlist" style="position:absolute;left:40px;top:116px;width:815px;margin:0;height:341px;">
+          <li><b>Something I am not an expert in</b>
+            <ul><li>If we want to do new science with AI, this needs to be the case. Become an expert as you are doing the work</li></ul></li>
+          <li><b>A concrete product: a catalogue</b>
+            <ul><li>Trivial for people to work out if the work has been done poorly or not</li><li>Will enable other people to do new exciting science (but only if it is good!)</li></ul></li>
+          <li><b>The work is separable into smaller tasks</b>
+            <ul><li>Agents work well on small well-posed problems</li></ul></li>
+          <li><b>To learn how to do something, do it</b>
+            <ul><li>You make mistakes, and improve</li><li>For example, naming and versioning have been the big problem here: defining version control at the start would have helped, largely for me to talk with Claude</li></ul></li>
+        </ul><aside class="notes">
+          <p>Why this was the right project to push the agentic approach on. It was outside my expertise, so I could not carry it on my own knowledge. It produces something concrete. And the quality is easy to see: a bad catalogue fails against spectroscopic redshifts immediately, so there is nowhere for plausible-but-wrong to hide.</p>
+        </aside>
+      </section>
+
+      <!-- blocks 1 · the word, and a neat, slightly higgledy-piggledy wall of blue blocks -->
+      <section id="blocks-wall" data-section="Blocks" data-background-color="#fbf8f1">
+        <svg class="wc" data-blocks="wall" width="1280" height="720" aria-hidden="true"></svg>
+        <aside class="notes">
+          <p>The wall: an analysis as blocks, each with its own inputs and outputs and a check around it, stacked one course on the last.</p>
+        </aside>
+      </section>
+
+      <!-- blocks 2 · the animation: the wall comes apart into the nest (blocks that overlap, contain one another, and a small one that opens onto a large one), and stops there -->
+      <section id="blocks-anim" data-background-color="#fbf8f1">
+        <svg class="wc" data-blocks="anim" width="1280" height="720" aria-hidden="true"></svg>
+        <aside class="notes">
+          <p>But blocks are not bricks. The wall settles to a ghost while blocks lift off it: they overlap; large blocks contain smaller ones; and a small block can contain a large one, one stage of a pipeline being itself a whole wall at the level below. It plays once and stays there.</p>
+        </aside>
+      </section>
+
+      <!-- blocks 3 · life: from the nest, blocks are painted in, grow, shrink, collapse, crumble and fade, at random -->
+      <section id="blocks-life" data-background-color="#fbf8f1">
+        <svg class="wc" data-blocks="life" width="1280" height="720" aria-hidden="true"></svg>
+        <aside class="notes">
+          <p>And they do not stay put. Blocks are made, grow, shrink, collapse, crumble, and disappear; it never plays the same way twice.</p>
+        </aside>
+      </section>
+
+      <!-- what a block is: the definition, its four parts, and the two ceilings on its size -->
+      <section id="block-def">
+        <div class="kicker">Blocks</div>
+        <h2>A block is the smallest piece of an analysis an agent can be handed whole</h2>
+        <p class="claim ink" style="left:40px;top:136px;width:1150px;font-size:24px;">It has its own inputs and outputs, and a check around it that must pass against something outside itself before anything is built on top.</p>
+        <div class="tiles" style="left:40px;top:246px;width:1200px;grid-template-columns:repeat(4, 1fr);">
+          <p class="tile"><span class="t">Interface</span><span class="g">Inputs and outputs</span><span class="c">So blocks compose, and many can be built in parallel.</span></p>
+          <p class="tile"><span class="t">Contract</span><span class="g">A check outside it</span><span class="c">When it fails, the agent revisits its assumptions.</span></p>
+          <p class="tile"><span class="t">Decisions</span><span class="g">Its own choices</span><span class="c">Explicit, implicit and inherited, logged in ASTRA.</span></p>
+          <p class="tile"><span class="t">Size</span><span class="g">A variable</span><span class="c">How big a block can be is the open question.</span></p>
+        </div>
+        <div class="card" style="position:absolute;left:40px;top:470px;width:1200px;">
+          <p style="margin:0 0 6px;font-size:19px;"><b>Two ceilings on block size.</b></p>
+          <p style="margin:0 0 4px;font-size:18px;"><b class="accent">Agent reliability</b>: how much an agent can do and get right. Evals measure it, and new models move it.</p>
+          <p style="margin:0;font-size:18px;"><b class="accent">Human understanding</b>: evals cannot move it, and that is the point. The analysis cannot advance faster than I understand it.</p>
+        </div>
+        <aside class="notes">
+          <p>A block is the smallest unit of an analysis that has its own inputs and outputs, can be handed to an agent whole, and has a check around it that must pass against something outside itself before anything is built on top (agentic-science/blocks/README.md).</p>
+          <p>The size of a block is the variable, and it has two ceilings. One is the agent's reliability, which evals measure and new models move. The other is my understanding, which evals cannot move.</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · the blocks, and the extraction block opened up -->
+      <section id="allsky-blocks" data-section="SPHEREx all-sky">
+        <div class="kicker">SPHEREx all-sky · the blocks</div>
+        <h2>The all-sky catalogue, block by block</h2>
+        <div class="walls" style="left:40px;top:118px;width:1200px;grid-template-columns:1fr;">
+          <div class="row">
+            <p class="brick">selection<i>36 choices</i></p>
+            <p class="brick">footprint<i>19 choices</i></p>
+            <p class="brick" style="border-color:var(--warm);">extraction<i>51 choices</i></p>
+            <p class="brick">redshifts<i>40 choices</i></p>
+            <p class="brick">flags, release<i>36 choices</i></p>
+            <p class="brick">clustering<i>57 choices</i></p>
+          </div>
+        </div>
+        <p class="label" style="position:absolute;left:40px;top:205px;margin:0;">The pipeline</p>
+        <ol class="ovlist pipe" style="position:absolute;left:40px;top:235px;width:1200px;margin:0;">
+          <li><b>Sources selected on VIS-detected DR1 Wide</b>
+            <ul><li>Sources with 16 &lt; I<sub>E</sub> &lt; 20.5, de-duplicated at 1″, with no flag cuts at this stage</li></ul></li>
+          <li><b>Forced photometry</b>
+            <ul><li>Tractor fits the SPHEREx PSF at the fixed Euclid position, once per target per frame that covers it</li></ul></li>
+          <li><b>Co-add onto 77 channels</b>
+            <ul><li>Each channel takes every observation in its wavelength bin, drops flagged ones, inflates errors per detector, clips at 3σ and takes the inverse-variance mean</li></ul></li>
+          <li><b>Zeropoints</b>
+            <ul><li>Euclid and ground-band offsets relative to SPHEREx are fitted at the spec-z on half the truth, then frozen and applied</li></ul></li>
+          <li><b>Joint redshift fit</b>
+            <ul><li>eazy-py fits the 77 channels with VIS, Y, J, H and the ground bands, flat prior, 12 FSPS templates</li></ul></li>
+          <li><b>Stellar fit, same run</b>
+            <ul><li>The same photometry is fitted with a grid of stellar models; <code>is_star</code> when the best star beats the galaxy fit in χ²</li></ul></li>
+          <li><b>After the fit</b>
+            <ul><li>The posteriors are recalibrated, and stellar mass, SFR and rest-frame colours come from the same fit</li></ul></li>
+        </ol><aside class="notes">
+          <p>The blocks of the all-sky catalogue are its pipeline stages, each with its own register of choices: 239 in docs/CHOICES.md (selection 36, footprint 19, extraction 51, redshifts 40, flags and release 36, clustering 57).</p>
+          <p>The pipeline in order, as given for Euclid DR1 × SPHEREx (pizza-lunch deck; report §3). 1. Select on Euclid: VIS-detected DR1 Wide, 16 &lt; I_E &lt; 20.5, 1″ dedup, no flag cuts; 13,784,773 targets. 2. Forced photometry: one Tractor PSF fit per target per SPHEREx frame, at the fixed Euclid position; frame-major, each frame opened once. 3. Co-add onto 77 channels once a sky cell is fully measured: per channel, drop flagged and stamp-edge observations, inflate errors by the per-detector factor, clip at 3σ, inverse-variance mean. 4. Zeropoints fitted at the spec-z on half the truth, frozen. 5. Joint fit: eazy-py on SPHEREx + VIS/Y/J/H + ground bands, flat prior, fsps_QSF_12_v3. 6. Stellar fit in the same run: is_star when χ²_star − χ²_gal &lt; 0. 7. Posterior recalibration; stellar mass, SFR, rest-frame colours.</p>
+          <p>For the all-sky catalogue the same pipeline runs on Legacy Surveys positions (16 &lt; r &lt; 20.5) instead of Euclid: 287 cells of 10°, 1.37 million frames, 97.7 TB (CATALOGUE_REPORT.md §3).</p>
+        </aside>
+      </section>
+
+      <section id="orchestration" class="net orch">
+        <div class="kicker" style="position:relative;left:-291px;top:-178px;">SPHEREx all-sky · how I work with Claude</div>
+        <h2>Issues, an orchestrator, and sub-agents</h2>
+        <p class="step fragment fade-out" data-fragment-index="1">We have a set of issues.</p>
+        <p class="step fragment fade-in-then-out" data-fragment-index="1">An orchestrator asks sub-agents to work on them.</p>
+        <p class="step fragment fade-in-then-out" data-fragment-index="2">A sub-agent solves an issue, and can create new ones.</p>
+        <p class="step fragment" data-fragment-index="3">After too long, a new orchestrator carries on.</p>
+        <svg class="links" width="1280" height="720" viewBox="0 0 1280 720" aria-hidden="true">
+          <path class="fragment" data-fragment-index="1" data-shape="arrow" data-from="orch:r" data-to="sa1:l sa2:l sa3:l"></path>
+          <path class="fragment dash" data-fragment-index="1" data-shape="dash" data-from="orch:r" data-to="sa4:l sa5:l sa6:l"></path>
+          <path class="fragment" data-fragment-index="1" data-shape="arrow" data-from="sa1:r" data-to="i2:l"></path>
+          <path class="fragment" data-fragment-index="1" data-shape="arrow" data-from="sa2:r" data-to="i11:l"></path>
+          <path class="fragment" data-fragment-index="1" data-shape="arrow" data-from="sa3:r" data-to="i23:l"></path>
+          <path class="fragment" data-fragment-index="2" data-shape="arrow" data-from="sa1:r" data-to="i2:l"></path>
+          <path class="fragment" data-fragment-index="2" data-shape="loop" data-from="i2" data-to="inew:r"></path>
+          <path class="fragment" data-fragment-index="3" data-shape="vline" data-from="orch:b" data-to="orch2:t"></path>
+          <path class="fragment dash" data-fragment-index="3" data-shape="dash" data-from="orch2:r" data-to="sa4:l sa5:l sa6:l"></path>
+        </svg>
+        <div class="branch fragment" data-fragment-index="1" style="left:40px;top:300px;width:250px;">
+          <p class="node" data-node="orch"><span class="t">Orchestrator</span><span class="g">the main session: asks sub-agents to work on issues, and merges their work</span></p>
+        </div>
+        <div class="branch subs fragment" data-fragment-index="1" style="left:380px;top:200px;width:280px;">
+          <p class="leaf" data-node="sa1"><span class="t">Sub-agent</span><span class="c">one issue, its own worktree and branch</span></p>
+          <p class="leaf" data-node="sa2"><span class="t">Sub-agent</span><span class="c">one issue, its own worktree and branch</span></p>
+          <p class="leaf" data-node="sa3"><span class="t">Sub-agent</span><span class="c">one issue, its own worktree and branch</span></p>
+          <p class="leaf ghost" data-node="sa4"><span class="t">sub-agent</span><span class="c">not started yet</span></p>
+          <p class="leaf ghost" data-node="sa5"><span class="t">sub-agent</span></p>
+          <p class="leaf ghost" data-node="sa6"><span class="t">sub-agent</span></p>
+        </div>
+        <div class="branch" style="left:760px;top:170px;width:440px;">
+          <p class="head" data-node="pile" style="text-align:left;"><span class="t">Issues</span><span class="g">the GitHub tracker</span></p>
+          <p class="leaf" data-node="i2"><span class="t"><span class="solved">#2 Bright-star halos move the redshifts</span><span class="tick fragment" data-fragment-index="2"> ✓ solved</span></span></p>
+          <p class="leaf" data-node="i47"><span class="t">#47 A flux offset above 3.8 µm</span></p>
+          <p class="leaf" data-node="i11"><span class="t">#11 He I read as Hα: a pile at z ≈ 0.65</span></p>
+          <p class="leaf" data-node="i36"><span class="t">#36 9.3% of fits fail</span></p>
+          <p class="leaf" data-node="i23"><span class="t">#23 Preferred redshifts: the comb</span></p>
+          <p class="leaf fragment" data-fragment-index="2" data-node="inew"><span class="t accent">#76 Frames that hold none of the targets</span><span class="c">new, created by a sub-agent</span></p>
+        </div>
+        <p class="ctx fragment" data-fragment-index="3" style="position:absolute;left:10px;top:440px;width:128px;margin:0;">too much context</p>
+        <div class="branch fragment" data-fragment-index="3" style="left:40px;top:540px;width:250px;">
+          <p class="node" data-node="orch2"><span class="t">Orchestrator</span><span class="g">a new one: reads the old one's HANDOFF.md and carries on</span></p>
+        </div><aside class="notes">
+          <p>The setup. We have a set of issues: the GitHub tracker is the problem list.</p>
+          <p>[click] An orchestrator, the main Claude session, asks sub-agents to work on them, three or four at a time. Each works on one issue in its own git worktree, on its own branch, and posts its results on the issue; the orchestrator merges.</p>
+          <p>[click] A sub-agent solves its issue, and on the way it often finds something new, so it creates a new issue, which goes on the pile with the rest.</p>
+          <p>[click] An orchestrator fills up with context. When it has worked for too long, it writes a handoff (docs/HANDOFF.md: state, decisions waiting on me, what to pick up first), and we start a new one, which reads it and carries on with its own sub-agents. There was one on the morning of 5 October.</p>
+          <p>The issues are real ones from the tracker; which one is marked solved, and #76 as the new one, are illustrative of the mechanism.</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · solved along the way: the helium line, one slide as in the Napoli deck -->
+      <section id="allsky-helium">
+        <div class="kicker">SPHEREx all-sky · solved along the way</div>
+        <h2>We can see airglow from helium with SPHEREx</h2>
+        <img src="images/image-2.png" alt="One SPHEREx D1 frame from 2025-10-20 with a dark arc across its bottom, the 1.083 µm curve drawn in orange" style="position:absolute;left:40px;top:120px;width:552px;">
+        <div class="steps" style="left:640px;top:120px;width:600px;">
+          <p style="font-size:22px;">The low Earth orbit means that SPHEREx sees some of the atmosphere.<br>The Sun lights up He I in the upper atmosphere, and SPHEREx sees it as emission at 1.083 µm.<br>Read naively, it looks like Hα.</p>
+        </div>
+        <img src="fig/allsky/talk/he_spectrum_compact.png" alt="A galaxy at DESI z = 0.120 fitted at z = 0.67 with the He I channels, and at z = 0.11 without them, with both P(z)" style="position:absolute;left:593px;top:304px;width:671px;"><aside class="notes">
+          <p>Metastable 2³S helium in the upper atmosphere resonantly scatters sunlight in the 2³S–2³P transition at 1.083 µm; Hubble's WFC3 sees it as a time-varying background (Brammer et al. 2014).</p>
+          <p>In one SPHEREx D1 frame (2025-10-20) the sky is 0.40 MJy/sr at 1.040 µm, 2.43 on the line and 0.47 at 1.106 µm. SPHEREx has a linear variable filter, so the orange curve is where the filter passes 1.083 µm. In the co-added spectra a residual on SPHEREx channels 14–15 is read as Hα at z ≈ 0.67, which made the alias pile at 0.6–0.68 and the cliff at 0.68 in the catalogue (issue #11).</p>
+          <p>The fix so far is a fit-level mask of the He I channels; the next step is SPHEREx's published He I background template (#49), and the adopted tractorjax-spherex background with 288 wavelength bins catches the line's edge across a whole frame (DECISIONS, EXT-20). In the Euclid v2 fit the He I channels are masked and the z ≈ 0.67 band is gone.</p>
+          <p>Slide from the Napoli deck; figures spherex-allsky results/figures/talk/he_spectrum_compact.png and the frame image.</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · solved along the way: the bright-star halos, as in the Napoli deck -->
+      <section id="allsky-halos">
+        <div class="kicker">SPHEREx all-sky · solved along the way</div>
+        <h2>SPHEREx images have too conservative masking around stars</h2>
+        <img src="fig/allsky/talk/halo_spherex_image.png" alt="SPHEREx D3 image of the same region, median of 127 frames, with the three bright stars and their halo radii marked" style="position:absolute;left:0px;top:234px;width:506px;">
+        <div class="figcard" style="left:520px;top:120px;width:720px;">
+          <img src="fig/allsky/talk/halo_sky.png" alt="Galaxies around three bright stars, coloured by fitted redshift, before and after the background fix">
+          <span class="cap">Galaxies round three bright stars: fitted at <b>z &lt; 0.1</b> (blue) or <b>0.5 &lt; z &lt; 0.7</b> (orange). Left, the annulus background as published; right, the clipped median.</span>
+        </div><aside class="notes">
+          <p>Found because redshift shells anti-correlated, which linear theory forbids, and because the systematics weights would not converge (CATALOGUE_REPORT.md §8.6, issue #2).</p>
+          <p>Around three stars of Ks 0.2, 0.4 and 1.9: before, 1,026 galaxies fitted at z &lt; 0.1 and 1,411 at 0.5–0.7; after the F4 background (clipped median over all usable pixels), 886 and 546. Against DESI, inside the halo radius: 22.8% outliers on 3,503 galaxies before, 3.8% on 3,647 after (results/figures/talk/halo_zz.png).</p>
+          <p>The release also carries the veto radius 0.1° × 10^(0.2(5.5 − Ks)), capped at 3°, round 188,347 2MASS stars (column bs_ratio). In the final background, tractorjax-spherex's map is adopted with F4 kept inside bright-star halo discs (DECISIONS, EXT-20).</p>
+          <p>Link to the Euclid catalogue: its galaxy sample vetoes 45″ round Gaia G &lt; 13 stars.</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · the halo fix, galaxy by galaxy -->
+      <section id="allsky-halo-spectra">
+        <div class="kicker">SPHEREx all-sky · solved along the way</div>
+        <h2>Two galaxies near a bright star, before and after the new extraction</h2>
+        <img src="fig/allsky/talk/halo_spectra.png" alt="Two galaxies near a bright star: the production spectrum and posterior in red, the fixed extraction in blue, with the DESI redshift marked" style="position:absolute;left:40px;top:118px;width:1000px;">
+        <div class="steps" style="left:1060px;top:140px;width:180px;">
+          <p><b>In the core</b>: DESI z = 0.21. Production 0.03, fixed 0.19.</p>
+          <p><b>In the ring</b>: DESI z = 0.31. Production 0.58, fixed 0.29.</p>
+          <p class="soft">Red: production. Blue: the fixed background.</p>
+        </div>
+        <aside class="notes">
+          <p>Two galaxies near the same bright star. (a) In the core, 0.20 of the halo radius from star A, r = 19.3, DESI z = 0.209: the production spectrum carries the star's light, mostly in the blue and at the He I channels, and fits at z = 0.03; with the fixed background (F4) it is fainter and flatter and fits at 0.19. (b) In the ring, 0.71 of the radius, r = 18.0, DESI z = 0.307: production 0.58, fixed 0.29. Right: the posteriors, DESI marked.</p>
+          <p>Figure: spherex-allsky results/figures/fig_halo_examples.png (report §8.6).</p>
+        </aside>
+      </section>
+
+      <!-- galaxy correlations between redshift shells, as in the Napoli deck -->
+      <section id="allsky-halo-clustering">
+        <div class="kicker">Euclid × SPHEREx · the clustering</div>
+        <h2>Galaxy correlations</h2>
+        <ul class="ovlist" style="position:absolute;left:40px;top:120px;width:470px;margin:0;">
+          <li>Randoms generated within the footprint</li>
+          <li>Iterative systematics weights, as in DES</li>
+          <li>Maps: dust, star density, SPHEREx depth, ecliptic latitude, zodiacal background, VIS depth, …</li>
+          <li><b>Cross-correlations between distant shells close to zero</b>: no more anti-correlation round bright stars</li>
+        </ul>
+        <img src="fig/euclid/wtheta_cross_grid_sq_res_plain.png" alt="All 21 auto and cross angular correlation functions between the six redshift shells from z = 0.05 to 0.6, ISD-weighted and unweighted" style="position:absolute;left:564px;top:10px;width:675px;">
+        <img src="fig/euclid/euclid_nz_desy6.svg" alt="Tomographic n(z), each scaled to peak 1: six Euclid × SPHEREx bins below z = 0.5 against the six DES Y6 clustering bins" style="position:absolute;left:30px;top:410px;width:520px;">
+        <p class="caption" style="position:absolute;left:40px;top:646px;width:510px;margin:0;text-align:left;">True n(z) of six Euclid × SPHEREx bins from reweighted spectra, against the DES Y6 lens bins (arXiv:2601.14559); each scaled to peak 1.</p><aside class="notes">
+          <p>Resolved Euclid galaxy sample in six shells from 0.05 to 0.6. Landy–Szalay cross-correlations against one shared random set (11.2 M randoms, 10× the largest shell), each galaxy weighted by its own shell's ISD weight, 120 jackknife patches. N per shell: 232k, 790k, 1.09 M, 1.12 M, 716k, 429k.</p>
+          <p>r over 10′–60′, weighted: neighbouring shells 0.15–0.33 (the overlap of their true n(z), as expected for σ_NMAD ≈ 0.009 and Δz = 0.1 shells); two or more apart −0.03 to 0.08. In September and in the first all-sky run, bright-star halos made far shells anti-correlate (r = −0.58 for 0.1–0.2 × 0.6–0.7); no longer.</p>
+          <p>Weights: ISD as in DES Y3/Y6, eight survey-property maps, five regressed (E(B−V), stars, SPHEREx channel count, ecliptic latitude, VIS depth); the most significant map is corrected and the loop repeats until every S_1D &lt; 2, with significance from 400 lognormal mocks. Weights span 0.77–1.36.</p>
+          <p>Caveat: the 10′–60′ window lies partly below some shells' scale cuts. Slide from the Napoli deck (numbers/numbers_v2_galaxy_resolved_clustering.json).</p>
+        </aside>
+      </section>
+
+      <section id="allsky-candide">
+        <div class="kicker">SPHEREx all-sky · how I work with Claude</div>
+        <h2>Two hundred knocks in eight seconds</h2>
+        <ol class="ovlist pipe" style="position:absolute;left:40px;top:120px;width:1200px;margin:0;">
+          <li><b>Jobs on candide, launched from nibi</b>
+            <ul><li>Every agent had to open its own SSH connection to candide</li></ul></li>
+          <li><b>One agent knocked on the door 200 times in 8 seconds</b>
+            <ul><li>candide's port knock took it as an attack, and we were blocked</li></ul></li>
+          <li><b>The orchestrator found a way back in</b>
+            <ul><li>Send agents through the connection another agent already had open</li></ul></li>
+          <li><b>The agent on issue #73 decided that was not allowed</b></li>
+          <li><b>Afterwards, we went through candide's rules together</b>
+            <ul><li>They now go into the agent's brief</li></ul></li>
+        </ol>
+        <div class="figcard" style="left:40px;top:420px;width:1200px;">
+          <img src="fig/allsky/talk/candide_rules.png" alt="An agent's brief: the shared connection only, with no retry loops; account cusers on comp, no GPUs, exclude n09; small writes under n09data/murray; rsync code over and bring results back to nibi to commit; never read n17data/cdaley">
+          <span class="cap">The candide rules, as an agent's brief now spells them out.</span>
+        </div><aside class="notes">
+          <p>A story about agents on someone else's machine. I was running jobs on candide from nibi, and every agent had to open its own SSH connection. Then one agent tried to connect 200 times in 8 seconds; candide's port knock read that as an attack, and we were locked out.</p>
+          <p>The orchestrator then worked out that agents could be sent through the connection another agent already had open. The agent working on issue #73 came along and decided that was not allowed.</p>
+          <p>Afterwards we went through candide's rules together, and they now go into the brief: the shared connection only, with no retry loops; the cusers account on comp, no GPUs, never node n09; small writes under /n09data/murray; rsync the code over and bring results back to nibi to commit; never read another user's data.</p>
+          <p>The repo's handoff says the same: one shared SSH master, never open new connections in loops (docs/HANDOFF.md).</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx · the catalogue, as summarised at Napoli -->
+      <section id="euclid-catalogue">
+        <div class="kicker">Euclid × SPHEREx · the catalogue</div>
+        <h2>13.8 million Euclid sources: 5.2 million galaxies, 3.1 million of quality</h2>
+        <table class="counts" style="left:40px;top:112px;width:1200px;">
+          <tbody><tr><th>all objects</th><th style="color:#2a62c9;">galaxy sample</th><th style="color:#2a62c9;">quality sample</th><th style="color:#8a4fd0;">stars</th><th style="color:#2a9d8f;">point-like</th><th style="color:#b5262f;">failed fits</th><th class="soft">removed by flags</th></tr>
+          <tr><td>13,784,773</td><td>5,206,897 (37.8%)</td><td>3,102,178 (22.5%)</td><td>1,233,310 (8.9%)</td><td>985,052 (7.1%)</td><td>5,751,542 (41.7%)</td><td>607,972 (4.4%)</td></tr>
+        </tbody></table>
+        <img src="fig/euclid/sample_overview_res.png" alt="Left: redshift distribution of the resolved galaxy and quality samples and of the point-like objects removed from them. Right: I_E distribution of stars, failed fits, point-like objects, galaxy sample, quality sample and objects removed by flags" style="position:absolute;left:90px;top:196px;width:1100px;">
+        <p class="soft" style="position:absolute;left:40px;top:640px;width:1200px;margin:0;font-size:17px;">Selected on Euclid DR1 VIS, 16 &lt; I<sub>E</sub> &lt; 20.5, over about 1,950 deg²; forced SPHEREx photometry at the Euclid positions; <b>redshifts from the SPHEREx spectra alone</b>. Most failed fits are bright stars.</p><aside class="notes">
+          <p>The v2 catalogue as shown in Napoli on 16 October: SPHEREx-only redshifts (no Euclid or ground bands in the fit), all 13,784,773 VIS-selected objects. Galaxy sample = the release galaxy sample (fitted, not a star, Sérsic/ellipticity, DR1 flags, spurious, Gaia halo veto) and resolved (not MER point_like_prob &gt; 0.5); quality = that plus all redshift-quality bits and odds ≥ 0.90.</p>
+          <p>Point-like objects (985k) are mostly DESI QSOs and stars; removing them takes galaxy-sample outliers from 2.5% to 1.9% with σ_NMAD unchanged. Failed fits (5.75 M): the fit ran to the grid floor; 71% point-like, 67% PHZ stars, peak at I_E ≈ 17.4: bright stars our stellar fit did not claim.</p>
+          <p>Area 1,953 deg² by target occupancy (north 451, south 1,502); the report's ~2,089 deg² was measured another way and the two are not reconciled.</p>
+          <p>From the Napoli deck (spherex-allsky docs/slides/euclid_wl_napoli_2026-10-16, numbers/sample_overview_res.json, figure fig/sample_overview_res.png).</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx 2 · redshifts against Euclid's own -->
+      <section id="euclid-zz">
+        <div class="kicker">Euclid × SPHEREx · the redshifts</div>
+        <h2>Four times tighter than Euclid's own photo-z</h2>
+        <div class="figcard" style="left:40px;top:130px;width:740px;">
+          <img src="fig/euclid/zz_galaxy_res.png" alt="Photometric against spectroscopic redshift for the resolved galaxy sample: Euclid DR1 PHZ on the left, SPHEREx-only redshifts on the right">
+          <span class="cap">The galaxy sample against 111,571 spectroscopic redshifts (DESI DR1, 6dFGS, 2dFGRS, 2dFLenS, OzDES). σ<sub>NMAD</sub> goes from <b>0.035</b> (Euclid DR1 PHZ) to <b>0.0087</b> (SPHEREx).</span>
+        </div>
+        <div class="steps" style="left:810px;top:130px;width:430px;">
+          <h3>Euclid DR1 × SPHEREx</h3>
+          <p>5.2 million resolved galaxies over about 1,950 deg², with redshifts from the SPHEREx spectra alone.</p>
+          <h3>Against Euclid's PHZ</h3>
+          <p>4.1× tighter overall; the quality sample (3.1 M) reaches 0.0075 with 0.5% outliers.</p>
+          <h3 class="next">Slightly more outliers</h3>
+          <p>1.9% catastrophic outliers in the galaxy sample, against 1.4% for PHZ.</p>
+        </div>
+        <aside class="notes">
+          <p>The v2 catalogue as shown in Napoli: SPHEREx-only redshifts, resolved galaxy sample (release galaxy sample + not MER point_like_prob &gt; 0.5). 111,571 truth matches: ours σ_NMAD 0.0087, outliers 1.93%; Euclid PHZ 0.0353 and 1.37% on the 110,935 with phz_flags = 0 (0.0354 / 1.50% on all). Quality sample: 0.0075 and 0.52% on 93,393 matches. North 0.0089 / 1.97%, south 0.0071 / 1.46%.</p>
+          <p>Against September's joint-fit catalogue (0.0111 / 4.8% on 108,968, release definition): the He I alias band at z_phot ≈ 0.67 is gone (He I channels masked), and the resolved cut removes the DESI QSOs that failed in both codes.</p>
+          <p>Outlier: |Δz|/(1+z) &gt; 0.15. Horizontal striping in PHZ is its own redshift quantisation. Napoli deck numbers/zz_galaxy_phzflags.json and numbers_v2_spherex_only_resolved.json; figure fig/zz_galaxy_res.png.</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx 3 · where it wins: by redshift and by magnitude -->
+      <section id="euclid-metrics">
+        <div class="kicker">Euclid × SPHEREx · the redshifts</div>
+        <h2>Best for bright, low-redshift galaxies, where Euclid is weakest</h2>
+        <div class="figcard" style="left:40px;top:120px;width:840px;">
+          <img src="fig/euclid/metrics_grid_v2big_res_lin.png" alt="sigma_NMAD and outlier fraction on linear axes against spectroscopic redshift (top) and I_E (bottom), for Euclid PHZ and SPHEREx-only redshifts, galaxy and quality samples">
+          <span class="cap">Scatter (left) and outlier fraction (right), against redshift (top) and magnitude (bottom). <b>Euclid PHZ</b> in orange, SPHEREx in blue; solid the galaxy sample, dashed the quality sample.</span>
+        </div>
+        <div class="steps" style="left:910px;top:130px;width:330px;">
+          <p>At I<sub>E</sub> ≈ 16.5 the scatter is about 0.004 against 0.040: <b>about 9× tighter</b>.</p>
+          <p>Tighter at every magnitude and redshift; still 0.020 against 0.029 at I<sub>E</sub> 20–20.5.</p>
+          <p class="soft">Outliers rise above PHZ's fainter than I<sub>E</sub> ≈ 19, and below z ≈ 0.05.</p>
+        </div>
+        <aside class="notes">
+          <p>Same resolved galaxy and quality samples and truth table as the previous slide (Napoli deck fig/metrics_grid_v2big_res_lin.png, replotted from the binned values of candide job 1007289). The per-magnitude values here are read off the figure, not from a table: at I_E 16–17 ours ≈ 0.0043, PHZ ≈ 0.040; at 20–20.5 ours ≈ 0.020, PHZ ≈ 0.029.</p>
+          <p>Outliers: ours 9.9% at I_E 20–20.5 in the galaxy sample (the quality sample stays near PHZ's 3%), and 6.25% at z_spec 0–0.05. Useful for a z &lt; 0.5 lensing sample and for clusters.</p>
+          <p>Changed from the September version: there the two crossed in scatter at I_E ≈ 19.5–20 (7.9× at 16–17); with the SPHEREx-only v2 fit they no longer cross.</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx 4 · what SPHEREx can do for Euclid -->
+      <section id="euclid-help">
+        <div class="kicker">Euclid × SPHEREx · for Euclid</div>
+        <h2>The two estimators fail on different galaxies</h2>
+        <div class="tiles" style="left:40px;top:120px;width:1200px;grid-template-columns:repeat(3, 1fr);">
+          <p class="tile"><span class="t">Different outliers</span><span class="g">Only 7.5% shared</span><span class="c">PHZ has slightly fewer outliers (1.4% vs 1.9%), but almost never the same ones.</span></p>
+          <p class="tile"><span class="t">Require agreement</span><span class="g">97% kept, 0.3% outliers</span><span class="c">at σ<sub>NMAD</sub> = 0.0085: a cleaner sample than either alone.</span></p>
+          <p class="tile"><span class="t">No spec-z needed</span><span class="g">CMB lensing at 9.7σ</span><span class="c">Lensing bias agrees with clustering bias in every shell: no sign of interlopers.</span></p>
+        </div>
+        <img src="fig/euclid/kappa_grid_lcl_res_y5.png" alt="Cross-power spectra of the galaxy sample with Planck CMB lensing in six redshift shells from z = 0.05 to 0.6, with detection significance" style="position:absolute;left:40px;top:290px;width:520px;">
+        <div class="steps" style="left:600px;top:300px;width:640px;">
+          <h3>Galaxies × Planck CMB lensing</h3>
+          <p>The lensing map sees where the galaxies really are, independently of our photometry. The galaxies' own clustering assumes the redshifts we gave them.</p>
+          <h3 class="next">They agree</h3>
+          <p>b<sub>κ</sub> / b<sub>gg</sub> = 1.0–1.5 from z = 0.05 to 0.6, within the errors in all six shells.</p>
+          <p class="soft" style="font-size:15px;">Pseudo-C<sub>ℓ</sub> with NaMaster, systematics-weighted.</p>
+        </div>
+        <aside class="notes">
+          <p>How SPHEREx can solve some Euclid problems, with the Napoli (v2, SPHEREx-only, resolved) numbers. PHZ has slightly fewer catastrophic outliers, 1.37% against 1.93%, but only 7.5% of our outliers are also PHZ outliers. Requiring |z_est − PHZ|/(1+PHZ) &lt; 0.15 keeps 96.9% at σ_NMAD 0.0085 and 0.29% outliers.</p>
+          <p>And without spectroscopy: galaxy × Planck CMB lensing in six shells 0.05–0.6, detected at 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ, 9.7σ combined (a quadrature sum, so somewhat optimistic). b_κ / b_gg = 1.17, 1.46, 0.98, 1.16, 1.29, 1.08 (b_κ errors 0.32–0.63): consistent everywhere. In September the 0.7–1.0 shell had b_κ 0.50 ± 0.30 against b_gg 1.32; the v2 measurement stops at 0.6.</p>
+          <p>The old three-panel figure (fig/euclid/fig_phz_zz.png) was from the September catalogue, with its He I band at 0.67, so it is no longer shown; Napoli has no v2 version of it. CMB figure: Napoli deck fig/kappa_grid_lcl_res_y5.png.</p>
+          <p>Spectroscopic coverage is 10–20% at I_E &lt; 19.5 and under 1% at I_E &gt; 20, and poor exactly where photo-z outliers live (colour_mag.png).</p>
+          <p>[Calum: this is the slide for "how SPHEREx can solve Euclid problems" if there is time this morning; the numbers are from the report, the framing is mine.]</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx · from the two Euclid DR1 patches to the whole sky (the Napoli finale) -->
+      <section id="euclid-allsky">
+        <div class="kicker">Euclid × SPHEREx</div>
+        <h2>From Euclid to the entire extragalactic sky</h2>
+        <video src="fig/euclid/finale_sky_z037.mp4" poster="fig/euclid/finale_sky_z037_poster.jpg" muted="" playsinline="" data-autoplay="" onended="this.currentTime=24.367;this.play()" style="position:absolute;left:100px;top:110px;width:1080px;height:540px;"></video>
+        <p class="caption" style="position:absolute;left:100px;top:660px;width:1080px;margin:0;text-align:center;">The Euclid DR1 × SPHEREx galaxies glide onto the whole sky; the all-sky SPHEREx catalogue (Legacy Surveys DR9, DR10 and DR11 positions) fills in around them, and Euclid's footprint stays in orange.</p><aside class="notes">
+          <p>About 24 s to the last shell (0.34 &lt; z &lt; 0.37), then it sweeps back down to 0.07 and up again, 24 s per sweep, until you leave the slide (talk over it). No Galactic-latitude cut.</p>
+          <p>1. The two Euclid DR1 lobes, one shell, 0.07 &lt; z &lt; 0.10 (58,643 galaxies, v2 SPHEREx-only resolved galaxy sample). 2. Every galaxy glides to its place on an equatorial Mollweide: the north lobe ends as slivers near the pole, the south lobe lands in the DES part of the southern sky. 3. The all-sky SPHEREx catalogue fades in around them, same shell (1,096,235 galaxies): SPHEREx forced photometry at Legacy Surveys DR9-north + DR10-south positions and, where those have no grz, the DR11 rerun, which replaces DELVE. Same method, different parent catalogue, redshifts from SPHEREx alone. 4. Euclid's footprint becomes an orange line; 8.3% of the all-sky galaxies fall inside it and fade out, so inside the line you see Euclid, once. 5. The shell steps out to 0.34 &lt; z &lt; 0.37 (790,370 all-sky and 76,552 Euclid galaxies), then back down and up again. Stopping below 0.4 stays clear of the 0.5–0.7 shells, which are flagged (He I residual on channel 13, issue #97).</p>
+          <p>Sample: 41,294,489 quality galaxies, no |b| or E(B−V) cut. DR11 contributes 6.57 M (4.3 M of them at |b| &lt; 20), with the fit's own star flag; that is where stars and reddened objects are most likely to have got in. Small artefact: a thin dark rim round the LMC hole.</p>
+          <p>The point for Euclid: the same method that gave their DR1 four-times-tighter photo-z already runs over most of the sky they will cover.</p>
+          <p>Movie from the Napoli deck, spherex-allsky docs/slides/euclid_wl_napoli_2026-10-16/scripts/finale_movie.py (Z_END=0.37; loop by finale_loop.py).</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · the catalogue, as summarised at Napoli -->
+      <section id="allsky-catalogue">
+        <div class="kicker">SPHEREx all-sky · the catalogue</div>
+        <h2>92 million objects: 71 million galaxies, 41 million of quality</h2>
+        <table class="counts" style="left:40px;top:112px;width:1200px;">
+          <tbody><tr><th>all objects</th><th style="color:#2a62c9;">galaxy sample</th><th style="color:#2a62c9;">quality sample</th><th style="color:#8a4fd0;">stars</th><th style="color:#b5262f;">failed fits</th><th class="soft">removed by cuts</th><th style="color:#c8651b;">calibration stars</th></tr>
+          <tr><td>92,036,397</td><td>71,137,758 (77.3%)</td><td>41,294,489 (44.9%)</td><td>3,916,929 (4.3%)</td><td>11,872,782 (12.9%)</td><td>2,942,193 (3.2%)</td><td>2,166,735 (2.4%)</td></tr>
+        </tbody></table>
+        <img src="fig/allsky/allsky_overview.png" alt="Left: redshift distribution of the all-sky galaxy and quality samples. Right: Legacy Surveys r distribution of stars, failed fits, galaxy sample, quality sample and objects removed by cuts" style="position:absolute;left:100px;top:192px;width:1080px;">
+        <p class="soft" style="position:absolute;left:40px;top:644px;width:1200px;margin:0;font-size:17px;">The same pipeline at Legacy Surveys DR9, DR10 and DR11 positions, r &lt; 20.5, over the whole extragalactic sky. Preliminary: DR11 redshifts are not yet validated against spectra.</p><aside class="notes">
+          <p>Every object before any cut, no |b| cut: final_v2 (release prelim_v0, 77,070,050 rows) with the 13.3 M DELVE rows dropped wherever DR11 was extracted, plus every DR11D row (28,296,000 with the SGA extension). Total 92,036,397.</p>
+          <p>Classes: failed = not fitted or z_est ≤ 0; star = fitted and star-flagged (classifier v3 for Legacy and DELVE, the fit's own is_star for SGA and DR11); galaxy = fitted, not a star, in the parent sample; Gaia calibration stars are fitted but never galaxies. Quality = galaxy + the four redshift-quality bits: exactly the 41,294,489 galaxies of the finale movie.</p>
+          <p>By survey (galaxy / quality): Legacy DR9 north 12.0 M / 7.6 M; DR10 south 45.0 M / 26.6 M; DR11 13.5 M / 6.5 M; DELVE 0.19 M / 0.11 M; SGA 0.48 M / 0.46 M. DR11's failed-fit share (34%) is far above Legacy's (3–4%): it reaches into the Galactic plane.</p>
+          <p>Spec-z validation (final_v2, without DR11): 7.1 M matches from eleven surveys; quality sample σ_NMAD 0.0048 at r 15.5–16.5, 0.0082 at 18.5–19, 0.0134 at 20–20.5; outliers 0.06% → 2.4%; bias −0.004. Fiducial clustering footprint 22,485 deg² (|b| &gt; 10, E(B−V) &lt; 0.10), not recomputed with DR11. Do not use the 0.5–0.7 shells (He I residual, issue #97). The report's status line: preliminary, not for quoting as release numbers.</p>
+          <p>From the Napoli deck (numbers/allsky_overview.json, fig/allsky_overview.png).</p>
+        </aside>
+      </section>
+
+      <!-- SPHEREx all-sky · the whole sky stepping outward through redshift, no Euclid -->
+      <section id="allsky-redshift">
+        <div class="kicker">SPHEREx all-sky</div>
+        <h2>The cosmic web over the whole sky, shell by shell</h2>
+        <video src="fig/allsky/allsky_redshift.mp4" poster="fig/allsky/allsky_redshift_poster.jpg" muted="" playsinline="" data-autoplay="" onended="this.currentTime=13.7;this.play()" style="position:absolute;left:130px;top:104px;width:1020px;height:510px;"></video>
+        <p class="soft" style="position:absolute;left:40px;top:632px;width:1200px;margin:0;font-size:17px;text-align:center;">41 million galaxies at Legacy Surveys DR9, DR10 and DR11 positions, with redshifts from SPHEREx alone, in shells of Δz = 0.03 from z = 0.07 to 0.37.</p><aside class="notes">
+          <p>About 14 s to the last shell (0.34 &lt; z &lt; 0.37), then it sweeps back down to 0.07 and up again, 24 s per sweep, until you leave the slide. Talk over it.</p>
+          <p>Sample: 41,294,489 quality galaxies (fitted, not a star, four redshift-quality bits), no |b| or E(B−V) cut: SPHEREx forced photometry at Legacy Surveys DR9-north and DR10-south positions, and the DR11 rerun where those have no grz (it replaces DELVE there). Redshifts from the 77 SPHEREx channels alone.</p>
+          <p>Shells of Δz = 0.03 stepping by 0.0025; a galaxy is drawn if its probability of lying in the shell exceeds 0.7, from a two-sided Gaussian on z16, z_est, z84 with widths rescaled by the pull width against DESI (1.00–1.14 by r). 1.10 M galaxies in the first shell, 1.37 M near z = 0.2, 0.79 M in the last. Stopping below 0.4 stays clear of the flagged 0.5–0.7 shells (He I residual, issue #97).</p>
+          <p>DR11 rows have no spectroscopic validation yet and use the fit's own star flag; the thin dark rim round the LMC hole at higher z is probably LMC stars just outside the cut.</p>
+          <p>Made by scripts/allsky_redshift_movie.py (the Napoli finale_movie.py's whole-sky phase without Euclid) from nibi /scratch/cmurray/spherex-allsky/napoli_allsky/galaxies_final_v2_dr11d_b0.parquet.</p>
+        </aside>
+      </section>
+
+      <!-- validation · the blocks again, now stacked vertically: one check per block, each against something outside the catalogue -->
+      <section id="validation-blocks">
+        <div class="kicker">Euclid × SPHEREx and all-sky · the validation</div>
+        <h2>With the catalogue built, the validation splits it back out</h2>
+        <div class="walls" style="left:40px;top:122px;width:1200px;grid-template-columns:250px 1fr;gap:16px 26px;align-items:center;">
+          <p class="brick">purity<i>stars, point-like, failed fits</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Stars from a stellar fit in the same run. Removing 1 M point-like objects (mostly quasars and stars) takes Euclid outliers from 2.5% to <b>1.9%</b>.</p>
+          <p class="brick">homogeneity<i>density on the sky</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">The galaxy sample's Galactic-latitude gradient is gone; what is left, SPHEREx depth and stellar density, is regressed out with DES-style weights.</p>
+          <p class="brick" style="border-color:var(--warm);">redshift quality<i>against spectra</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Euclid: σ<sub>NMAD</sub> <b>0.0087</b>, 1.9% outliers on 111,571 spectra. All-sky: <b>0.005 to 0.013</b> from r = 16 to 20.5, on 7.1 million.</p>
+          <p class="brick">shells × shells<i>clustering between redshift bins</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Neighbouring shells correlate as their overlap predicts (r = 0.15–0.33); shells further apart, −0.03 to 0.08. No more anti-correlation round bright stars.</p>
+          <p class="brick">clustering redshifts<i>against DESI, all-sky</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">The mean redshift of every shell agrees with the spectra to <b>≤ 0.009</b>. The 0.6–0.7 shell holds low-z interlopers, and is flagged.</p>
+          <p class="brick">CMB lensing<i>against Planck</i></p>
+          <p style="margin:0;padding-top:3px;font-size:17px;line-height:1.35;">Euclid galaxies × Planck lensing at <b>9.7σ</b>; lensing and clustering biases agree in all six shells.</p>
+        </div><aside class="notes">
+          <p>The building blocks of slide 17 ran left to right; the validation runs top to bottom, each test checking the catalogue against something outside it. All results from the Napoli deck (16 October); Euclid = v2 SPHEREx-only resolved galaxy sample, all-sky = final_v2 (+ DR11 where stated).</p>
+          <p>Purity: 1,233,310 stars, 985,052 point-like, 5,751,542 failed fits of 13.8 M (Euclid). Point-like removal: galaxy-sample outliers 2.50% → 1.93%, quality 0.61% → 0.52%, σ unchanged.</p>
+          <p>Homogeneity: density maps per sample; the galaxy sample's share of targets rises with |b| (ρ = +0.84) because the other samples fall. Weights: ISD as in DES Y3/Y6, five maps regressed (E(B−V), stars, SPHEREx channel count, ecliptic latitude, VIS depth), iterated until every S_1D &lt; 2, significance from 400 lognormal mocks.</p>
+          <p>Redshift quality: Euclid 111,571 matches, σ_NMAD 0.0087 / 1.93% (PHZ 0.0353 / 1.37%). All-sky quality sample, 7,130,481 matches from eleven surveys, σ_NMAD 0.0048 at r 15.5–16.5 to 0.0134 at 20–20.5; DR11 not yet validated.</p>
+          <p>Shells × shells (Euclid, six shells 0.05–0.6): neighbours r over 10′–60′ 0.15–0.33; two or more apart −0.03 to 0.08. Bright-star halos made far shells anti-correlate in September and in the first all-sky run; no longer.</p>
+          <p>Clustering redshifts (all-sky, 16 M galaxies over 12,600 deg² with DESI DR1 BGS and LRG): mean z within ±0.2 of each shell, clustering against spec-z matching, agree to ≤ 0.009; both put shells 0.1–0.5 about 0.01–0.02 above z_est. Shell 0.6–0.7 has a bump at z ≈ 0.2–0.45 (issue #97). Preliminary.</p>
+          <p>CMB lensing (Euclid): 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ in the six shells, 9.7σ as a quadrature sum (somewhat optimistic); b_κ / b_gg 0.98–1.46, errors 0.3–0.6.</p>
+        </aside>
+      </section>
+
+      <!-- Euclid × SPHEREx 5 · DRAFT: how the Euclid people have taken it -->
+      <section id="euclid-excited">
+        <div class="kicker">Euclid × SPHEREx · the reaction</div>
+        <h2>Why the Euclid people are excited</h2>
+        <div class="tiles" style="left:40px;top:150px;width:1200px;grid-template-columns:repeat(3, 1fr);">
+          <p class="tile"><span class="t">Where Euclid is weakest</span><span class="g">About 9× tighter at I<sub>E</sub> ≈ 16.5</span><span class="c">Bright, low-redshift galaxies: a clean lens sample below z ≈ 0.5, and clusters.</span></p>
+          <p class="tile"><span class="t">A second opinion</span><span class="g">Only 7.5% of outliers shared</span><span class="c">Requiring the two estimators to agree keeps 97% of the galaxies at 0.3% outliers.</span></p>
+          <p class="tile"><span class="t">Already over their sky</span><span class="g">71 million galaxies, now</span><span class="c">The same pipeline on Legacy Surveys DR9–DR11 positions covers most of the DR1 area and far beyond, ahead of SPHEREx's own catalogues.</span></p>
+        </div>
+        <div class="steps" style="left:40px;top:340px;width:1200px;">
+          <h3 class="next">What comes next with them</h3>
+          <p>[Calum: who wants what, e.g. OU-PHZ taking the combined estimator, the WL people a low-z lens sample.]</p>
+        </div>
+        <aside class="notes">
+          <p>[Calum: DRAFT, written without knowing what was said. Nothing in the repos records the reaction, so put in who was excited (the Napoli WL meeting on 16 October? the SWG photo-z talk on 28 September?), what they said, and what they asked for. The three tiles are the reasons the numbers support; keep, cut or reorder.]</p>
+          <p>Sources, updated to the Napoli (v2, SPHEREx-only, resolved) numbers: ≈ 0.0043 against 0.040 at I_E ≈ 16.5, read off the metrics figure; 7.5% shared outliers and 96.9% kept at 0.29% from the Napoli redshift-validation notes. 71,137,758 galaxies (41,294,489 quality) of 92,036,397 objects in the all-sky catalogue with DR11 (Napoli "Some numbers for the full sky catalogue"); the validation report of 2026-10-17 counts 92,681,594 standing rows in prelim_v0_dr11d. "Covers most of the DR1 area": the Napoli deck's finale notes, where 10.5% of the Legacy catalogue's galaxies fall inside Euclid's DR1 line. "Ahead of SPHEREx's own catalogues": the mission's legacy catalogues are due March 2028 on the Napoli timeline slide.</p>
+        </aside>
+      </section>
+
+      <!-- UNIONS: SPHEREx lens bins against DES Y6 -->
+      <section id="unions" data-section="UNIONS">
+        <div class="kicker">UNIONS · what next</div>
+        <h2>UNIONS with SPHEREx redshifts: thin lens bins below DES</h2>
+        <div class="steps" style="left:40px;top:140px;width:500px;">
+          <h3>What we have</h3>
+          <p>UNIONS shapes over 3,500 deg², SPHEREx redshifts at the same positions, and DESI spectra over almost all of the footprint.</p>
+          <h3 class="band">An independent Ω<sub>m</sub></h3>
+          <ul class="band"><li>Six thin lens bins at z = 0.1–0.45, where DES Y6 has one.</li><li>That is where DESI's evolving dark energy shows, and it rests on Ω<sub>m</sub>, where the probes disagree.</li></ul>
+          <h3 class="next">Then DES alongside</h3>
+          <p>DES + UNIONS: lensing over about 10,000 deg². A small group, me, Cail, Martin and a few others, doing DES-level work.</p>
+        </div>
+        <div class="figcard" style="left:580px;top:150px;width:660px;">
+          <img src="fig/unions_nz.svg" alt="Tomographic n(z), each scaled to peak 1: six UNIONS × SPHEREx bins below z = 0.5 against the six DES Y6 clustering bins">
+          <span class="cap">Six <b>UNIONS × SPHEREx</b> bins against the DES Y6 3×2pt lens bins, each scaled to peak 1. Our n(z) are the DESI redshifts of the galaxies in each bin; the DES bins are read from Fig. 2 of arXiv:2601.14559.</span>
+        </div>
+        <aside class="notes">
+          <p>Where this goes next. With SPHEREx redshifts UNIONS gets six thin lens bins between z of 0.1 and 0.45, where DES Y6 has a single bin (and dropped its second, dashed, from the fiducial 3×2pt before unblinding). That is where DESI's w(z) peaks and crosses −1, and the evolving-dark-energy preference rests on Ωm, where the probes disagree.</p>
+          <p>Be honest about the size: DES Y6 got Ωm to about 8%, against a gap of about 10% between the probes, so on its own this is roughly a 1σ arbitration.</p>
+          <p>Figure: cambridge-ai-physics/interview/fig/nz.svg (make_nz.py). Our n(z) are DIR from matched DESI redshifts in one SPHEREx field of about 13.5 deg², UNIONS r &lt; 20.5; the plot compares shapes and widths, not heights. [Calum: the footprint map said 5,000 deg² for the r-selected positions; check which UNIONS area you want to quote.]</p>
+        </aside>
+      </section>
+
+      <!-- dust in our universe · quasars behind SPHEREx galaxies are magnified: the three samples -->
+      <section id="dust-magnification" data-section="Dust">
+        <div class="kicker">Dust in our universe · magnification</div>
+        <img src="fig/logos/lightcone.svg" alt="Lightcone Research" style="position:absolute;left:1040px;top:30px;width:200px;">
+        <h2>Quasars behind SPHEREx galaxies are magnified</h2>
+        <img src="fig/dust/magnification.png" alt="Three panels, Quaia, DESI DR1 QSOs and SDSS DR16Q: the mean brightening of quasars against projected distance from LSx galaxies, every band, falling as r_p to the -0.8, with the joint W1 and W2 fit and its S/N" style="position:absolute;left:40px;top:104px;width:1200px;">
+        <p style="position:absolute;left:40px;top:560px;width:1200px;margin:0;font-size:19px;line-height:1.4;">Quasars from three surveys, stacked behind the all-sky SPHEREx galaxies: the closer the galaxy, the brighter the quasar, in every band. <b>Magnification is the same in every band</b>; dust dims blue bands more than red ones, so the colours of the same shifts measure the dust.</p>
+        <p class="soft" style="position:absolute;left:40px;top:650px;width:1200px;margin:0;font-size:15px;">Lenses weighted by stellar mass. Dashed: the joint W1 + W2 fit of a (r<sub>p</sub> / 1 Mpc)<sup>−0.8</sup> profile above 100 kpc; smaller scales shaded. Open points have the opposite sign. Preliminary catalogue.</p><aside class="notes">
+          <p>The dust_in_our_universe project: background quasars from Quaia, DESI DR1 and SDSS DR16Q stacked behind LSx galaxies (the all-sky SPHEREx catalogue), in physical r_p per pair. Magnification is achromatic and extinction is not, so the chromaticity of the quasar magnitude shifts separates the two; W1 and W2 anchor the magnification level.</p>
+          <p>Joint W1+W2 GLS fit of A (r_p / 1 Mpc)^−0.8 above 100 kpc, jackknife covariance with the Hartlap factor: S/N 9.2 (Quaia, 601,446 quasars), 11.1 (DESI, 1,126,816), 5.3 (SDSS, 681,936). Below 100 kpc the shifts are set by the photometry of a quasar beside a neighbour, which differs between surveys.</p>
+          <p>Universe mass_weighted (lenses weighted by stellar mass; the baseline gives S/N 8.0, 4.3, 1.1). The LSx build it uses is prelim_v0_dr11d, marked preliminary and not for science: say so if numbers are asked for.</p>
+          <p>Figure: scripts/magnification_profiles.py, the left column of the repo's src/fig_chromaticity.py, from results/mass_weighted/excess_profiles.hdf5 (commit 766ea0a on nibi).</p>
+        </aside>
+      </section>
+
+      <!-- apps · the little Mac apps made with Claude, each running (fig/apps, 10 s loops) -->
+      <section id="apps">
+        <h2 style="position:relative;left:0px;top:18px;">Some small tools I made to help me</h2>
+        <video src="fig/apps/drapeaux.mp4" poster="fig/apps/drapeaux_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:74px;top:112px;width:508px;height:330px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
+        <video src="fig/apps/chat.mp4" poster="fig/apps/chat_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:602px;top:112px;width:604px;height:330px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
+        <p class="caption" style="position:absolute;left:74px;top:446px;width:508px;margin:0;"><b>Drapeaux au vent</b> · my to-do list</p>
+        <p class="caption" style="position:absolute;left:602px;top:446px;width:604px;margin:0;"><b>Chat</b> · just saves me opening firefox... also local models</p>
+        <video src="fig/apps/caffeinate.mp4" poster="fig/apps/caffeinate_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:74px;top:486px;width:135px;height:190px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
+        <video src="fig/apps/usage.mp4" poster="fig/apps/usage_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:229px;top:486px;width:174px;height:190px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
+        <p class="caption" style="position:absolute;left:74px;top:680px;width:135px;margin:0;"><b>Caffeinate</b></p>
+        <p class="caption" style="position:absolute;left:229px;top:680px;width:174px;margin:0;"><b>Usage</b></p>
+        <div style="position:absolute;left:450px;top:486px;width:756px;">
+        </div>
+        
+        <img src="fig/apps/lectern_map.png" alt="Lectern's map view of this deck: the slides laid out in their sections, intrinsic alignments then 2D lensing, each with its title" style="position:absolute;left:450px;top:486px;width:756px;height:190px;object-fit:cover;object-position:left top;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);">
+        <p class="caption" style="position:absolute;left:450px;top:680px;width:756px;margin:0;"><b>Lectern</b> · so I can edit AI created slides like keynote</p><aside class="notes">
+          <p>Not research, but the same habit: when something small gets in the way, an evening with Claude makes a tool that fits. All four are native Mac apps in Swift, no web view, about 700 to 2,400 lines each, made between 3 September and 18 October. Lectern, which made this deck, is the same idea.</p>
+          <p>Drapeaux au vent: type or dictate a note, Haiku files it into tasks, and each rises as a flag in its project's colour. Today's on the nearest hill, older ones further off and bluer. The wind is Open-Meteo's live wind for Paris, gusts and all. Drapeaux was built in a day (18 October).</p>
+          <p>Chat: a window over claude -p, with conversations saved as Markdown. It can open files and move windows through one small binary, deskctl, and is refused everything else.</p>
+          <p>Caffeinate: click and the pot pours while caffeinate runs; the cup fills over half a minute, then spills. Usage: the same numbers as /usage, over Chat's ink wind.</p>
+          <p>Clips: Chat and Usage are 10 s screen recordings of the real windows on 19 October, the Chat sidebar titles blurred and Usage's error line cropped off. Caffeinate is rendered offscreen by its own painter, 24 to 40 s into a pour, so the cup brims at about 7 s in and runs down into the saucer. Drapeaux is rendered offscreen the same way with the sample list from Tools/Render.swift, because on the 1080p screen the app draws its hills in bands.</p>
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="reveal/dist/reveal.js"></script>
+  <script src="reveal/plugin/math/math.js"></script>
+  <script src="reveal/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280, height: 720, margin: 0.04,
+      center: false, hash: true, transition: 'none',
+      controls: false, progress: true, slideNumber: 'c/t',
+      katex: { local: 'reveal/katex' },
+      plugins: [ RevealMath.KaTeX, RevealNotes ],
+    });
+  </script>
+  <script src="js/links.js"></script>
+  <script src="js/watercolour.js"></script>
+  <script src="js/ia/web_data.js"></script>
+  <script src="js/ia/orbit.js"></script>
+</body>
+</html>
