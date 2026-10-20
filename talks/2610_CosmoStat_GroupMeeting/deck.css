@@ -199,3 +199,6 @@
 .reveal .tiles.ov.tight ul { margin: 4px 0 0; }
 .reveal .tiles.ov.tight li { font-size: 15px; line-height: 1.3; margin: 0 0 3px; }
 .reveal .ovlist b.paper, .reveal .ovlist b.paper a { color: var(--warm); text-decoration: none; }
+.reveal .ovlist.big > li { font-size: 24px; line-height: 1.35; margin: 0 0 12px; }
+.reveal .ovlist.roomy > li { font-size: 24px; margin: 0 0 18px; }
+.reveal .ovlist.roomy ul li { font-size: 20px; line-height: 1.4; margin: 0 0 5px; }

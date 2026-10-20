@@ -26,7 +26,7 @@
           <li><b>Cosmological principle work</b>
             <ul><li><b class="paper">Nguyen &amp; Murray 2026, A&amp;A, <a href="https://arxiv.org/abs/2605.30367">arXiv:2605.30367</a></b>: our acceleration from Quaia quasar proper motions</li></ul></li>
           <li><b>Non-Gaussianity constraints</b>
-            <ul><li><b class="paper">UNIONS u-band dropouts</b></li><li><b class="paper">Payerne et al. 2026, <a href="https://arxiv.org/abs/2607.09943">arXiv:2607.09943</a></b></li></ul></li>
+            <ul><li>UNIONS u-band dropouts</li><li><b class="paper">Payerne et al. 2026, <a href="https://arxiv.org/abs/2607.09943">arXiv:2607.09943</a></b></li></ul></li>
         </ul>
         <ul class="ovlist" style="position:absolute;left:660px;top:100px;width:580px;margin:0;">
           <li><b>SPHEREx + Euclid / UNIONS / all-sky</b>
@@ -292,20 +292,15 @@
       <!-- what a block is: the definition, its four parts, and the two ceilings on its size -->
       <section id="block-def">
         <div class="kicker">Blocks</div>
-        <h2>A block is the smallest piece of an analysis an agent can be handed whole</h2>
-        <p class="claim ink" style="left:40px;top:136px;width:1150px;font-size:24px;">It has its own inputs and outputs, and a check around it that must pass against something outside itself before anything is built on top.</p>
-        <div class="tiles" style="left:40px;top:246px;width:1200px;grid-template-columns:repeat(4, 1fr);">
-          <p class="tile"><span class="t">Interface</span><span class="g">Inputs and outputs</span><span class="c">So blocks compose, and many can be built in parallel.</span></p>
-          <p class="tile"><span class="t">Contract</span><span class="g">A check outside it</span><span class="c">When it fails, the agent revisits its assumptions.</span></p>
-          <p class="tile"><span class="t">Decisions</span><span class="g">Its own choices</span><span class="c">Explicit, implicit and inherited, logged in ASTRA.</span></p>
-          <p class="tile"><span class="t">Size</span><span class="g">A variable</span><span class="c">How big a block can be is the open question.</span></p>
-        </div>
-        <div class="card" style="position:absolute;left:40px;top:470px;width:1200px;">
-          <p style="margin:0 0 6px;font-size:19px;"><b>Two ceilings on block size.</b></p>
-          <p style="margin:0 0 4px;font-size:18px;"><b class="accent">Agent reliability</b>: how much an agent can do and get right. Evals measure it, and new models move it.</p>
-          <p style="margin:0;font-size:18px;"><b class="accent">Human understanding</b>: evals cannot move it, and that is the point. The analysis cannot advance faster than I understand it.</p>
-        </div>
-        <aside class="notes">
+        <h2>Blocks: try to build slowly, not just A-&gt;Z</h2>
+        <ul class="ovlist roomy" style="position:absolute;left:40px;top:140px;width:1133px;margin:0;height:397px;">
+          <li><b>What it is</b>
+            <ul><li>Its own inputs and outputs, and a check around it that must pass against something outside itself before anything is built on top</li></ul></li>
+          <li><b>Its four parts</b>
+            <ul style="position:relative;left:0px;top:-4px;"><li>Interface: inputs and outputs, so blocks compose and many can be built in parallel</li><li>Contract: a check outside it; when it fails, the agent revisits its assumptions</li><li>Decisions: its own choices, explicit, implicit and inherited, logged in ASTRA</li><li>Size: a variable; how big a block can be is the open question</li></ul></li>
+          <li><b>Two ceilings on block size</b>
+            <ul><li><b class="paper">Agent reliability</b>: how much an agent can do and get right. Evals measure it, and new models move it</li><li><b class="paper">Human understanding</b>: evals cannot move it, and that is the point. The analysis cannot advance faster than I understand it</li></ul></li>
+        </ul><aside class="notes">
           <p>A block is the smallest unit of an analysis that has its own inputs and outputs, can be handed to an agent whole, and has a check around it that must pass against something outside itself before anything is built on top (agentic-science/blocks/README.md).</p>
           <p>The size of a block is the variable, and it has two ceilings. One is the agent's reliability, which evals measure and new models move. The other is my understanding, which evals cannot move.</p>
         </aside>
@@ -468,21 +463,9 @@
 
       <section id="allsky-candide">
         <div class="kicker">SPHEREx all-sky · how I work with Claude</div>
-        <h2>Two hundred knocks in eight seconds</h2>
-        <ol class="ovlist pipe" style="position:absolute;left:40px;top:120px;width:1200px;margin:0;">
-          <li><b>Jobs on candide, launched from nibi</b>
-            <ul><li>Every agent had to open its own SSH connection to candide</li></ul></li>
-          <li><b>One agent knocked on the door 200 times in 8 seconds</b>
-            <ul><li>candide's port knock took it as an attack, and we were blocked</li></ul></li>
-          <li><b>The orchestrator found a way back in</b>
-            <ul><li>Send agents through the connection another agent already had open</li></ul></li>
-          <li><b>The agent on issue #73 decided that was not allowed</b></li>
-          <li><b>Afterwards, we went through candide's rules together</b>
-            <ul><li>They now go into the agent's brief</li></ul></li>
-        </ol>
-        <div class="figcard" style="left:40px;top:420px;width:1200px;">
-          <img src="fig/allsky/talk/candide_rules.png" alt="An agent's brief: the shared connection only, with no retry loops; account cusers on comp, no GPUs, exclude n09; small writes under n09data/murray; rsync code over and bring results back to nibi to commit; never read n17data/cdaley">
-          <span class="cap">The candide rules, as an agent's brief now spells them out.</span>
+        <h2>Something funny</h2>
+        <div class="figcard" style="left:34px;top:377px;width:1200px;">
+          <img src="fig/allsky/talk/candide_rules.png" alt="An agent's brief: the shared connection only, with no retry loops; account cusers on comp, no GPUs, exclude n09; small writes under n09data/murray; rsync code over and bring results back to nibi to commit; never read n17data/cdaley" style="position:relative;left:0px;top:-218px;">
         </div><aside class="notes">
           <p>A story about agents on someone else's machine. I was running jobs on candide from nibi, and every agent had to open its own SSH connection. Then one agent tried to connect 200 times in 8 seconds; candide's port knock read that as an attack, and we were locked out.</p>
           <p>The orchestrator then worked out that agents could be sent through the connection another agent already had open. The agent working on issue #73 came along and decided that was not allowed.</p>
@@ -548,32 +531,6 @@
           <p>Same resolved galaxy and quality samples and truth table as the previous slide (Napoli deck fig/metrics_grid_v2big_res_lin.png, replotted from the binned values of candide job 1007289). The per-magnitude values here are read off the figure, not from a table: at I_E 16–17 ours ≈ 0.0043, PHZ ≈ 0.040; at 20–20.5 ours ≈ 0.020, PHZ ≈ 0.029.</p>
           <p>Outliers: ours 9.9% at I_E 20–20.5 in the galaxy sample (the quality sample stays near PHZ's 3%), and 6.25% at z_spec 0–0.05. Useful for a z &lt; 0.5 lensing sample and for clusters.</p>
           <p>Changed from the September version: there the two crossed in scatter at I_E ≈ 19.5–20 (7.9× at 16–17); with the SPHEREx-only v2 fit they no longer cross.</p>
-        </aside>
-      </section>
-
-      <!-- Euclid × SPHEREx 4 · what SPHEREx can do for Euclid -->
-      <section id="euclid-help">
-        <div class="kicker">Euclid × SPHEREx · for Euclid</div>
-        <h2>The two estimators fail on different galaxies</h2>
-        <div class="tiles" style="left:40px;top:120px;width:1200px;grid-template-columns:repeat(3, 1fr);">
-          <p class="tile"><span class="t">Different outliers</span><span class="g">Only 7.5% shared</span><span class="c">PHZ has slightly fewer outliers (1.4% vs 1.9%), but almost never the same ones.</span></p>
-          <p class="tile"><span class="t">Require agreement</span><span class="g">97% kept, 0.3% outliers</span><span class="c">at σ<sub>NMAD</sub> = 0.0085: a cleaner sample than either alone.</span></p>
-          <p class="tile"><span class="t">No spec-z needed</span><span class="g">CMB lensing at 9.7σ</span><span class="c">Lensing bias agrees with clustering bias in every shell: no sign of interlopers.</span></p>
-        </div>
-        <img src="fig/euclid/kappa_grid_lcl_res_y5.png" alt="Cross-power spectra of the galaxy sample with Planck CMB lensing in six redshift shells from z = 0.05 to 0.6, with detection significance" style="position:absolute;left:40px;top:290px;width:520px;">
-        <div class="steps" style="left:600px;top:300px;width:640px;">
-          <h3>Galaxies × Planck CMB lensing</h3>
-          <p>The lensing map sees where the galaxies really are, independently of our photometry. The galaxies' own clustering assumes the redshifts we gave them.</p>
-          <h3 class="next">They agree</h3>
-          <p>b<sub>κ</sub> / b<sub>gg</sub> = 1.0–1.5 from z = 0.05 to 0.6, within the errors in all six shells.</p>
-          <p class="soft" style="font-size:15px;">Pseudo-C<sub>ℓ</sub> with NaMaster, systematics-weighted.</p>
-        </div>
-        <aside class="notes">
-          <p>How SPHEREx can solve some Euclid problems, with the Napoli (v2, SPHEREx-only, resolved) numbers. PHZ has slightly fewer catastrophic outliers, 1.37% against 1.93%, but only 7.5% of our outliers are also PHZ outliers. Requiring |z_est − PHZ|/(1+PHZ) &lt; 0.15 keeps 96.9% at σ_NMAD 0.0085 and 0.29% outliers.</p>
-          <p>And without spectroscopy: galaxy × Planck CMB lensing in six shells 0.05–0.6, detected at 1.4, 3.3, 3.1, 4.3, 5.5, 4.9σ, 9.7σ combined (a quadrature sum, so somewhat optimistic). b_κ / b_gg = 1.17, 1.46, 0.98, 1.16, 1.29, 1.08 (b_κ errors 0.32–0.63): consistent everywhere. In September the 0.7–1.0 shell had b_κ 0.50 ± 0.30 against b_gg 1.32; the v2 measurement stops at 0.6.</p>
-          <p>The old three-panel figure (fig/euclid/fig_phz_zz.png) was from the September catalogue, with its He I band at 0.67, so it is no longer shown; Napoli has no v2 version of it. CMB figure: Napoli deck fig/kappa_grid_lcl_res_y5.png.</p>
-          <p>Spectroscopic coverage is 10–20% at I_E &lt; 19.5 and under 1% at I_E &gt; 20, and poor exactly where photo-z outliers live (colour_mag.png).</p>
-          <p>[Calum: this is the slide for "how SPHEREx can solve Euclid problems" if there is time this morning; the numbers are from the report, the framing is mine.]</p>
         </aside>
       </section>
 
@@ -654,17 +611,19 @@
       <!-- Euclid × SPHEREx 5 · DRAFT: how the Euclid people have taken it -->
       <section id="euclid-excited">
         <div class="kicker">Euclid × SPHEREx · the reaction</div>
-        <h2>Why the Euclid people are excited</h2>
-        <div class="tiles" style="left:40px;top:150px;width:1200px;grid-template-columns:repeat(3, 1fr);">
-          <p class="tile"><span class="t">Where Euclid is weakest</span><span class="g">About 9× tighter at I<sub>E</sub> ≈ 16.5</span><span class="c">Bright, low-redshift galaxies: a clean lens sample below z ≈ 0.5, and clusters.</span></p>
-          <p class="tile"><span class="t">A second opinion</span><span class="g">Only 7.5% of outliers shared</span><span class="c">Requiring the two estimators to agree keeps 97% of the galaxies at 0.3% outliers.</span></p>
-          <p class="tile"><span class="t">Already over their sky</span><span class="g">71 million galaxies, now</span><span class="c">The same pipeline on Legacy Surveys DR9–DR11 positions covers most of the DR1 area and far beyond, ahead of SPHEREx's own catalogues.</span></p>
-        </div>
-        <div class="steps" style="left:40px;top:340px;width:1200px;">
-          <h3 class="next">What comes next with them</h3>
-          <p>[Calum: who wants what, e.g. OU-PHZ taking the combined estimator, the WL people a low-z lens sample.]</p>
-        </div>
-        <aside class="notes">
+        <h2>Possible applications</h2>
+        <ul class="ovlist big" style="position:absolute;left:40px;top:136px;width:1200px;margin:0;">
+          <li>3×2pt analysis with Euclid <span class="soft">·</span> <b class="paper">Alex Hall, Hironao Miyatake</b></li>
+          <li>3×2pt analysis with UNIONS <span class="soft">·</span> <b class="paper">Calum, Cail, Martin, Antonin, ++</b></li>
+          <li>Intrinsic alignments with Euclid <span class="soft">·</span> <b class="paper">Benjamin Joachimi</b></li>
+          <li>Cosmological parity violations with galaxy shapes <span class="soft">·</span> <b class="paper">Yun-Hao Zhang</b></li>
+          <li>Photo-z calibration for Euclid <span class="soft">·</span> <b class="paper">William d'Assignies</b></li>
+          <li>Field-level inference <span class="soft">·</span> <b class="paper">Hardik Kuralkar, Mike Hudson</b></li>
+          <li>Cluster catalogues <span class="soft">·</span> <b class="paper">Lammin Ahad</b></li>
+          <li>Cross-correlations for gravitational waves</li>
+          <li>Mapping dust in the Universe <span class="soft">·</span> <b class="paper">Calum</b></li><li>Galaxy–galaxy lensing <span class="soft">·</span> <b class="paper">Divya Rana</b></li>
+          <li>Lots of other applications</li>
+        </ul><aside class="notes">
           <p>[Calum: DRAFT, written without knowing what was said. Nothing in the repos records the reaction, so put in who was excited (the Napoli WL meeting on 16 October? the SWG photo-z talk on 28 September?), what they said, and what they asked for. The three tiles are the reasons the numbers support; keep, cut or reorder.]</p>
           <p>Sources, updated to the Napoli (v2, SPHEREx-only, resolved) numbers: ≈ 0.0043 against 0.040 at I_E ≈ 16.5, read off the metrics figure; 7.5% shared outliers and 96.9% kept at 0.29% from the Napoli redshift-validation notes. 71,137,758 galaxies (41,294,489 quality) of 92,036,397 objects in the all-sky catalogue with DR11 (Napoli "Some numbers for the full sky catalogue"); the validation report of 2026-10-17 counts 92,681,594 standing rows in prelim_v0_dr11d. "Covers most of the DR1 area": the Napoli deck's finale notes, where 10.5% of the Legacy catalogue's galaxies fall inside Euclid's DR1 line. "Ahead of SPHEREx's own catalogues": the mission's legacy catalogues are due March 2028 on the Napoli timeline slide.</p>
         </aside>
@@ -696,11 +655,11 @@
       <!-- dust in our universe · quasars behind SPHEREx galaxies are magnified: the three samples -->
       <section id="dust-magnification" data-section="Dust">
         <div class="kicker">Dust in our universe · magnification</div>
-        <img src="fig/logos/lightcone.svg" alt="Lightcone Research" style="position:absolute;left:1040px;top:30px;width:200px;">
+        <img src="fig/logos/lightcone.svg" alt="Lightcone Research" style="position:absolute;left:89px;top:635px;width:200px;">
         <h2>Quasars behind SPHEREx galaxies are magnified</h2>
         <img src="fig/dust/magnification.png" alt="Three panels, Quaia, DESI DR1 QSOs and SDSS DR16Q: the mean brightening of quasars against projected distance from LSx galaxies, every band, falling as r_p to the -0.8, with the joint W1 and W2 fit and its S/N" style="position:absolute;left:40px;top:104px;width:1200px;">
         <p style="position:absolute;left:40px;top:560px;width:1200px;margin:0;font-size:19px;line-height:1.4;">Quasars from three surveys, stacked behind the all-sky SPHEREx galaxies: the closer the galaxy, the brighter the quasar, in every band. <b>Magnification is the same in every band</b>; dust dims blue bands more than red ones, so the colours of the same shifts measure the dust.</p>
-        <p class="soft" style="position:absolute;left:40px;top:650px;width:1200px;margin:0;font-size:15px;">Lenses weighted by stellar mass. Dashed: the joint W1 + W2 fit of a (r<sub>p</sub> / 1 Mpc)<sup>−0.8</sup> profile above 100 kpc; smaller scales shaded. Open points have the opposite sign. Preliminary catalogue.</p><aside class="notes">
+        <p class="soft" style="position:absolute;left:46px;top:638px;width:1200px;margin:0;font-size:15px;">Using:</p><aside class="notes">
           <p>The dust_in_our_universe project: background quasars from Quaia, DESI DR1 and SDSS DR16Q stacked behind LSx galaxies (the all-sky SPHEREx catalogue), in physical r_p per pair. Magnification is achromatic and extinction is not, so the chromaticity of the quasar magnitude shifts separates the two; W1 and W2 anchor the magnification level.</p>
           <p>Joint W1+W2 GLS fit of A (r_p / 1 Mpc)^−0.8 above 100 kpc, jackknife covariance with the Hartlap factor: S/N 9.2 (Quaia, 601,446 quasars), 11.1 (DESI, 1,126,816), 5.3 (SDSS, 681,936). Below 100 kpc the shifts are set by the photometry of a quasar beside a neighbour, which differs between surveys.</p>
           <p>Universe mass_weighted (lenses weighted by stellar mass; the baseline gives S/N 8.0, 4.3, 1.1). The LSx build it uses is prelim_v0_dr11d, marked preliminary and not for science: say so if numbers are asked for.</p>
@@ -710,7 +669,7 @@
 
       <!-- apps · the little Mac apps made with Claude, each running (fig/apps, 10 s loops) -->
       <section id="apps">
-        <h2 style="position:relative;left:0px;top:18px;">Some small tools I made to help me</h2>
+        <h2 style="position:relative;left:0px;top:18px;">Some small tools I made to help my work</h2>
         <video src="fig/apps/drapeaux.mp4" poster="fig/apps/drapeaux_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:74px;top:112px;width:508px;height:330px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
         <video src="fig/apps/chat.mp4" poster="fig/apps/chat_poster.jpg" muted="" loop="" playsinline="" data-autoplay="" style="position:absolute;left:602px;top:112px;width:604px;height:330px;object-fit:cover;border-radius:8px;box-shadow:0 1px 6px rgba(29,47,66,0.18);"></video>
         <p class="caption" style="position:absolute;left:74px;top:446px;width:508px;margin:0;"><b>Drapeaux au vent</b> · my to-do list</p>
