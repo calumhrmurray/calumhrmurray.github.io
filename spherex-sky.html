@@ -96,10 +96,10 @@
 <main>
   <h1>The Cosmic Web</h1>
 
-  <video class="sky" id="sky" autoplay muted playsinline preload="auto"
+  <video class="sky" id="sky" autoplay muted loop playsinline preload="auto"
          poster="assets/spherex/allsky_redshift_oldstyle_poster.jpg"
          aria-label="A Mollweide map of the whole sky, filled with galaxies from the SPHEREx catalogue. As redshift increases from 0.07 to 0.37 and back, the pattern of filaments and voids drifts and changes.">
-    <source src="assets/spherex/allsky_redshift_oldstyle.mp4" type="video/mp4" />
+    <source src="assets/spherex/allsky_redshift_oldstyle_loop.mp4" type="video/mp4" />
     <img src="assets/spherex/allsky_redshift_oldstyle_poster.jpg" alt="The all-sky SPHEREx catalogue between redshifts 0.07 and 0.10: 1,096,235 galaxies tracing filaments and voids." />
   </video>
 
@@ -110,10 +110,7 @@
   <p class="credit">Created by Calum Murray using Claude Code.</p>
 </main>
 <script>
-  // The movie climbs 0.07 -> 0.37 once (~14 s), then sweeps down and up. Restart at the top
-  // of the climb so the repeat is the down-and-up sweep rather than a jump back to z = 0.07.
   const sky = document.getElementById("sky");
-  sky.addEventListener("ended", () => { sky.currentTime = 13.7; sky.play(); });
   // No native controls: they would sit over the redshift label in the frame's corner.
   sky.addEventListener("click", () => { sky.paused ? sky.play() : sky.pause(); });
 </script>
