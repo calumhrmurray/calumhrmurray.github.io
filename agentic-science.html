@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agentic science | Calum Murray</title>
+<!-- Unlisted: shared by direct link only, not from the nav or the sitemap. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="author" content="Calum Murray" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+  :root {
+    --ink: #1d2f42;
+    --wind: #2e5c88;
+    --quiet: #8795a3;
+    --line: rgba(29, 47, 66, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 56px;
+  }
+
+  .home {
+    align-self: flex-start;
+    margin: 22px 0 0;
+    color: var(--quiet);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 15px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .home:hover { color: var(--wind); border-color: var(--wind); }
+
+  main {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    margin-top: 34px;
+  }
+
+  h1 {
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: clamp(27px, 4.6vw, 41px);
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 28px auto 0;
+    background: #0b1420;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+  <a class="home" href="index.html">Calum Murray</a>
+  <main>
+    <h1>Building the Legacy SPHEREx Galaxy Catalogue with agentic science</h1>
+    <video controls playsinline preload="metadata" poster="assets/film/agentic_science.jpg">
+      <source src="assets/film/agentic_science.mp4" type="video/mp4" />
+    </video>
+  </main>
+</body>
+</html>

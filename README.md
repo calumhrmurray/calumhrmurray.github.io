@@ -12,6 +12,7 @@ Static HTML and CSS, no build step, served by GitHub Pages. Pages built with the
 | `unions_map.html` | The same convergence map in WebGL, interactive: drag, zoom, smoothing scale, colour map |
 | `weak_lens.html` | An interactive gravitational lensing sandbox |
 | `spherex-sky.html` | The half-sky SPHEREx catalogue as a movie through redshift, from `assets/spherex/`. Unlisted: linked only from a figure caption in the Cambridge application, marked `noindex` and left out of the sitemap |
+| `agentic-science.html` | The fellowship film (the Legacy SPHEREx Galaxy Catalogue built with agentic science), from `assets/film/`, re-encoded for the web from `career/firstprinciples/animation/film_sound.mp4`. Unlisted: shared by direct link only, marked `noindex` and left out of the sitemap |
 | `outreach.html`, `aot.html` | Public outreach and Astronomy on Tap Paris |
 
 `press-releases.html` and `outreach.html` play a 3.3 MB looping animation from `assets/unions/` (a seamless 300-frame
