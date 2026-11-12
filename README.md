@@ -12,7 +12,7 @@ Static HTML and CSS, no build step, served by GitHub Pages. Pages built with the
 | `press-releases.html` | The UNIONS dark matter map: the globe animation and the July 2026 announcements |
 | `unions_map.html` | The same convergence map in WebGL, interactive: drag, zoom, smoothing scale, colour map |
 | `weak_lens.html` | An interactive gravitational lensing sandbox |
-| `spherex-sky.html` | The SPHEREx catalogue as a movie through redshift, on its own page. Linked from a figure caption in the Cambridge application, marked `noindex` and left out of the sitemap; the same movie is on the home page |
+| `spherex-sky.html` | The SPHEREx catalogue as a movie through redshift, on its own page. Linked from the catalogue section of the home page and from a figure caption in the Cambridge application; still marked `noindex` and left out of the sitemap |
 | `agentic-science.html` | The fellowship film (the Legacy SPHEREx Galaxy Catalogue built with agentic science), from `assets/film/`, re-encoded for the web from `career/firstprinciples/animation/film_sound.mp4`. Unlisted: shared by direct link only, marked `noindex` and left out of the sitemap |
 
 The first four pages share `styles.css` (ink on paper, no cards; the typeface is DM Sans, self-hosted in `assets/fonts/` under the SIL Open Font License, set by the variables `--text` and `--label` at its top) and `site.js`, which plays a
