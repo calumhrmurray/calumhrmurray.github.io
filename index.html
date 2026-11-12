@@ -6,7 +6,7 @@
   <title>Calum Murray | Cosmology, Weak Lensing &amp; Galaxy Clusters</title>
   <meta
     name="description"
-    content="Calum Murray is an observational cosmologist at CosmoStat, CEA Saclay, working on weak gravitational lensing, galaxy clusters, intrinsic alignments, modified gravity, Euclid, DESC and UNIONS."
+    content="Calum Murray is an observational cosmologist at CosmoStat, CEA Saclay, working on weak gravitational lensing, galaxy clusters, intrinsic alignments, redshift catalogues with SPHEREx, Euclid, DESC and UNIONS."
   />
   <meta name="author" content="Calum Murray" />
   <meta name="robots" content="index, follow" />
@@ -16,15 +16,17 @@
   <meta property="og:title" content="Calum Murray | Cosmology, Weak Lensing &amp; Galaxy Clusters" />
   <meta
     property="og:description"
-    content="Observational cosmologist working on weak gravitational lensing, galaxy clusters, intrinsic alignments, modified gravity, Euclid, DESC and UNIONS."
+    content="Observational cosmologist working on weak gravitational lensing, galaxy clusters, intrinsic alignments, redshift catalogues with SPHEREx, Euclid, DESC and UNIONS."
   />
   <meta property="og:url" content="https://calumhrmurray.github.io/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://calumhrmurray.github.io/assets/spherex/allsky_redshift_oldstyle_poster.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calum Murray | Cosmology, Weak Lensing &amp; Galaxy Clusters" />
   <meta
     name="twitter:description"
-    content="Observational cosmologist working on weak gravitational lensing, galaxy clusters, intrinsic alignments, modified gravity, Euclid, DESC and UNIONS."
+    content="Observational cosmologist working on weak gravitational lensing, galaxy clusters, intrinsic alignments, redshift catalogues with SPHEREx, Euclid, DESC and UNIONS."
   />
+  <meta name="twitter:image" content="https://calumhrmurray.github.io/assets/spherex/allsky_redshift_oldstyle_poster.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
@@ -49,7 +51,8 @@
         "Modified gravity",
         "Euclid",
         "LSST DESC",
-        "UNIONS"
+        "UNIONS",
+        "SPHEREx"
       ],
       "sameAs": [
         "https://www.cosmostat.org/people/calum-murray",
@@ -59,123 +62,127 @@
   </script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar__inner">
-      <a class="brand" href="index.html">Calum Murray</a>
-      <div class="nav-links">
-        <a href="index.html" aria-current="page">Research</a>
+  <div class="hero">
+    <header class="top">
+      <a class="name" href="index.html" aria-current="page">Calum Murray</a>
+      <nav aria-label="Site">
         <a href="publications.html">Publications</a>
         <a href="software.html">Software</a>
-        <a href="weak_lens.html">Lensing</a>
         <a href="outreach.html">Outreach</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">CV (pdf)</a>
+        <a href="cv.pdf">CV</a>
+      </nav>
+    </header>
+    <figure class="onpaper">
+      <video muted playsinline autoplay preload="auto" width="1920" height="1080" data-loop-from="23.733"
+             poster="assets/spherex/spheres_poster.jpg"
+             aria-label="A sphere of galaxies seen from outside. As the view draws back, larger shells of more distant galaxies grow around it, one inside the other, and the whole turns.">
+        <source src="assets/spherex/spheres_small.mp4" type="video/mp4" media="(max-width: 1000px)" />
+        <source src="assets/spherex/spheres.mp4" type="video/mp4" />
+      </video>
+    </figure>
+    <div class="hero-body">
+      <div>
+        <h1>Observational cosmologist</h1>
+        <p class="lede">I'm a cosmologist working on large-scale structure, weak gravitational lensing, galaxy clusters, creating redshift catalogues, learning more about intrinsic alignment and many other things.</p>
+        <p class="links">
+          <a href="mailto:calum.murray@cea.fr">calum.murray@cea.fr</a>
+          <a href="mailto:calumhrmurray@gmail.com">calumhrmurray@gmail.com</a>
+          <a href="https://github.com/calumhrmurray">GitHub</a>
+        </p>
       </div>
     </div>
-  </nav>
-
-  <div class="page">
-    <header class="hero">
-      <p class="muted">Cosmology • Gravitational Lensing • Clusters of Galaxies • Intrinsic Alignments</p>
-      <h1>Observational cosmologist</h1>
-      <p>I'm a cosmologist working on large-scale structure, weak gravitational lensing, galaxy clusters, creating redshift catalogues, learning more about intrinsic alignment and many other things.</p>
-      <div class="hero__actions">
-        <a class="button" href="mailto:calum.murray@cea.fr">calum.murray@cea.fr</a>
-        <a class="button" href="mailto:calumhrmurray@gmail.com">calumhrmurray@gmail.com</a>
-        <a class="button secondary" href="https://github.com/calumhrmurray" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </header>
-
-    <figure class="figure">
-      <img
-        id="profile-photo"
-        alt="Standing beside a historic telescope inside an observatory dome."
-        role="button"
-        tabindex="0"
-        aria-pressed="false"
-      />
-      <figcaption>At the Observatoire Astronomique de Strasbourg.</figcaption>
-    </figure>
-    <script src="photo-data.js"></script>
-    <script>
-      const photo = document.getElementById('profile-photo');
-
-      function buildMonochromeVersion() {
-        return new Promise((resolve, reject) => {
-          if (!photo) {
-            reject(new Error('Profile photo not found'));
-            return;
-          }
-
-          const process = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = photo.naturalWidth;
-            canvas.height = photo.naturalHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(photo, 0, 0);
-
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-
-            for (let i = 0; i < data.length; i += 4) {
-              const r = data[i];
-              const g = data[i + 1];
-              const b = data[i + 2];
-              // Luminance-preserving grayscale conversion
-              const gray = 0.299 * r + 0.587 * g + 0.114 * b;
-              data[i] = gray;
-              data[i + 1] = gray;
-              data[i + 2] = gray;
-            }
-
-            ctx.putImageData(imageData, 0, 0);
-            const altSrc = canvas.toDataURL('image/png');
-            resolve(altSrc);
-          };
-
-          if (photo.complete) {
-            process();
-          } else {
-            photo.addEventListener('load', process, { once: true });
-            photo.addEventListener('error', reject, { once: true });
-          }
-        });
-      }
-
-      if (photo) {
-        const originalSrc = window.PROFILE_PHOTO_SRC || photo.getAttribute('src');
-        if (originalSrc) {
-          photo.src = originalSrc;
-        }
-        let monochromeSrc = null;
-
-        const togglePhoto = async () => {
-          try {
-            if (!monochromeSrc) {
-              monochromeSrc = await buildMonochromeVersion();
-            }
-
-            const useMonochrome = !photo.classList.contains('is-monochrome');
-            photo.classList.toggle('is-monochrome', useMonochrome);
-            photo.setAttribute('aria-pressed', useMonochrome);
-            photo.src = useMonochrome ? monochromeSrc : originalSrc;
-          } catch (err) {
-            console.error('Could not build monochrome photo', err);
-          }
-        };
-
-        photo.addEventListener('click', togglePhoto);
-        photo.addEventListener('keydown', event => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            togglePhoto();
-          }
-        });
-      }
-    </script>
-
-    <footer>
-      <p>Based at CosmoStat (CEA Saclay). Collaboration-friendly and always keen to talk lensing, clusters, and outreach.</p>
-    </footer>
   </div>
+
+  <main class="page">
+    <h2 id="about">About</h2>
+    <div class="beside">
+      <div>
+        <p>I'm a postdoctoral researcher at CosmoStat (CEA Paris-Saclay), working on observational cosmology. <strong>I am currently looking for a job (<a href="mailto:calum.murray@cea.fr">send me an email</a> if you would like to work with me).</strong></p>
+        <p>My research focuses on understanding how galaxies populate the cosmic web and learning more about the nature of dark energy.</p>
+        <dl class="roles">
+          <dt>Euclid</dt>
+          <dd>I'm working on weak lensing of clusters and clustering of galaxies around clusters.</dd>
+          <dt>UNIONS</dt>
+          <dd>3×2pt analysis, creating the shape catalogue and the position catalogue.</dd>
+        </dl>
+      </div>
+      <figure>
+        <img src="assets/calum_strasbourg.jpg" width="747" height="995" loading="lazy"
+             alt="Standing beside a historic telescope inside an observatory dome." />
+        <figcaption>At the Observatoire Astronomique de Strasbourg.</figcaption>
+      </figure>
+    </div>
+
+    <h2 id="spherex">The Legacy Surveys × SPHEREx Galaxy Catalogue</h2>
+    <p>I selected sources using the DESI legacy imaging surveys and used SPHEREx spectrophotometry to measure their redshifts. This provides a catalogue of 71,204,033 galaxies across almost the entire extragalactic sky.</p>
+    <figure class="onpaper tight">
+      <video muted playsinline preload="none" width="2000" height="1014" data-loop-from="13.7"
+             poster="assets/spherex/allsky_redshift_oldstyle_poster.jpg"
+             aria-label="A Mollweide map of the whole sky, filled with galaxies from the SPHEREx catalogue. As redshift increases from 0.07 to 0.37 and back, the pattern of filaments and voids drifts and changes.">
+        <source src="assets/spherex/allsky_redshift_oldstyle.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Each black point is a galaxy observed by SPHEREx + DESI Legacy Imaging Survey. As we look at galaxies which are further and further away we can see the evolution of the cosmic web.</figcaption>
+    </figure>
+
+    <h2 id="lensing">Weak lensing</h2>
+    <div class="pair">
+      <figure class="globe">
+        <video muted loop playsinline preload="none" width="900" height="900"
+               poster="assets/unions/unions_globe_poster.jpg"
+               aria-label="A rotating globe of the sky. The UNIONS survey footprint glows blue where weak gravitational lensing traces the mass between us and distant galaxies.">
+          <source src="assets/unions/unions_globe.mp4" type="video/mp4" />
+        </video>
+      </figure>
+      <div>
+        <h3>The largest dark matter map of the northern sky</h3>
+        <p>The UNIONS collaboration announced it in July 2026: ten years of imaging the northern sky and the shapes of 61 million distant galaxies, and the mass their distortion reveals. The blue is that mass.</p>
+        <p class="links">
+          <a href="press-releases.html">The press release</a>
+          <a href="unions_map.html">Explore the map yourself</a>
+          <a href="weak_lens.html">A lensing sandbox</a>
+        </p>
+      </div>
+    </div>
+
+    <h2 id="publications">Publications</h2>
+    <div class="text">
+      <h3>First-author papers</h3>
+      <ol class="refs" start="1">
+        <li><strong>C. Murray</strong>, M. Kilbinger, C. Payerne (2026). Two-dimensional weak lensing shear for cluster mass, concentration, ellipticity and miscentering estimation. <a href="https://arxiv.org/abs/2609.24948">arXiv:2609.24948</a>.</li>
+        <li><strong>C. Murray</strong>, R. Kou, J. G. Bartlett (2025). Detecting gravitational lensing by matter currents. <em>A&amp;A 708, A48 (2026)</em>, <a href="https://arxiv.org/abs/2510.19798">arXiv:2510.19798</a>.</li>
+        <li><strong>C. Murray</strong>, C. Combet, C. Payerne, M. Ricci (2025). Filtering out large-scale noise for cluster weak-lensing mass estimation. <em>A&amp;A 697, A141 (2025)</em>, <a href="https://arxiv.org/abs/2505.13399">arXiv:2505.13399</a>.</li>
+        <li><strong>C. Murray</strong>, J. G. Bartlett, E. Artis, J. Melin (2022). Measuring weak lensing masses on individual clusters. <em>MNRAS 512, 4785 (2022)</em>, <a href="https://arxiv.org/abs/2204.02229">arXiv:2204.02229</a>.</li>
+        <li><strong>C. Murray</strong> (2021). The effects of lensing by local structures on the dipole of radio source counts. <em>MNRAS 510, 3098 (2022)</em>, <a href="https://arxiv.org/abs/2112.06689">arXiv:2112.06689</a>.</li>
+      </ol>
+      <h3>Second author papers</h3>
+      <ol class="refs" start="6">
+        <li>P. H. Nguyen, <strong>C. Murray</strong> (2026). Observing the Peculiar Acceleration of our Solar System with Quasar Proper Motions. <em>A&amp;A (accepted)</em>, <a href="https://arxiv.org/abs/2605.30367">arXiv:2605.30367</a>.</li>
+        <li>C. Payerne, <strong>C. Murray</strong>, H. Simon (2026). Simulation-based cosmological inference from optically-selected galaxy clusters with Capish. <em>A&amp;A (accepted)</em>, <a href="https://arxiv.org/abs/2602.01911">arXiv:2602.01911</a>.</li>
+        <li>C. Payerne, <strong>C. Murray</strong>, C. Combet, M. Penna-Lima (2024). Towards including super-sample covariance in the unbinned likelihood for cluster abundance cosmology. <em>MNRAS (accepted)</em>, <a href="https://arxiv.org/abs/2401.10024">arXiv:2401.10024</a>.</li>
+        <li>R. Kou, <strong>C. Murray</strong>, J. G. Bartlett (2023). Constraining f(R) gravity with cross-correlation of galaxies and cosmic microwave background lensing. <em>A&amp;A 686, A193 (2024)</em>, <a href="https://arxiv.org/abs/2311.09936">arXiv:2311.09936</a>.</li>
+        <li>C. Payerne, <strong>C. Murray</strong>, C. Combet, C. Doux, A. Fumagalli, M. Penna-Lima (2022). Testing the accuracy of likelihoods for cluster abundance cosmology. <em>MNRAS 520, 6223 (2023)</em>, <a href="https://arxiv.org/abs/2210.11093">arXiv:2210.11093</a>.</li>
+      </ol>
+      <p class="links" style="margin-top:1.4rem"><a href="publications.html">Complete publication list</a></p>
+    </div>
+
+    <h2 id="software">Software</h2>
+    <ul class="entries">
+      <li><strong>cucount</strong> — correlations of arbitrary spin quantities, on the GPU</li>
+      <li><strong>capish</strong> — cluster cosmology by likelihood-free inference</li>
+      <li><strong>Lectern</strong> — a visual editor for html slides, with easy interfaces for LLMs</li>
+    </ul>
+    <p class="links" style="margin-top:1rem"><a href="software.html">More about each</a></p>
+
+    <h2 id="outreach">Outreach</h2>
+    <p>Among other public outreach activities, I have been organising <a href="https://astronomyontap.org/">Astronomy on Tap</a> in Paris since November 2023, where we get to explain astrophysics to the general public in a relaxed, friendly setting.</p>
+    <p class="links"><a href="outreach.html">Outreach and press</a></p>
+  </main>
+
+  <footer>
+    <p>Based at CosmoStat (CEA Saclay). Collaboration-friendly and always keen to talk lensing, clusters, and outreach.</p>
+  </footer>
+
+  <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure"><button aria-label="Close">×</button><p></p></div>
+  <script src="site.js"></script>
 </body>
 </html>

@@ -29,64 +29,56 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar__inner">
-      <a class="brand" href="index.html">Calum Murray</a>
-      <div class="nav-links">
-        <a href="index.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="software.html" aria-current="page">Software</a>
-        <a href="weak_lens.html">Lensing</a>
-        <a href="outreach.html">Outreach</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">CV (pdf)</a>
-      </div>
-    </div>
-  </nav>
+  <header class="top">
+    <a class="name" href="index.html">Calum Murray</a>
+    <nav aria-label="Site">
+      <a href="publications.html">Publications</a>
+      <a href="software.html" aria-current="page">Software</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+  </header>
 
-  <div class="page">
-    <header class="hero">
-      <p class="muted">GPU correlations • Likelihood-free inference • Tools</p>
-      <h1>Software</h1>
-      <p>Here's some public code that I have written and contributed to.</p>
-      <div class="hero__actions">
-        <a class="button" href="https://github.com/calumhrmurray" target="_blank" rel="noopener">github.com/calumhrmurray</a>
-      </div>
-    </header>
+  <main class="page">
+    <h1>Software</h1>
+    <p>Here's some public code that I have written and contributed to.</p>
+    <p class="links"><a href="https://github.com/calumhrmurray">github.com/calumhrmurray</a></p>
 
-    <section aria-labelledby="projects">
-      <h2 class="section-title" id="projects">Projects</h2>
-      <ul class="list">
+    <h2 id="projects">Projects</h2>
+    <ul class="entries">
         <li>
           <strong>cucount — correlations of arbitrary spin quantities, on the GPU</strong>
           <p>A GPU pair-counting code written by Arnaud de Mattia. I added auto- and cross-correlations of arbitrary spin quantities, which is what it takes to correlate galaxy <em>shapes</em>, which are spin 2, with galaxy <em>positions</em>, which are spin 0. Validated against <code>treecorr</code>, and about a hundred times faster than the CPU codes for shape&ndash;position correlations, which is what made the environmental splits in my intrinsic-alignment analysis possible at all.</p>
-          <p class="repo-meta">Merged upstream in November 2025 &middot; 2,171 lines across 14 files, including the CUDA build.</p>
-          <p class="repo-links">
-            <a href="https://github.com/adematti/cucount/pull/1" target="_blank" rel="noopener">The merged pull request &#8599;</a>
-            <a href="https://github.com/adematti/cucount" target="_blank" rel="noopener">adematti/cucount &#8599;</a>
+          <p class="small">Merged upstream in November 2025 &middot; 2,171 lines across 14 files, including the CUDA build.</p>
+          <p class="links">
+            <a href="https://github.com/adematti/cucount/pull/1">The merged pull request</a>
+            <a href="https://github.com/adematti/cucount">adematti/cucount</a>
           </p>
         </li>
         <li>
           <strong>capish — cluster cosmology by likelihood-free inference</strong>
           <p>Written with Constantin Payerne. Capish forward models a cluster survey end to end: a halo catalogue drawn from a set of cosmological parameters, with the mass function, halo bias and super-sample covariance; then the things a survey actually observes &mdash; weak-lensing mass, richness, photometric redshift &mdash; with completeness, purity and selection applied to them; then the summary statistics you would measure. The point is to constrain cosmology from cluster counts without having to write down a likelihood for them, which is the situation any model with a realistic selection function leaves you in.</p>
-          <p class="repo-links">
-            <a href="https://github.com/calumhrmurray/capish" target="_blank" rel="noopener">calumhrmurray/capish &#8599;</a>
+          <p class="links">
+            <a href="https://github.com/calumhrmurray/capish">calumhrmurray/capish</a>
           </p>
         </li>
         <li>
-          <strong>Lectern — a visual editor for the slides an AI assistant writes</strong>
+          <strong>Lectern — a visual editor for html slides, with easy interfaces for LLMs</strong>
           <p>Ask an assistant for a talk and it writes a reveal.js HTML file, usually with the content right and the layout wrong. Lectern is a drag-and-drop canvas over that same file: you fix the layout by hand while the assistant keeps working on the content, and each of you sees the other's changes within a second. Where you want something different, you leave a note on the slide and the assistant works through it. The <code>.html</code> file <em>is</em> the deck &mdash; no proprietary format, no import, no export, and it stays readable in <code>git diff</code>.</p>
-          <p class="repo-meta">Offline by construction: no account, no telemetry, and the test suite fails if the editor so much as tries to reach the network. Ships as a Claude Code plugin.</p>
-          <p class="repo-links">
-            <a href="https://github.com/calumhrmurray/lectern" target="_blank" rel="noopener">calumhrmurray/lectern &#8599;</a>
-            <a href="https://www.npmjs.com/package/lectern-editor" target="_blank" rel="noopener">npm: lectern-editor &#8599;</a>
+          <p class="small">Offline by construction: no account, no telemetry, and the test suite fails if the editor so much as tries to reach the network. Ships as a Claude Code plugin.</p>
+          <p class="links">
+            <a href="https://github.com/calumhrmurray/lectern">calumhrmurray/lectern</a>
+            <a href="https://www.npmjs.com/package/lectern-editor">npm: lectern-editor</a>
           </p>
         </li>
-      </ul>
-    </section>
+    </ul>
+  </main>
 
-    <footer>
-      <p>Based at CosmoStat (CEA Saclay). Happy to talk about any of it: <a href="mailto:calum.murray@cea.fr">calum.murray@cea.fr</a></p>
-    </footer>
-  </div>
+  <footer>
+    <p>Based at CosmoStat (CEA Saclay). Happy to talk about any of it: <a href="mailto:calum.murray@cea.fr">calum.murray@cea.fr</a></p>
+  </footer>
+
+  <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure"><button aria-label="Close">×</button><p></p></div>
+  <script src="site.js"></script>
 </body>
 </html>

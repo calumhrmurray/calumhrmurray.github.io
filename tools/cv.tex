@@ -1,0 +1,241 @@
+ \documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{needspace}
+\hypersetup{hidelinks}
+
+% Define colors
+\definecolor{sectioncolor}{RGB}{0, 102, 102}
+\definecolor{black}{RGB}{0, 0, 0}
+
+% Format sections
+\titleformat{\section}
+  {\color{sectioncolor}\large\bfseries}
+  {}
+  {0em}
+  {}
+  [\color{sectioncolor}\titlerule]
+
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+
+\begin{document}
+
+\begin{flushleft}
+{\LARGE \textbf{Calum Murray}} \\[0.3em]
+{\large Postdoctoral Researcher at AIM, IRFU, CEA Paris-Saclay } \\[0.3em]
+Email: calum.murray@cea.fr \\
+Website: \href{https://calumhrmurray.github.io}{calumhrmurray.github.io} $\cdot$ GitHub: \href{https://github.com/calumhrmurray}{github.com/calumhrmurray}
+\end{flushleft}
+
+\vspace{0.5em}
+{\color{sectioncolor}\rule{\linewidth}{1pt}}
+
+\section*{Profile}
+
+I am currently a postdoctoral researcher at CosmoStat (CEA Paris-Saclay), working on observational cosmology. My research focuses on understanding how galaxies populate the cosmic web by combining weak gravitational lensing observations with detailed characterization of observational systematics. I develop physically motivated models and forward-modeling strategies validated on real survey data from Euclid, UNIONS, and DESI, with particular focus on cluster cosmology and characterizing the galaxy-halo connection through both galaxy clustering and intrinsic alignments. I hold leadership positions in the Euclid collaboration as co-lead of the cluster catalogue work package and the COMB-CL processing function for cluster weak lensing measurements.
+
+\section*{Research experiences}
+
+\textbf{01/09/2024 -- Present: Postdoctoral researcher} at CosmoStat, CEA Saclay, France \\
+Advisors: Dr. Martin Kilbinger \& Dr. Samuel Farrens
+
+\textbf{01/09/2022 -- 01/09/2024: Postdoctoral researcher} at AstroParticle and Cosmology laboratory (APC), Université de Paris, France \\
+Advisor: Prof. James G. Bartlett
+
+\textbf{01/11/2020 -- 01/09/2022: Postdoctoral researcher} at Laboratory of Subatomic Physics and Cosmology (LPSC), Université Grenoble Alpes, France \\
+Advisor: Dr. Céline Combet
+
+\needspace{8\baselineskip}
+\section*{Education and key qualifications}
+
+\textbf{30/10/2020: PhD}, Astrophysics, Université Paris Cité, France \\
+Thesis: \textit{Galaxy cluster cosmology with the Euclid Dark Energy Survey} \\
+Supervisor: Prof. James G. Bartlett
+
+\textbf{2017: Master of Mathematical Physics (MPhys)}, University of Edinburgh, UK \\
+Thesis: \textit{The colours of galaxies} \\
+Supervisor: Prof. Robert Mann
+
+\section*{Leadership roles in major collaborations}
+
+\textbf{Euclid Consortium (2017 -- Present)}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item \textbf{Co-lead} of the Galaxy Clusters work package on catalogue selection and definition (since 2024)
+\item \textbf{Co-lead} of COMB-CL processing function for cluster weak lensing measurements (improved code speed by factor of 50 for large datasets) (since October 2025)
+\item \textbf{Lead author} on key paper analysing covariances between observed cluster properties using the 5,150 square degree Euclid Flagship simulation, in preparation. 
+\end{itemize}
+
+\textbf{UNIONS -- Ultraviolet Near Infrared Optical Northern Survey (2024 -- Present)}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Member, contributing to cosmic shear analysis and intrinsic alignment measurements using UNIONS galaxy shape measurements combined with DESI spectroscopic data
+\end{itemize}
+
+\textbf{LSST Dark Energy Science Collaboration (2020 -- Present)}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Member, contributed two-halo term computation and elliptical halo validation to DESC cluster weak lensing processing function CLMM
+\end{itemize}
+
+\textbf{Wide-field Spectroscopic Telescope (WST)}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Member of WST Science Team
+\end{itemize}
+
+\section*{Statistical and methodological expertise}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Weak gravitational lensing: shear and magnification measurements, cluster mass estimation
+\item Development of statistical techniques: Wiener filtering, two-dimensional shear field analysis
+\item Forward modeling and simulation-based inference approaches
+\item Cross-correlation analyses for tests of gravity and cosmological systematics
+\item Extended GPU correlation code (cucount, https://github.com/adematti/cucount) for arbitrary spin-correlations, enabling rapid computation of shape-position and higher-order correlations (100x speedup)
+\item Cluster abundance cosmology: likelihood development, super-sample covariance
+\item Large-scale survey data validation and systematic characterization
+\item Analysis of photometric surveys (Euclid, UNIONS, HSC) and spectroscopic surveys (DESI)
+\item Production of mock observations and catalogue-level forward models
+\end{itemize}
+
+\section*{Supervising \& Teaching}
+
+\textbf{PhD Supervision}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Antonin Corinaldi (Sept 2025 -- present), intrinsic alignments with UNIONS, DESI and Euclid, co-supervised with Dr. M. Kilbinger and Dr. S. Codis
+\item Constantin Payerne (co-supervised during his PhD), cluster abundance cosmology, resulted in 2 publications
+\item Raphaël Kou (co-supervised during his PhD), tests of modified gravity, resulted in 1 publication
+\end{itemize}
+
+\textbf{Master's Students}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Antonin Corinaldi (Jan--Sept 2025), intrinsic alignment with UNIONS and DESI
+\item Huy Nguyen Phu (Apr--Sept 2024), galactic acceleration using quasar proper motions, resulted in 1 publication (A\&A, accepted)
+\item Théo Courty (May--July 2023), intrinsic alignments of galaxies
+\item Mahmoud Osman (Apr--June 2022), optical mass proxies for galaxy clusters
+\item Margaux Scavini (May--June 2019), strong gravitational lensing
+\end{itemize}
+
+\textbf{Teaching}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item August 2026: Lecturer, Euclid Summer School. Delivered 6-hour graduate-level course on observational aspects of weak gravitational lensing
+\item August 2025: Lecturer, Euclid Summer School. Delivered 6-hour graduate-level course on observational aspects of weak gravitational lensing
+\item June 2025: Lecturer, COLOURS Workshop. Developed and taught workshop on analyzing Euclid's first data release
+\end{itemize}
+
+\section*{Contributions to the research community}
+
+\textbf{Scientific life}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Since 2026: \textbf{Peer reviewer for Springer Nature}
+\item Since 2025: Organizer of monthly meetings for CEA researchers working on Euclid
+\item Since 2025: Peer reviewer for American Astronomical Society (AAS) journals
+\item 2022--2024: Organizer of weekly APC cluster journal club
+\item 2018--2020: Organizer of biweekly APC cosmology journal club
+\item 2021: Local Organizing Committee, Euclid France meeting, LPSC Grenoble
+\item 2019: Organizing Committee, Rencontres des Jeunes Physicien.ne.s, Collège de France, Paris
+\end{itemize}
+
+\textbf{Outreach activities}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item Since Nov 2023: Co-organizer of Astronomy on Tap, Paris. Principal organiser since January 2025. Organized monthly public lectures in bars in Paris making astronomy accessible to the general public
+\item Nov 2022 \& Dec 2024: Rencontres du Ciel et de l'Espace, Paris. Volunteered at Euclid and Rubin stands explaining cosmological surveys to the public
+\end{itemize}
+
+\section*{Selected publications}
+
+54 papers on arXiv: 5 first-author, 13 co-authored (many with students I co-supervised), 2 conference proceedings and 34 Euclid Collaboration papers; 3 more first-author papers in preparation. Complete list at \href{https://calumhrmurray.github.io/publications.html}{calumhrmurray.github.io/publications.html}.
+ 
+\textbf{First-author publications}
+
+\textbf{C. Murray}, M. Kilbinger, C. Payerne (2026). Two-dimensional weak lensing shear for cluster mass, concentration, ellipticity and miscentering estimation. arXiv:2609.24948.
+
+\textbf{C. Murray}, R. Kou, J.G. Bartlett (2026). Detecting gravitational lensing by matter currents. \textit{Astronomy \& Astrophysics}, 708, A48
+
+\textbf{C. Murray}, C. Combet, C. Payerne, M. Ricci (2025). Filtering out large-scale noise for cluster weak lensing mass estimation. \textit{Astronomy \& Astrophysics}, 697, A141
+
+\textbf{C. Murray}, J.G. Bartlett, E. Artis, J.B. Melin (2022). Measuring weak lensing masses on individual clusters. \textit{Monthly Notices of the Royal Astronomical Society}, 512(4), 4785-4791
+
+\textbf{C. Murray} (2022). The effects of lensing by local structures on the dipole of radio source counts. \textit{Monthly Notices of the Royal Astronomical Society}, 510(2), 3098-3101
+
+\textbf{C. Murray}, M. Kilbinger (under internal review within UNIONS). Observational evidence for the origin of intrinsic alignments of galaxies.
+
+\textbf{C. Murray} et al. (in preparation). LSx: a catalogue of 71 million galaxies with SPHEREx spectra and distances.
+
+Euclid Collaboration: \textbf{C. Murray}, S. Bhargava, et al. (in preparation). Euclid preparation: Covariances between observed cluster properties with the Euclid Flagship simulation.
+
+\textbf{Key collaborative publications (co-supervised students)}
+
+C. Payerne, \textbf{C. Murray}, H. Simon (2026). Simulation-based cosmological inference from optically-selected galaxy clusters with Capish. \textit{Astronomy \& Astrophysics} (accepted), arXiv:2602.01911
+
+P.H. Nguyen, \textbf{C. Murray} (2026). Observing the peculiar acceleration of our Solar System with quasar proper motions. \textit{Astronomy \& Astrophysics} (accepted), arXiv:2605.30367 (from my Master's student's internship)
+
+C. Payerne, \textbf{C. Murray}, C. Combet, M. Penna-Lima (2024). Towards including super-sample covariance in the unbinned likelihood for cluster abundance cosmology. \textit{Monthly Notices of the Royal Astronomical Society} (accepted), arXiv:2401.10024
+
+C. Payerne, \textbf{C. Murray}, C. Combet, C. Doux, A. Fumagalli, M. Penna-Lima (2023). Testing the accuracy of likelihoods for cluster abundance cosmology. \textit{Monthly Notices of the Royal Astronomical Society}, 520(4), 6223-6236
+
+R. Kou, \textbf{C. Murray}, J.G. Bartlett (2024). Constraining f(R) gravity with cross-correlation of galaxies and cosmic microwave background lensing. \textit{Astronomy \& Astrophysics}, 686, A193
+
+\textbf{Other significant collaborative publications}
+
+E. Artis, J.B. Melin, J.G. Bartlett, \textbf{C. Murray} (2021). Impact of the calibration of the halo mass function on galaxy cluster number count cosmology. \textit{Astronomy \& Astrophysics}, 649, A47
+
+R. Akhmetshyn, J. Elvin-Poole, M.J. Hudson, et al., incl. \textbf{C. Murray} (2026). Measuring satellite galaxy subhalo masses in redMaPPer clusters with UNIONS weak lensing data. \textit{Monthly Notices of the Royal Astronomical Society} (accepted), arXiv:2607.14207
+
+C. Payerne, C. Y\`eche, W. d'Assignies Doumerg, H. Hildebrandt, M. Kilbinger, \textbf{C. Murray}, et al. (2026). Assessing the large-scale angular clustering of UNIONS Lyman Break Galaxies via cross-correlations. arXiv:2607.09943
+
+M. Aguena, C. Combet, S. Fu, C. Payerne, M. Ricci, et al., incl. \textbf{C. Murray} (2026). CLMM v2, the updated LSST-DESC cluster weak lensing mass modelling library. arXiv:2610.37455
+
+C. Payerne, Z. Zhang, M. Aguena, C. Combet, et al., incl. \textbf{C. Murray} (2025). Weak lensing mass-richness relation of redMaPPer clusters in the LSST DESC DC2 simulations. \textit{Astronomy \& Astrophysics}, 700, A34
+
+\textbf{Euclid Collaboration publications}
+
+Euclid Collaboration: S. Bhargava, C. Benoist, A.H. Gonzalez, ..., \textbf{C. Murray}, et al. (2025). Euclid Quick Data Release (Q1): First detections from the galaxy cluster workflow. arXiv:2503.19196 \\
+- For this article I contributed creating colour images for validation of the cluster detections, validation of the photometry within crowded fields, and the effects of masking
+
+\textbf{UNIONS Collaboration publications}
+
+F. Hervas Peters, M. Kilbinger, et al., incl. \textbf{C. Murray} (2025). UNIONS: a direct measurement of intrinsic alignment with BOSS/eBOSS spectroscopy. \textit{Astronomy \& Astrophysics}, 699, A201
+
+\textit{Plus 33 further Euclid Collaboration papers and 2 conference proceedings; see the complete list}
+
+\section*{Invited talks \& conference presentations}
+
+\textbf{Selected invited seminars}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+\item July 2025: Le comptage d'amas de galaxies dans notre Univers avec Euclid, 27ème Congrès Général de la Société Française de Physique, Troyes, France
+\item January 2025: Constraining f(R) gravity with cross-correlation of galaxies and cosmic microwave background lensing, Max Planck Institute for Extraterrestrial Physics, Munich, Germany
+\item April 2024: Beyond cosmic variance: galaxy cluster weak lensing, Royal Observatory of Edinburgh, United Kingdom
+\item March 2024: Robust estimation of the quasar dipole, Laboratoire Univers et Particules de Montpellier, France
+\item February 2023: Gravitational lensing by matter currents, CPPM, Marseille, France
+\item January 2021: Individual weak lensing masses with HSC, LPSC, Grenoble, France
+\item January 2020: Individual weak lensing masses with HSC, CosmoStat, CEA Saclay, France
+\item December 2018: Individual weak lensing masses for Euclid, Observatoire de Paris, Meudon, France
+\end{itemize}
+
+\textbf{Conference \& collaboration presentations}
+
+8 international conferences (including Rencontres de Moriond, Tracing Cosmic Evolution with Clusters of Galaxies Sexten, Progress on Old and New Themes in Cosmology Avignon) $\cdot$ 25 Euclid collaboration meetings (Euclid France, general Consortium meetings, Galaxy Clusters Science Working Group, Theory Science Working Group) $\cdot$ 8 LSST Dark Energy Science Collaboration meetings
+
+\newpage
+
+\section*{References}
+
+\textbf{Dr. Martin Kilbinger} \\
+martin.kilbinger@cea.fr \\
+CosmoStat, AIM, IRFU, CEA, Université Paris-Saclay, France
+
+\textbf{Prof. James G. Bartlett} \\
+bartlett@apc.in2p3.fr \\
+Université de Paris, CNRS, Astroparticule et Cosmologie, France \\
+Jet Propulsion Laboratory, California Institute of Technology, Pasadena, USA
+
+\textbf{Dr. Céline Combet} \\
+celine.combet@lpsc.in2p3.fr \\
+Université Grenoble Alpes, CNRS, LPSC-IN2P3, Grenoble, France
+
+\end{document}

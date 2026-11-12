@@ -29,81 +29,94 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar__inner">
-      <a class="brand" href="index.html">Calum Murray</a>
-      <div class="nav-links">
-        <a href="index.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="software.html">Software</a>
-        <a href="weak_lens.html">Lensing</a>
-        <a href="outreach.html" aria-current="page">Outreach</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">CV (pdf)</a>
+  <header class="top">
+    <a class="name" href="index.html">Calum Murray</a>
+    <nav aria-label="Site">
+      <a href="publications.html">Publications</a>
+      <a href="software.html">Software</a>
+      <a href="outreach.html" aria-current="page">Outreach</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Connecting astronomy with the public</h1>
+
+    <h2 id="press-releases">Press releases</h2>
+    <div class="pair">
+      <figure class="globe">
+        <video muted loop playsinline preload="metadata" width="900" height="900"
+               poster="assets/unions/unions_globe_poster.jpg"
+               aria-label="A rotating globe of the sky. The UNIONS survey footprint glows blue where weak gravitational lensing traces the mass between us and distant galaxies.">
+          <source src="assets/unions/unions_globe.mp4" type="video/mp4" />
+        </video>
+      </figure>
+      <div>
+        <h3>The largest dark matter map of the northern sky</h3>
+        <p>The UNIONS collaboration announced it in July 2026: ten years of imaging the
+        northern sky and the shapes of 61 million distant galaxies, and the mass their
+        distortion reveals. The blue is that mass.</p>
+        <p>Within the UNIONS collaboration, I wrote the press release for the CEA website
+        and made graphics that were published in the Canadian newspaper Globe and Mail.</p>
+        <p class="links">
+          <a href="press-releases.html">See it full screen</a>
+          <a href="https://uwaterloo.ca/news/decade-cosmic-discovery">University of Waterloo</a>
+          <a href="https://irfu.cea.fr/Phocea/Vie_des_labos/Ast/ast.php?t=fait_marquant&amp;id_ast=5498">CEA-Irfu</a>
+          <a href="https://www.theglobeandmail.com/canada/science/article-scientists-produce-map-of-dark-matter-in-northern-skies/">The Globe and Mail</a>
+        </p>
       </div>
     </div>
-  </nav>
 
-  <div class="page">
-    <header class="hero">
-      <h1>Connecting astronomy with the public</h1>
-    </header>
+    <h2 id="astronomy-on-tap">Astronomy on Tap Paris</h2>
+    <p>Among other public outreach activities, I have been organising <a href="https://astronomyontap.org/">Astronomy on Tap</a> in Paris since November 2023, where we get to explain astrophysics to the general public in a relaxed, friendly setting.</p>
+    <p>A relaxed evening series bringing astrophysics to Paris bars with short talks, live demos, and quiz rounds.</p>
+    <p class="links">
+      <a href="https://www.instagram.com/aotparis/">Instagram</a>
+      <a href="https://www.youtube.com/@AoTParis">YouTube</a>
+    </p>
+    <dl class="roles">
+      <dt>Role</dt>
+      <dd>Principal organiser: curating speakers, running logistics, and keeping the AV and livestreams smooth.</dd>
+      <dt>Format</dt>
+      <dd>Two short talks + quiz + Q&amp;A every month. Bilingual where possible to welcome both French and English-speaking audiences.</dd>
+      <dt>Partners</dt>
+      <dd>Supported by local universities and labs, with venues across the city that make science approachable.</dd>
+    </dl>
 
-    <section aria-labelledby="press-releases">
-      <h2 class="section-title" id="press-releases">Press releases</h2>
-      <div class="release-card">
-        <a class="release-globe" href="press-releases.html" aria-label="The UNIONS dark matter map, full screen">
-          <video autoplay muted loop playsinline preload="metadata"
-                 poster="assets/unions/unions_globe_poster.jpg">
-            <source src="assets/unions/unions_globe.mp4" type="video/mp4" />
-            <img src="assets/unions/unions_globe_poster.jpg" alt="The sky as a globe, with the UNIONS survey footprint picked out in blue." />
-          </video>
-        </a>
-        <div>
-          <strong>The largest dark matter map of the northern sky</strong>
-          <p>The UNIONS collaboration announced it in July 2026: ten years of imaging the
-          northern sky and the shapes of 61 million distant galaxies, and the mass their
-          distortion reveals. The blue is that mass.</p>
-          <p>Within the UNIONS collaboration, I wrote the press release for the CEA website
-          and made graphics that were published in the Canadian newspaper Globe and Mail.</p>
-          <p class="repo-links">
-            <a href="press-releases.html">See it full screen &#8594;</a>
-            <a href="https://uwaterloo.ca/news/decade-cosmic-discovery" target="_blank" rel="noopener">University of Waterloo &#8599;</a>
-            <a href="https://irfu.cea.fr/Phocea/Vie_des_labos/Ast/ast.php?t=fait_marquant&amp;id_ast=5498" target="_blank" rel="noopener">CEA-Irfu &#8599;</a>
-            <a href="https://www.theglobeandmail.com/canada/science/article-scientists-produce-map-of-dark-matter-in-northern-skies/" target="_blank" rel="noopener">The Globe and Mail &#8599;</a>
-          </p>
-        </div>
-      </div>
-    </section>
+    <h3>Recent talks</h3>
+    <div class="posters">
+      <figure>
+        <img src="assets/aot_november_2026.jpg" alt="Astronomy on Tap Paris poster for 'Observing the highest energy light in the Universe, from stellar graveyards to super massive black holes'." loading="lazy" />
+        <figcaption>Observing the highest energy light in the Universe, from stellar graveyards to super massive black holes (12 November 2026).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/aot_april.jpg" alt="Astronomy on Tap Paris poster for Astronomy at the End of the World." loading="lazy" />
+        <figcaption>Astronomy at the End of the World (16 April 2026).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/aot_march.jpg" alt="Astronomy on Tap Paris poster for talks on dark matter and dark energy." loading="lazy" />
+        <figcaption>La matiere noire: observer l'invisible &amp; l'energie noire: la menace fantome (12 March 2026).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/aot_janvier.jpg" alt="Astronomy on Tap Paris poster for 'Simuler les premieres galaxies et leurs observations'." loading="lazy" />
+        <figcaption>Simuler les premieres galaxies et leurs observations (15 January 2026).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/THE%20ASTRONOMY%20ON%20TAP%20NOVEMBER-8.png" alt="Astronomy on Tap poster for 'The origin of cosmic rays'." loading="lazy" />
+        <figcaption>The origin of cosmic rays (13 November).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/ASTRONOMY%20ON%20TAP-4.png" alt="Astronomy on Tap Paris poster for energy noire and galaxy clusters talks." loading="lazy" />
+        <figcaption>L'histoire de l'energie noire &amp; la place des amas de galaxies (16 October 2025).</figcaption>
+      </figure>
+    </div>
+  </main>
 
-    <section aria-labelledby="astronomy-on-tap">
-      <h2 class="section-title" id="astronomy-on-tap">Astronomy on Tap Paris</h2>
-      <p>Among other public outreach activities over the past year and a half, I have been organising <a href="https://astronomyontap.org/" target="_blank" rel="noopener">Astronomy on Tap</a> in Paris, where we get to explain astrophysics to the general public in a relaxed, friendly setting.</p>
-      <p class="muted">More about the series, and how to speak at it: <a href="aot.html">Astronomy on Tap Paris</a>.</p>
+  <footer>
+    <p>Interested in speaking at an upcoming event? <a href="mailto:calum.murray@cea.fr">Email me</a> with your idea.</p>
+  </footer>
 
-      <h3 class="subsection-title">Recent talks</h3>
-      <div class="poster-grid">
-        <figure class="poster-card">
-          <img src="assets/aot_april.jpg" alt="Astronomy on Tap Paris poster for Astronomy at the End of the World." />
-          <figcaption>Astronomy at the End of the World (16 April 2026).</figcaption>
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/aot_march.jpg" alt="Astronomy on Tap Paris poster for talks on dark matter and dark energy." />
-          <figcaption>La matiere noire: observer l'invisible &amp; l'energie noire: la menace fantome (12 March 2026).</figcaption>
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/aot_janvier.jpg" alt="Astronomy on Tap Paris poster for 'Simuler les premieres galaxies et leurs observations'." />
-          <figcaption>Simuler les premieres galaxies et leurs observations (15 January 2026).</figcaption>
-        </figure>
-        <figure class="poster-card">
-          <img src="assets/THE%20ASTRONOMY%20ON%20TAP%20NOVEMBER-8.png" alt="Astronomy on Tap poster for 'The origin of cosmic rays'." />
-          <figcaption>The origin of cosmic rays (13 November).</figcaption>
-        </figure>
-        <figure class="poster-card">
-          <img class="poster-media" src="assets/ASTRONOMY%20ON%20TAP-4.png" alt="Astronomy on Tap Paris poster for energy noire and galaxy clusters talks." />
-          <figcaption>L'histoire de l'energie noire &amp; la place des amas de galaxies (16 October 2025).</figcaption>
-        </figure>
-      </div>
-    </section>
-  </div>
+  <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure"><button aria-label="Close">×</button><p></p></div>
+  <script src="site.js"></script>
 </body>
 </html>
