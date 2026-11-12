@@ -1,6 +1,6 @@
 # calumhrmurray.github.io
 
-Personal site of Calum Murray, observational cosmologist at CosmoStat, CEA Paris-Saclay.
+Personal site of Calum Murray, cosmologist at CosmoStat, CEA Paris-Saclay.
 Static HTML and CSS, no build step, served by GitHub Pages. Pages built with the help of Claude Code.
 
 | Page | What it is |
