@@ -1,7 +1,7 @@
 # calumhrmurray.github.io
 
 Personal site of Calum Murray, observational cosmologist at CosmoStat, CEA Paris-Saclay.
-Static HTML and CSS, no build step, served by GitHub Pages.
+Static HTML and CSS, no build step, served by GitHub Pages. Pages built with the help of Claude Code.
 
 | Page | What it is |
 | --- | --- |
@@ -13,6 +13,7 @@ Static HTML and CSS, no build step, served by GitHub Pages.
 | `unions_map.html` | The same convergence map in WebGL, interactive: drag, zoom, smoothing scale, colour map |
 | `weak_lens.html` | An interactive gravitational lensing sandbox |
 | `spherex-sky.html` | The SPHEREx catalogue as a movie through redshift, on its own page. Linked from a figure caption in the Cambridge application, marked `noindex` and left out of the sitemap; the same movie is on the home page |
+| `agentic-science.html` | The fellowship film (the Legacy SPHEREx Galaxy Catalogue built with agentic science), from `assets/film/`, re-encoded for the web from `career/firstprinciples/animation/film_sound.mp4`. Unlisted: shared by direct link only, marked `noindex` and left out of the sitemap |
 
 The first four pages share `styles.css` (ink on paper, no cards; the typeface is DM Sans, self-hosted in `assets/fonts/` under the SIL Open Font License, set by the variables `--text` and `--label` at its top) and `site.js`, which plays a
 film only while it is on screen, shows stills with the browser's play button to anyone who asks for reduced
@@ -26,7 +27,7 @@ All are silent H.264 in `assets/`, each with a poster still. Their sources are i
 | File | From | How |
 | --- | --- | --- |
 | `spherex/spheres.mp4` (74 MB), `spheres_small.mp4` (15 MB) | `2611_catalogue_film` | not a cut of `film.mp4`: a separate render of the journey out (film time 22 to 33.6 s) without words, rings or the "we are here" mark, then held zoomed out while the shells turn. The turn quickens to 10°/s over 4 s and makes one whole turn, so the last 36 s loop without a seam; `data-loop-from="23.733"` sends the film back there when it ends. The whole 16:9 frame, the sphere at its centre, its paper lifted to white. Two cuts: 1920×1080 at crf 28, and 1280×720 at crf 29 for screens under 1000 px, chosen by the `media` attribute on its `<source>` |
-| `spherex/allsky_redshift_oldstyle.mp4` (29 MB) | the CosmoStat group-meeting deck | on white; loops from 13.7 s, the top of its climb. Also on `spherex-sky.html` |
+| `spherex/allsky_redshift_oldstyle_loop.mp4` (18 MB) | the CosmoStat group-meeting deck | on white; sweeps up and down in redshift without a pause, so it loops as it is. Also on `spherex-sky.html` |
 | `unions/unions_globe.mp4` (3.3 MB) | | a seamless 300-frame rotation, so it tiles without a cut. A disc on black: on the light pages `clip-path` shows only the disc |
 
 The sphere film was rendered by serving the film's folder with `film.js` patched in memory (a turn added to the
