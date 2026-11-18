@@ -3,7 +3,7 @@
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(assets/fonts/dm-sans.woff2) format("woff2"); }
 @font-face { font-family: "DM Sans"; font-style: italic; font-weight: 400 700; font-display: swap; src: url(assets/fonts/dm-sans-italic.woff2) format("woff2"); }
 :root {
-  --paper: #f7f6f3;
+  --paper: #fbfaf7;
   --ink: #1d2733;
   --quiet: #6b675f;
   --accent: #8b4a2a;          /* the films' burnt sienna */
