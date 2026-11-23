@@ -13,9 +13,9 @@
   // the film's frame, in its own units: 1280 wide, the camera 3.3 sky radii out with a focal length of 900, the
   // centre at (640, 372); each galaxy a dot 1.1 wide
   const W = 1280, D = 3.3, F = 900, CX = 640, CY = 372, DOT = 1.1;
-  // the ink, the film's navy, one per shell from the innermost out; PALE is how strongly each is laid down (thinner
-  // than the film's 1, so more paper shows through), NEAR how strongly the near half of each shell shows
-  const INKS = ['#16304f', '#16304f', '#16304f', '#16304f'], PALE = [0.7, 0.7, 0.7, 0.7], NEAR = 0.3;
+  // the ink, a paler navy than the film's (#16304f), one per shell from the innermost out; PALE is how strongly each
+  // is laid down, NEAR how strongly the near half of each shell shows
+  const INKS = ['#2b4a70', '#2b4a70', '#2b4a70', '#2b4a70'], PALE = [0.85, 0.85, 0.85, 0.85], NEAR = 0.3;
   const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
   const SPIN = 10 * Math.PI / 180;   // the film's turn, 10 degrees a second
 

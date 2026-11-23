@@ -39,14 +39,14 @@ shell centred on 0.355) can be dragged round on its own. Each turns on the sky's
 turns the shell under the pointer (the smallest whose disc holds it, so each is taken by its own ring), a throw
 carries on and dies away over about a second, and the shell's own turn comes back. With reduced motion nothing
 turns unasked and a shell stops where it is let go. On a touch screen a touch that lands on the sphere turns it and
-anywhere else scrolls the page. The ink is the film's navy, `#16304f`, laid down at 0.7 of the film's strength so more paper shows through (`INKS`, one per shell, and `PALE` at the top of `shells.js`).
+anywhere else scrolls the page. The ink is a paler navy than the film's, `#2b4a70` at 0.85 in place of `#16304f` at 1 (`INKS`, one per shell, and `PALE` at the top of `shells.js`).
 
 `tools/prep_shells.mjs <film folder>` makes `shells.bin` from the film's `data/`: the same points and weights the
 film's `cloud.js` draws once drawn back (every third galaxy of LSx v0.92's quality sample, the near galaxies and the
 night sky's first shell; a galaxy counts towards a shell with the weight of the film's soft band round its radius),
 kept at random in proportion to that weight, 120,000 in each inner shell and 400,000 in the outer, out of 3.6 million.
 The file stores each shell's total ink, and `shells.js` shares it among the points it draws, so each shell keeps the
-film's balance of darkness (then thinned by `PALE`). The camera, framing and dot size are the film's. `shells_poster.jpg` is the first live
+film's balance of darkness (then scaled by `PALE`). The camera, framing and dot size are the film's. `shells_poster.jpg` is the first live
 frame on white, shown before the points arrive and wherever WebGL is missing. The films above, `spheres.mp4` and
 `spheres_loop.mp4` with their small cuts and posters, are no longer on any page.
 
