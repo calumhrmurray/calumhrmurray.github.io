@@ -5,7 +5,7 @@ Static HTML and CSS, no build step, served by GitHub Pages. Pages built with the
 
 | Page | What it is |
 | --- | --- |
-| `index.html` | The first screen is the sphere film with a few words on it; then About, the catalogue and its cosmic web movie, the UNIONS map, every publication, and short lists that link into the pages below |
+| `index.html` | The first screen is the four shells of galaxies, drawn live, with a few words on it; then About, the catalogue and its cosmic web movie, the UNIONS map, every publication, and short lists that link into the pages below |
 | `publications.html` | Publications and preprints |
 | `software.html` | Public code: `cucount` spin correlations, `capish`, Lectern |
 | `outreach.html` | Press releases and Astronomy on Tap Paris. `aot.html` only redirects here |
@@ -27,9 +27,28 @@ All are silent H.264 in `assets/`, each with a poster still. Their sources are i
 | File | From | How |
 | --- | --- | --- |
 | `spherex/spheres.mp4` (74 MB), `spheres_small.mp4` (15 MB) | `2611_catalogue_film` | not a cut of `film.mp4`: a separate render of the journey out (film time 22 to 33.6 s) without words, rings or the "we are here" mark, then held zoomed out while the shells turn. The turn quickens to 10°/s over 4 s and makes one whole turn, so the last 36 s loop without a seam. Kept as the source of the loop below; no longer on the page. The whole 16:9 frame, the sphere at its centre, its paper lifted to white. Two cuts: 1920×1080 at crf 28, and 1280×720 at crf 29 for screens under 1000 px, chosen by the `media` attribute on its `<source>` |
-| `spherex/spheres_loop.mp4` (18 MB), `spheres_loop_small.mp4` (8 MB), `spheres_loop_poster.jpg` | `spheres.mp4`, `spheres_small.mp4` | the first screen. Only the turn: frames 712 to 1791 (from 23.733 s to the end, 1080 frames, 36.0 s), one whole turn, so plain `loop` closes it; the last frame matches frame 711 best, and the seam jumps about as far as two ordinary frames. Two-pass H.264 at 4 Mb/s (1080p) and 1.8 Mb/s (720p), because crf on this grain gave 59 MB. The poster is the loop's first frame |
+| `spherex/spheres_loop.mp4` (18 MB), `spheres_loop_small.mp4` (8 MB), `spheres_loop_poster.jpg` | `spheres.mp4`, `spheres_small.mp4` | was the first screen. Only the turn: frames 712 to 1791 (from 23.733 s to the end, 1080 frames, 36.0 s), one whole turn, so plain `loop` closes it; the last frame matches frame 711 best, and the seam jumps about as far as two ordinary frames. Two-pass H.264 at 4 Mb/s (1080p) and 1.8 Mb/s (720p), because crf on this grain gave 59 MB. The poster is the loop's first frame. No longer on the page: the live shells below replaced it |
 | `spherex/allsky_redshift_oldstyle_loop.mp4` (18 MB) | the CosmoStat group-meeting deck | on white; sweeps up and down in redshift without a pause, so it loops as it is. Also on `spherex-sky.html` |
 | `unions/unions_globe.mp4` (3.3 MB) | | a seamless 300-frame rotation, so it tiles without a cut. A disc on black: on the light pages `clip-path` shows only the disc |
+
+## The shells on the first screen
+
+The home page no longer plays a film: the sphere film's held, zoomed-out view is drawn live by `shells.js` (WebGL, no
+library) from `assets/spherex/shells.bin` (3.0 MB), so that each of the four shells (z = 0.1, 0.2, 0.3 and the outer
+shell centred on 0.355) can be dragged round on its own. Each turns on the sky's pole at the film's 10°/s; a drag
+turns the shell under the pointer (the smallest whose disc holds it, so each is taken by its own ring), a throw
+carries on and dies away over about a second, and the shell's own turn comes back. With reduced motion nothing
+turns unasked and a shell stops where it is let go. On a touch screen a touch that lands on the sphere turns it and
+anywhere else scrolls the page. The ink is the film's navy, `#16304f`, laid down at 0.7 of the film's strength so more paper shows through (`INKS`, one per shell, and `PALE` at the top of `shells.js`).
+
+`tools/prep_shells.mjs <film folder>` makes `shells.bin` from the film's `data/`: the same points and weights the
+film's `cloud.js` draws once drawn back (every third galaxy of LSx v0.92's quality sample, the near galaxies and the
+night sky's first shell; a galaxy counts towards a shell with the weight of the film's soft band round its radius),
+kept at random in proportion to that weight, 120,000 in each inner shell and 400,000 in the outer, out of 3.6 million.
+The file stores each shell's total ink, and `shells.js` shares it among the points it draws, so each shell keeps the
+film's balance of darkness (then thinned by `PALE`). The camera, framing and dot size are the film's. `shells_poster.jpg` is the first live
+frame on white, shown before the points arrive and wherever WebGL is missing. The films above, `spheres.mp4` and
+`spheres_loop.mp4` with their small cuts and posters, are no longer on any page.
 
 The sphere film was rendered by serving the film's folder with `film.js` patched in memory (a turn added to the
 camera's RA, `drawSweepMarks` switched off, `layer=picture` for no words), so nothing in that repository changed.

@@ -72,13 +72,11 @@
         <a href="cv.pdf">CV</a>
       </nav>
     </header>
-    <figure class="onpaper">
-      <video muted loop playsinline autoplay preload="auto" width="1920" height="1080"
-             poster="assets/spherex/spheres_loop_poster.jpg"
-             aria-label="Nested shells of galaxies, one inside the other, turning slowly: the nearer galaxies at the centre, the more distant ones in the outer shells.">
-        <source src="assets/spherex/spheres_loop_small.mp4" type="video/mp4" media="(max-width: 1000px)" />
-        <source src="assets/spherex/spheres_loop.mp4" type="video/mp4" />
-      </video>
+    <figure class="onpaper shells">
+      <img src="assets/spherex/shells_poster.jpg" width="1920" height="1080"
+           alt="Nested shells of galaxies, one inside the other, turning slowly: the nearer galaxies at the centre, the more distant ones in the outer shells." />
+      <canvas hidden role="img"
+              aria-label="Nested shells of galaxies, one inside the other, turning slowly: the nearer galaxies at the centre, the more distant ones in the outer shells."></canvas>
     </figure>
     <div class="hero-body">
       <div>
@@ -182,5 +180,6 @@
 
   <div id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure"><button aria-label="Close">×</button><p></p></div>
   <script src="site.js"></script>
+  <script src="shells.js"></script>
 </body>
 </html>
