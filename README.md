@@ -73,10 +73,17 @@ and the ink stays: the page colour is `--paper` alone, and changing it needs no 
 
 ## Publications and CV
 
-`publications.html` and the lists on the home page were made from the First Principles dossier in the career
-repository (`firstprinciples/dossier/cv/publications.tex`, compiled from arXiv on 30 October 2026), keeping only
-what is on arXiv: the paper under internal review and the two in preparation are left out. "Second author papers"
-are the co-authored ones where I am second in the author list; the home page shows first and second author only. `cv.pdf` is built from
-`tools/cv.tex`: that dossier's `cv.tex` with the language written for an AI-research audience taken out (the
-last sentence of the profile, the "AI-native research" section, the "agentic science paper" note), the LSx count
-brought to 71 million, and the complete list pointed at `publications.html`. It needs the `needspace` package.
+Both follow the career repository (private), where they are edited: `career/cv/main.tex` is the CV and
+`career/cv/publications.tex` the complete publication list. Here `tools/cv.tex` is an unchanged copy of `main.tex`, and
+`cv.pdf` is built from it. The referees are in `referees.tex` there, which is never copied here; `main.tex` skips them
+when that file is absent. To update, from this folder:
+
+```bash
+cp ../career/cv/main.tex tools/cv.tex
+(cd tools && latexmk -pdf -outdir=/tmp/cv cv.tex) && cp /tmp/cv/cv.pdf cv.pdf
+pdftotext cv.pdf - | grep -i -A3 '^References'   # must print nothing
+```
+
+`publications.html` and the list on the home page are edited by hand to match `publications.tex`, keeping only what is on
+arXiv (the papers in preparation are left out). The first list holds first- and second-author papers, newest first; the
+home page shows that list only. Papers are numbered through, so change the `start` of each later list when adding one.
