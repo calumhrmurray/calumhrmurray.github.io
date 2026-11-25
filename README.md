@@ -26,8 +26,6 @@ All are silent H.264 in `assets/`, each with a poster still. Their sources are i
 
 | File | From | How |
 | --- | --- | --- |
-| `spherex/spheres.mp4` (74 MB), `spheres_small.mp4` (15 MB) | `2611_catalogue_film` | not a cut of `film.mp4`: a separate render of the journey out (film time 22 to 33.6 s) without words, rings or the "we are here" mark, then held zoomed out while the shells turn. The turn quickens to 10°/s over 4 s and makes one whole turn, so the last 36 s loop without a seam. Kept as the source of the loop below; no longer on the page. The whole 16:9 frame, the sphere at its centre, its paper lifted to white. Two cuts: 1920×1080 at crf 28, and 1280×720 at crf 29 for screens under 1000 px, chosen by the `media` attribute on its `<source>` |
-| `spherex/spheres_loop.mp4` (18 MB), `spheres_loop_small.mp4` (8 MB), `spheres_loop_poster.jpg` | `spheres.mp4`, `spheres_small.mp4` | was the first screen. Only the turn: frames 712 to 1791 (from 23.733 s to the end, 1080 frames, 36.0 s), one whole turn, so plain `loop` closes it; the last frame matches frame 711 best, and the seam jumps about as far as two ordinary frames. Two-pass H.264 at 4 Mb/s (1080p) and 1.8 Mb/s (720p), because crf on this grain gave 59 MB. The poster is the loop's first frame. No longer on the page: the live shells below replaced it |
 | `spherex/allsky_redshift_oldstyle_loop.mp4` (18 MB) | the CosmoStat group-meeting deck | on white; sweeps up and down in redshift without a pause, so it loops as it is. Also on `spherex-sky.html` |
 | `unions/unions_globe.mp4` (3.3 MB) | | a seamless 300-frame rotation, so it tiles without a cut. A disc on black: on the light pages `clip-path` shows only the disc |
 
@@ -47,8 +45,9 @@ night sky's first shell; a galaxy counts towards a shell with the weight of the 
 kept at random in proportion to that weight, 120,000 in each inner shell and 400,000 in the outer, out of 3.6 million.
 The file stores each shell's total ink, and `shells.js` shares it among the points it draws, so each shell keeps the
 film's balance of darkness (then scaled by `PALE`). The camera, framing and dot size are the film's. `shells_poster.jpg` is the first live
-frame on white, shown before the points arrive and wherever WebGL is missing. The films above, `spheres.mp4` and
-`spheres_loop.mp4` with their small cuts and posters, are no longer on any page.
+frame on white, shown before the points arrive and wherever WebGL is missing. The sphere films it
+replaced (`spheres.mp4`, `spheres_loop.mp4`, their small cuts and posters) were deleted; they are in the history up to
+`6de7303`.
 
 The sphere film was rendered by serving the film's folder with `film.js` patched in memory (a turn added to the
 camera's RA, `drawSweepMarks` switched off, `layer=picture` for no words), so nothing in that repository changed.
@@ -69,7 +68,7 @@ python3 -m http.server 8000
 Python's server does not answer range requests, so there a film that ends restarts from its beginning instead of
 its loop point. GitHub Pages does answer them.
 
-The two SPHEREx films are on white and carry `mix-blend-mode: multiply` (`.onpaper`), so white becomes the page
+The SPHEREx movie and the shells are on white and carry `mix-blend-mode: multiply` (`.onpaper`), so white becomes the page
 and the ink stays: the page colour is `--paper` alone, and changing it needs no new encode.
 
 ## Publications and CV
