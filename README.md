@@ -26,7 +26,7 @@ All are silent H.264 in `assets/`, each with a poster still. Their sources are i
 
 | File | From | How |
 | --- | --- | --- |
-| `spherex/allsky_redshift_oldstyle_loop.mp4` (18 MB) | the CosmoStat group-meeting deck | on white; sweeps up and down in redshift without a pause, so it loops as it is. Also on `spherex-sky.html` |
+| `spherex/allsky_redshift_loop.mp4` (22 MB) | `talks/2611_Clusters_Meudon/scripts/sky.py --web` in the talks repository | the whole-sky part of that talk's slide 10, drawn as Fig. 1 of arXiv:2611.26593: LSx v0.92 quality sample, slices 0.03 thick, on white; sweeps up and down in redshift in 16 s without a pause, so it loops as it is. In greys; `.ink` puts the ink's colour back. Also on `spherex-sky.html` |
 | `unions/unions_globe.mp4` (3.3 MB) | | a seamless 300-frame rotation, so it tiles without a cut. A disc on black: on the light pages `clip-path` shows only the disc |
 
 ## The shells on the first screen

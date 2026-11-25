@@ -43,6 +43,7 @@
       big.src = el.currentSrc || el.src; big.alt = el.alt;
     }
     cap.textContent = el.closest('figure')?.querySelector('figcaption')?.textContent.trim() || '';
+    if (el.closest('.ink')) { const ink = document.createElement('div'); ink.className = 'ink'; ink.append(big); big = ink; }
     lb.insertBefore(big, cap);
     back = el; lb.hidden = false; close.focus();
   };
