@@ -68,7 +68,7 @@ python3 -m http.server 8000
 Python's server does not answer range requests, so there a film that ends restarts from its beginning instead of
 its loop point. GitHub Pages does answer them.
 
-The SPHEREx movie and the shells are on white and carry `mix-blend-mode: multiply` (`.onpaper`), so white becomes the page
+The SPHEREx movie and the shells' poster are on white and, like the shells' canvas, carry `mix-blend-mode: multiply` (`.onpaper`), so white becomes the page
 and the ink stays: the page colour is `--paper` alone, and changing it needs no new encode.
 
 ## Publications and CV
